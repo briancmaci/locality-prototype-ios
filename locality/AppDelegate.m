@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -17,7 +18,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self initParse];
     return YES;
+}
+
+- (void)initParse {
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
+    NSString *appID = [dict objectForKey:@"ParseApplicationID"];
+    NSString *clientKey = [dict objectForKey:@"ParseClientKey"];
+    NSLog(@"init parse with: %@, %@", appID, clientKey);
+    
+    [Parse setApplicationId:appID clientKey:clientKey];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

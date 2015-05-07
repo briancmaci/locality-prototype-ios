@@ -43,5 +43,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>ParseApplicationID</key>
+    <string>lSUQ4rBYy3s7g4x6O6OnS6VuXtVeaVoFQzlwdYBx</string>
+    <key>ParseClientKey</key>
+    <string>XlJ0A0q0xyIRlSGxVpHOhiW9k8bE8HOOrOq1O9vY</string>
 </dict>
 </plist>
