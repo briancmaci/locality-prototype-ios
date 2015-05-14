@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 @interface ViewController ()
 
 @end
@@ -17,6 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //fb test
+    //FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    //loginButton.center = self.view.center;
+    //[self.view addSubview:loginButton];
 }
 
 - (void)didReceiveMemoryWarning {

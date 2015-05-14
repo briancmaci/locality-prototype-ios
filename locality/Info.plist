@@ -43,9 +43,22 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>ParseApplicationID</key>
-    <string>lSUQ4rBYy3s7g4x6O6OnS6VuXtVeaVoFQzlwdYBx</string>
-    <key>ParseClientKey</key>
-    <string>XlJ0A0q0xyIRlSGxVpHOhiW9k8bE8HOOrOq1O9vY</string>
+	<key>ParseApplicationID</key>
+	<string>JqpwyHSApOHZYJxGdkw4slUfzSaI8goWCTaKEWQD</string>
+	<key>ParseClientKey</key>
+	<string>f3Yxk5prY341ChR5Tulnk9bbkegqbYJDDZ3uzGjR</string>
+	<key>FacebookAppID</key>
+	<string>767843809990226</string>
+	<key>FacebookDisplayName</key>
+	<string>locality</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb767843809990226</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

@@ -7,9 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76301B03C9A100C78CB0 /* FeedLocationModel.m */; };
+		032C76351B03EFA100C78CB0 /* config.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76341B03EFA100C78CB0 /* config.m */; };
+		032C76411B03F04A00C78CB0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76401B03F04A00C78CB0 /* ViewController.m */; };
+		032C76461B03F06D00C78CB0 /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76431B03F06D00C78CB0 /* FacebookManager.m */; };
+		032C76471B03F06D00C78CB0 /* ParseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76451B03F06D00C78CB0 /* ParseManager.m */; };
+		032C764A1B03F0A400C78CB0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76491B03F0A400C78CB0 /* LoginViewController.m */; };
+		032C764D1B03F0DE00C78CB0 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C764C1B03F0DE00C78CB0 /* SignUpViewController.m */; };
+		032C76501B03F8FC00C78CB0 /* SignUpEmailFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C764F1B03F8FC00C78CB0 /* SignUpEmailFormViewController.m */; };
+		032C76531B03FC1100C78CB0 /* SignUpEmailSentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76521B03FC1100C78CB0 /* SignUpEmailSentViewController.m */; };
+		032C76571B0407D000C78CB0 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76561B0407D000C78CB0 /* UserModel.m */; };
+		032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76591B041CFE00C78CB0 /* FeedViewController.m */; };
 		036CA1C41AFBC88F0064AB6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 036CA1C31AFBC88F0064AB6C /* main.m */; };
 		036CA1C71AFBC88F0064AB6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 036CA1C61AFBC88F0064AB6C /* AppDelegate.m */; };
-		036CA1CA1AFBC88F0064AB6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036CA1C91AFBC88F0064AB6C /* ViewController.m */; };
 		036CA1CD1AFBC88F0064AB6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1CB1AFBC88F0064AB6C /* Main.storyboard */; };
 		036CA1CF1AFBC88F0064AB6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1CE1AFBC88F0064AB6C /* Images.xcassets */; };
 		036CA1D21AFBC88F0064AB6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1D01AFBC88F0064AB6C /* LaunchScreen.xib */; };
@@ -28,13 +38,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		032C762F1B03C9A100C78CB0 /* FeedLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedLocationModel.h; path = model/FeedLocationModel.h; sourceTree = "<group>"; };
+		032C76301B03C9A100C78CB0 /* FeedLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedLocationModel.m; path = model/FeedLocationModel.m; sourceTree = "<group>"; };
+		032C76331B03EFA100C78CB0 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		032C76341B03EFA100C78CB0 /* config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = config.m; sourceTree = "<group>"; };
+		032C763F1B03F04A00C78CB0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = viewcontroller/ViewController.h; sourceTree = "<group>"; };
+		032C76401B03F04A00C78CB0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = viewcontroller/ViewController.m; sourceTree = "<group>"; };
+		032C76421B03F06D00C78CB0 /* FacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookManager.h; path = manager/FacebookManager.h; sourceTree = "<group>"; };
+		032C76431B03F06D00C78CB0 /* FacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookManager.m; path = manager/FacebookManager.m; sourceTree = "<group>"; };
+		032C76441B03F06D00C78CB0 /* ParseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParseManager.h; path = manager/ParseManager.h; sourceTree = "<group>"; };
+		032C76451B03F06D00C78CB0 /* ParseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParseManager.m; path = manager/ParseManager.m; sourceTree = "<group>"; };
+		032C76481B03F0A400C78CB0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = viewcontroller/LoginViewController.h; sourceTree = "<group>"; };
+		032C76491B03F0A400C78CB0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = viewcontroller/LoginViewController.m; sourceTree = "<group>"; };
+		032C764B1B03F0DE00C78CB0 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = viewcontroller/SignUpViewController.h; sourceTree = "<group>"; };
+		032C764C1B03F0DE00C78CB0 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = viewcontroller/SignUpViewController.m; sourceTree = "<group>"; };
+		032C764E1B03F8FC00C78CB0 /* SignUpEmailFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpEmailFormViewController.h; path = viewcontroller/SignUpEmailFormViewController.h; sourceTree = "<group>"; };
+		032C764F1B03F8FC00C78CB0 /* SignUpEmailFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpEmailFormViewController.m; path = viewcontroller/SignUpEmailFormViewController.m; sourceTree = "<group>"; };
+		032C76511B03FC1100C78CB0 /* SignUpEmailSentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpEmailSentViewController.h; path = viewcontroller/SignUpEmailSentViewController.h; sourceTree = "<group>"; };
+		032C76521B03FC1100C78CB0 /* SignUpEmailSentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpEmailSentViewController.m; path = viewcontroller/SignUpEmailSentViewController.m; sourceTree = "<group>"; };
+		032C76551B0407D000C78CB0 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserModel.h; path = model/UserModel.h; sourceTree = "<group>"; };
+		032C76561B0407D000C78CB0 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserModel.m; path = model/UserModel.m; sourceTree = "<group>"; };
+		032C76581B041CFE00C78CB0 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedViewController.h; path = viewcontroller/FeedViewController.h; sourceTree = "<group>"; };
+		032C76591B041CFE00C78CB0 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedViewController.m; path = viewcontroller/FeedViewController.m; sourceTree = "<group>"; };
 		036CA1BE1AFBC88F0064AB6C /* locality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		036CA1C21AFBC88F0064AB6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		036CA1C31AFBC88F0064AB6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		036CA1C51AFBC88F0064AB6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		036CA1C61AFBC88F0064AB6C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		036CA1C81AFBC88F0064AB6C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		036CA1C91AFBC88F0064AB6C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		036CA1CC1AFBC88F0064AB6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		036CA1CE1AFBC88F0064AB6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		036CA1D11AFBC88F0064AB6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -65,6 +95,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		032C76321B03EF8100C78CB0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				032C762F1B03C9A100C78CB0 /* FeedLocationModel.h */,
+				032C76301B03C9A100C78CB0 /* FeedLocationModel.m */,
+				032C76551B0407D000C78CB0 /* UserModel.h */,
+				032C76561B0407D000C78CB0 /* UserModel.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		032C76361B03EFA900C78CB0 /* util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		032C76371B03EFB700C78CB0 /* viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				032C765B1B041D0800C78CB0 /* feed */,
+				032C763F1B03F04A00C78CB0 /* ViewController.h */,
+				032C76401B03F04A00C78CB0 /* ViewController.m */,
+				032C76541B03FD4A00C78CB0 /* login-signup */,
+			);
+			name = viewcontroller;
+			sourceTree = "<group>";
+		};
+		032C76381B03EFCD00C78CB0 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				032C76421B03F06D00C78CB0 /* FacebookManager.h */,
+				032C76431B03F06D00C78CB0 /* FacebookManager.m */,
+				032C76441B03F06D00C78CB0 /* ParseManager.h */,
+				032C76451B03F06D00C78CB0 /* ParseManager.m */,
+			);
+			name = manager;
+			sourceTree = "<group>";
+		};
+		032C76541B03FD4A00C78CB0 /* login-signup */ = {
+			isa = PBXGroup;
+			children = (
+				032C76481B03F0A400C78CB0 /* LoginViewController.h */,
+				032C76491B03F0A400C78CB0 /* LoginViewController.m */,
+				032C764B1B03F0DE00C78CB0 /* SignUpViewController.h */,
+				032C764C1B03F0DE00C78CB0 /* SignUpViewController.m */,
+				032C764E1B03F8FC00C78CB0 /* SignUpEmailFormViewController.h */,
+				032C764F1B03F8FC00C78CB0 /* SignUpEmailFormViewController.m */,
+				032C76511B03FC1100C78CB0 /* SignUpEmailSentViewController.h */,
+				032C76521B03FC1100C78CB0 /* SignUpEmailSentViewController.m */,
+			);
+			name = "login-signup";
+			sourceTree = "<group>";
+		};
+		032C765B1B041D0800C78CB0 /* feed */ = {
+			isa = PBXGroup;
+			children = (
+				032C76581B041CFE00C78CB0 /* FeedViewController.h */,
+				032C76591B041CFE00C78CB0 /* FeedViewController.m */,
+			);
+			name = feed;
+			sourceTree = "<group>";
+		};
 		036CA1B51AFBC88E0064AB6C = {
 			isa = PBXGroup;
 			children = (
@@ -90,11 +184,15 @@
 			children = (
 				036CA1C51AFBC88F0064AB6C /* AppDelegate.h */,
 				036CA1C61AFBC88F0064AB6C /* AppDelegate.m */,
-				036CA1C81AFBC88F0064AB6C /* ViewController.h */,
-				036CA1C91AFBC88F0064AB6C /* ViewController.m */,
+				032C76331B03EFA100C78CB0 /* config.h */,
+				032C76341B03EFA100C78CB0 /* config.m */,
 				036CA1CB1AFBC88F0064AB6C /* Main.storyboard */,
 				036CA1CE1AFBC88F0064AB6C /* Images.xcassets */,
 				036CA1D01AFBC88F0064AB6C /* LaunchScreen.xib */,
+				032C76381B03EFCD00C78CB0 /* manager */,
+				032C76321B03EF8100C78CB0 /* model */,
+				032C76361B03EFA900C78CB0 /* util */,
+				032C76371B03EFB700C78CB0 /* viewcontroller */,
 				036CA1C11AFBC88F0064AB6C /* Supporting Files */,
 			);
 			path = locality;
@@ -278,9 +376,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				036CA1CA1AFBC88F0064AB6C /* ViewController.m in Sources */,
+				032C764A1B03F0A400C78CB0 /* LoginViewController.m in Sources */,
+				032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */,
+				032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */,
+				032C76571B0407D000C78CB0 /* UserModel.m in Sources */,
+				032C76461B03F06D00C78CB0 /* FacebookManager.m in Sources */,
 				036CA1C71AFBC88F0064AB6C /* AppDelegate.m in Sources */,
+				032C76531B03FC1100C78CB0 /* SignUpEmailSentViewController.m in Sources */,
 				036CA1C41AFBC88F0064AB6C /* main.m in Sources */,
+				032C76351B03EFA100C78CB0 /* config.m in Sources */,
+				032C76411B03F04A00C78CB0 /* ViewController.m in Sources */,
+				032C76471B03F06D00C78CB0 /* ParseManager.m in Sources */,
+				032C764D1B03F0DE00C78CB0 /* SignUpViewController.m in Sources */,
+				032C76501B03F8FC00C78CB0 /* SignUpEmailFormViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
