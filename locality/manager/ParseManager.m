@@ -7,8 +7,21 @@
 //
 
 #import "ParseManager.h"
+#import "config.h"
 
 @implementation ParseManager
+
++(void) initParse {
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
+    NSString *appID = [dict objectForKey:PARSE_APP_ID];
+    NSString *clientKey = [dict objectForKey:PARSE_CLIENT_KEY];
+    NSLog(@"init Parse with: %@, %@", appID, clientKey);
+    
+    [Parse setApplicationId:appID clientKey:clientKey];
+    [PFUser enableRevocableSessionInBackground];
+}
 
 +(void) signupUserViaEmail:(NSString *)email username:(NSString *)username password:(NSString *)password success:(successBlock)successBlock failure:(failureBlock)failureBlock {
     

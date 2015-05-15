@@ -24,6 +24,7 @@
             sharedSingleton.password = @"";
             sharedSingleton.username = @"";
             sharedSingleton.isVerified = NO;
+            sharedSingleton.isFirstTime = YES;
         }
         return sharedSingleton;
     }

@@ -14,6 +14,7 @@
 typedef void(^failureBlock)(NSError *error);
 typedef void(^successBlock)(id response);
 
++(void) initParse;
 +(void) signupUserViaEmail:(NSString *)email username:(NSString *)username password:(NSString *)password success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 +(void) loginViaUsername:(NSString *)username password:(NSString *)password success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 @end

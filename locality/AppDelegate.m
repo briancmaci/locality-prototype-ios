@@ -9,9 +9,12 @@
 #import "AppDelegate.h"
 #import "ParseManager.h"
 #import "FacebookManager.h"
+#import "FlickrManager.h"
+#import "GoogleMapsManager.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FlickrKit/FlickrKit.h>
 #import "config.h"
 
 @interface AppDelegate ()
@@ -20,14 +23,19 @@
 
 @implementation AppDelegate
 
-static NSString *kMainFeedStoryboardId = @"mainFeedVC";
-static NSString *kLoginStoryboardId = @"loginVC";
+static NSString *kLoginNavStoryboardId = @"loginNavigationVC";
+
+static NSString *kCurrentFeedInitStoryboardId = @"currentFeedInitVC";
+static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [self initParse];
+    //initialize APIs
+    [FlickrManager initFlickr];
+    [ParseManager initParse];
+    [GoogleMapsManager initGoogleMaps];
     
     [self loadInitialView];
     
@@ -43,9 +51,14 @@ static NSString *kLoginStoryboardId = @"loginVC";
         }
         
         else{
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRootView:) name:kLoggedInNotify object:nil];
+            //no valid current user
             [self showLoginView];
         }
+    }
+    
+    else{
+        //no current user at all
+        [self showLoginView];
     }
 }
 
@@ -53,43 +66,37 @@ static NSString *kLoginStoryboardId = @"loginVC";
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    self.mainFeedVC = [storyboard instantiateViewControllerWithIdentifier:kMainFeedStoryboardId];
-    self.window.rootViewController = self.mainFeedVC;
+    //check if it's the first time
+    if( [[[PFUser currentUser] objectForKey:@"isFirstTime"] boolValue] ) {
+        self.currentFeedInitVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedInitStoryboardId];
+        self.mainFeedNavVC = [[MainFeedNavigationController alloc] initWithRootViewController:self.currentFeedInitVC];
+    }
     
-    //[FacebookManager getFacebookInfo];
+    else {
+        self.currentFeedVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedStoryboardId];
+        self.mainFeedNavVC = [[MainFeedNavigationController alloc] initWithRootViewController:self.currentFeedVC];
+    }
+    self.window.rootViewController = self.mainFeedNavVC;
+    
 }
 
 -(void) showLoginView
 {
+    //add login notification listener for auth success
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRootView:) name:kLoggedInNotify object:nil];
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    //MRYActiveDirectoryLoginViewController *adViewController = [storyboard instantiateViewControllerWithIdentifier:@"mryADLoginVC"];
-    //self.window.rootViewController = adViewController;
-    
-    self.loginVC = [storyboard instantiateViewControllerWithIdentifier:kLoginStoryboardId];
-    self.window.rootViewController = self.loginVC;
-    //[self.window addSubview:self.fbLoginViewController.view];
-    //NSLog(@"FERSBERK!");
+    self.loginNavVC = [storyboard instantiateViewControllerWithIdentifier:kLoginNavStoryboardId];
+    self.window.rootViewController = self.loginNavVC;
 }
 
 -(void)updateRootView:(NSNotification *)notification {
-    
-    [self showMainFeedView];
     NSLog(@"Update root view!");
+    [self showMainFeedView];
+    
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kLoggedInNotify object:nil];
-}
-
-
-- (void)initParse {
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
-    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
-    NSString *appID = [dict objectForKey:@"ParseApplicationID"];
-    NSString *clientKey = [dict objectForKey:@"ParseClientKey"];
-    NSLog(@"init parse with: %@, %@", appID, clientKey);
-    
-    [Parse setApplicationId:appID clientKey:clientKey];
 }
 
 - (BOOL)application:(UIApplication *)application

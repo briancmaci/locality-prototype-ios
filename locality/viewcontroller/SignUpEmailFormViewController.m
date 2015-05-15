@@ -70,8 +70,13 @@ static NSString * kSignUpCompleteSegue = @"signupCompleteSegue";
         [UserModel sharedInstance].username = self.incomingUsername;
         [UserModel sharedInstance].email = self.emailField.text;
         [UserModel sharedInstance].password = self.passwordField.text;
+        [UserModel sharedInstance].isFirstTime = YES;
         
         [self performSegueWithIdentifier:kSignUpCompleteSegue sender:self];
+        
+        //set isFirstTime
+        [[PFUser currentUser] setObject:@([UserModel sharedInstance].isFirstTime) forKey:@"isFirstTime"];
+        [[PFUser currentUser] saveInBackground];
         
     } failure:^(NSError *error) {
         NSLog(@"Error: %@", error);

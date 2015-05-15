@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 briancmaci. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface FeedViewController : ViewController
+@interface FeedViewController : UIViewController
 
 @end

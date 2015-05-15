@@ -50,6 +50,7 @@
         //load main feed view
         
         if( [user[@"emailVerified"] boolValue] ) {
+            NSLog(@"sending notification now");
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoggedInNotify object:nil userInfo:nil];
         }
         

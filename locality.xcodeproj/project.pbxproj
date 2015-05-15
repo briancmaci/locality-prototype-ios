@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030C41291B04F334004F1ECE /* FlickrManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 030C41281B04F334004F1ECE /* FlickrManager.m */; };
+		030C412C1B050B22004F1ECE /* CurrentFeedInitializeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030C412B1B050B22004F1ECE /* CurrentFeedInitializeViewController.m */; };
+		030C412F1B051592004F1ECE /* MainFeedNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030C412E1B051592004F1ECE /* MainFeedNavigationController.m */; };
+		030C41321B051EC1004F1ECE /* GoogleMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 030C41311B051EC1004F1ECE /* GoogleMapsManager.m */; };
+		030C41391B0541A5004F1ECE /* LocationRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 030C41381B0541A5004F1ECE /* LocationRangeSlider.m */; };
 		032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76301B03C9A100C78CB0 /* FeedLocationModel.m */; };
 		032C76351B03EFA100C78CB0 /* config.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76341B03EFA100C78CB0 /* config.m */; };
-		032C76411B03F04A00C78CB0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76401B03F04A00C78CB0 /* ViewController.m */; };
 		032C76461B03F06D00C78CB0 /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76431B03F06D00C78CB0 /* FacebookManager.m */; };
 		032C76471B03F06D00C78CB0 /* ParseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76451B03F06D00C78CB0 /* ParseManager.m */; };
 		032C764A1B03F0A400C78CB0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76491B03F0A400C78CB0 /* LoginViewController.m */; };
@@ -38,12 +42,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030C41271B04F334004F1ECE /* FlickrManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlickrManager.h; path = manager/FlickrManager.h; sourceTree = "<group>"; };
+		030C41281B04F334004F1ECE /* FlickrManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlickrManager.m; path = manager/FlickrManager.m; sourceTree = "<group>"; };
+		030C412A1B050B22004F1ECE /* CurrentFeedInitializeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrentFeedInitializeViewController.h; path = viewcontroller/CurrentFeedInitializeViewController.h; sourceTree = "<group>"; };
+		030C412B1B050B22004F1ECE /* CurrentFeedInitializeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrentFeedInitializeViewController.m; path = viewcontroller/CurrentFeedInitializeViewController.m; sourceTree = "<group>"; };
+		030C412D1B051592004F1ECE /* MainFeedNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainFeedNavigationController.h; path = viewcontroller/MainFeedNavigationController.h; sourceTree = "<group>"; };
+		030C412E1B051592004F1ECE /* MainFeedNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainFeedNavigationController.m; path = viewcontroller/MainFeedNavigationController.m; sourceTree = "<group>"; };
+		030C41301B051EC1004F1ECE /* GoogleMapsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleMapsManager.h; path = manager/GoogleMapsManager.h; sourceTree = "<group>"; };
+		030C41311B051EC1004F1ECE /* GoogleMapsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleMapsManager.m; path = manager/GoogleMapsManager.m; sourceTree = "<group>"; };
+		030C41371B0541A5004F1ECE /* LocationRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationRangeSlider.h; path = custom_ui/LocationRangeSlider.h; sourceTree = "<group>"; };
+		030C41381B0541A5004F1ECE /* LocationRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationRangeSlider.m; path = custom_ui/LocationRangeSlider.m; sourceTree = "<group>"; };
 		032C762F1B03C9A100C78CB0 /* FeedLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedLocationModel.h; path = model/FeedLocationModel.h; sourceTree = "<group>"; };
 		032C76301B03C9A100C78CB0 /* FeedLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedLocationModel.m; path = model/FeedLocationModel.m; sourceTree = "<group>"; };
 		032C76331B03EFA100C78CB0 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		032C76341B03EFA100C78CB0 /* config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = config.m; sourceTree = "<group>"; };
-		032C763F1B03F04A00C78CB0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = viewcontroller/ViewController.h; sourceTree = "<group>"; };
-		032C76401B03F04A00C78CB0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = viewcontroller/ViewController.m; sourceTree = "<group>"; };
 		032C76421B03F06D00C78CB0 /* FacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookManager.h; path = manager/FacebookManager.h; sourceTree = "<group>"; };
 		032C76431B03F06D00C78CB0 /* FacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookManager.m; path = manager/FacebookManager.m; sourceTree = "<group>"; };
 		032C76441B03F06D00C78CB0 /* ParseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParseManager.h; path = manager/ParseManager.h; sourceTree = "<group>"; };
@@ -95,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030C41331B054158004F1ECE /* custom_ui */ = {
+			isa = PBXGroup;
+			children = (
+				030C41371B0541A5004F1ECE /* LocationRangeSlider.h */,
+				030C41381B0541A5004F1ECE /* LocationRangeSlider.m */,
+			);
+			name = custom_ui;
+			sourceTree = "<group>";
+		};
 		032C76321B03EF8100C78CB0 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,9 +137,9 @@
 		032C76371B03EFB700C78CB0 /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				030C412D1B051592004F1ECE /* MainFeedNavigationController.h */,
+				030C412E1B051592004F1ECE /* MainFeedNavigationController.m */,
 				032C765B1B041D0800C78CB0 /* feed */,
-				032C763F1B03F04A00C78CB0 /* ViewController.h */,
-				032C76401B03F04A00C78CB0 /* ViewController.m */,
 				032C76541B03FD4A00C78CB0 /* login-signup */,
 			);
 			name = viewcontroller;
@@ -129,6 +150,10 @@
 			children = (
 				032C76421B03F06D00C78CB0 /* FacebookManager.h */,
 				032C76431B03F06D00C78CB0 /* FacebookManager.m */,
+				030C41271B04F334004F1ECE /* FlickrManager.h */,
+				030C41281B04F334004F1ECE /* FlickrManager.m */,
+				030C41301B051EC1004F1ECE /* GoogleMapsManager.h */,
+				030C41311B051EC1004F1ECE /* GoogleMapsManager.m */,
 				032C76441B03F06D00C78CB0 /* ParseManager.h */,
 				032C76451B03F06D00C78CB0 /* ParseManager.m */,
 			);
@@ -153,6 +178,8 @@
 		032C765B1B041D0800C78CB0 /* feed */ = {
 			isa = PBXGroup;
 			children = (
+				030C412A1B050B22004F1ECE /* CurrentFeedInitializeViewController.h */,
+				030C412B1B050B22004F1ECE /* CurrentFeedInitializeViewController.m */,
 				032C76581B041CFE00C78CB0 /* FeedViewController.h */,
 				032C76591B041CFE00C78CB0 /* FeedViewController.m */,
 			);
@@ -189,6 +216,7 @@
 				036CA1CB1AFBC88F0064AB6C /* Main.storyboard */,
 				036CA1CE1AFBC88F0064AB6C /* Images.xcassets */,
 				036CA1D01AFBC88F0064AB6C /* LaunchScreen.xib */,
+				030C41331B054158004F1ECE /* custom_ui */,
 				032C76381B03EFCD00C78CB0 /* manager */,
 				032C76321B03EF8100C78CB0 /* model */,
 				032C76361B03EFA900C78CB0 /* util */,
@@ -376,18 +404,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030C412C1B050B22004F1ECE /* CurrentFeedInitializeViewController.m in Sources */,
 				032C764A1B03F0A400C78CB0 /* LoginViewController.m in Sources */,
 				032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */,
 				032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */,
 				032C76571B0407D000C78CB0 /* UserModel.m in Sources */,
 				032C76461B03F06D00C78CB0 /* FacebookManager.m in Sources */,
 				036CA1C71AFBC88F0064AB6C /* AppDelegate.m in Sources */,
+				030C41321B051EC1004F1ECE /* GoogleMapsManager.m in Sources */,
 				032C76531B03FC1100C78CB0 /* SignUpEmailSentViewController.m in Sources */,
 				036CA1C41AFBC88F0064AB6C /* main.m in Sources */,
+				030C41291B04F334004F1ECE /* FlickrManager.m in Sources */,
 				032C76351B03EFA100C78CB0 /* config.m in Sources */,
-				032C76411B03F04A00C78CB0 /* ViewController.m in Sources */,
+				030C412F1B051592004F1ECE /* MainFeedNavigationController.m in Sources */,
 				032C76471B03F06D00C78CB0 /* ParseManager.m in Sources */,
 				032C764D1B03F0DE00C78CB0 /* SignUpViewController.m in Sources */,
+				030C41391B0541A5004F1ECE /* LocationRangeSlider.m in Sources */,
 				032C76501B03F8FC00C78CB0 /* SignUpEmailFormViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

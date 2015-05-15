@@ -47,6 +47,14 @@
 	<string>JqpwyHSApOHZYJxGdkw4slUfzSaI8goWCTaKEWQD</string>
 	<key>ParseClientKey</key>
 	<string>f3Yxk5prY341ChR5Tulnk9bbkegqbYJDDZ3uzGjR</string>
+	<key>FlickrAppKey</key>
+	<string>eed0fb5b4385bba52245c35ae5071899</string>
+	<key>FlickrAppSecret</key>
+	<string>10fabf7c3e4ae03e</string>
+	<key>GoogleMapsAPIKey</key>
+	<string>AIzaSyDB8jIBu3FXYKljpz0n4mlEf9U5c8nEfXk</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>By accessing your location, locality will keep you current with what&apos;s around you.</string>
 	<key>FacebookAppID</key>
 	<string>767843809990226</string>
 	<key>FacebookDisplayName</key>

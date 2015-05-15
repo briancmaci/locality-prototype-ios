@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSString *password;
 
 @property (nonatomic) BOOL isVerified;
+@property (nonatomic) BOOL isFirstTime;
 
 + (UserModel *)sharedInstance;
 
