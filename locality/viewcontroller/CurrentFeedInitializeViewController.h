@@ -18,4 +18,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *currentLocationLabel;
 @property (strong, nonatomic) IBOutlet LocationRangeSlider *rangeSlider;
+@property (strong, nonatomic) IBOutlet UIImageView *defaultImage;
+
+
 @end

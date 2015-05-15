@@ -8,5 +8,6 @@ pod 'Facebook-iOS-SDK', '4.0.1'
 pod 'FlickrKit', '~> 1.0'
 pod 'Google-Maps-iOS-SDK', '~> 1.9'
 pod 'AFNetworking', '~> 2.5'
+pod 'SDWebImage', '~> 3.7'
 end
 

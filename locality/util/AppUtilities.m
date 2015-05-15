@@ -10,4 +10,10 @@
 
 @implementation AppUtilities
 
+static const float metersPerFoot = 0.3048;
+
++(float) feetToMeters:(float)valueInFeet {
+    return metersPerFoot * valueInFeet;
+}
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Google-Maps-iOS-SDK/GoogleMaps.h>
 
 @interface FlickrManager : NSObject
 
@@ -14,5 +15,6 @@ typedef void(^failureBlock)(NSError *error);
 typedef void(^successBlock)(id response);
 
 +(void) initFlickr;
++(void) getImagesForLocation:(CLLocationCoordinate2D)center success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 
 @end

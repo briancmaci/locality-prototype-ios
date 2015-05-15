@@ -497,29 +497,41 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgx-7V-BlW" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="77" width="320" height="284"/>
+                                <rect key="frame" x="0.0" y="61" width="320" height="284"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="284" id="wJW-di-jlY"/>
                                 </constraints>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NKs-CK-boM" customClass="LocationRangeSlider">
-                                <rect key="frame" x="14" y="377" width="292" height="31"/>
+                                <rect key="frame" x="14" y="355" width="292" height="31"/>
+                                <color key="tintColor" red="0.80036695075757569" green="0.42709669711850828" blue="0.53136035305830809" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OOr-uk-bJI"/>
                                 </constraints>
+                                <color key="thumbTintColor" red="0.80036695075757569" green="0.65866902413062978" blue="0.63577644463613314" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="rangeSliderChanged:" destination="nG1-4j-8ri" eventType="touchUpInside" id="SwB-gU-ZOE"/>
+                                </connections>
                             </slider>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VK2-fw-0ZQ">
+                                <rect key="frame" x="0.0" y="391" width="320" height="177"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Est-cA-GlT" firstAttribute="top" secondItem="GGs-fi-fbo" secondAttribute="bottom" constant="8" id="2WM-LB-T9E"/>
                             <constraint firstAttribute="trailing" secondItem="lgx-7V-BlW" secondAttribute="trailing" id="5gG-QC-Cqd"/>
-                            <constraint firstItem="lgx-7V-BlW" firstAttribute="top" secondItem="Est-cA-GlT" secondAttribute="bottom" constant="28" id="8Gq-5m-8rg"/>
+                            <constraint firstItem="lgx-7V-BlW" firstAttribute="top" secondItem="Est-cA-GlT" secondAttribute="bottom" constant="12" id="8Gq-5m-8rg"/>
+                            <constraint firstAttribute="trailing" secondItem="VK2-fw-0ZQ" secondAttribute="trailing" id="ATV-3E-8SX"/>
                             <constraint firstAttribute="centerX" secondItem="Est-cA-GlT" secondAttribute="centerX" id="Buw-WT-6k5"/>
                             <constraint firstItem="NKs-CK-boM" firstAttribute="leading" secondItem="JAl-wy-lyn" secondAttribute="leadingMargin" id="Sqi-8U-W0m"/>
                             <constraint firstItem="NKs-CK-boM" firstAttribute="trailing" secondItem="JAl-wy-lyn" secondAttribute="trailingMargin" id="aas-5O-cFY"/>
-                            <constraint firstItem="NKs-CK-boM" firstAttribute="top" secondItem="lgx-7V-BlW" secondAttribute="bottom" constant="16" id="gjd-tu-eHc"/>
+                            <constraint firstAttribute="bottom" secondItem="VK2-fw-0ZQ" secondAttribute="bottom" id="bg8-ad-nBj"/>
+                            <constraint firstItem="NKs-CK-boM" firstAttribute="top" secondItem="lgx-7V-BlW" secondAttribute="bottom" constant="10" id="gjd-tu-eHc"/>
+                            <constraint firstItem="VK2-fw-0ZQ" firstAttribute="top" secondItem="NKs-CK-boM" secondAttribute="bottom" constant="6" id="hGN-9I-sH0"/>
                             <constraint firstItem="lgx-7V-BlW" firstAttribute="leading" secondItem="JAl-wy-lyn" secondAttribute="leading" id="isj-lO-TZ9"/>
+                            <constraint firstItem="VK2-fw-0ZQ" firstAttribute="leading" secondItem="JAl-wy-lyn" secondAttribute="leading" id="rKX-UX-J7n"/>
                             <constraint firstItem="Est-cA-GlT" firstAttribute="leading" secondItem="JAl-wy-lyn" secondAttribute="leading" id="tzV-vg-vBr"/>
                             <constraint firstAttribute="trailing" secondItem="Est-cA-GlT" secondAttribute="trailing" id="w5X-CT-gP4"/>
                         </constraints>
@@ -528,6 +540,7 @@
                     <connections>
                         <outlet property="currentLocationLabel" destination="Est-cA-GlT" id="gPI-tc-ZwS"/>
                         <outlet property="currentLocationView" destination="lgx-7V-BlW" id="dPQ-Hd-4rw"/>
+                        <outlet property="defaultImage" destination="VK2-fw-0ZQ" id="wof-U2-jML"/>
                         <outlet property="rangeSlider" destination="NKs-CK-boM" id="VUK-we-IKP"/>
                     </connections>
                 </viewController>

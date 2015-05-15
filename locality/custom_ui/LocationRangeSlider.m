@@ -18,4 +18,19 @@
 }
 */
 
+- (void)initSliderWithRange:(NSArray *)range {
+    
+    self.sliderSteps = range;
+    self.stepsCount = (int)[self.sliderSteps count] - 1;
+        
+    [self buildSlider];
+}
+
+- (void) buildSlider {
+    
+    self.minimumValue = 0;
+    self.maximumValue = self.stepsCount;
+
+}
+
 @end

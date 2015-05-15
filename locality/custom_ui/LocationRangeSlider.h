@@ -10,4 +10,9 @@
 
 @interface LocationRangeSlider : UISlider
 
+@property (strong, nonatomic) NSArray *sliderSteps;
+@property (nonatomic) int stepsCount;
+
+- (void)initSliderWithRange:(NSArray *)range;
+
 @end

@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Google-Maps-iOS-SDK/GoogleMaps.h>
 
 @interface GoogleMapsManager : NSObject
 
 +(void) initGoogleMaps;
++(void) drawRangeCircleAt:(CLLocationCoordinate2D)center rangeDiameter:(float)range onMap:(GMSMapView*)map;
 
 @end

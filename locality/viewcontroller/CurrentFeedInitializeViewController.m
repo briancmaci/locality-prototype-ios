@@ -7,6 +7,12 @@
 //
 
 #import "CurrentFeedInitializeViewController.h"
+#import "config.h"
+#import "FlickrManager.h"
+#import "GoogleMapsManager.h"
+#import <CoreData/CoreData.h>
+#import "AppUtilities.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface CurrentFeedInitializeViewController ()
 
@@ -15,12 +21,14 @@
 @implementation CurrentFeedInitializeViewController
 
 static NSString * kLocationFormat = @"You are currently in %@, %@";
+CLLocationCoordinate2D currentLocation;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     [self initCurrentLocationMap];
+    [self initRangeSlider];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,6 +53,10 @@ static NSString * kLocationFormat = @"You are currently in %@, %@";
     }];
 }
 
+-(void) initRangeSlider {
+    [self.rangeSlider initSliderWithRange:SLIDER_STEPS_IN_FEET];
+}
+
 
 #pragma mark - CLLocationManagerDelegate Methods
 
@@ -59,13 +71,47 @@ static NSString * kLocationFormat = @"You are currently in %@, %@";
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     CLLocation *location = [locations objectAtIndex:0];
+    currentLocation = location.coordinate;
     
-    self.currentLocationView.camera = [GMSCameraPosition cameraWithTarget:location.coordinate zoom:15 bearing:0 viewingAngle:0];
+    self.currentLocationView.camera = [GMSCameraPosition cameraWithTarget:currentLocation zoom:15 bearing:0 viewingAngle:0];
     
     [self.locationManager stopUpdatingLocation];
     
-    [self reverseGeocodeCoordinate:location.coordinate];
+    [self reverseGeocodeCoordinate:currentLocation];
 }
+
+#pragma mark - Range Slider CTA
+-(IBAction)rangeSliderChanged:(LocationRangeSlider *)sender {
+    float newStep = roundf(sender.value);
+    
+    sender.value = newStep;
+    
+    NSLog(@"step: %f, value: %@", newStep, [[sender.sliderSteps objectAtIndex:newStep] objectForKey:@"distance"]);
+    float currentRange = [[[sender.sliderSteps objectAtIndex:newStep] objectForKey:@"distance"] floatValue];
+    
+    
+    //test points
+    //CLLocationCoordinate2D annArbor = CLLocationCoordinate2DMake(42.2708333, -83.7263889);
+    //CLLocationCoordinate2D cantonMichigan = CLLocationCoordinate2DMake(42.308658, -83.48211);
+    //CLLocationCoordinate2D dubai = CLLocationCoordinate2DMake(25.276987, 55.296249);
+    //CLLocationCoordinate2D endwellNY = CLLocationCoordinate2DMake(42.112852500000000000, -76.021033999999980000);
+    
+    //update map
+    [GoogleMapsManager drawRangeCircleAt:currentLocation rangeDiameter:[AppUtilities feetToMeters:currentRange] onMap:self.currentLocationView];
+    
+    //get photo
+    
+    
+    [FlickrManager getImagesForLocation:currentLocation success:^(id response) {
+        NSLog(@"we got pictures!");
+        
+        //load random into image
+        [self.defaultImage sd_setImageWithURL:[NSURL URLWithString:[response objectAtIndex:(int)(arc4random() % [response count])]]];
+    } failure:^(NSError *error) {
+        NSLog(@"flickr error: %@", error);
+    }];
+}
+
 /*
 #pragma mark - Navigation
 

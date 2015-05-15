@@ -10,4 +10,6 @@
 
 @interface AppUtilities : NSObject
 
++(float) feetToMeters:(float)valueInFeet;
+
 @end
