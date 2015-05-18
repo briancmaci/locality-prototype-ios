@@ -9,6 +9,7 @@
 #import "SignUpViewController.h"
 #import "UserModel.h"
 #import "SignUpEmailFormViewController.h"
+#import "ParseManager.h"
 
 @interface SignUpViewController ()
 
@@ -40,9 +41,45 @@ static NSString * kSignupEmailFormSegue = @"signupEmailFormSegue";
     return YES;
 }
 
+-(IBAction)facebookSignupClicked:(id)sender {
+    
+    //testing username uniqueness
+    [ParseManager isValidUsername:self.usernameField.text success:^(id response) {
+        NSLog(@"parse query success");
+        NSArray *matches = (NSArray *)response;
+        if( matches.count ) {
+            NSLog(@"Username in use");
+        }
+        
+        else {
+            NSLog(@"Go to facebook authentication process");
+            [ParseManager signupUserViaFacebookWithUsername:self.usernameField.text success:^(id response) {
+                NSLog(@"facebook signup success");
+            } failure:^(NSError *error) {
+                NSLog(@"facebook signup fail");
+            }];
+        }
+    } failure:^(NSError *error) {
+        NSLog(@"parse query fail: %@", error);
+    }];
+}
+
 -(IBAction)emailSignupClicked:(id)sender {
     
-    [self performSegueWithIdentifier:kSignupEmailFormSegue sender:self];
+    
+    [ParseManager isValidUsername:self.usernameField.text success:^(id response) {
+        NSLog(@"parse query success");
+        NSArray *matches = (NSArray *)response;
+        if( matches.count ) {
+            NSLog(@"Username in use");
+        }
+        
+        else {
+            [self performSegueWithIdentifier:kSignupEmailFormSegue sender:self];
+        }
+    } failure:^(NSError *error) {
+        NSLog(@"parse query fail: %@", error);
+    }];
 }
 
 #pragma mark - Navigation

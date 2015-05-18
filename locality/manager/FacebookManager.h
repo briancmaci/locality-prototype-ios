@@ -10,4 +10,9 @@
 
 @interface FacebookManager : NSObject
 
+typedef void(^failureBlock)(NSError *error);
+typedef void(^successBlock)(id response);
+
++(void) initFacebookUtils:(NSDictionary *)launchOptions;
+
 @end

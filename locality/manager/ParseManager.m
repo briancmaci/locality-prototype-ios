@@ -8,8 +8,13 @@
 
 #import "ParseManager.h"
 #import "config.h"
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <Facebook-iOS-SDK/FBSDKCoreKit/FBSDKProfile.h>
+#import <Facebook-iOS-SDK/FBSDKCoreKit/FBSDKGraphRequest.h>
 
 @implementation ParseManager
+
+static NSString * kDBUser = @"_User";
 
 +(void) initParse {
     
@@ -42,7 +47,7 @@
 
 +(void) loginViaUsername:(NSString *)username password:(NSString *)password success:(successBlock)successBlock failure:(failureBlock)failureBlock {
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
-        if (user) {
+        if (!error) {
             // Do stuff after successful login.
             successBlock(user);
         } else {
@@ -51,6 +56,70 @@
         }
     }];
 
+}
+
++(void) signupUserViaFacebookWithUsername:(NSString *)username success:(successBlock)successBlock failure:(failureBlock)failureBlock {
+    
+    NSArray *permissions = @[ @"email"];
+    //NSLog(@"signup entered");
+    [PFFacebookUtils logInInBackgroundWithReadPermissions:permissions block:^(PFUser *user, NSError *error) {
+        NSLog(@"PFFacebookUtils called");
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in through Facebook!");
+            
+            //add username
+            user.username = username;
+            
+            if ([FBSDKAccessToken currentAccessToken]) {
+                [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+                 startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                     if (!error) {
+                         NSLog(@"fetched user:%@", result);
+                         
+                         //user[@"emailVerified"] = @YES;
+                         //user[@"isFirstTime"] = @YES;
+                         user.email = [result objectForKey:@"email"];
+                         
+                         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                             if (!error) {   // Hooray! Let them use the app now.
+                                 successBlock(nil);
+                             } else {   //NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
+                                 failureBlock(error);
+                             }
+                         }];
+                     }
+                 }];
+            }
+
+        } else {
+            NSLog(@"User logged in through Facebook!");
+        }
+    }];
+}
+
+//queries
++(void) isValidUsername:(NSString *)username success:(successBlock)successBlock failure:(failureBlock)failureBlock {
+    PFQuery *query = [PFQuery queryWithClassName:kDBUser];
+    [query whereKey:@"username" equalTo:username];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", (int)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+            }
+            
+            return successBlock(objects);
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+            return failureBlock(error);
+        }
+    }];
 }
 
 @end

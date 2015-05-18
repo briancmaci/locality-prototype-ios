@@ -36,6 +36,7 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
     [FlickrManager initFlickr];
     [ParseManager initParse];
     [GoogleMapsManager initGoogleMaps];
+    [FacebookManager initFacebookUtils:launchOptions];
     
     [self loadInitialView];
     

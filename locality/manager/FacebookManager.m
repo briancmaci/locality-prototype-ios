@@ -7,7 +7,12 @@
 //
 
 #import "FacebookManager.h"
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
 @implementation FacebookManager
+
++(void) initFacebookUtils:(NSDictionary *)launchOptions {
+    [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
+}
 
 @end
