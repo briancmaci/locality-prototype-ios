@@ -79,8 +79,8 @@ static NSString * kDBUser = @"_User";
                          NSLog(@"fetched user:%@", result);
                          
                          //user[@"emailVerified"] = @YES;
-                         //user[@"isFirstTime"] = @YES;
-                         user.email = [result objectForKey:@"email"];
+                         user[@"facebookEmail"] = [result objectForKey:@"email"];
+                         user[@"isFirstTime"] = @YES;
                          
                          [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                              if (!error) {   // Hooray! Let them use the app now.
@@ -98,6 +98,42 @@ static NSString * kDBUser = @"_User";
         }
     }];
 }
+
++(void) loginViaFacebook:(successBlock)successBlock failure:(failureBlock)failureBlock {
+    
+    NSArray *permissions = @[ @"email"];
+    
+    [PFFacebookUtils logInInBackgroundWithReadPermissions:permissions block:^(PFUser *user, NSError *error) {
+        NSLog(@"PFFacebookUtils called");
+        if (!user) {
+            failureBlock(error);
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in through Facebook!");
+            NSLog(@"They should be redirected to signup");
+            failureBlock(error);
+        } else {
+            NSLog(@"User logged in through Facebook!");
+            
+            if ([FBSDKAccessToken currentAccessToken]) {
+                [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+                 startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                     if (!error) {
+                         
+                         NSLog(@"[TO DO]: Set Facebook stuff here that we wish to save in UserModel from result %@", result);
+                         successBlock(user);
+                     }
+                     
+                     else {
+                         failureBlock(error);
+                     }
+                 }];
+            }
+        }
+    }];
+}
+
+#pragma mark - Parse Queries
 
 //queries
 +(void) isValidUsername:(NSString *)username success:(successBlock)successBlock failure:(failureBlock)failureBlock {
@@ -120,6 +156,32 @@ static NSString * kDBUser = @"_User";
             return failureBlock(error);
         }
     }];
+}
+
++(void) updateCurrentFeed:(FeedLocationModel *)currentFeed success:(successBlock)successBlock failure:(failureBlock)failureBlock {
+    
+    //create parse-safe object
+    NSDictionary *currentFeedParams = @{ kName : currentFeed.name,
+                                         
+                                         kImgUrl : currentFeed.imgUrl,
+                                         kLatitude : [[NSNumber alloc] initWithDouble:currentFeed.latitude],
+                                         kLongitude : [[NSNumber alloc] initWithDouble:currentFeed.longitude],
+                                         kRange : [[NSNumber alloc] initWithFloat:currentFeed.range],
+                                         kPromotionsEnabled : @(currentFeed.promotionsEnabled),
+                                         kPushEnabled : @(currentFeed.pushEnabled),
+                                         kImportantEnabled : @(currentFeed.importantEnabled) };
+    
+    [PFUser currentUser][@"currentLocation"] = currentFeedParams;
+    
+    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {   // Hooray! Let them use the app now.
+            successBlock(nil);
+        } else {   //NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
+            failureBlock(error);
+            NSLog(@"error saving currentLocation");
+        }
+    }];
+
 }
 
 @end

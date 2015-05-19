@@ -11,6 +11,19 @@
 
 @interface FeedLocationModel : NSObject
 
+#define kCurrentFeedName @"_current"
+
+#define kName @"name"
+#define kImgUrl @"imgUrl"
+
+#define kLatitude @"latitude"
+#define kLongitude @"longitude"
+#define kRange @"range"
+
+#define kPromotionsEnabled @"promotionsEnabled"
+#define kPushEnabled @"pushEnabled"
+#define kImportantEnabled @"importantEnabled"
+
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *imgUrl;
 
@@ -22,5 +35,7 @@
 @property (nonatomic) BOOL promotionsEnabled;
 @property (nonatomic) BOOL pushEnabled;
 @property (nonatomic) BOOL importantEnabled;
+
+-(id) initWithLocation:(CLLocationCoordinate2D)center andName:(NSString *)name;;
 
 @end

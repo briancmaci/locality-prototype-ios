@@ -10,6 +10,7 @@
 #import "UserModel.h"
 #import "SignUpEmailFormViewController.h"
 #import "ParseManager.h"
+#import "config.h"
 
 @interface SignUpViewController ()
 
@@ -17,7 +18,8 @@
 
 @implementation SignUpViewController
 
-static NSString * kSignupEmailFormSegue = @"signupEmailFormSegue";
+static NSString * kSignUpEmailFormSegue = @"signupEmailFormSegue";
+static NSString * kSignUpCompleteSegue = @"signupCompleteSegue";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,6 +57,9 @@ static NSString * kSignupEmailFormSegue = @"signupEmailFormSegue";
             NSLog(@"Go to facebook authentication process");
             [ParseManager signupUserViaFacebookWithUsername:self.usernameField.text success:^(id response) {
                 NSLog(@"facebook signup success");
+                //[self performSegueWithIdentifier:kSignUpCompleteSegue sender:self];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kLoggedInNotify object:nil userInfo:nil];
+                
             } failure:^(NSError *error) {
                 NSLog(@"facebook signup fail");
             }];
@@ -73,10 +78,10 @@ static NSString * kSignupEmailFormSegue = @"signupEmailFormSegue";
         if( matches.count ) {
             NSLog(@"Username in use");
         }
-        
         else {
-            [self performSegueWithIdentifier:kSignupEmailFormSegue sender:self];
+            [self performSegueWithIdentifier:kSignUpEmailFormSegue sender:self];
         }
+        
     } failure:^(NSError *error) {
         NSLog(@"parse query fail: %@", error);
     }];
@@ -87,7 +92,7 @@ static NSString * kSignupEmailFormSegue = @"signupEmailFormSegue";
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if([[segue identifier] isEqualToString:kSignupEmailFormSegue]) {
+    if([[segue identifier] isEqualToString:kSignUpEmailFormSegue]) {
         
         SignUpEmailFormViewController *vc = [segue destinationViewController];
         vc.incomingUsername = self.usernameField.text;

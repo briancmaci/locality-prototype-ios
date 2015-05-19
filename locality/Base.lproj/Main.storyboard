@@ -29,6 +29,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="facebookLoginButtonClicked:" destination="FsX-Wk-tin" eventType="touchUpInside" id="vVh-8Q-FtB"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" - OR -" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvW-aB-h3c">
                                 <rect key="frame" x="139" y="200" width="42" height="21"/>
@@ -283,6 +286,7 @@
                         <outlet property="fbSignupButton" destination="fwV-gR-9NZ" id="TPO-XG-wla"/>
                         <outlet property="usernameField" destination="Ayc-78-jJ6" id="LFt-2i-UNZ"/>
                         <segue destination="BGz-WB-gJ4" kind="push" identifier="signupEmailFormSegue" id="LOy-kL-c6T"/>
+                        <segue destination="Xbq-AH-zHe" kind="push" identifier="signupCompleteSegue" id="jiQ-Bu-aQ2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yiL-h4-POL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -458,7 +462,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rOQ-Qu-XPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2018" y="256"/>
+            <point key="canvasLocation" x="2021" y="256"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rU2-zC-Q1C">
@@ -520,6 +524,21 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VK2-fw-0ZQ">
                                 <rect key="frame" x="0.0" y="391" width="320" height="177"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFU-Iw-wfc">
+                                <rect key="frame" x="91" y="393" width="139" height="30"/>
+                                <color key="backgroundColor" red="0.27211814212524238" green="0.67688604797979801" blue="0.41081001097239583" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MNo-MU-toC"/>
+                                    <constraint firstAttribute="width" constant="139" id="jth-a9-89h"/>
+                                </constraints>
+                                <state key="normal" title="Set Range">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createCurrentFeed:" destination="nG1-4j-8ri" eventType="touchUpInside" id="fz1-K7-bbS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -528,7 +547,9 @@
                             <constraint firstItem="lgx-7V-BlW" firstAttribute="top" secondItem="Est-cA-GlT" secondAttribute="bottom" constant="12" id="8Gq-5m-8rg"/>
                             <constraint firstAttribute="trailing" secondItem="VK2-fw-0ZQ" secondAttribute="trailing" id="ATV-3E-8SX"/>
                             <constraint firstAttribute="centerX" secondItem="Est-cA-GlT" secondAttribute="centerX" id="Buw-WT-6k5"/>
+                            <constraint firstAttribute="centerX" secondItem="IFU-Iw-wfc" secondAttribute="centerX" constant="-0.5" id="EDJ-Md-mLn"/>
                             <constraint firstItem="NKs-CK-boM" firstAttribute="leading" secondItem="JAl-wy-lyn" secondAttribute="leadingMargin" id="Sqi-8U-W0m"/>
+                            <constraint firstItem="IFU-Iw-wfc" firstAttribute="top" secondItem="NKs-CK-boM" secondAttribute="bottom" constant="8" id="UWd-3S-WTo"/>
                             <constraint firstItem="NKs-CK-boM" firstAttribute="trailing" secondItem="JAl-wy-lyn" secondAttribute="trailingMargin" id="aas-5O-cFY"/>
                             <constraint firstAttribute="bottom" secondItem="VK2-fw-0ZQ" secondAttribute="bottom" id="bg8-ad-nBj"/>
                             <constraint firstItem="NKs-CK-boM" firstAttribute="top" secondItem="lgx-7V-BlW" secondAttribute="bottom" constant="10" id="gjd-tu-eHc"/>
@@ -591,4 +612,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="jiQ-Bu-aQ2"/>
+    </inferredMetricsTieBreakers>
 </document>

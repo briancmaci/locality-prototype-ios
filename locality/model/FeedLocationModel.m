@@ -10,4 +10,23 @@
 
 @implementation FeedLocationModel
 
+-(id) initWithLocation:(CLLocationCoordinate2D)center andName:(NSString *)name {
+    
+    self = [super init];
+    
+    if(self) {
+        _promotionsEnabled = YES;
+        _pushEnabled = YES;
+        _importantEnabled = YES;
+        
+        _latitude = center.latitude;
+        _longitude = center.longitude;
+        
+        _name = name;
+    }
+    
+    return self;
+
+}
+
 @end

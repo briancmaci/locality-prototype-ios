@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FeedLocationModel.h"
 
 @interface UserModel : NSObject
 
@@ -16,6 +17,10 @@
 
 @property (nonatomic) BOOL isVerified;
 @property (nonatomic) BOOL isFirstTime;
+
+//feeds
+@property (strong, nonatomic) FeedLocationModel *currentLocation;
+@property (strong, nonatomic) NSMutableArray *pinnedLocations;
 
 + (UserModel *)sharedInstance;
 

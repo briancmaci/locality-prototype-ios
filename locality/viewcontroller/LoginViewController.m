@@ -59,6 +59,22 @@
     }];
 }
 
+-(IBAction)facebookLoginButtonClicked:(id)sender {
+    [ParseManager loginViaFacebook:^(id response) {
+        //PFUser *user = (PFUser *)response;
+        //NSLog(@"email verified? %@", user[@"emailVerified"]);
+        
+        //load main feed view
+        
+        //if( [user[@"emailVerified"] boolValue] ) {
+        //    NSLog(@"sending notification now");
+        [[NSNotificationCenter defaultCenter] postNotificationName:kLoggedInNotify object:nil userInfo:nil];
+        //}
+    } failure:^(NSError *error) {
+        NSLog(@"facebook login fail");
+    }];
+}
+
 /*
 #pragma mark - Navigation
 

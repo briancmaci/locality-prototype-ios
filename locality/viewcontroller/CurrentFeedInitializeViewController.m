@@ -10,9 +10,11 @@
 #import "config.h"
 #import "FlickrManager.h"
 #import "GoogleMapsManager.h"
+#import "ParseManager.h"
 #import <CoreData/CoreData.h>
 #import "AppUtilities.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UserModel.h"
 
 @interface CurrentFeedInitializeViewController ()
 
@@ -22,6 +24,8 @@
 
 static NSString * kLocationFormat = @"You are currently in %@, %@";
 CLLocationCoordinate2D currentLocation;
+NSString *flickrDefaultImage;
+float currentRange;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -66,6 +70,7 @@ CLLocationCoordinate2D currentLocation;
         
         self.currentLocationView.myLocationEnabled = YES;
         self.currentLocationView.settings.myLocationButton = YES;
+        self.currentLocationView.userInteractionEnabled = NO;
     }
 }
 
@@ -87,7 +92,7 @@ CLLocationCoordinate2D currentLocation;
     sender.value = newStep;
     
     NSLog(@"step: %f, value: %@", newStep, [[sender.sliderSteps objectAtIndex:newStep] objectForKey:@"distance"]);
-    float currentRange = [[[sender.sliderSteps objectAtIndex:newStep] objectForKey:@"distance"] floatValue];
+    currentRange = [[[sender.sliderSteps objectAtIndex:newStep] objectForKey:@"distance"] floatValue];
     
     
     //test points
@@ -106,9 +111,25 @@ CLLocationCoordinate2D currentLocation;
         NSLog(@"we got pictures!");
         
         //load random into image
+        flickrDefaultImage = [response objectAtIndex:(int)(arc4random() % [response count])];
+        
         [self.defaultImage sd_setImageWithURL:[NSURL URLWithString:[response objectAtIndex:(int)(arc4random() % [response count])]]];
     } failure:^(NSError *error) {
         NSLog(@"flickr error: %@", error);
+    }];
+}
+
+#pragma mark - Create Current Feed CTA
+-(IBAction) createCurrentFeed:(id)sender {
+    
+    [UserModel sharedInstance].currentLocation = [[FeedLocationModel alloc] initWithLocation:currentLocation andName:kCurrentFeedName];
+    [[UserModel sharedInstance].currentLocation setImgUrl:flickrDefaultImage];
+    [[UserModel sharedInstance].currentLocation setRange:currentRange];
+    
+    [ParseManager updateCurrentFeed:[UserModel sharedInstance].currentLocation success:^(id response) {
+        NSLog(@"LOCATION SAVED!");
+    } failure:^(NSError *error) {
+        NSLog(@"Location Save Fail: %@", error);
     }];
 }
 

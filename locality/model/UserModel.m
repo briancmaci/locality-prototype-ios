@@ -25,6 +25,8 @@
             sharedSingleton.username = @"";
             sharedSingleton.isVerified = NO;
             sharedSingleton.isFirstTime = YES;
+            
+            sharedSingleton.pinnedLocations = [[NSMutableArray alloc] init];
         }
         return sharedSingleton;
     }
