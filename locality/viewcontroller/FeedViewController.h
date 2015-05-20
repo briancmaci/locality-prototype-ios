@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FeedSliderMenuView.h"
 
 @interface FeedViewController : UIViewController
+
+@property (strong, nonatomic) FeedSliderMenuView *feedMenu;
 
 @end

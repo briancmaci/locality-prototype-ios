@@ -22,6 +22,39 @@
 		032C76531B03FC1100C78CB0 /* SignUpEmailSentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76521B03FC1100C78CB0 /* SignUpEmailSentViewController.m */; };
 		032C76571B0407D000C78CB0 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76561B0407D000C78CB0 /* UserModel.m */; };
 		032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76591B041CFE00C78CB0 /* FeedViewController.m */; };
+		033B732B1B0CB62800355581 /* FeedHeaderHeroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B732A1B0CB62800355581 /* FeedHeaderHeroView.m */; };
+		033B732D1B0CB64000355581 /* FeedHeaderHeroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033B732C1B0CB64000355581 /* FeedHeaderHeroView.xib */; };
+		033B73321B0D039500355581 /* FeedSliderMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B73311B0D039500355581 /* FeedSliderMenuView.m */; };
+		033B73521B0D219600355581 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73341B0D219600355581 /* Gotham-Bold.otf */; };
+		033B73531B0D219600355581 /* Gotham-BoldIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73351B0D219600355581 /* Gotham-BoldIta.otf */; };
+		033B73541B0D219600355581 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73361B0D219600355581 /* Gotham-Book.otf */; };
+		033B73551B0D219600355581 /* Gotham-BookIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73371B0D219600355581 /* Gotham-BookIta.otf */; };
+		033B73561B0D219600355581 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73381B0D219600355581 /* Gotham-Light.otf */; };
+		033B73571B0D219600355581 /* Gotham-LightIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73391B0D219600355581 /* Gotham-LightIta.otf */; };
+		033B73581B0D219600355581 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B733A1B0D219600355581 /* Gotham-Medium.otf */; };
+		033B73591B0D219600355581 /* Gotham-MediumIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B733B1B0D219600355581 /* Gotham-MediumIta.otf */; };
+		033B735A1B0D219600355581 /* GothamCondensed-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B733C1B0D219600355581 /* GothamCondensed-Bold.otf */; };
+		033B735B1B0D219600355581 /* GothamCondensed-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B733D1B0D219600355581 /* GothamCondensed-Book.otf */; };
+		033B735C1B0D219600355581 /* GothamCondensed-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B733E1B0D219600355581 /* GothamCondensed-Light.otf */; };
+		033B735D1B0D219600355581 /* GothamCondensed-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B733F1B0D219600355581 /* GothamCondensed-Medium.otf */; };
+		033B735E1B0D219600355581 /* GothamNarrow Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73401B0D219600355581 /* GothamNarrow Bold.otf */; };
+		033B735F1B0D219600355581 /* GothamNarrow-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73411B0D219600355581 /* GothamNarrow-Book.otf */; };
+		033B73601B0D219600355581 /* GothamNarrow-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73421B0D219600355581 /* GothamNarrow-BookItalic.otf */; };
+		033B73611B0D219600355581 /* GothamNarrow-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73431B0D219600355581 /* GothamNarrow-Medium.otf */; };
+		033B73621B0D219600355581 /* ProximaNova-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73441B0D219600355581 /* ProximaNova-Black.otf */; };
+		033B73631B0D219600355581 /* ProximaNova-BlackIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73451B0D219600355581 /* ProximaNova-BlackIt.otf */; };
+		033B73641B0D219600355581 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73461B0D219600355581 /* ProximaNova-Bold.otf */; };
+		033B73651B0D219600355581 /* ProximaNova-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73471B0D219600355581 /* ProximaNova-BoldIt.otf */; };
+		033B73661B0D219600355581 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73481B0D219600355581 /* ProximaNova-Light.otf */; };
+		033B73671B0D219600355581 /* ProximaNova-LightIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73491B0D219600355581 /* ProximaNova-LightIt.otf */; };
+		033B73681B0D219600355581 /* ProximaNova-Reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B734A1B0D219600355581 /* ProximaNova-Reg.otf */; };
+		033B73691B0D219600355581 /* ProximaNova-RegIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B734B1B0D219600355581 /* ProximaNova-RegIt.otf */; };
+		033B736A1B0D219600355581 /* ProximaNova-Sbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B734C1B0D219600355581 /* ProximaNova-Sbold.otf */; };
+		033B736B1B0D219600355581 /* ProximaNova-SboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B734D1B0D219600355581 /* ProximaNova-SboldIt.otf */; };
+		033B736C1B0D219600355581 /* ProximaNova-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B734E1B0D219600355581 /* ProximaNova-Thin.otf */; };
+		033B736D1B0D219600355581 /* ProximaNova-ThinIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B734F1B0D219600355581 /* ProximaNova-ThinIt.otf */; };
+		033B736E1B0D219600355581 /* ProximaNova-Xbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73501B0D219600355581 /* ProximaNova-Xbold.otf */; };
+		033B736F1B0D219600355581 /* ProximaNova-XboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 033B73511B0D219600355581 /* ProximaNova-XboldIt.otf */; };
 		036CA1C41AFBC88F0064AB6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 036CA1C31AFBC88F0064AB6C /* main.m */; };
 		036CA1C71AFBC88F0064AB6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 036CA1C61AFBC88F0064AB6C /* AppDelegate.m */; };
 		036CA1CD1AFBC88F0064AB6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1CB1AFBC88F0064AB6C /* Main.storyboard */; };
@@ -62,6 +95,41 @@
 		032C76561B0407D000C78CB0 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserModel.m; path = model/UserModel.m; sourceTree = "<group>"; };
 		032C76581B041CFE00C78CB0 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedViewController.h; path = viewcontroller/FeedViewController.h; sourceTree = "<group>"; };
 		032C76591B041CFE00C78CB0 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedViewController.m; path = viewcontroller/FeedViewController.m; sourceTree = "<group>"; };
+		033B73291B0CB62800355581 /* FeedHeaderHeroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedHeaderHeroView.h; path = custom_ui/FeedHeaderHeroView.h; sourceTree = "<group>"; };
+		033B732A1B0CB62800355581 /* FeedHeaderHeroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedHeaderHeroView.m; path = custom_ui/FeedHeaderHeroView.m; sourceTree = "<group>"; };
+		033B732C1B0CB64000355581 /* FeedHeaderHeroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedHeaderHeroView.xib; path = custom_ui/FeedHeaderHeroView.xib; sourceTree = "<group>"; };
+		033B73301B0D039500355581 /* FeedSliderMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSliderMenuView.h; path = custom_ui/FeedSliderMenuView.h; sourceTree = "<group>"; };
+		033B73311B0D039500355581 /* FeedSliderMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSliderMenuView.m; path = custom_ui/FeedSliderMenuView.m; sourceTree = "<group>"; };
+		033B73341B0D219600355581 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Bold.otf"; path = "fonts/Gotham-Bold.otf"; sourceTree = "<group>"; };
+		033B73351B0D219600355581 /* Gotham-BoldIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-BoldIta.otf"; path = "fonts/Gotham-BoldIta.otf"; sourceTree = "<group>"; };
+		033B73361B0D219600355581 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Book.otf"; path = "fonts/Gotham-Book.otf"; sourceTree = "<group>"; };
+		033B73371B0D219600355581 /* Gotham-BookIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-BookIta.otf"; path = "fonts/Gotham-BookIta.otf"; sourceTree = "<group>"; };
+		033B73381B0D219600355581 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Light.otf"; path = "fonts/Gotham-Light.otf"; sourceTree = "<group>"; };
+		033B73391B0D219600355581 /* Gotham-LightIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-LightIta.otf"; path = "fonts/Gotham-LightIta.otf"; sourceTree = "<group>"; };
+		033B733A1B0D219600355581 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Medium.otf"; path = "fonts/Gotham-Medium.otf"; sourceTree = "<group>"; };
+		033B733B1B0D219600355581 /* Gotham-MediumIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-MediumIta.otf"; path = "fonts/Gotham-MediumIta.otf"; sourceTree = "<group>"; };
+		033B733C1B0D219600355581 /* GothamCondensed-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamCondensed-Bold.otf"; path = "fonts/GothamCondensed-Bold.otf"; sourceTree = "<group>"; };
+		033B733D1B0D219600355581 /* GothamCondensed-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamCondensed-Book.otf"; path = "fonts/GothamCondensed-Book.otf"; sourceTree = "<group>"; };
+		033B733E1B0D219600355581 /* GothamCondensed-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamCondensed-Light.otf"; path = "fonts/GothamCondensed-Light.otf"; sourceTree = "<group>"; };
+		033B733F1B0D219600355581 /* GothamCondensed-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamCondensed-Medium.otf"; path = "fonts/GothamCondensed-Medium.otf"; sourceTree = "<group>"; };
+		033B73401B0D219600355581 /* GothamNarrow Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow Bold.otf"; path = "fonts/GothamNarrow Bold.otf"; sourceTree = "<group>"; };
+		033B73411B0D219600355581 /* GothamNarrow-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Book.otf"; path = "fonts/GothamNarrow-Book.otf"; sourceTree = "<group>"; };
+		033B73421B0D219600355581 /* GothamNarrow-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-BookItalic.otf"; path = "fonts/GothamNarrow-BookItalic.otf"; sourceTree = "<group>"; };
+		033B73431B0D219600355581 /* GothamNarrow-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Medium.otf"; path = "fonts/GothamNarrow-Medium.otf"; sourceTree = "<group>"; };
+		033B73441B0D219600355581 /* ProximaNova-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Black.otf"; path = "fonts/ProximaNova-Black.otf"; sourceTree = "<group>"; };
+		033B73451B0D219600355581 /* ProximaNova-BlackIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-BlackIt.otf"; path = "fonts/ProximaNova-BlackIt.otf"; sourceTree = "<group>"; };
+		033B73461B0D219600355581 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Bold.otf"; path = "fonts/ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		033B73471B0D219600355581 /* ProximaNova-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-BoldIt.otf"; path = "fonts/ProximaNova-BoldIt.otf"; sourceTree = "<group>"; };
+		033B73481B0D219600355581 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Light.otf"; path = "fonts/ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		033B73491B0D219600355581 /* ProximaNova-LightIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-LightIt.otf"; path = "fonts/ProximaNova-LightIt.otf"; sourceTree = "<group>"; };
+		033B734A1B0D219600355581 /* ProximaNova-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Reg.otf"; path = "fonts/ProximaNova-Reg.otf"; sourceTree = "<group>"; };
+		033B734B1B0D219600355581 /* ProximaNova-RegIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-RegIt.otf"; path = "fonts/ProximaNova-RegIt.otf"; sourceTree = "<group>"; };
+		033B734C1B0D219600355581 /* ProximaNova-Sbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Sbold.otf"; path = "fonts/ProximaNova-Sbold.otf"; sourceTree = "<group>"; };
+		033B734D1B0D219600355581 /* ProximaNova-SboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-SboldIt.otf"; path = "fonts/ProximaNova-SboldIt.otf"; sourceTree = "<group>"; };
+		033B734E1B0D219600355581 /* ProximaNova-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Thin.otf"; path = "fonts/ProximaNova-Thin.otf"; sourceTree = "<group>"; };
+		033B734F1B0D219600355581 /* ProximaNova-ThinIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-ThinIt.otf"; path = "fonts/ProximaNova-ThinIt.otf"; sourceTree = "<group>"; };
+		033B73501B0D219600355581 /* ProximaNova-Xbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Xbold.otf"; path = "fonts/ProximaNova-Xbold.otf"; sourceTree = "<group>"; };
+		033B73511B0D219600355581 /* ProximaNova-XboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-XboldIt.otf"; path = "fonts/ProximaNova-XboldIt.otf"; sourceTree = "<group>"; };
 		036CA1BE1AFBC88F0064AB6C /* locality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		036CA1C21AFBC88F0064AB6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		036CA1C31AFBC88F0064AB6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +164,11 @@
 			children = (
 				030C41371B0541A5004F1ECE /* LocationRangeSlider.h */,
 				030C41381B0541A5004F1ECE /* LocationRangeSlider.m */,
+				033B73291B0CB62800355581 /* FeedHeaderHeroView.h */,
+				033B732A1B0CB62800355581 /* FeedHeaderHeroView.m */,
+				033B732C1B0CB64000355581 /* FeedHeaderHeroView.xib */,
+				033B73301B0D039500355581 /* FeedSliderMenuView.h */,
+				033B73311B0D039500355581 /* FeedSliderMenuView.m */,
 			);
 			name = custom_ui;
 			sourceTree = "<group>";
@@ -172,6 +245,43 @@
 			name = feed;
 			sourceTree = "<group>";
 		};
+		033B73331B0D218400355581 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				033B73341B0D219600355581 /* Gotham-Bold.otf */,
+				033B73351B0D219600355581 /* Gotham-BoldIta.otf */,
+				033B73361B0D219600355581 /* Gotham-Book.otf */,
+				033B73371B0D219600355581 /* Gotham-BookIta.otf */,
+				033B73381B0D219600355581 /* Gotham-Light.otf */,
+				033B73391B0D219600355581 /* Gotham-LightIta.otf */,
+				033B733A1B0D219600355581 /* Gotham-Medium.otf */,
+				033B733B1B0D219600355581 /* Gotham-MediumIta.otf */,
+				033B733C1B0D219600355581 /* GothamCondensed-Bold.otf */,
+				033B733D1B0D219600355581 /* GothamCondensed-Book.otf */,
+				033B733E1B0D219600355581 /* GothamCondensed-Light.otf */,
+				033B733F1B0D219600355581 /* GothamCondensed-Medium.otf */,
+				033B73401B0D219600355581 /* GothamNarrow Bold.otf */,
+				033B73411B0D219600355581 /* GothamNarrow-Book.otf */,
+				033B73421B0D219600355581 /* GothamNarrow-BookItalic.otf */,
+				033B73431B0D219600355581 /* GothamNarrow-Medium.otf */,
+				033B73441B0D219600355581 /* ProximaNova-Black.otf */,
+				033B73451B0D219600355581 /* ProximaNova-BlackIt.otf */,
+				033B73461B0D219600355581 /* ProximaNova-Bold.otf */,
+				033B73471B0D219600355581 /* ProximaNova-BoldIt.otf */,
+				033B73481B0D219600355581 /* ProximaNova-Light.otf */,
+				033B73491B0D219600355581 /* ProximaNova-LightIt.otf */,
+				033B734A1B0D219600355581 /* ProximaNova-Reg.otf */,
+				033B734B1B0D219600355581 /* ProximaNova-RegIt.otf */,
+				033B734C1B0D219600355581 /* ProximaNova-Sbold.otf */,
+				033B734D1B0D219600355581 /* ProximaNova-SboldIt.otf */,
+				033B734E1B0D219600355581 /* ProximaNova-Thin.otf */,
+				033B734F1B0D219600355581 /* ProximaNova-ThinIt.otf */,
+				033B73501B0D219600355581 /* ProximaNova-Xbold.otf */,
+				033B73511B0D219600355581 /* ProximaNova-XboldIt.otf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
 		036CA1B51AFBC88E0064AB6C = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +324,7 @@
 		036CA1C11AFBC88F0064AB6C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				033B73331B0D218400355581 /* fonts */,
 				036CA1C21AFBC88F0064AB6C /* Info.plist */,
 				036CA1C31AFBC88F0064AB6C /* main.m */,
 			);
@@ -313,9 +424,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033B73521B0D219600355581 /* Gotham-Bold.otf in Resources */,
+				033B736D1B0D219600355581 /* ProximaNova-ThinIt.otf in Resources */,
+				033B73681B0D219600355581 /* ProximaNova-Reg.otf in Resources */,
+				033B735F1B0D219600355581 /* GothamNarrow-Book.otf in Resources */,
+				033B736E1B0D219600355581 /* ProximaNova-Xbold.otf in Resources */,
 				036CA1CD1AFBC88F0064AB6C /* Main.storyboard in Resources */,
+				033B73661B0D219600355581 /* ProximaNova-Light.otf in Resources */,
+				033B736A1B0D219600355581 /* ProximaNova-Sbold.otf in Resources */,
+				033B73551B0D219600355581 /* Gotham-BookIta.otf in Resources */,
+				033B735D1B0D219600355581 /* GothamCondensed-Medium.otf in Resources */,
+				033B73671B0D219600355581 /* ProximaNova-LightIt.otf in Resources */,
+				033B735B1B0D219600355581 /* GothamCondensed-Book.otf in Resources */,
+				033B736F1B0D219600355581 /* ProximaNova-XboldIt.otf in Resources */,
+				033B73561B0D219600355581 /* Gotham-Light.otf in Resources */,
+				033B73621B0D219600355581 /* ProximaNova-Black.otf in Resources */,
+				033B736B1B0D219600355581 /* ProximaNova-SboldIt.otf in Resources */,
+				033B73531B0D219600355581 /* Gotham-BoldIta.otf in Resources */,
+				033B73611B0D219600355581 /* GothamNarrow-Medium.otf in Resources */,
+				033B735A1B0D219600355581 /* GothamCondensed-Bold.otf in Resources */,
+				033B735C1B0D219600355581 /* GothamCondensed-Light.otf in Resources */,
+				033B735E1B0D219600355581 /* GothamNarrow Bold.otf in Resources */,
+				033B73591B0D219600355581 /* Gotham-MediumIta.otf in Resources */,
+				033B73601B0D219600355581 /* GothamNarrow-BookItalic.otf in Resources */,
+				033B73581B0D219600355581 /* Gotham-Medium.otf in Resources */,
+				033B73651B0D219600355581 /* ProximaNova-BoldIt.otf in Resources */,
+				033B732D1B0CB64000355581 /* FeedHeaderHeroView.xib in Resources */,
+				033B73691B0D219600355581 /* ProximaNova-RegIt.otf in Resources */,
 				036CA1D21AFBC88F0064AB6C /* LaunchScreen.xib in Resources */,
+				033B73541B0D219600355581 /* Gotham-Book.otf in Resources */,
+				033B73631B0D219600355581 /* ProximaNova-BlackIt.otf in Resources */,
+				033B73641B0D219600355581 /* ProximaNova-Bold.otf in Resources */,
 				036CA1CF1AFBC88F0064AB6C /* Images.xcassets in Resources */,
+				033B73571B0D219600355581 /* Gotham-LightIta.otf in Resources */,
+				033B736C1B0D219600355581 /* ProximaNova-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,12 +504,14 @@
 				03D595C71B06269B00C48F25 /* AppUtilities.m in Sources */,
 				030C412C1B050B22004F1ECE /* CurrentFeedInitializeViewController.m in Sources */,
 				032C764A1B03F0A400C78CB0 /* LoginViewController.m in Sources */,
+				033B732B1B0CB62800355581 /* FeedHeaderHeroView.m in Sources */,
 				032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */,
 				032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */,
 				032C76571B0407D000C78CB0 /* UserModel.m in Sources */,
 				032C76461B03F06D00C78CB0 /* FacebookManager.m in Sources */,
 				036CA1C71AFBC88F0064AB6C /* AppDelegate.m in Sources */,
 				030C41321B051EC1004F1ECE /* GoogleMapsManager.m in Sources */,
+				033B73321B0D039500355581 /* FeedSliderMenuView.m in Sources */,
 				032C76531B03FC1100C78CB0 /* SignUpEmailSentViewController.m in Sources */,
 				036CA1C41AFBC88F0064AB6C /* main.m in Sources */,
 				030C41291B04F334004F1ECE /* FlickrManager.m in Sources */,

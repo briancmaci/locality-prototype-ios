@@ -566,6 +566,7 @@
                         <outlet property="currentLocationView" destination="lgx-7V-BlW" id="dPQ-Hd-4rw"/>
                         <outlet property="defaultImage" destination="VK2-fw-0ZQ" id="wof-U2-jML"/>
                         <outlet property="rangeSlider" destination="NKs-CK-boM" id="VUK-we-IKP"/>
+                        <segue destination="LyI-3e-qaP" kind="push" identifier="currentFeedViewSegue" id="U4G-oh-9Zp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5i3-ig-qHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -601,6 +602,7 @@
                             <constraint firstItem="kug-EL-2tO" firstAttribute="top" secondItem="5Q7-q9-SF9" secondAttribute="bottom" constant="106" id="UuS-RO-epm"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jdh-1l-bS2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euL-UA-Uez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

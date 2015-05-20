@@ -23,6 +23,8 @@
 @implementation CurrentFeedInitializeViewController
 
 static NSString * kLocationFormat = @"You are currently in %@, %@";
+static NSString * kCurrentFeedSegue = @"currentFeedViewSegue";
+
 CLLocationCoordinate2D currentLocation;
 NSString *flickrDefaultImage;
 float currentRange;
@@ -128,6 +130,10 @@ float currentRange;
     
     [ParseManager updateCurrentFeed:[UserModel sharedInstance].currentLocation success:^(id response) {
         NSLog(@"LOCATION SAVED!");
+        
+        //go to feed
+        [self performSegueWithIdentifier:kCurrentFeedSegue sender:self];
+        
     } failure:^(NSError *error) {
         NSLog(@"Location Save Fail: %@", error);
     }];
