@@ -4,11 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="GothamCondensed-Book.otf">
-            <string>GothamCondensed-Book</string>
-        </mutableArray>
-        <mutableArray key="GothamCondensed-Light.otf">
-            <string>GothamCondensed-Light</string>
+        <mutableArray key="InterstateLightCondensed.ttf">
+            <string>InterstateLightCondensed</string>
+            <string>InterstateLightCondensed</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -27,7 +25,7 @@
                         <constraint firstAttribute="width" constant="190" id="VCG-ok-V6h"/>
                         <constraint firstAttribute="height" constant="22" id="wPG-J4-CNu"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="GothamCondensed-Book" family="GothamCondensed" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="14"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -57,7 +55,7 @@
                         <constraint firstAttribute="height" constant="28" id="kNV-T9-LJH"/>
                         <constraint firstAttribute="width" constant="190" id="lgn-DU-hhp"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="GothamCondensed-Light" family="GothamCondensed" pointSize="24"/>
+                    <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="24"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
