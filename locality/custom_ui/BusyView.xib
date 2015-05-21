@@ -15,18 +15,33 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GpT-Hu-Z3f">
-                    <rect key="frame" x="142" y="265" width="37" height="37"/>
-                    <color key="color" red="0.6983924143270468" green="0.83326861685187303" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                </activityIndicatorView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INITIALIZING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Get-B2-fEX">
-                    <rect key="frame" x="119" y="310" width="82" height="21"/>
-                    <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="16"/>
-                    <color key="textColor" red="0.69839241429999999" green="0.83326861689999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9eR-St-SQL">
+                    <rect key="frame" x="99" y="210" width="122" height="106"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GpT-Hu-Z3f">
+                            <rect key="frame" x="43" y="20" width="37" height="37"/>
+                            <color key="color" red="0.6983924143270468" green="0.83326861685187303" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INITIALIZING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Get-B2-fEX">
+                            <rect key="frame" x="20" y="65" width="82" height="21"/>
+                            <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="16"/>
+                            <color key="textColor" red="0.69839241429999999" green="0.83326861689999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="106" id="nA4-mM-8xq"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="9eR-St-SQL" secondAttribute="trailing" constant="99" id="7IR-f4-eOr"/>
+                <constraint firstAttribute="centerX" secondItem="9eR-St-SQL" secondAttribute="centerX" id="J2C-L0-D1R"/>
+                <constraint firstAttribute="centerY" secondItem="9eR-St-SQL" secondAttribute="centerY" constant="21" id="fhG-Jm-ooE"/>
+                <constraint firstItem="9eR-St-SQL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="99" id="mXv-O7-Poh"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
