@@ -1,31 +1,35 @@
 //
-//  FeedViewController.m
+//  FeedMenuViewController.m
 //  locality
 //
-//  Created by Brian Maci on 5/13/15.
+//  Created by MRY on 5/25/15.
 //  Copyright (c) 2015 briancmaci. All rights reserved.
 //
 
-#import "FeedViewController.h"
+#import "FeedMenuViewController.h"
 #import "UserModel.h"
-#import "config.h"
-#import "ParseManager.h"
 
-@interface FeedViewController ()
+@interface FeedMenuViewController ()
 
 @end
 
-@implementation FeedViewController
+@implementation FeedMenuViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self initSlideMenu];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) initSlideMenu {
+    _feedMenu = [[FeedSliderMenuView alloc] initWithCurrentLocation:[UserModel sharedInstance].currentLocation andPinnedLocations:[UserModel sharedInstance].pinnedLocations];
+    [self.view addSubview:_feedMenu];
 }
 
 /*

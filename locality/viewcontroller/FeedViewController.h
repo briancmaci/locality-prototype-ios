@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FeedSliderMenuView.h"
+#import "FeedHeaderHeroView.h"
 
 @interface FeedViewController : UIViewController
 
-@property (strong, nonatomic) FeedSliderMenuView *feedMenu;
+@property (strong, nonatomic) IBOutlet UITableView *feedPostsTable;
+@property (strong, nonatomic) IBOutlet FeedHeaderHeroView *headerHero;
+@property (strong, nonatomic) IBOutlet UIButton *addPostButton;
 
 @end

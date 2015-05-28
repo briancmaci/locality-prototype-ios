@@ -1,26 +1,22 @@
 //
-//  FeedViewController.m
+//  PostDetailViewController.m
 //  locality
 //
-//  Created by Brian Maci on 5/13/15.
+//  Created by MRY on 5/22/15.
 //  Copyright (c) 2015 briancmaci. All rights reserved.
 //
 
-#import "FeedViewController.h"
-#import "UserModel.h"
-#import "config.h"
-#import "ParseManager.h"
+#import "PostDetailViewController.h"
 
-@interface FeedViewController ()
+@interface PostDetailViewController ()
 
 @end
 
-@implementation FeedViewController
+@implementation PostDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
 }
 
 - (void)didReceiveMemoryWarning {

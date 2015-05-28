@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="InterstateLightCondensed.ttf">
@@ -19,6 +19,16 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ye0-Ad-rIU">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aB-Zc-4rk">
+                    <rect key="frame" x="65" y="16" width="190" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="kNV-T9-LJH"/>
+                        <constraint firstAttribute="width" constant="190" id="lgn-DU-hhp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="24"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW YORK, NY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO3-kb-efM">
                     <rect key="frame" x="65" y="42" width="190" height="22"/>
                     <constraints>
@@ -29,6 +39,15 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2J-V1-QTv" userLabel="openFeedButton">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="openFeedTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="itl-Ge-5Qw"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqH-HF-y2A">
                     <rect key="frame" x="270" y="10" width="40" height="40"/>
                     <constraints>
@@ -49,16 +68,6 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aB-Zc-4rk">
-                    <rect key="frame" x="65" y="16" width="190" height="28"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="28" id="kNV-T9-LJH"/>
-                        <constraint firstAttribute="width" constant="190" id="lgn-DU-hhp"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="24"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="0.19862006500000001" green="0.3620610635" blue="0.59868421049999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -71,7 +80,11 @@
                 <constraint firstAttribute="bottom" secondItem="Ye0-Ad-rIU" secondAttribute="bottom" id="VJN-CX-lH3"/>
                 <constraint firstItem="3aB-Zc-4rk" firstAttribute="centerX" secondItem="Ye0-Ad-rIU" secondAttribute="centerX" id="VkB-T0-9va"/>
                 <constraint firstItem="Ye0-Ad-rIU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="a2l-e5-3fJ"/>
+                <constraint firstItem="k2J-V1-QTv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="c3y-OL-uR2"/>
+                <constraint firstAttribute="bottom" secondItem="k2J-V1-QTv" secondAttribute="bottom" id="f1p-Sk-7ol"/>
                 <constraint firstItem="hO3-kb-efM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="42" id="iiY-fs-Wkr"/>
+                <constraint firstAttribute="trailing" secondItem="k2J-V1-QTv" secondAttribute="trailing" id="q0U-M7-ppv"/>
+                <constraint firstItem="k2J-V1-QTv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="whc-t0-jF2"/>
                 <constraint firstItem="hO3-kb-efM" firstAttribute="centerX" secondItem="Ye0-Ad-rIU" secondAttribute="centerX" id="x5h-un-TAY"/>
                 <constraint firstItem="3aB-Zc-4rk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="y0w-AF-1qC"/>
             </constraints>
@@ -80,6 +93,7 @@
                 <outlet property="heroImage" destination="Ye0-Ad-rIU" id="a7Y-Yu-06p"/>
                 <outlet property="locationLabel" destination="hO3-kb-efM" id="NgR-zq-YHo"/>
                 <outlet property="menuButton" destination="iqH-HF-y2A" id="8Cl-OM-dhF"/>
+                <outlet property="openFeedButton" destination="k2J-V1-QTv" id="Uyw-Bg-RTE"/>
                 <outlet property="settingsButton" destination="aPe-vI-gqo" id="KYT-Bc-skG"/>
                 <outlet property="titleLabel" destination="3aB-Zc-4rk" id="Pdd-VD-Vys"/>
             </connections>

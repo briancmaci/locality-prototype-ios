@@ -19,8 +19,9 @@
 }
 */
 
--(void) populateWithData:(FeedLocationModel *)model {
+-(void) populateWithData:(FeedLocationModel *)model atIndex:(int)index {
     _model = model;
+    _feedIndex = index;
     
     [self initImage];
     [self setMenuMode:NO];
@@ -34,6 +35,16 @@
 -(void) setMenuMode:(BOOL)yes {
     [_menuButton setHidden:!yes];
     [_settingsButton setHidden:yes];
+}
+
+#pragma mark - CTAs
+
+-(IBAction)openFeedTapped:(id)sender {
+    
+    //call delegate
+    if( [_delegate respondsToSelector:@selector(openFeedClicked:atIndex:)]) {
+        [_delegate openFeedClicked:_model atIndex:_feedIndex];
+    }
 }
 
 @end

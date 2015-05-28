@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "FeedLocationModel.h"
+#import "FeedHeaderHeroView.h"
 #import "config.h"
 
-@interface FeedSliderMenuView : UIView
+@interface FeedSliderMenuView : UIView <FeedHeaderHeroDelegate>
 
 -(id) initWithCurrentLocation:(FeedLocationModel *)currentLocation andPinnedLocations:(NSMutableArray *)pinnedLocations;
 

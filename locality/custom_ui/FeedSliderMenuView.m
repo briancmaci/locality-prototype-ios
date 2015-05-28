@@ -7,11 +7,10 @@
 //
 
 #import "FeedSliderMenuView.h"
-#import "FeedHeaderHeroView.h"
 
 @implementation FeedSliderMenuView
 
-static float kHeroHeight = 170.0f;
+static float kHeroHeight = 137.0f;
 
 -(id) initWithCurrentLocation:(FeedLocationModel *)currentLocation andPinnedLocations:(NSMutableArray *)pinnedLocations {
     
@@ -47,9 +46,17 @@ static float kHeroHeight = 170.0f;
         
         //set frame
         [op setFrame:CGRectMake(0, i * kHeroHeight, DEVICE_WIDTH, kHeroHeight)];
-        [op populateWithData:[_menuOptions objectAtIndex:i]];
+        [op populateWithData:[_menuOptions objectAtIndex:i] atIndex:i];
+        op.delegate = self;
+        
         [self addSubview:op];
     }
+}
+
+#pragma mark - FeedHeaderHero Delegate Methods
+
+-(void) openFeedClicked:(FeedLocationModel *)feed atIndex:(int)index {
+    NSLog(@"Load feed #%d", index);
 }
 /*
 // Only override drawRect: if you perform custom drawing.

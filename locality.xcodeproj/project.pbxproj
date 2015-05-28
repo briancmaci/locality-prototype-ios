@@ -52,6 +52,11 @@
 		036CA1D21AFBC88F0064AB6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1D01AFBC88F0064AB6C /* LaunchScreen.xib */; };
 		03D595C71B06269B00C48F25 /* AppUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D595C61B06269B00C48F25 /* AppUtilities.m */; };
 		4823EA5EEC9A9D8CFC3335D3 /* libPods-locality.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D973429C6A2108EE94A211B /* libPods-locality.a */; };
+		4E777E631B0F6A3100EEAEFC /* FeedSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E777E621B0F6A3100EEAEFC /* FeedSettingsViewController.m */; };
+		4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E777E661B0F6A6D00EEAEFC /* PostDetailViewController.m */; };
+		4E9D5AE11B133C5A00302886 /* PostCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D5AE01B133C5A00302886 /* PostCreateViewController.m */; };
+		4E9D5AEA1B133DEF00302886 /* FeedMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D5AE91B133DEF00302886 /* FeedMenuViewController.m */; };
+		4E9D5AED1B15FA0200302886 /* PostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D5AEC1B15FA0200302886 /* PostModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +128,16 @@
 		036CA1DD1AFBC88F0064AB6C /* localityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = localityTests.m; sourceTree = "<group>"; };
 		03D595C51B06269B00C48F25 /* AppUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppUtilities.h; path = util/AppUtilities.h; sourceTree = "<group>"; };
 		03D595C61B06269B00C48F25 /* AppUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppUtilities.m; path = util/AppUtilities.m; sourceTree = "<group>"; };
+		4E777E611B0F6A3100EEAEFC /* FeedSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSettingsViewController.h; path = viewcontroller/FeedSettingsViewController.h; sourceTree = "<group>"; };
+		4E777E621B0F6A3100EEAEFC /* FeedSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSettingsViewController.m; path = viewcontroller/FeedSettingsViewController.m; sourceTree = "<group>"; };
+		4E777E651B0F6A6D00EEAEFC /* PostDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostDetailViewController.h; path = viewcontroller/PostDetailViewController.h; sourceTree = "<group>"; };
+		4E777E661B0F6A6D00EEAEFC /* PostDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostDetailViewController.m; path = viewcontroller/PostDetailViewController.m; sourceTree = "<group>"; };
+		4E9D5ADF1B133C5A00302886 /* PostCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostCreateViewController.h; path = viewcontroller/PostCreateViewController.h; sourceTree = "<group>"; };
+		4E9D5AE01B133C5A00302886 /* PostCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostCreateViewController.m; path = viewcontroller/PostCreateViewController.m; sourceTree = "<group>"; };
+		4E9D5AE81B133DEF00302886 /* FeedMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedMenuViewController.h; path = viewcontroller/FeedMenuViewController.h; sourceTree = "<group>"; };
+		4E9D5AE91B133DEF00302886 /* FeedMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedMenuViewController.m; path = viewcontroller/FeedMenuViewController.m; sourceTree = "<group>"; };
+		4E9D5AEB1B15FA0200302886 /* PostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostModel.h; path = model/PostModel.h; sourceTree = "<group>"; };
+		4E9D5AEC1B15FA0200302886 /* PostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostModel.m; path = model/PostModel.m; sourceTree = "<group>"; };
 		7D973429C6A2108EE94A211B /* libPods-locality.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-locality.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06C2D1706F010AEAB1BEA7D /* Pods-locality.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locality.debug.xcconfig"; path = "Pods/Target Support Files/Pods-locality/Pods-locality.debug.xcconfig"; sourceTree = "<group>"; };
 		DAF769E18A2F3E553FEBB732 /* Pods-locality.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locality.release.xcconfig"; path = "Pods/Target Support Files/Pods-locality/Pods-locality.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +179,8 @@
 				032C76301B03C9A100C78CB0 /* FeedLocationModel.m */,
 				032C76551B0407D000C78CB0 /* UserModel.h */,
 				032C76561B0407D000C78CB0 /* UserModel.m */,
+				4E9D5AEB1B15FA0200302886 /* PostModel.h */,
+				4E9D5AEC1B15FA0200302886 /* PostModel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -183,6 +200,7 @@
 				030C412D1B051592004F1ECE /* MainFeedNavigationController.h */,
 				030C412E1B051592004F1ECE /* MainFeedNavigationController.m */,
 				032C765B1B041D0800C78CB0 /* feed */,
+				4E777E641B0F6A5100EEAEFC /* post */,
 				032C76541B03FD4A00C78CB0 /* login-signup */,
 			);
 			name = viewcontroller;
@@ -225,6 +243,10 @@
 				030C412B1B050B22004F1ECE /* CurrentFeedInitializeViewController.m */,
 				032C76581B041CFE00C78CB0 /* FeedViewController.h */,
 				032C76591B041CFE00C78CB0 /* FeedViewController.m */,
+				4E9D5AE81B133DEF00302886 /* FeedMenuViewController.h */,
+				4E9D5AE91B133DEF00302886 /* FeedMenuViewController.m */,
+				4E777E611B0F6A3100EEAEFC /* FeedSettingsViewController.h */,
+				4E777E621B0F6A3100EEAEFC /* FeedSettingsViewController.m */,
 			);
 			name = feed;
 			sourceTree = "<group>";
@@ -329,6 +351,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4E777E641B0F6A5100EEAEFC /* post */ = {
+			isa = PBXGroup;
+			children = (
+				4E777E651B0F6A6D00EEAEFC /* PostDetailViewController.h */,
+				4E777E661B0F6A6D00EEAEFC /* PostDetailViewController.m */,
+				4E9D5ADF1B133C5A00302886 /* PostCreateViewController.h */,
+				4E9D5AE01B133C5A00302886 /* PostCreateViewController.m */,
+			);
+			name = post;
+			sourceTree = "<group>";
+		};
 		C3D004E5419D0C5AD6C191B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +403,7 @@
 				TargetAttributes = {
 					036CA1BD1AFBC88F0064AB6C = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = MF94FJYR24;
 					};
 				};
 			};
@@ -465,6 +499,7 @@
 				03D595C71B06269B00C48F25 /* AppUtilities.m in Sources */,
 				030C412C1B050B22004F1ECE /* CurrentFeedInitializeViewController.m in Sources */,
 				032C764A1B03F0A400C78CB0 /* LoginViewController.m in Sources */,
+				4E777E631B0F6A3100EEAEFC /* FeedSettingsViewController.m in Sources */,
 				033B732B1B0CB62800355581 /* FeedHeaderHeroView.m in Sources */,
 				032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */,
 				032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */,
@@ -475,12 +510,16 @@
 				033B73321B0D039500355581 /* FeedSliderMenuView.m in Sources */,
 				032C76531B03FC1100C78CB0 /* SignUpEmailSentViewController.m in Sources */,
 				036CA1C41AFBC88F0064AB6C /* main.m in Sources */,
+				4E9D5AE11B133C5A00302886 /* PostCreateViewController.m in Sources */,
 				030C41291B04F334004F1ECE /* FlickrManager.m in Sources */,
 				0353B4A21B0E3D5500CE3750 /* BusyView.m in Sources */,
+				4E9D5AED1B15FA0200302886 /* PostModel.m in Sources */,
+				4E9D5AEA1B133DEF00302886 /* FeedMenuViewController.m in Sources */,
 				032C76351B03EFA100C78CB0 /* config.m in Sources */,
 				030C412F1B051592004F1ECE /* MainFeedNavigationController.m in Sources */,
 				032C76471B03F06D00C78CB0 /* ParseManager.m in Sources */,
 				032C764D1B03F0DE00C78CB0 /* SignUpViewController.m in Sources */,
+				4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */,
 				030C41391B0541A5004F1ECE /* LocationRangeSlider.m in Sources */,
 				032C76501B03F8FC00C78CB0 /* SignUpEmailFormViewController.m in Sources */,
 			);
@@ -548,7 +587,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "b1244b1d-b0bc-4ca3-a428-d805c72d082c";
+				PROVISIONING_PROFILE = "d11c4332-6f43-4e7e-8831-566b3c297fa7";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -587,7 +626,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "b1244b1d-b0bc-4ca3-a428-d805c72d082c";
+				PROVISIONING_PROFILE = "d11c4332-6f43-4e7e-8831-566b3c297fa7";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -599,12 +638,12 @@
 			baseConfigurationReference = C06C2D1706F010AEAB1BEA7D /* Pods-locality.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Brian Maci (TDPTK5PLF3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brian Maci (TDPTK5PLF3)";
 				INFOPLIST_FILE = locality/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b1244b1d-b0bc-4ca3-a428-d805c72d082c";
+				PROVISIONING_PROFILE = "d11c4332-6f43-4e7e-8831-566b3c297fa7";
 			};
 			name = Debug;
 		};
@@ -613,11 +652,12 @@
 			baseConfigurationReference = DAF769E18A2F3E553FEBB732 /* Pods-locality.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Brian Maci (TDPTK5PLF3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brian Maci (TDPTK5PLF3)";
 				INFOPLIST_FILE = locality/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b1244b1d-b0bc-4ca3-a428-d805c72d082c";
+				PROVISIONING_PROFILE = "d11c4332-6f43-4e7e-8831-566b3c297fa7";
 			};
 			name = Release;
 		};
