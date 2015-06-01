@@ -10,4 +10,6 @@
 
 @interface PostCreateViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton * backButton;
+@property (weak, nonatomic) IBOutlet UIButton * postButton;
 @end

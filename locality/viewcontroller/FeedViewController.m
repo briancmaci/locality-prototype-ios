@@ -21,6 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    NSLog(@"Add Post Button: %@", NSStringFromCGRect(_addPostButton.frame));
 }
 
 - (void)didReceiveMemoryWarning {

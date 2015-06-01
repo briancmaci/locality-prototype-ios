@@ -17,10 +17,18 @@
 @property (nonatomic) double longitude;
 
 @property (strong, nonatomic) NSString *postCaption;
-@property (strong, nonatomic) NSString *imgUrl;
+@property (strong, nonatomic) NSString *postImgUrl;
 
+//User info
+@property (nonatomic) BOOL isAnonymous;
+@property (strong, nonatomic) NSString *username;
+@property (strong, nonatomic) NSString *profileImgUrl;
+
+//Get list of liked users, take count and bool if user has liked
 @property (nonatomic) int likesCount;
-@property (nonatomic) int commentsCount;
 @property (nonatomic) BOOL isLikedByMe;
+
+@property (nonatomic) int commentsCount;
+
 
 @end

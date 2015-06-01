@@ -604,6 +604,10 @@
                                     <constraint firstAttribute="height" constant="137" id="N6d-Gh-onl"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fql-3W-LOP">
+                                <rect key="frame" x="0.0" y="137" width="320" height="431"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pz-uC-Wwn">
                                 <rect key="frame" x="125" y="478" width="70" height="70"/>
                                 <constraints>
@@ -613,11 +617,10 @@
                                 <state key="normal" image="button_post">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="KKK-Bh-Iba" kind="push" identifier="writePostSegue" id="Cyt-ui-alK"/>
+                                </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fql-3W-LOP">
-                                <rect key="frame" x="0.0" y="137" width="320" height="431"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -807,6 +810,7 @@
                             <constraint firstAttribute="trailing" secondItem="EdP-16-wGg" secondAttribute="trailing" constant="10" id="zIM-dV-XMs"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="z0h-DW-JZW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czG-cX-fSN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
