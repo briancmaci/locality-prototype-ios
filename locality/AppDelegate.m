@@ -16,6 +16,9 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FlickrKit/FlickrKit.h>
 #import "config.h"
+#import "BusyView.h"
+#import "DataManager.h"
+#import "UserModel.h"
 
 @interface AppDelegate ()
 
@@ -39,6 +42,7 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
     [FacebookManager initFacebookUtils:launchOptions];
     
     [self loadInitialView];
+    [self initBusyView];
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
@@ -63,6 +67,11 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
     }
 }
 
+-(void) initBusyView {
+    [self.mainFeedNavVC.view addSubview:[BusyView sharedInstance]];
+    [[BusyView sharedInstance] show:NO withLabel:nil];
+}
+
 -(void) showMainFeedView
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -74,7 +83,14 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
     }
     
     else {
+        
+        //grab user data
+        [DataManager parseUserDataIntoModel:[PFUser currentUser]];
+        
         self.currentFeedVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedStoryboardId];
+        self.currentFeedVC.isCurrentLocationFeed = YES;
+        self.currentFeedVC.thisFeed = [UserModel sharedInstance].currentLocation;
+        
         self.mainFeedNavVC = [[MainFeedNavigationController alloc] initWithRootViewController:self.currentFeedVC];
     }
     self.window.rootViewController = self.mainFeedNavVC;

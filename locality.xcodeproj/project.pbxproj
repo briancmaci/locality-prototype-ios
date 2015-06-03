@@ -12,6 +12,7 @@
 		030C412F1B051592004F1ECE /* MainFeedNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030C412E1B051592004F1ECE /* MainFeedNavigationController.m */; };
 		030C41321B051EC1004F1ECE /* GoogleMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 030C41311B051EC1004F1ECE /* GoogleMapsManager.m */; };
 		030C41391B0541A5004F1ECE /* LocationRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 030C41381B0541A5004F1ECE /* LocationRangeSlider.m */; };
+		031BC92F1B1F87ED007DFCFB /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 031BC92E1B1F87ED007DFCFB /* DataManager.m */; };
 		032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76301B03C9A100C78CB0 /* FeedLocationModel.m */; };
 		032C76351B03EFA100C78CB0 /* config.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76341B03EFA100C78CB0 /* config.m */; };
 		032C76461B03F06D00C78CB0 /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76431B03F06D00C78CB0 /* FacebookManager.m */; };
@@ -70,6 +71,8 @@
 		030C41311B051EC1004F1ECE /* GoogleMapsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleMapsManager.m; path = manager/GoogleMapsManager.m; sourceTree = "<group>"; };
 		030C41371B0541A5004F1ECE /* LocationRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationRangeSlider.h; path = custom_ui/LocationRangeSlider.h; sourceTree = "<group>"; };
 		030C41381B0541A5004F1ECE /* LocationRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationRangeSlider.m; path = custom_ui/LocationRangeSlider.m; sourceTree = "<group>"; };
+		031BC92D1B1F87ED007DFCFB /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = manager/DataManager.h; sourceTree = "<group>"; };
+		031BC92E1B1F87ED007DFCFB /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = manager/DataManager.m; sourceTree = "<group>"; };
 		032C762F1B03C9A100C78CB0 /* FeedLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedLocationModel.h; path = model/FeedLocationModel.h; sourceTree = "<group>"; };
 		032C76301B03C9A100C78CB0 /* FeedLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedLocationModel.m; path = model/FeedLocationModel.m; sourceTree = "<group>"; };
 		032C76331B03EFA100C78CB0 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				030C41311B051EC1004F1ECE /* GoogleMapsManager.m */,
 				032C76441B03F06D00C78CB0 /* ParseManager.h */,
 				032C76451B03F06D00C78CB0 /* ParseManager.m */,
+				031BC92D1B1F87ED007DFCFB /* DataManager.h */,
+				031BC92E1B1F87ED007DFCFB /* DataManager.m */,
 			);
 			name = manager;
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 				032C764D1B03F0DE00C78CB0 /* SignUpViewController.m in Sources */,
 				4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */,
 				030C41391B0541A5004F1ECE /* LocationRangeSlider.m in Sources */,
+				031BC92F1B1F87ED007DFCFB /* DataManager.m in Sources */,
 				032C76501B03F8FC00C78CB0 /* SignUpEmailFormViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,10 +590,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "d11c4332-6f43-4e7e-8831-566b3c297fa7";
+				PROVISIONING_PROFILE = "e85081d8-5a9d-4a91-9a28-ef268ce2c751";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -624,9 +630,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "d11c4332-6f43-4e7e-8831-566b3c297fa7";
+				PROVISIONING_PROFILE = "e85081d8-5a9d-4a91-9a28-ef268ce2c751";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -638,12 +644,12 @@
 			baseConfigurationReference = C06C2D1706F010AEAB1BEA7D /* Pods-locality.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Brian Maci (TDPTK5PLF3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brian Maci (TDPTK5PLF3)";
 				INFOPLIST_FILE = locality/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d11c4332-6f43-4e7e-8831-566b3c297fa7";
+				PROVISIONING_PROFILE = "e85081d8-5a9d-4a91-9a28-ef268ce2c751";
 			};
 			name = Debug;
 		};
@@ -652,12 +658,12 @@
 			baseConfigurationReference = DAF769E18A2F3E553FEBB732 /* Pods-locality.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Brian Maci (TDPTK5PLF3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brian Maci (TDPTK5PLF3)";
 				INFOPLIST_FILE = locality/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d11c4332-6f43-4e7e-8831-566b3c297fa7";
+				PROVISIONING_PROFILE = "e85081d8-5a9d-4a91-9a28-ef268ce2c751";
 			};
 			name = Release;
 		};

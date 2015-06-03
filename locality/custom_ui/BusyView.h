@@ -10,4 +10,11 @@
 
 @interface BusyView : UIView
 
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) IBOutlet UILabel *busyLabel;
+
++ (BusyView *)sharedInstance;
+
+-(void)show:(BOOL)isShowing withLabel:(NSString *)label;
+
 @end
