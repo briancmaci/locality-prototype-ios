@@ -31,6 +31,7 @@ static NSString *kLoginStoryboardId = @"loginVC";
 
 static NSString *kCurrentFeedInitStoryboardId = @"currentFeedInitVC";
 static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
+static NSString *kFeedMenuStoryboardId = @"feedMenuVC";
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -41,6 +42,8 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
     [ParseManager initParse];
     [GoogleMapsManager initGoogleMaps];
     [FacebookManager initFacebookUtils:launchOptions];
+    
+    [self.window makeKeyAndVisible];
     
     [self loadInitialView];
     [self initBusyView];
@@ -82,8 +85,6 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
         _currentFeedInitVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedInitStoryboardId];
         
         [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:_currentFeedInitVC withCompletion:nil];
-        
-        //self.mainFeedNavVC = [[MainFeedNavigationController alloc] initWithRootViewController:self.currentFeedInitVC];
     }
     
     else {
@@ -91,15 +92,16 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
         //grab user data
         [DataManager parseUserDataIntoModel:[PFUser currentUser]];
         
+        _feedMenuVC = [storyboard instantiateViewControllerWithIdentifier:kFeedMenuStoryboardId];
+        
         _currentFeedVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedStoryboardId];
         _currentFeedVC.isCurrentLocationFeed = YES;
         _currentFeedVC.thisFeed = [UserModel sharedInstance].currentLocation;
         
-        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:_currentFeedVC withCompletion:nil];
-        //self.mainFeedNavVC = [[MainFeedNavigationController alloc] initWithRootViewController:self.currentFeedVC];
+        //for now... let's push the feedMenu THEN the currentFeed to go back
+        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:_feedMenuVC withCompletion:nil];
+        [[SlideNavigationController sharedInstance] pushViewController:_currentFeedVC animated:NO];
     }
-    //self.window.rootViewController = self.mainFeedNavVC;
-    
 }
 
 -(void) showLoginView

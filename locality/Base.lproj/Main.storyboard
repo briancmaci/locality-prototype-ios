@@ -46,7 +46,7 @@
                                     <action selector="facebookLoginButtonClicked:" destination="FsX-Wk-tin" eventType="touchUpInside" id="vVh-8Q-FtB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" - OR -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvW-aB-h3c">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" - OR -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="GvW-aB-h3c">
                                 <rect key="frame" x="139" y="200" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="0Xi-5t-fDY"/>
@@ -219,7 +219,7 @@
                                     <action selector="facebookSignupClicked:" destination="F5q-3t-4fL" eventType="touchUpInside" id="E2Z-U4-gdl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" - OR -" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcD-Ft-tYa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" - OR -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="ZcD-Ft-tYa">
                                 <rect key="frame" x="139" y="335" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="kWJ-ne-ZjV"/>
@@ -646,6 +646,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euL-UA-Uez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="757" y="908"/>
+        </scene>
+        <!--Feed Menu Table View Controller-->
+        <scene sceneID="ewY-fm-kcX">
+            <objects>
+                <tableViewController storyboardIdentifier="feedMenuVC" id="paS-xT-CFQ" customClass="FeedMenuTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="137" sectionHeaderHeight="22" sectionFooterHeight="22" id="7UZ-1b-YSk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="FeedMenu" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedMenuCell" id="Xc1-s5-Gv6" customClass="FeedMenuTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xc1-s5-Gv6" id="Zkw-8M-bey">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="paS-xT-CFQ" id="ql9-jb-pe9"/>
+                            <outlet property="delegate" destination="paS-xT-CFQ" id="OJt-1d-vsr"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jk9-XA-swc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757" y="1579"/>
         </scene>
         <!--Post Create View Controller-->
         <scene sceneID="4kg-G5-4D3">

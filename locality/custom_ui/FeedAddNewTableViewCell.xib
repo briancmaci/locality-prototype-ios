@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="InterstateLightCondensed.ttf">
+            <string>InterstateLightCondensed</string>
+            <string>InterstateLightCondensed</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FeedAddNewTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_add_location_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Xaf-rc-Huf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD NEW LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1s-kp-BC6">
+                        <rect key="frame" x="74" y="24" width="176" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="176" id="4nM-HY-EE0"/>
+                            <constraint firstAttribute="height" constant="21" id="fWK-4N-xnL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="24"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_add_location_plus" translatesAutoresizingMaskIntoConstraints="NO" id="TBk-gl-iYx">
+                        <rect key="frame" x="133" y="53" width="54" height="54"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="54" id="03H-9l-PWN"/>
+                            <constraint firstAttribute="height" constant="54" id="qZu-R8-pFg"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChW-Ku-n3y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
+                        <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="24"/>
+                        <inset key="titleEdgeInsets" minX="-54" minY="24" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="130" minY="54" maxX="0.0" maxY="0.0"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="addNewLocationTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="EXx-nN-vmi"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="TBk-gl-iYx" firstAttribute="top" secondItem="H1s-kp-BC6" secondAttribute="bottom" constant="8" id="1RZ-LD-AWV"/>
+                    <constraint firstItem="ChW-Ku-n3y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="354-q1-phs"/>
+                    <constraint firstAttribute="bottom" secondItem="Xaf-rc-Huf" secondAttribute="bottom" id="BeT-9p-D0t"/>
+                    <constraint firstItem="H1s-kp-BC6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="LUY-f9-xEY"/>
+                    <constraint firstAttribute="centerX" secondItem="H1s-kp-BC6" secondAttribute="centerX" constant="-2" id="Lk4-oi-yxD"/>
+                    <constraint firstItem="Xaf-rc-Huf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="LpF-W5-eiC"/>
+                    <constraint firstAttribute="bottom" secondItem="ChW-Ku-n3y" secondAttribute="bottom" id="V9g-Ji-l68"/>
+                    <constraint firstItem="Xaf-rc-Huf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fA4-XE-bil"/>
+                    <constraint firstItem="ChW-Ku-n3y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lmO-hT-d19"/>
+                    <constraint firstAttribute="trailing" secondItem="ChW-Ku-n3y" secondAttribute="trailing" id="rxj-II-g18"/>
+                    <constraint firstAttribute="trailing" secondItem="Xaf-rc-Huf" secondAttribute="trailing" id="v6k-jO-M76"/>
+                    <constraint firstAttribute="centerX" secondItem="TBk-gl-iYx" secondAttribute="centerX" id="xbc-vf-CcX"/>
+                </constraints>
+            </tableViewCellContentView>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="button_add_location_bg" width="320" height="150"/>
+        <image name="button_add_location_plus" width="54" height="54"/>
+    </resources>
+</document>

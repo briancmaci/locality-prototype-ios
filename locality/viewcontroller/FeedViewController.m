@@ -10,6 +10,7 @@
 #import "UserModel.h"
 #import "config.h"
 #import "ParseManager.h"
+#import "FeedHeaderHeroView.h"
 
 @interface FeedViewController ()
 
@@ -21,12 +22,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSLog(@"Add Post Button: %@", NSStringFromCGRect(_addPostButton.frame));
+    //NSLog(@"Add Post Button: %@", NSStringFromCGRect(_addPostButton.frame));
+    [self initHeroHeader];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) initHeroHeader {
+    
 }
 
 /*

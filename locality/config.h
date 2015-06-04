@@ -36,5 +36,6 @@
 
 /* CURRENT FEED DEFAULTS */
 #define DEFAULT_FEED_IMAGE @"feed_default_hero"
+#define FEED_HERO_HEIGHT 137.0f
 
 @end
