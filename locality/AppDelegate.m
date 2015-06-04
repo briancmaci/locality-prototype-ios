@@ -11,6 +11,7 @@
 #import "FacebookManager.h"
 #import "FlickrManager.h"
 #import "GoogleMapsManager.h"
+#import "SlideNavigationController.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -26,7 +27,7 @@
 
 @implementation AppDelegate
 
-static NSString *kLoginNavStoryboardId = @"loginNavigationVC";
+static NSString *kLoginStoryboardId = @"loginVC";
 
 static NSString *kCurrentFeedInitStoryboardId = @"currentFeedInitVC";
 static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
@@ -68,7 +69,7 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
 }
 
 -(void) initBusyView {
-    [self.mainFeedNavVC.view addSubview:[BusyView sharedInstance]];
+    [self.window addSubview:[BusyView sharedInstance]];
     [[BusyView sharedInstance] show:NO withLabel:nil];
 }
 
@@ -78,8 +79,11 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
     
     //check if it's the first time
     if( [[[PFUser currentUser] objectForKey:@"isFirstTime"] boolValue] ) {
-        self.currentFeedInitVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedInitStoryboardId];
-        self.mainFeedNavVC = [[MainFeedNavigationController alloc] initWithRootViewController:self.currentFeedInitVC];
+        _currentFeedInitVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedInitStoryboardId];
+        
+        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:_currentFeedInitVC withCompletion:nil];
+        
+        //self.mainFeedNavVC = [[MainFeedNavigationController alloc] initWithRootViewController:self.currentFeedInitVC];
     }
     
     else {
@@ -87,13 +91,14 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
         //grab user data
         [DataManager parseUserDataIntoModel:[PFUser currentUser]];
         
-        self.currentFeedVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedStoryboardId];
-        self.currentFeedVC.isCurrentLocationFeed = YES;
-        self.currentFeedVC.thisFeed = [UserModel sharedInstance].currentLocation;
+        _currentFeedVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedStoryboardId];
+        _currentFeedVC.isCurrentLocationFeed = YES;
+        _currentFeedVC.thisFeed = [UserModel sharedInstance].currentLocation;
         
-        self.mainFeedNavVC = [[MainFeedNavigationController alloc] initWithRootViewController:self.currentFeedVC];
+        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:_currentFeedVC withCompletion:nil];
+        //self.mainFeedNavVC = [[MainFeedNavigationController alloc] initWithRootViewController:self.currentFeedVC];
     }
-    self.window.rootViewController = self.mainFeedNavVC;
+    //self.window.rootViewController = self.mainFeedNavVC;
     
 }
 
@@ -104,8 +109,9 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    self.loginNavVC = [storyboard instantiateViewControllerWithIdentifier:kLoginNavStoryboardId];
-    self.window.rootViewController = self.loginNavVC;
+    _loginNavVC = [storyboard instantiateViewControllerWithIdentifier:kLoginStoryboardId];
+    //self.window.rootViewController = self.loginNavVC;
+    [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:_loginNavVC withCompletion:nil];
 }
 
 -(void)updateRootView:(NSNotification *)notification {

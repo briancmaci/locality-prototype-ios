@@ -52,6 +52,12 @@
 		036CA1CF1AFBC88F0064AB6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1CE1AFBC88F0064AB6C /* Images.xcassets */; };
 		036CA1D21AFBC88F0064AB6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1D01AFBC88F0064AB6C /* LaunchScreen.xib */; };
 		03D595C71B06269B00C48F25 /* AppUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D595C61B06269B00C48F25 /* AppUtilities.m */; };
+		03F71A5A1B2076B8006F4088 /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F71A591B2076B8006F4088 /* SlideNavigationController.m */; };
+		03F71A671B2076D3006F4088 /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F71A5E1B2076D3006F4088 /* SlideNavigationContorllerAnimatorFade.m */; };
+		03F71A681B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F71A601B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.m */; };
+		03F71A691B2076D3006F4088 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F71A621B2076D3006F4088 /* SlideNavigationContorllerAnimatorScaleAndFade.m */; };
+		03F71A6A1B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F71A641B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlide.m */; };
+		03F71A6B1B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F71A661B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlideAndFade.m */; };
 		4823EA5EEC9A9D8CFC3335D3 /* libPods-locality.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D973429C6A2108EE94A211B /* libPods-locality.a */; };
 		4E777E631B0F6A3100EEAEFC /* FeedSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E777E621B0F6A3100EEAEFC /* FeedSettingsViewController.m */; };
 		4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E777E661B0F6A6D00EEAEFC /* PostDetailViewController.m */; };
@@ -131,6 +137,19 @@
 		036CA1DD1AFBC88F0064AB6C /* localityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = localityTests.m; sourceTree = "<group>"; };
 		03D595C51B06269B00C48F25 /* AppUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppUtilities.h; path = util/AppUtilities.h; sourceTree = "<group>"; };
 		03D595C61B06269B00C48F25 /* AppUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppUtilities.m; path = util/AppUtilities.m; sourceTree = "<group>"; };
+		03F71A581B2076B8006F4088 /* SlideNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideNavigationController.h; path = custom_ui/SlideNavigationController/SlideNavigationController.h; sourceTree = "<group>"; };
+		03F71A591B2076B8006F4088 /* SlideNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationController.m; path = custom_ui/SlideNavigationController/SlideNavigationController.m; sourceTree = "<group>"; };
+		03F71A5C1B2076D3006F4088 /* SlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimator.h; path = custom_ui/SlideNavigationController/Animations/SlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
+		03F71A5D1B2076D3006F4088 /* SlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorFade.h; path = custom_ui/SlideNavigationController/Animations/SlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
+		03F71A5E1B2076D3006F4088 /* SlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorFade.m; path = custom_ui/SlideNavigationController/Animations/SlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
+		03F71A5F1B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorScale.h; path = custom_ui/SlideNavigationController/Animations/SlideNavigationContorllerAnimatorScale.h; sourceTree = "<group>"; };
+		03F71A601B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorScale.m; path = custom_ui/SlideNavigationController/Animations/SlideNavigationContorllerAnimatorScale.m; sourceTree = "<group>"; };
+		03F71A611B2076D3006F4088 /* SlideNavigationContorllerAnimatorScaleAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorScaleAndFade.h; path = custom_ui/SlideNavigationController/Animations/SlideNavigationContorllerAnimatorScaleAndFade.h; sourceTree = "<group>"; };
+		03F71A621B2076D3006F4088 /* SlideNavigationContorllerAnimatorScaleAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorScaleAndFade.m; path = custom_ui/SlideNavigationController/Animations/SlideNavigationContorllerAnimatorScaleAndFade.m; sourceTree = "<group>"; };
+		03F71A631B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorSlide.h; path = custom_ui/SlideNavigationController/Animations/SlideNavigationContorllerAnimatorSlide.h; sourceTree = "<group>"; };
+		03F71A641B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorSlide.m; path = custom_ui/SlideNavigationController/Animations/SlideNavigationContorllerAnimatorSlide.m; sourceTree = "<group>"; };
+		03F71A651B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlideAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorSlideAndFade.h; path = custom_ui/SlideNavigationController/Animations/SlideNavigationContorllerAnimatorSlideAndFade.h; sourceTree = "<group>"; };
+		03F71A661B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlideAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorSlideAndFade.m; path = custom_ui/SlideNavigationController/Animations/SlideNavigationContorllerAnimatorSlideAndFade.m; sourceTree = "<group>"; };
 		4E777E611B0F6A3100EEAEFC /* FeedSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSettingsViewController.h; path = viewcontroller/FeedSettingsViewController.h; sourceTree = "<group>"; };
 		4E777E621B0F6A3100EEAEFC /* FeedSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSettingsViewController.m; path = viewcontroller/FeedSettingsViewController.m; sourceTree = "<group>"; };
 		4E777E651B0F6A6D00EEAEFC /* PostDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostDetailViewController.h; path = viewcontroller/PostDetailViewController.h; sourceTree = "<group>"; };
@@ -161,6 +180,7 @@
 		030C41331B054158004F1ECE /* custom_ui */ = {
 			isa = PBXGroup;
 			children = (
+				03F71A571B2076A8006F4088 /* SlideNavigationController */,
 				030C41371B0541A5004F1ECE /* LocationRangeSlider.h */,
 				030C41381B0541A5004F1ECE /* LocationRangeSlider.m */,
 				033B73291B0CB62800355581 /* FeedHeaderHeroView.h */,
@@ -347,6 +367,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		03F71A571B2076A8006F4088 /* SlideNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				03F71A581B2076B8006F4088 /* SlideNavigationController.h */,
+				03F71A591B2076B8006F4088 /* SlideNavigationController.m */,
+				03F71A5B1B2076C2006F4088 /* Animations */,
+			);
+			name = SlideNavigationController;
+			sourceTree = "<group>";
+		};
+		03F71A5B1B2076C2006F4088 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				03F71A5C1B2076D3006F4088 /* SlideNavigationContorllerAnimator.h */,
+				03F71A5D1B2076D3006F4088 /* SlideNavigationContorllerAnimatorFade.h */,
+				03F71A5E1B2076D3006F4088 /* SlideNavigationContorllerAnimatorFade.m */,
+				03F71A5F1B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.h */,
+				03F71A601B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.m */,
+				03F71A611B2076D3006F4088 /* SlideNavigationContorllerAnimatorScaleAndFade.h */,
+				03F71A621B2076D3006F4088 /* SlideNavigationContorllerAnimatorScaleAndFade.m */,
+				03F71A631B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlide.h */,
+				03F71A641B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlide.m */,
+				03F71A651B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlideAndFade.h */,
+				03F71A661B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlideAndFade.m */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
 		2EB97B287A6B34791CB09DB4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03F71A671B2076D3006F4088 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				03D595C71B06269B00C48F25 /* AppUtilities.m in Sources */,
 				030C412C1B050B22004F1ECE /* CurrentFeedInitializeViewController.m in Sources */,
 				032C764A1B03F0A400C78CB0 /* LoginViewController.m in Sources */,
@@ -516,18 +565,23 @@
 				032C76531B03FC1100C78CB0 /* SignUpEmailSentViewController.m in Sources */,
 				036CA1C41AFBC88F0064AB6C /* main.m in Sources */,
 				4E9D5AE11B133C5A00302886 /* PostCreateViewController.m in Sources */,
+				03F71A691B2076D3006F4088 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				030C41291B04F334004F1ECE /* FlickrManager.m in Sources */,
 				0353B4A21B0E3D5500CE3750 /* BusyView.m in Sources */,
 				4E9D5AED1B15FA0200302886 /* PostModel.m in Sources */,
+				03F71A6A1B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				4E9D5AEA1B133DEF00302886 /* FeedMenuViewController.m in Sources */,
 				032C76351B03EFA100C78CB0 /* config.m in Sources */,
 				030C412F1B051592004F1ECE /* MainFeedNavigationController.m in Sources */,
 				032C76471B03F06D00C78CB0 /* ParseManager.m in Sources */,
 				032C764D1B03F0DE00C78CB0 /* SignUpViewController.m in Sources */,
+				03F71A6B1B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */,
+				03F71A681B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				030C41391B0541A5004F1ECE /* LocationRangeSlider.m in Sources */,
 				031BC92F1B1F87ED007DFCFB /* DataManager.m in Sources */,
 				032C76501B03F8FC00C78CB0 /* SignUpEmailFormViewController.m in Sources */,
+				03F71A5A1B2076B8006F4088 /* SlideNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
