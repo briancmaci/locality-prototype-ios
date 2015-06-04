@@ -8,6 +8,7 @@
 
 #import "FeedHeaderHeroView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "config.h"
 
 @implementation FeedHeaderHeroView
 
@@ -29,7 +30,14 @@
 }
 
 -(void) initImage {
-    [_heroImage sd_setImageWithURL:[NSURL URLWithString:_model.imgUrl]];
+    
+    if( ![_model.imgUrl isEqualToString:DEFAULT_FEED_IMAGE] ) {
+        [_heroImage sd_setImageWithURL:[NSURL URLWithString:_model.imgUrl]];
+    }
+    
+    else {
+        [_heroImage setImage:[UIImage imageNamed:DEFAULT_FEED_IMAGE]];
+    }
 }
 
 -(void) setMenuMode:(BOOL)yes {

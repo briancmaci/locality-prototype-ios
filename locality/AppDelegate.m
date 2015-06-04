@@ -11,11 +11,15 @@
 #import "FacebookManager.h"
 #import "FlickrManager.h"
 #import "GoogleMapsManager.h"
+#import "SlideNavigationController.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FlickrKit/FlickrKit.h>
 #import "config.h"
+#import "BusyView.h"
+#import "DataManager.h"
+#import "UserModel.h"
 
 @interface AppDelegate ()
 
@@ -23,10 +27,11 @@
 
 @implementation AppDelegate
 
-static NSString *kLoginNavStoryboardId = @"loginNavigationVC";
+static NSString *kLoginStoryboardId = @"loginVC";
 
 static NSString *kCurrentFeedInitStoryboardId = @"currentFeedInitVC";
 static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
+static NSString *kFeedMenuStoryboardId = @"feedMenuVC";
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -38,7 +43,10 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
     [GoogleMapsManager initGoogleMaps];
     [FacebookManager initFacebookUtils:launchOptions];
     
+    [self.window makeKeyAndVisible];
+    
     [self loadInitialView];
+    [self initBusyView];
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
@@ -63,22 +71,37 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
     }
 }
 
+-(void) initBusyView {
+    [self.window addSubview:[BusyView sharedInstance]];
+    [[BusyView sharedInstance] show:NO withLabel:nil];
+}
+
 -(void) showMainFeedView
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     //check if it's the first time
     if( [[[PFUser currentUser] objectForKey:@"isFirstTime"] boolValue] ) {
-        self.currentFeedInitVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedInitStoryboardId];
-        self.mainFeedNavVC = [[MainFeedNavigationController alloc] initWithRootViewController:self.currentFeedInitVC];
+        _currentFeedInitVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedInitStoryboardId];
+        
+        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:_currentFeedInitVC withCompletion:nil];
     }
     
     else {
-        self.currentFeedVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedStoryboardId];
-        self.mainFeedNavVC = [[MainFeedNavigationController alloc] initWithRootViewController:self.currentFeedVC];
+        
+        //grab user data
+        [DataManager parseUserDataIntoModel:[PFUser currentUser]];
+        
+        _feedMenuVC = [storyboard instantiateViewControllerWithIdentifier:kFeedMenuStoryboardId];
+        
+        _currentFeedVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedStoryboardId];
+        _currentFeedVC.isCurrentLocationFeed = YES;
+        _currentFeedVC.thisFeed = [UserModel sharedInstance].currentLocation;
+        
+        //for now... let's push the feedMenu THEN the currentFeed to go back
+        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:_feedMenuVC withCompletion:nil];
+        [[SlideNavigationController sharedInstance] pushViewController:_currentFeedVC animated:NO];
     }
-    self.window.rootViewController = self.mainFeedNavVC;
-    
 }
 
 -(void) showLoginView
@@ -88,8 +111,9 @@ static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    self.loginNavVC = [storyboard instantiateViewControllerWithIdentifier:kLoginNavStoryboardId];
-    self.window.rootViewController = self.loginNavVC;
+    _loginNavVC = [storyboard instantiateViewControllerWithIdentifier:kLoginStoryboardId];
+    //self.window.rootViewController = self.loginNavVC;
+    [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:_loginNavVC withCompletion:nil];
 }
 
 -(void)updateRootView:(NSNotification *)notification {

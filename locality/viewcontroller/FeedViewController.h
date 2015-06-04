@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "FeedHeaderHeroView.h"
+#import "FeedLocationModel.h"
 
 @interface FeedViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *feedPostsTable;
 @property (strong, nonatomic) IBOutlet FeedHeaderHeroView *headerHero;
 @property (strong, nonatomic) IBOutlet UIButton *addPostButton;
+
+@property (strong, nonatomic) FeedLocationModel *thisFeed;
+@property (nonatomic) BOOL isCurrentLocationFeed;
 
 @end

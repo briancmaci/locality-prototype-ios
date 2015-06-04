@@ -7,10 +7,9 @@
 //
 
 #import "FeedSliderMenuView.h"
+#import "config.h"
 
 @implementation FeedSliderMenuView
-
-static float kHeroHeight = 137.0f;
 
 -(id) initWithCurrentLocation:(FeedLocationModel *)currentLocation andPinnedLocations:(NSMutableArray *)pinnedLocations {
     
@@ -45,7 +44,7 @@ static float kHeroHeight = 137.0f;
         FeedHeaderHeroView *op = [nib objectAtIndex:0];
         
         //set frame
-        [op setFrame:CGRectMake(0, i * kHeroHeight, DEVICE_WIDTH, kHeroHeight)];
+        [op setFrame:CGRectMake(0, i * FEED_HERO_HEIGHT, DEVICE_WIDTH, FEED_HERO_HEIGHT)];
         [op populateWithData:[_menuOptions objectAtIndex:i] atIndex:i];
         op.delegate = self;
         

@@ -7,6 +7,7 @@
 //
 
 #import "FeedLocationModel.h"
+#import "config.h"
 
 @implementation FeedLocationModel
 
@@ -23,6 +24,7 @@
         _longitude = center.longitude;
         
         _name = name;
+        _imgUrl = DEFAULT_FEED_IMAGE;
     }
     
     return self;

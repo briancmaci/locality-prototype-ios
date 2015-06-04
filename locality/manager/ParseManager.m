@@ -172,6 +172,7 @@ static NSString * kDBUser = @"_User";
                                          kImportantEnabled : @(currentFeed.importantEnabled) };
     
     [PFUser currentUser][@"currentLocation"] = currentFeedParams;
+    [PFUser currentUser][@"isFirstTime"] = @NO;
     
     [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {   // Hooray! Let them use the app now.

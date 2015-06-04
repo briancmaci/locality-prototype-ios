@@ -15,6 +15,7 @@
 #import "AppUtilities.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UserModel.h"
+#import "BusyView.h"
 
 @interface CurrentFeedInitializeViewController ()
 
@@ -108,7 +109,7 @@ float currentRange;
     
     //get photo
     
-    
+    /*
     [FlickrManager getImagesForLocation:currentLocation success:^(id response) {
         NSLog(@"we got pictures!");
         
@@ -119,16 +120,20 @@ float currentRange;
     } failure:^(NSError *error) {
         NSLog(@"flickr error: %@", error);
     }];
+     */
 }
 
 #pragma mark - Create Current Feed CTA
 -(IBAction) createCurrentFeed:(id)sender {
     
     [UserModel sharedInstance].currentLocation = [[FeedLocationModel alloc] initWithLocation:currentLocation andName:kCurrentFeedName];
-    [[UserModel sharedInstance].currentLocation setImgUrl:flickrDefaultImage];
+    [[UserModel sharedInstance].currentLocation setImgUrl:flickrDefaultImage ? flickrDefaultImage : DEFAULT_FEED_IMAGE];
     [[UserModel sharedInstance].currentLocation setRange:currentRange];
     
+    [[BusyView sharedInstance] show:YES withLabel:@"INITIALIZING"];
+    
     [ParseManager updateCurrentFeed:[UserModel sharedInstance].currentLocation success:^(id response) {
+        [[BusyView sharedInstance] show:NO withLabel:nil];
         NSLog(@"LOCATION SAVED!");
         
         //go to feed
