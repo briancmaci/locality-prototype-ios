@@ -11,6 +11,7 @@
 #import "config.h"
 #import "FeedMenuTableViewCell.h"
 #import "FeedAddNewTableViewCell.h"
+#import "FeedViewController.h"
 
 @interface FeedMenuTableViewController ()
 
@@ -58,6 +59,13 @@
 
 -(void) openFeedClicked:(FeedLocationModel *)feed atIndex:(int)index {
     NSLog(@"Load feed #%d", index);
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    FeedViewController *vc = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedStoryboardId];
+    
+    vc.thisFeed = feed;
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - Table view data source

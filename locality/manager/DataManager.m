@@ -23,7 +23,7 @@
     //pinned locations
     
     //first time
-    [UserModel sharedInstance].isFirstTime = [me objectForKey:@"isFirstTime"];
+    [UserModel sharedInstance].isFirstTime = [[me objectForKey:@"isFirstTime"] boolValue];
     
 }
 

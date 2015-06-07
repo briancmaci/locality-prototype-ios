@@ -10,7 +10,14 @@
 #import "FeedLocationModel.h"
 
 @protocol FeedHeaderHeroDelegate <NSObject>
+
+-(void) toFeedMenuClicked;
+-(void) toFeedSettingsClicked:(FeedLocationModel *)feed;
+
+@optional
 -(void) openFeedClicked:(FeedLocationModel *)feed atIndex:(int)index;
+
+
 @end
 
 @interface FeedHeaderHeroView : UIView
@@ -28,5 +35,6 @@
 @property (nonatomic) int feedIndex;
 
 -(void) populateWithData:(FeedLocationModel *)model atIndex:(int)index;
+-(void) setMenuMode:(BOOL)yes;
 
 @end

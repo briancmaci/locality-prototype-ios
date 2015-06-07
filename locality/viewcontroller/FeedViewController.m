@@ -10,7 +10,6 @@
 #import "UserModel.h"
 #import "config.h"
 #import "ParseManager.h"
-#import "FeedHeaderHeroView.h"
 
 @interface FeedViewController ()
 
@@ -32,7 +31,27 @@
 }
 
 -(void) initHeroHeader {
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FeedHeaderHeroView" owner:self options:nil];
+    _headerHero = [nib objectAtIndex:0];
     
+    [_headerHero setFrame:CGRectMake(0, 0, DEVICE_WIDTH, FEED_HERO_HEIGHT)];
+    [_headerHero populateWithData:_thisFeed atIndex:0];
+    [_headerHero setMenuMode:YES];
+    _headerHero.delegate = self;
+    
+    [self.view addSubview:_headerHero];
+    
+    //NSLog(@"[FeedViewController:initHeader]");
+}
+
+#pragma mark - FeedHeaderHeroDelegate Methods
+
+-(void)toFeedMenuClicked {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)toFeedSettingsClicked:(FeedLocationModel *)feed {
+    //do nothing
 }
 
 /*

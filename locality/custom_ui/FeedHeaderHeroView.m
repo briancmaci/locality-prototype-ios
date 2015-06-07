@@ -55,4 +55,20 @@
     }
 }
 
+-(IBAction)settingsTapped:(id)sender {
+
+    //call delegate
+    if( [_delegate respondsToSelector:@selector(toFeedSettingsClicked:)]) {
+        [_delegate toFeedSettingsClicked:_model];
+    }
+}
+
+-(IBAction)feedMenuTapped:(id)sender {
+
+    //call delegate
+    if( [_delegate respondsToSelector:@selector(toFeedMenuClicked)]) {
+        [_delegate toFeedMenuClicked];
+    }
+}
+
 @end

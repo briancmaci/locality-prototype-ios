@@ -27,13 +27,6 @@
 
 @implementation AppDelegate
 
-static NSString *kLoginStoryboardId = @"loginVC";
-
-static NSString *kCurrentFeedInitStoryboardId = @"currentFeedInitVC";
-static NSString *kCurrentFeedStoryboardId = @"mainFeedVC";
-static NSString *kFeedMenuStoryboardId = @"feedMenuVC";
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
@@ -83,7 +76,6 @@ static NSString *kFeedMenuStoryboardId = @"feedMenuVC";
     //check if it's the first time
     if( [[[PFUser currentUser] objectForKey:@"isFirstTime"] boolValue] ) {
         _currentFeedInitVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedInitStoryboardId];
-        
         [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:_currentFeedInitVC withCompletion:nil];
     }
     
