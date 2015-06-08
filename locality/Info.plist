@@ -42,7 +42,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>By accessing your location, locality will keep you current with what's around you.</string>
+	<string>By accessing your location, locality will keep you current with what&apos;s around you.</string>
 	<key>ParseApplicationID</key>
 	<string>JqpwyHSApOHZYJxGdkw4slUfzSaI8goWCTaKEWQD</string>
 	<key>ParseClientKey</key>
@@ -51,6 +51,8 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -34,12 +34,12 @@
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FeedHeaderHeroView" owner:self options:nil];
     _headerHero = [nib objectAtIndex:0];
     
-    [_headerHero setFrame:CGRectMake(0, 0, DEVICE_WIDTH, FEED_HERO_HEIGHT)];
+    [_headerHero setFrame:CGRectMake(0, 0, _headerHeroHolder.frame.size.width, _headerHeroHolder.frame.size.height)];
     [_headerHero populateWithData:_thisFeed atIndex:0];
     [_headerHero setMenuMode:YES];
     _headerHero.delegate = self;
     
-    [self.view addSubview:_headerHero];
+    [_headerHeroHolder addSubview:_headerHero];
     
     //NSLog(@"[FeedViewController:initHeader]");
 }

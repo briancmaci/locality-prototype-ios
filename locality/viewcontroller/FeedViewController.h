@@ -15,6 +15,7 @@
 @property (strong, nonatomic) FeedHeaderHeroView *headerHero;
 @property (strong, nonatomic) IBOutlet UITableView *feedPostsTable;
 @property (strong, nonatomic) IBOutlet UIButton *addPostButton;
+@property (strong, nonatomic) IBOutlet UIView *headerHeroHolder;
 
 @property (strong, nonatomic) FeedLocationModel *thisFeed;
 @property (nonatomic) BOOL isCurrentLocationFeed;

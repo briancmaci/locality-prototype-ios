@@ -24,6 +24,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)backButtonTapped:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(IBAction)postButtonTapped:(id)sender {
+
+}
+
 /*
 #pragma mark - Navigation
 

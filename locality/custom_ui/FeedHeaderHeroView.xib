@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="InterstateLightCondensed.ttf">
@@ -14,14 +14,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FeedHeaderHeroView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ye0-Ad-rIU">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aB-Zc-4rk">
-                    <rect key="frame" x="65" y="16" width="190" height="28"/>
+                    <rect key="frame" x="65" y="36" width="190" height="28"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="kNV-T9-LJH"/>
                         <constraint firstAttribute="width" constant="190" id="lgn-DU-hhp"/>
@@ -31,7 +31,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW YORK, NY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO3-kb-efM">
-                    <rect key="frame" x="65" y="42" width="190" height="22"/>
+                    <rect key="frame" x="65" y="62" width="190" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="190" id="VCG-ok-V6h"/>
                         <constraint firstAttribute="height" constant="22" id="wPG-J4-CNu"/>
@@ -41,7 +41,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2J-V1-QTv" userLabel="openFeedButton">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -50,7 +50,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqH-HF-y2A" userLabel="MenuButton">
-                    <rect key="frame" x="270" y="10" width="40" height="40"/>
+                    <rect key="frame" x="270" y="30" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="BtX-Av-WMT"/>
                         <constraint firstAttribute="height" constant="40" id="ind-4L-GcB"/>
@@ -63,7 +63,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPe-vI-gqo" userLabel="SettingsButton">
-                    <rect key="frame" x="270" y="10" width="40" height="40"/>
+                    <rect key="frame" x="270" y="30" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="AVU-xR-cVF"/>
                         <constraint firstAttribute="width" constant="40" id="UUW-Er-4lG"/>
@@ -80,20 +80,20 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="aPe-vI-gqo" secondAttribute="trailing" constant="10" id="5pJ-kv-WR8"/>
                 <constraint firstAttribute="trailing" secondItem="iqH-HF-y2A" secondAttribute="trailing" constant="10" id="GoB-GI-NPn"/>
-                <constraint firstItem="iqH-HF-y2A" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="HEk-Te-W1O"/>
+                <constraint firstItem="iqH-HF-y2A" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="HEk-Te-W1O"/>
                 <constraint firstAttribute="trailing" secondItem="Ye0-Ad-rIU" secondAttribute="trailing" id="MLK-zl-IqS"/>
                 <constraint firstItem="Ye0-Ad-rIU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ry5-xc-Acv"/>
-                <constraint firstItem="aPe-vI-gqo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="TLd-Mz-YrW"/>
+                <constraint firstItem="aPe-vI-gqo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="TLd-Mz-YrW"/>
                 <constraint firstAttribute="bottom" secondItem="Ye0-Ad-rIU" secondAttribute="bottom" id="VJN-CX-lH3"/>
                 <constraint firstItem="3aB-Zc-4rk" firstAttribute="centerX" secondItem="Ye0-Ad-rIU" secondAttribute="centerX" id="VkB-T0-9va"/>
                 <constraint firstItem="Ye0-Ad-rIU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="a2l-e5-3fJ"/>
                 <constraint firstItem="k2J-V1-QTv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="c3y-OL-uR2"/>
                 <constraint firstAttribute="bottom" secondItem="k2J-V1-QTv" secondAttribute="bottom" id="f1p-Sk-7ol"/>
-                <constraint firstItem="hO3-kb-efM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="42" id="iiY-fs-Wkr"/>
+                <constraint firstItem="hO3-kb-efM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="62" id="iiY-fs-Wkr"/>
                 <constraint firstAttribute="trailing" secondItem="k2J-V1-QTv" secondAttribute="trailing" id="q0U-M7-ppv"/>
                 <constraint firstItem="k2J-V1-QTv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="whc-t0-jF2"/>
                 <constraint firstItem="hO3-kb-efM" firstAttribute="centerX" secondItem="Ye0-Ad-rIU" secondAttribute="centerX" id="x5h-un-TAY"/>
-                <constraint firstItem="3aB-Zc-4rk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="y0w-AF-1qC"/>
+                <constraint firstItem="3aB-Zc-4rk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="y0w-AF-1qC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -104,6 +104,7 @@
                 <outlet property="settingsButton" destination="aPe-vI-gqo" id="KYT-Bc-skG"/>
                 <outlet property="titleLabel" destination="3aB-Zc-4rk" id="Pdd-VD-Vys"/>
             </connections>
+            <point key="canvasLocation" x="726" y="535.5"/>
         </view>
     </objects>
     <resources>

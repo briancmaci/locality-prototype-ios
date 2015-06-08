@@ -38,12 +38,17 @@
     
     [self.window makeKeyAndVisible];
     
+    [self initStatusBar];
     [self loadInitialView];
     [self initBusyView];
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
     //return YES;
+}
+
+-(void)initStatusBar {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 - (void)loadInitialView {
