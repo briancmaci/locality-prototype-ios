@@ -38,8 +38,8 @@
     
     GMSCircle *rangeCircle = [GMSCircle circleWithPosition:center radius:range/2];
     
-    rangeCircle.fillColor = [UIColor colorWithRed:0.25 green:0 blue:0 alpha:0.05];
-    rangeCircle.strokeColor = [UIColor colorWithRed:0.25 green:0 blue:0 alpha:1];
+    rangeCircle.fillColor = [UIColor colorWithRed:0 green:122.0f/255.0f blue:1 alpha:0.2];
+    rangeCircle.strokeColor = [UIColor colorWithRed:0 green:122.0f/255.0f blue:1 alpha:0.4];
     rangeCircle.strokeWidth = 1;
     rangeCircle.map = map;
     

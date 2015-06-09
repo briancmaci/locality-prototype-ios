@@ -22,6 +22,8 @@
 
 -(IBAction)addNewLocationTapped:(id)sender {
     NSLog(@"Add New Location");
+    
+    [_delegate addNewLocationFeed];
 }
 
 @end

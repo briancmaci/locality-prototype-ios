@@ -7,6 +7,7 @@
 //
 
 #import "LocationRangeSlider.h"
+#import "AppUtilities.h"
 
 @implementation LocationRangeSlider
 
@@ -20,17 +21,50 @@
 
 - (void)initSliderWithRange:(NSArray *)range {
     
-    self.sliderSteps = range;
-    self.stepsCount = (int)[self.sliderSteps count] - 1;
-        
-    [self buildSlider];
-}
-
-- (void) buildSlider {
+    _sliderSteps = range;
+    _stepsCount = (int)[_sliderSteps count] - 1;
     
-    self.minimumValue = 0;
-    self.maximumValue = self.stepsCount;
-
+    [self initLabels];
+    [self initSlider];
 }
+
+- (void) initSlider {
+    
+    _slider.minimumValue = 0;
+    _slider.maximumValue = _stepsCount;
+    
+    //init custom knob
+    [_minLabel setAttributedText:[AppUtilities rangeLabel:[[_sliderSteps objectAtIndex:0] objectForKey:@"unit_label"] withUnits:[[[_sliderSteps objectAtIndex:0] objectForKey:@"unit"] uppercaseString]]];
+    [_maxLabel setAttributedText:[AppUtilities rangeLabel:[[_sliderSteps objectAtIndex:_stepsCount] objectForKey:@"unit_label"] withUnits:[[[_sliderSteps objectAtIndex:_stepsCount] objectForKey:@"unit"] uppercaseString]]];
+}
+
+- (void) initLabels {
+
+    //set min and max to dictionary values of slider steps
+}
+
+-(IBAction)rangeSliderChanged:(UISlider *)sender {
+    float newStep = roundf(sender.value);
+    
+    sender.value = newStep;
+    
+    NSLog(@"step: %f, value: %@", newStep, [[_sliderSteps objectAtIndex:newStep] objectForKey:@"distance"]);
+    _currentRange = [[[_sliderSteps objectAtIndex:newStep] objectForKey:@"distance"] floatValue];
+    
+    
+    //test points
+    //CLLocationCoordinate2D annArbor = CLLocationCoordinate2DMake(42.2708333, -83.7263889);
+    //CLLocationCoordinate2D cantonMichigan = CLLocationCoordinate2DMake(42.308658, -83.48211);
+    //CLLocationCoordinate2D dubai = CLLocationCoordinate2DMake(25.276987, 55.296249);
+    //CLLocationCoordinate2D endwellNY = CLLocationCoordinate2DMake(42.112852500000000000, -76.021033999999980000);
+    
+    //update map with delegate
+    //[GoogleMapsManager drawRangeCircleAt:currentLocation rangeDiameter:[AppUtilities feetToMeters:currentRange] onMap:self.currentLocationView];
+    
+    if ( [_delegate respondsToSelector:@selector(rangeUpdated:)] ) {
+        [_delegate rangeUpdated:[_sliderSteps objectAtIndex:newStep]];
+    }
+}
+
 
 @end

@@ -21,6 +21,8 @@
 
 @implementation FeedMenuTableViewController
 
+static NSString * kAddNewLocationSegue = @"addNewLocationSegue";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -53,6 +55,7 @@
     
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FeedAddNewTableViewCell" owner:self options:nil];
     _addNewCell = [nib objectAtIndex:0];
+    _addNewCell.delegate = self;
 }
 
 #pragma mark - FeedHeaderHero Delegate Methods
@@ -66,6 +69,12 @@
     vc.thisFeed = feed;
     
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - FeedAddNewDelegate Methods
+
+-(void) addNewLocationFeed {
+    [self performSegueWithIdentifier:kAddNewLocationSegue sender:self];
 }
 
 #pragma mark - Table view data source

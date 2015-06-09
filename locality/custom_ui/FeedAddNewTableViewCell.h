@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FeedAddNewDelegate <NSObject>
+
+-(void) addNewLocationFeed;
+
+@end
+
 @interface FeedAddNewTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) id<FeedAddNewDelegate> delegate;
 
 @end

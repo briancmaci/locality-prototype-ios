@@ -10,7 +10,7 @@
 #import <Google-Maps-iOS-SDK/GoogleMaps.h>
 #import "LocationRangeSlider.h"
 
-@interface CurrentFeedInitializeViewController : UIViewController <CLLocationManagerDelegate>
+@interface CurrentFeedInitializeViewController : UIViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate>
 
 @property (weak, nonatomic) IBOutlet GMSMapView *currentLocationView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
@@ -18,6 +18,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *currentLocationLabel;
 @property (strong, nonatomic) IBOutlet LocationRangeSlider *rangeSlider;
+@property (strong, nonatomic) IBOutlet UILabel *currentRangeLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *defaultImage;
 
 

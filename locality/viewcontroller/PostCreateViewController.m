@@ -28,7 +28,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(IBAction)postButtonTapped:(id)sender {
+-(IBAction)publishPostButtonTapped:(id)sender {
 
 }
 

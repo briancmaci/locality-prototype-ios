@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "FeedHeaderHeroView.h"
+#import "FeedAddNewTableViewCell.h"
 
-@interface FeedMenuTableViewController : UITableViewController <FeedHeaderHeroDelegate>
+@interface FeedMenuTableViewController : UITableViewController <FeedHeaderHeroDelegate, FeedAddNewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *menuOptions;
 

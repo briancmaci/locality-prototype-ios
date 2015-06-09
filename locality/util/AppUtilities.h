@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface AppUtilities : NSObject
 
 +(float) feetToMeters:(float)valueInFeet;
++(NSMutableAttributedString *) rangeLabel:(NSString *)size withUnits:(NSString *)unit;
+
 
 @end

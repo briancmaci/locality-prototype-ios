@@ -62,6 +62,7 @@ float currentRange;
 
 -(void) initRangeSlider {
     [self.rangeSlider initSliderWithRange:SLIDER_STEPS_IN_FEET];
+    _rangeSlider.delegate = self;
 }
 
 
@@ -88,39 +89,14 @@ float currentRange;
     [self reverseGeocodeCoordinate:currentLocation];
 }
 
-#pragma mark - Range Slider CTA
--(IBAction)rangeSliderChanged:(LocationRangeSlider *)sender {
-    float newStep = roundf(sender.value);
+#pragma mark - LocationRangeSliderDelegate Methods
+-(void) rangeUpdated:(NSDictionary *)rangeStep {
     
-    sender.value = newStep;
-    
-    NSLog(@"step: %f, value: %@", newStep, [[sender.sliderSteps objectAtIndex:newStep] objectForKey:@"distance"]);
-    currentRange = [[[sender.sliderSteps objectAtIndex:newStep] objectForKey:@"distance"] floatValue];
-    
-    
-    //test points
-    //CLLocationCoordinate2D annArbor = CLLocationCoordinate2DMake(42.2708333, -83.7263889);
-    //CLLocationCoordinate2D cantonMichigan = CLLocationCoordinate2DMake(42.308658, -83.48211);
-    //CLLocationCoordinate2D dubai = CLLocationCoordinate2DMake(25.276987, 55.296249);
-    //CLLocationCoordinate2D endwellNY = CLLocationCoordinate2DMake(42.112852500000000000, -76.021033999999980000);
-    
-    //update map
+    currentRange = [[rangeStep objectForKey:@"distance"] floatValue];
     [GoogleMapsManager drawRangeCircleAt:currentLocation rangeDiameter:[AppUtilities feetToMeters:currentRange] onMap:self.currentLocationView];
     
-    //get photo
-    
-    /*
-    [FlickrManager getImagesForLocation:currentLocation success:^(id response) {
-        NSLog(@"we got pictures!");
-        
-        //load random into image
-        flickrDefaultImage = [response objectAtIndex:(int)(arc4random() % [response count])];
-        
-        [self.defaultImage sd_setImageWithURL:[NSURL URLWithString:[response objectAtIndex:(int)(arc4random() % [response count])]]];
-    } failure:^(NSError *error) {
-        NSLog(@"flickr error: %@", error);
-    }];
-     */
+    //update range label
+    [_currentRangeLabel setAttributedText:[AppUtilities rangeLabel:[rangeStep objectForKey:@"unit_label"] withUnits:[[rangeStep objectForKey:@"unit"] uppercaseString]]];
 }
 
 #pragma mark - Create Current Feed CTA
