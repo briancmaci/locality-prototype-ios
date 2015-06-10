@@ -32,7 +32,12 @@
 #define DEVICE_WIDTH                                [[UIScreen mainScreen] bounds].size.width
 #define DEVICE_HEIGHT                               [[UIScreen mainScreen] bounds].size.height
 
+/* CONSTANTS MOST LIKELY TO BE DB DRIVEN FOR PRODUCTION */
 #define SLIDER_STEPS_IN_FEET @[@{ @"distance":@500, @"unit_label":@"500", @"unit":@"ft"},@{ @"distance":@750, @"unit_label":@"750", @"unit":@"ft"},@{ @"distance":@1000, @"unit_label":@"1000", @"unit":@"ft"},@{ @"distance":@1320, @"unit_label":@"0.25", @"unit":@"mi"},@{ @"distance":@2640, @"unit_label":@"0.5", @"unit":@"mi"},@{ @"distance":@5280, @"unit_label":@"1", @"unit":@"mi"},@{ @"distance":@10560, @"unit_label":@"2", @"unit":@"mi"},@{ @"distance":@26400, @"unit_label":@"5", @"unit":@"mi"},@{ @"distance":@52800, @"unit_label":@"10", @"unit":@"mi"}]
+
+#define FEED_SETTINGS @[@{ @"label":@"Send me push alerts from this location", @"default":@YES, @"var":@"pushEnabled"}, @{ @"label":@"Include promotions for this location", @"default":@NO, @"var":@"promotionsEnabled"}, @{ @"label":@"Would you like important alerts?", @"default":@YES, @"var":@"importantEnabled"}]
+
+
 
 /* Storyboard IDs */
 #define kLoginStoryboardId @"loginVC"
