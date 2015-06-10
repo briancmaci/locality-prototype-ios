@@ -8,6 +8,7 @@
 
 #import "LocationRangeSlider.h"
 #import "AppUtilities.h"
+#import "config.h"
 
 @implementation LocationRangeSlider
 
@@ -34,13 +35,14 @@
     _slider.maximumValue = _stepsCount;
     
     //init custom knob
-    [_minLabel setAttributedText:[AppUtilities rangeLabel:[[_sliderSteps objectAtIndex:0] objectForKey:@"unit_label"] withUnits:[[[_sliderSteps objectAtIndex:0] objectForKey:@"unit"] uppercaseString]]];
-    [_maxLabel setAttributedText:[AppUtilities rangeLabel:[[_sliderSteps objectAtIndex:_stepsCount] objectForKey:@"unit_label"] withUnits:[[[_sliderSteps objectAtIndex:_stepsCount] objectForKey:@"unit"] uppercaseString]]];
+    [_slider setThumbImage:[UIImage imageNamed:kSwitchSliderKnob] forState:UIControlStateNormal];
 }
 
 - (void) initLabels {
 
     //set min and max to dictionary values of slider steps
+    [_minLabel setAttributedText:[AppUtilities rangeLabel:[[_sliderSteps objectAtIndex:0] objectForKey:@"unit_label"] withUnits:[[[_sliderSteps objectAtIndex:0] objectForKey:@"unit"] uppercaseString]]];
+    [_maxLabel setAttributedText:[AppUtilities rangeLabel:[[_sliderSteps objectAtIndex:_stepsCount] objectForKey:@"unit_label"] withUnits:[[[_sliderSteps objectAtIndex:_stepsCount] objectForKey:@"unit"] uppercaseString]]];
 }
 
 -(IBAction)rangeSliderChanged:(UISlider *)sender {
@@ -48,7 +50,7 @@
     
     sender.value = newStep;
     
-    NSLog(@"step: %f, value: %@", newStep, [[_sliderSteps objectAtIndex:newStep] objectForKey:@"distance"]);
+    //NSLog(@"step: %f, value: %@", newStep, [[_sliderSteps objectAtIndex:newStep] objectForKey:@"distance"]);
     _currentRange = [[[_sliderSteps objectAtIndex:newStep] objectForKey:@"distance"] floatValue];
     
     

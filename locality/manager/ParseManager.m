@@ -37,9 +37,13 @@ static NSString * kDBUser = @"_User";
     user.password = password;
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {   // Hooray! Let them use the app now.
+        if (!error) {
+            
+            //Nothing to return. The act of the return continues with sign-up completion.
             successBlock(nil);
-        } else {   //NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
+        } else {
+            
+            //Transmit error for future alerts, etc.
             failureBlock(error);
         }
     }];
@@ -61,7 +65,7 @@ static NSString * kDBUser = @"_User";
 +(void) signupUserViaFacebookWithUsername:(NSString *)username success:(successBlock)successBlock failure:(failureBlock)failureBlock {
     
     NSArray *permissions = @[ @"email"];
-    //NSLog(@"signup entered");
+    
     [PFFacebookUtils logInInBackgroundWithReadPermissions:permissions block:^(PFUser *user, NSError *error) {
         NSLog(@"PFFacebookUtils called");
         if (!user) {
@@ -78,14 +82,14 @@ static NSString * kDBUser = @"_User";
                      if (!error) {
                          NSLog(@"fetched user:%@", result);
                          
-                         //user[@"emailVerified"] = @YES;
+                         //We save the Facebook authenticated user email in a separate column of _User dB. Without email verification, we save this for future authentication needs and/or user contact list building.
                          user[@"facebookEmail"] = [result objectForKey:@"email"];
                          user[@"isFirstTime"] = @YES;
                          
                          [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                             if (!error) {   // Hooray! Let them use the app now.
+                             if (!error) {
                                  successBlock(nil);
-                             } else {   //NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
+                             } else {
                                  failureBlock(error);
                              }
                          }];
@@ -142,14 +146,10 @@ static NSString * kDBUser = @"_User";
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d scores.", (int)objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-            }
             
+            //This return value should be of count 0 if we do not have a duplicate.
             return successBlock(objects);
+            
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);

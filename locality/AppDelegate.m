@@ -39,16 +39,40 @@
     [self.window makeKeyAndVisible];
     
     [self initStatusBar];
-    [self loadInitialView];
+    [self initSlideNavigation];
+    [self initStoryboardAccess];
     [self initBusyView];
+    [self loadInitialView];
+    
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
     //return YES;
 }
 
--(void)initStatusBar {
+-(void) initStatusBar {
+    
+    //not sure where this will be. design dependent.
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+}
+
+-(void) initSlideNavigation {
+    
+    //currently there is no need for the SlideNavigationController, nor this method.
+    //However, we foresee a future side-menu for User profile settings, etc. I built it into the structure now.
+}
+
+-(void) initStoryboardAccess {
+    
+    //just setting the storyboard to a class var for easy access.
+    _storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+}
+
+-(void) initBusyView {
+    
+    //overlay to indicate the app is thinking. Design dependent. (May be just a status bar rather than full-screen).
+    [self.window addSubview:[BusyView sharedInstance]];
+    [[BusyView sharedInstance] show:NO withLabel:nil];
 }
 
 - (void)loadInitialView {
@@ -58,30 +82,24 @@
         }
         
         else{
-            //no valid current user
+            //no valid current Parse user
             [self showLoginView];
         }
     }
     
     else{
-        //no current user at all
+        //no user at all
         [self showLoginView];
     }
 }
 
--(void) initBusyView {
-    [self.window addSubview:[BusyView sharedInstance]];
-    [[BusyView sharedInstance] show:NO withLabel:nil];
-}
-
 -(void) showMainFeedView
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
     
     //check if it's the first time
     if( [[[PFUser currentUser] objectForKey:@"isFirstTime"] boolValue] ) {
-        _currentFeedInitVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedInitStoryboardId];
-        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:_currentFeedInitVC withCompletion:nil];
+        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:[_storyboard instantiateViewControllerWithIdentifier:kCurrentFeedInitStoryboardId] withCompletion:nil];
     }
     
     else {
@@ -89,15 +107,13 @@
         //grab user data
         [DataManager parseUserDataIntoModel:[PFUser currentUser]];
         
-        _feedMenuVC = [storyboard instantiateViewControllerWithIdentifier:kFeedMenuStoryboardId];
+        FeedViewController *currentFeedVC = [_storyboard instantiateViewControllerWithIdentifier:kCurrentFeedStoryboardId];
+        currentFeedVC.isCurrentLocationFeed = YES;
+        currentFeedVC.thisFeed = [UserModel sharedInstance].currentLocation;
         
-        _currentFeedVC = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedStoryboardId];
-        _currentFeedVC.isCurrentLocationFeed = YES;
-        _currentFeedVC.thisFeed = [UserModel sharedInstance].currentLocation;
-        
-        //for now... let's push the feedMenu THEN the currentFeed to go back
-        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:_feedMenuVC withCompletion:nil];
-        [[SlideNavigationController sharedInstance] pushViewController:_currentFeedVC animated:NO];
+        //for now... let's push the feedMenu THEN the currentFeed to go back. Ultimately the Feed Menu VC and the Feed VC will be one view controller, with an expand/collapse animation between the two states.
+        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:[_storyboard instantiateViewControllerWithIdentifier:kFeedMenuStoryboardId] withCompletion:nil];
+        [[SlideNavigationController sharedInstance] pushViewController:currentFeedVC animated:NO];
     }
 }
 
@@ -106,18 +122,13 @@
     //add login notification listener for auth success
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRootView:) name:kLoggedInNotify object:nil];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    _loginNavVC = [storyboard instantiateViewControllerWithIdentifier:kLoginStoryboardId];
-    //self.window.rootViewController = self.loginNavVC;
-    [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:_loginNavVC withCompletion:nil];
+    [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:[_storyboard instantiateViewControllerWithIdentifier:kLoginStoryboardId] withCompletion:nil];
 }
 
 -(void)updateRootView:(NSNotification *)notification {
-    NSLog(@"Update root view!");
+    
+    //user is now authenticated, move on in.
     [self showMainFeedView];
-    
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kLoggedInNotify object:nil];
 }
 

@@ -44,6 +44,7 @@ float currentRange;
 }
 
 - (void) initCurrentLocationMap {
+    
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     [self.locationManager requestWhenInUseAuthorization];
@@ -55,7 +56,7 @@ float currentRange;
     [self.geocoder reverseGeocodeCoordinate:coordinate completionHandler:^(GMSReverseGeocodeResponse *response, NSError *error) {
         GMSAddress *address = response.firstResult;
         
-        NSLog(@"%@, %@", address.locality, address.administrativeArea);
+        //NSLog(@"%@, %@", address.locality, address.administrativeArea);
         self.currentLocationLabel.text = [NSString stringWithFormat:kLocationFormat, address.locality, address.administrativeArea];
     }];
 }

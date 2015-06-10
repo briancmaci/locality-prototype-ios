@@ -61,8 +61,9 @@
     CLLocation *location = [locations objectAtIndex:0];
     _currentLocation = location.coordinate;
     
-    _mapView.camera = [GMSCameraPosition cameraWithTarget:_currentLocation zoom:15 bearing:0 viewingAngle:0];
+    _mapView.camera = [GMSCameraPosition cameraWithTarget:_currentLocation zoom:8 bearing:0 viewingAngle:0];
     
+    //location only needed here to show current location. We will have location on otherwise when you update the current location feed
     [_locationManager stopUpdatingLocation];
     
     //[self reverseGeocodeCoordinate:currentLocation];

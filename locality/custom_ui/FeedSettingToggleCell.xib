@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="InterstateLightCondensed.ttf">
+            <string>InterstateLightCondensed</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FeedSettingToggleCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgV-aS-Tro">
+                        <rect key="frame" x="9" y="11" width="226" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="caH-BD-eUg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="16"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMm-Hl-ZTP">
+                        <rect key="frame" x="253" y="6" width="51" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="49" id="N7q-I1-TKv"/>
+                            <constraint firstAttribute="height" constant="31" id="ahV-7e-jvE"/>
+                        </constraints>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="zgV-aS-Tro" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="9CB-4e-eWU"/>
+                    <constraint firstItem="zgV-aS-Tro" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="hvM-pe-VhB"/>
+                    <constraint firstItem="fMm-Hl-ZTP" firstAttribute="leading" secondItem="zgV-aS-Tro" secondAttribute="trailing" constant="18" id="lJE-jb-CA3"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fMm-Hl-ZTP" secondAttribute="trailing" constant="10" id="nxy-zg-7Fb"/>
+                    <constraint firstAttribute="centerY" secondItem="fMm-Hl-ZTP" secondAttribute="centerY" id="yaX-9U-Vwl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="settingsLabel" destination="zgV-aS-Tro" id="Hiz-Za-PrS"/>
+                <outlet property="settingsSwitch" destination="fMm-Hl-ZTP" id="lff-Le-ccm"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

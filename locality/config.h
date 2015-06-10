@@ -45,4 +45,7 @@
 #define DEFAULT_FEED_IMAGE @"feed_default_hero"
 #define FEED_HERO_HEIGHT 157.0f //adjusted 20px for the status bar
 
+/* CUSTOM UI */
+#define kSwitchSliderKnob @"ui_switch_knob"
+
 @end

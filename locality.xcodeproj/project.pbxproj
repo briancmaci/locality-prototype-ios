@@ -24,6 +24,8 @@
 		033B732B1B0CB62800355581 /* FeedHeaderHeroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B732A1B0CB62800355581 /* FeedHeaderHeroView.m */; };
 		033B732D1B0CB64000355581 /* FeedHeaderHeroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033B732C1B0CB64000355581 /* FeedHeaderHeroView.xib */; };
 		033B73321B0D039500355581 /* FeedSliderMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B73311B0D039500355581 /* FeedSliderMenuView.m */; };
+		0349E3B81B2871F30036F6D1 /* FeedSettingToggleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E3B61B2871F30036F6D1 /* FeedSettingToggleCell.m */; };
+		0349E3B91B2871F30036F6D1 /* FeedSettingToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0349E3B71B2871F30036F6D1 /* FeedSettingToggleCell.xib */; };
 		0353B4891B0E3C1400CE3750 /* Interstate Bold Cond.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0353B4771B0E3C1400CE3750 /* Interstate Bold Cond.ttf */; };
 		0353B48A1B0E3C1400CE3750 /* Interstate Cond Mono - Blk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0353B4781B0E3C1400CE3750 /* Interstate Cond Mono - Blk.ttf */; };
 		0353B48B1B0E3C1400CE3750 /* Interstate Cond Mono - Lgt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0353B4791B0E3C1400CE3750 /* Interstate Cond Mono - Lgt.ttf */; };
@@ -102,6 +104,9 @@
 		033B732C1B0CB64000355581 /* FeedHeaderHeroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedHeaderHeroView.xib; path = custom_ui/FeedHeaderHeroView.xib; sourceTree = "<group>"; };
 		033B73301B0D039500355581 /* FeedSliderMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSliderMenuView.h; path = custom_ui/FeedSliderMenuView.h; sourceTree = "<group>"; };
 		033B73311B0D039500355581 /* FeedSliderMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSliderMenuView.m; path = custom_ui/FeedSliderMenuView.m; sourceTree = "<group>"; };
+		0349E3B51B2871F30036F6D1 /* FeedSettingToggleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSettingToggleCell.h; path = custom_ui/FeedSettingToggleCell.h; sourceTree = "<group>"; };
+		0349E3B61B2871F30036F6D1 /* FeedSettingToggleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSettingToggleCell.m; path = custom_ui/FeedSettingToggleCell.m; sourceTree = "<group>"; };
+		0349E3B71B2871F30036F6D1 /* FeedSettingToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedSettingToggleCell.xib; path = custom_ui/FeedSettingToggleCell.xib; sourceTree = "<group>"; };
 		0353B4771B0E3C1400CE3750 /* Interstate Bold Cond.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Interstate Bold Cond.ttf"; path = "fonts/Interstate Bold Cond.ttf"; sourceTree = "<group>"; };
 		0353B4781B0E3C1400CE3750 /* Interstate Cond Mono - Blk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Interstate Cond Mono - Blk.ttf"; path = "fonts/Interstate Cond Mono - Blk.ttf"; sourceTree = "<group>"; };
 		0353B4791B0E3C1400CE3750 /* Interstate Cond Mono - Lgt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Interstate Cond Mono - Lgt.ttf"; path = "fonts/Interstate Cond Mono - Lgt.ttf"; sourceTree = "<group>"; };
@@ -404,6 +409,9 @@
 				03F71A761B20C425006F4088 /* FeedAddNewTableViewCell.h */,
 				03F71A771B20C425006F4088 /* FeedAddNewTableViewCell.m */,
 				03F71A781B20C425006F4088 /* FeedAddNewTableViewCell.xib */,
+				0349E3B51B2871F30036F6D1 /* FeedSettingToggleCell.h */,
+				0349E3B61B2871F30036F6D1 /* FeedSettingToggleCell.m */,
+				0349E3B71B2871F30036F6D1 /* FeedSettingToggleCell.xib */,
 			);
 			name = tableviewcells;
 			sourceTree = "<group>";
@@ -510,6 +518,7 @@
 				0353B48A1B0E3C1400CE3750 /* Interstate Cond Mono - Blk.ttf in Resources */,
 				0353B48F1B0E3C1400CE3750 /* Interstate-BlackCondensed.ttf in Resources */,
 				0353B4941B0E3C1400CE3750 /* Interstate-RegularCond.otf in Resources */,
+				0349E3B91B2871F30036F6D1 /* FeedSettingToggleCell.xib in Resources */,
 				0353B48D1B0E3C1400CE3750 /* Interstate ExtraLight Cond.ttf in Resources */,
 				0353B4911B0E3C1400CE3750 /* Interstate-LightCond.otf in Resources */,
 				033B732D1B0CB64000355581 /* FeedHeaderHeroView.xib in Resources */,
@@ -583,6 +592,7 @@
 				03F71A691B2076D3006F4088 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				030C41291B04F334004F1ECE /* FlickrManager.m in Sources */,
 				0353B4A21B0E3D5500CE3750 /* BusyView.m in Sources */,
+				0349E3B81B2871F30036F6D1 /* FeedSettingToggleCell.m in Sources */,
 				4E9D5AED1B15FA0200302886 /* PostModel.m in Sources */,
 				03F71A6A1B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				032C76471B03F06D00C78CB0 /* ParseManager.m in Sources */,

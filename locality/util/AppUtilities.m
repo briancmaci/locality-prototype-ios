@@ -19,8 +19,8 @@ static const float metersPerFoot = 0.3048;
 }
 
 +(NSMutableAttributedString *) rangeLabel:(NSString *)size withUnits:(NSString *)unit {
-    NSLog(@"size %@, unit %@", size, unit);
-    NSLog (@"Font families: %@", [UIFont familyNames]);
+    //NSLog(@"size %@, unit %@", size, unit);
+    //NSLog (@"Font families: %@", [UIFont familyNames]);
     NSString *string = [NSString stringWithFormat:@"%@%@", size, unit];
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:string];
     

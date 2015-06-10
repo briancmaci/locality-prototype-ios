@@ -12,6 +12,8 @@
 
 @implementation FlickrManager
 
+static NSString * const flickrURLFormat = @"https://farm%@.staticflickr.com/%@/%@_%@.jpg";
+
 +(void) initFlickr {
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
@@ -69,11 +71,6 @@
             successBlock(pictureURLs);
         }
     }];
-        
-//    } failure:^(NSError *error) {
-//        //places fail
-//        failureBlock(error);
-//    }];
 }
 
 +(void) getFlickrPlaceIdForLocation:(CLLocationCoordinate2D)center success:(successBlock)successBlock failure:(failureBlock)failureBlock {
@@ -108,7 +105,7 @@
 +(NSString *)getFlickrURL:(NSDictionary *)responseObject {
     NSDictionary *photo = responseObject;
     
-    return [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@.jpg", [photo objectForKey:@"farm"], [photo objectForKey:@"server"], [photo objectForKey:@"id"], [photo objectForKey:@"secret"]];
+    return [NSString stringWithFormat:flickrURLFormat, [photo objectForKey:@"farm"], [photo objectForKey:@"server"], [photo objectForKey:@"id"], [photo objectForKey:@"secret"]];
 }
 
 @end
