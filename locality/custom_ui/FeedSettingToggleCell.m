@@ -7,11 +7,14 @@
 //
 
 #import "FeedSettingToggleCell.h"
+#import "config.h"
 
 @implementation FeedSettingToggleCell
 
 - (void)awakeFromNib {
     // Initialization code
+    
+    [self initStage];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -20,6 +23,16 @@
     // Configure the view for the selected state
 }
 
--(void) populateWithQuestion:(NSString *)
+-(void) initStage {
+    _settingsSwitch.transform = CGAffineTransformMakeScale(0.8, 0.8);
+}
+
+-(void) populateWithData:(NSDictionary *)data {
+    
+    _data = data;
+    
+    [_settingsLabel setText:[data objectForKey:@"label"]];
+    [_settingsSwitch setOn:[[data objectForKey:@"default"] boolValue]];
+}
 
 @end

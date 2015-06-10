@@ -13,4 +13,8 @@
 @property(weak, nonatomic) IBOutlet UISwitch *settingsSwitch;
 @property(weak, nonatomic) IBOutlet UILabel *settingsLabel;
 
+@property (strong, nonatomic) NSDictionary *data;
+
+-(void) populateWithData:(NSDictionary *)data;
+
 @end

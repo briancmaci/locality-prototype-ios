@@ -35,6 +35,7 @@
                             <constraint firstAttribute="width" constant="49" id="N7q-I1-TKv"/>
                             <constraint firstAttribute="height" constant="31" id="ahV-7e-jvE"/>
                         </constraints>
+                        <color key="onTintColor" red="0.61176470588235299" green="0.72941176470588232" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </switch>
                 </subviews>
                 <constraints>

@@ -10,14 +10,31 @@
 #import <Google-Maps-iOS-SDK/GoogleMaps.h>
 #import "LocationRangeSlider.h"
 
-@interface FeedSettingsViewController : UIViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate>
+@class SPGooglePlacesAutocompleteQuery;
+
+@interface FeedSettingsViewController : UIViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate> {
+    NSArray *searchResultPlaces;
+    SPGooglePlacesAutocompleteQuery *searchQuery;
+    //MKPointAnnotation *selectedPlaceAnnotation;
+    
+    BOOL shouldBeginEditing;
+}
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) GMSGeocoder *geocoder;
 
-@property (strong, nonatomic) IBOutlet LocationRangeSlider *rangeSlider;
-@property (strong, nonatomic) IBOutlet UILabel *currentRangeLabel;
+@property (weak, nonatomic) IBOutlet LocationRangeSlider *rangeSlider;
+@property (weak, nonatomic) IBOutlet UILabel *currentRangeLabel;
 
+//settings options tableview
+@property (weak, nonatomic) IBOutlet UITableView *feedOptionsTable;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *feedOptionsTableHeight;
+
+@property (strong, nonatomic) NSMutableArray *feedOptions;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeight;
 
 @end
