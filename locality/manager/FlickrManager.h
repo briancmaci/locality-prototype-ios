@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Google-Maps-iOS-SDK/GoogleMaps.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface FlickrManager : NSObject
 

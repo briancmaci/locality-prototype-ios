@@ -45,6 +45,8 @@
 #define kCurrentFeedStoryboardId @"mainFeedVC"
 #define kFeedMenuStoryboardId @"feedMenuVC"
 
+/* Fonts */
+#define kMainFont @"InterstateLightCondensed"
 
 /* CURRENT FEED DEFAULTS */
 #define DEFAULT_FEED_IMAGE @"feed_default_hero"

@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Google-Maps-iOS-SDK/GoogleMaps.h>
+#import <GoogleMaps/GoogleMaps.h>
 #import "LocationRangeSlider.h"
-
-@class SPGooglePlacesAutocompleteQuery;
 
 @interface FeedSettingsViewController : UIViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate> {
     NSArray *searchResultPlaces;
-    SPGooglePlacesAutocompleteQuery *searchQuery;
-    //MKPointAnnotation *selectedPlaceAnnotation;
+    GMSPlacesClient *placesClient;
+    GMSVisibleRegion visibleRegion;
+    GMSCoordinateBounds *bounds;
+    GMSAutocompleteFilter *filter;
     
     BOOL shouldBeginEditing;
 }

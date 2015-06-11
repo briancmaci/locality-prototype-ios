@@ -12,9 +12,6 @@
 #import "GoogleMapsManager.h"
 #import "FeedSettingToggleCell.h"
 
-#import <SPGooglePlacesAutocomplete/SPGooglePlacesAutocompleteQuery.h>
-#import <SPGooglePlacesAutocomplete/SPGooglePlacesAutocompletePlace.h>
-
 @interface FeedSettingsViewController ()
 
 @property(nonatomic) float currentRange;
@@ -38,11 +35,12 @@
 
 - (void) initAutoCompleteSearch {
     
-    searchQuery = [[SPGooglePlacesAutocompleteQuery alloc] init];
-    searchQuery.radius = 100.0;
-    searchQuery.key = @"AIzaSyBM-R4liycGYMxbUUAareuq-TO_okvALaU";
-    shouldBeginEditing = YES;
+    placesClient = [[GMSPlacesClient alloc] init];
     
+    visibleRegion = _mapView.projection.visibleRegion;
+    bounds = [[GMSCoordinateBounds alloc] initWithCoordinate:visibleRegion.farLeft coordinate:visibleRegion.nearRight];
+    filter = [[GMSAutocompleteFilter alloc] init];
+    filter.type = kGMSPlacesAutocompleteTypeFilterGeocode;
 }
 
 - (void) initFeedOptionsTable {
@@ -63,9 +61,6 @@
     contentRect.size.height += _feedOptionsTableHeight.constant;
     _contentViewHeight.constant = contentRect.size.height;
     [_scrollView setContentSize:contentRect.size];
-    
-    //NSLog(@"content view: %@", NSStringFromCGSize(_scrollView.contentSize));
-    //NSLog(@"content rect: %@", NSStringFromCGSize(contentRect.size));
     
     _scrollView.delegate = self;
 }
@@ -120,6 +115,52 @@
     [_currentRangeLabel setAttributedText:[AppUtilities rangeLabel:[rangeStep objectForKey:@"unit_label"] withUnits:[[rangeStep objectForKey:@"unit"] uppercaseString]]];
 }
 
+#pragma mark - GooglePlaceID Methods
+
+- (void) getDetailsWithPlaceID:(NSString *)placeID {
+    
+    [placesClient lookUpPlaceID:placeID callback:^(GMSPlace *place, NSError *error) {
+        if (error != nil) {
+            NSLog(@"Place Details error %@", [error localizedDescription]);
+            return;
+        }
+        
+        if (place != nil) {
+            NSLog(@"Place lat %f", place.coordinate.latitude);
+            NSLog(@"Place long %f", place.coordinate.longitude);
+            //NSLog(@"Place placeID %@", place.placeID);
+            //NSLog(@"Place attributions %@", place.attributions);
+            [self updateMapToLocation:place.coordinate];
+            
+        } else {
+            NSLog(@"No place details for %@", placeID);
+        }
+    }];
+    
+}
+
+-(void) updateMapToLocation:(CLLocationCoordinate2D)place {
+    //_mapView.camera = [GMSCameraPosition cameraWithTarget:place zoom:14];
+    _currentLocation = place;
+    [GoogleMapsManager animateToPosition:_currentLocation onMap:_mapView];
+    
+    //add pin test
+    GMSMarker *marker = [GMSMarker markerWithPosition:_currentLocation];
+    marker.appearAnimation = kGMSMarkerAnimationPop;
+    marker.map = _mapView;
+}
+
+#pragma mark - ScrollView Delegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //bounce restricted to bottom only
+    scrollView.bounces = (scrollView.contentOffset.y > 20);
+    
+    //remove search bar when not at top
+    self.searchDisplayController.searchBar.alpha = (self.searchDisplayController.searchBar.frame.size.height - scrollView.contentOffset.y)/self.searchDisplayController.searchBar.frame.size.height;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -127,7 +168,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if( tableView == _feedOptionsTable ) return [_feedOptions count];
+    if( tableView == _feedOptionsTable ) return [_feedOptions count] + 1;
     else return [searchResultPlaces count];
 }
 
@@ -136,7 +177,7 @@
     return 44;
 }
 
-- (SPGooglePlacesAutocompletePlace *)placeAtIndexPath:(NSIndexPath *)indexPath {
+-(GMSAutocompletePrediction *)placeAtIndexPath:(NSIndexPath *)indexPath {
     return [searchResultPlaces objectAtIndex:indexPath.row];
 }
 
@@ -163,30 +204,45 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         }
         
-        cell.textLabel.font = [UIFont fontWithName:@"GillSans" size:16.0];
-        cell.textLabel.text = [self placeAtIndexPath:indexPath].name;
+        cell.textLabel.font = [UIFont fontWithName:kMainFont size:16.0];
+        cell.textLabel.text = [self placeAtIndexPath:indexPath].attributedFullText.string;
         return cell;
     }
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if( tableView != _feedOptionsTable ) {
+        [self getDetailsWithPlaceID:[self placeAtIndexPath:indexPath].placeID];
+        [self dismissSearchControllerWhileStayingActive];
+        
+        
+        shouldBeginEditing = NO;
+        [self.searchDisplayController setActive:NO];
+        //_mapView.camera = [GMSCameraPosition cameraWithTarget:_currentLocation zoom:14 bearing:0 viewingAngle:0];
+    }
+}
 #pragma mark -
 #pragma mark UISearchDisplayDelegate
 
 - (void)handleSearchForSearchString:(NSString *)searchString {
-    searchQuery.location = _currentLocation;
-    searchQuery.input = searchString;
-    NSLog(@"search string: %@", searchString);
     
-    [searchQuery fetchPlaces:^(NSArray *places, NSError *error) {
-        if (error) {
-            //SPPresentAlertViewWithErrorAndTitle(error, @"Could not fetch Places");
-            //NSLog(@"Error: %@", error);
-        } else {
-            searchResultPlaces = places;
-            //NSLog(@"Places? %@", places);
-            [self.searchDisplayController.searchResultsTableView reloadData];
-        }
-    }];
+    [placesClient autocompleteQuery:searchString
+                             bounds:bounds
+                             filter:filter
+                           callback:^(NSArray *results, NSError *error) {
+                               if (error != nil) {
+                                   NSLog(@"Autocomplete error %@", [error localizedDescription]);
+                                   return;
+                               }
+                               
+                               searchResultPlaces = results;
+                               [self.searchDisplayController.searchResultsTableView reloadData];
+                               for (GMSAutocompletePrediction * result in results) {
+                                   NSLog(@"Result '%@' with placeID %@", result.attributedFullText.string, result.placeID);
+                               }
+                           }];
+
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
@@ -218,11 +274,27 @@
         [UIView commitAnimations];
         
         [self.searchDisplayController.searchBar setShowsCancelButton:YES animated:YES];
+        
+        //testing
+        //[GoogleMapsManager placeAutoCompleteWithMap:_mapView];
     }
+
     BOOL boolToReturn = shouldBeginEditing;
     shouldBeginEditing = YES;
     return boolToReturn;
 }
+
+- (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller
+{
+    // workaround for bug in ios 7 were quickly double tapping uisearchbar (e.g it         appears and get dismissed quickly)
+    // does not re add the uisearch bar to the correct view.
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        //UIView *parentView = [self.scrollView.subviews objectAtIndex:0];
+        //[parentView addSubview:self.searchDisplayController.searchBar];
+    }
+    return;
+}
+
 
 - (void)dismissSearchControllerWhileStayingActive {
     // Animate out the table view.

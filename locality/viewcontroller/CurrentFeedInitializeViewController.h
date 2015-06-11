@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Google-Maps-iOS-SDK/GoogleMaps.h>
+#import <GoogleMaps/GoogleMaps.h>
 #import "LocationRangeSlider.h"
 
 @interface CurrentFeedInitializeViewController : UIViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate>

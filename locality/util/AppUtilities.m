@@ -9,6 +9,7 @@
 #import "AppUtilities.h"
 #import <CoreText/CTStringAttributes.h>
 #import <CoreText/CoreText.h>
+#import "config.h"
 
 @implementation AppUtilities
 
@@ -24,8 +25,8 @@ static const float metersPerFoot = 0.3048;
     NSString *string = [NSString stringWithFormat:@"%@%@", size, unit];
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:string];
     
-    UIFont *font = [UIFont fontWithName:@"InterstateLightCondensed" size:14.0f];
-    UIFont *smallFont = [UIFont fontWithName:@"InterstateLightCondensed" size:10.0f];
+    UIFont *font = [UIFont fontWithName:kMainFont size:14.0f];
+    UIFont *smallFont = [UIFont fontWithName:kMainFont size:9.0f];
     
     [attString beginEditing];
     [attString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, size.length)];
