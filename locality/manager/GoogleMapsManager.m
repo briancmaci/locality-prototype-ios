@@ -29,9 +29,9 @@
     
     GMSCircle *rangeCircle = [GMSCircle circleWithPosition:center radius:[AppUtilities feetToMeters:range/2]];
     
-    rangeCircle.fillColor = [UIColor colorWithRed:0 green:122.0f/255.0f blue:1 alpha:0.2];
-    rangeCircle.strokeColor = [UIColor colorWithRed:0 green:122.0f/255.0f blue:1 alpha:0.4];
-    rangeCircle.strokeWidth = 1;
+    rangeCircle.fillColor = [UIColor colorWithRed:1 green:125.0f/255.0f blue:108.0f/255.0f alpha:0.2];
+    //rangeCircle.strokeColor = [UIColor colorWithRed:1 green:125.0f/255.0f blue:108.0f/255.0f alpha:0.2];
+    rangeCircle.strokeWidth = 0;
     rangeCircle.map = map;
     
     CLLocationCoordinate2D rangePoint = [GoogleMapsManager translateCoordinate:center withMetersLat:[AppUtilities feetToMeters:range] metersLong:[AppUtilities feetToMeters:range]];
@@ -39,6 +39,7 @@
     GMSCameraUpdate *camUpdate = [GMSCameraUpdate fitBounds:bounds];
     
     GMSMarker *marker = [GMSMarker markerWithPosition:center];
+    marker.icon = [UIImage imageNamed:kMapMarkerHere];
     marker.map = map;
 
     [map animateWithCameraUpdate:camUpdate];

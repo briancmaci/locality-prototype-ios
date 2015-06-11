@@ -62,6 +62,8 @@
 		03F71A751B20C0B0006F4088 /* FeedMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F71A741B20C0B0006F4088 /* FeedMenuTableViewCell.m */; };
 		03F71A791B20C425006F4088 /* FeedAddNewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F71A771B20C425006F4088 /* FeedAddNewTableViewCell.m */; };
 		03F71A7A1B20C425006F4088 /* FeedAddNewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F71A781B20C425006F4088 /* FeedAddNewTableViewCell.xib */; };
+		03FA85C21B2A25D600F68102 /* CameraOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FA85C01B2A25D600F68102 /* CameraOverlayView.m */; };
+		03FA85C31B2A25D600F68102 /* CameraOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03FA85C11B2A25D600F68102 /* CameraOverlayView.xib */; };
 		4823EA5EEC9A9D8CFC3335D3 /* libPods-locality.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D973429C6A2108EE94A211B /* libPods-locality.a */; };
 		4E777E631B0F6A3100EEAEFC /* FeedSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E777E621B0F6A3100EEAEFC /* FeedSettingsViewController.m */; };
 		4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E777E661B0F6A6D00EEAEFC /* PostDetailViewController.m */; };
@@ -160,6 +162,9 @@
 		03F71A761B20C425006F4088 /* FeedAddNewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedAddNewTableViewCell.h; path = custom_ui/FeedAddNewTableViewCell.h; sourceTree = "<group>"; };
 		03F71A771B20C425006F4088 /* FeedAddNewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedAddNewTableViewCell.m; path = custom_ui/FeedAddNewTableViewCell.m; sourceTree = "<group>"; };
 		03F71A781B20C425006F4088 /* FeedAddNewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedAddNewTableViewCell.xib; path = custom_ui/FeedAddNewTableViewCell.xib; sourceTree = "<group>"; };
+		03FA85BF1B2A25D600F68102 /* CameraOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraOverlayView.h; path = custom_ui/CameraOverlayView.h; sourceTree = "<group>"; };
+		03FA85C01B2A25D600F68102 /* CameraOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraOverlayView.m; path = custom_ui/CameraOverlayView.m; sourceTree = "<group>"; };
+		03FA85C11B2A25D600F68102 /* CameraOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CameraOverlayView.xib; path = custom_ui/CameraOverlayView.xib; sourceTree = "<group>"; };
 		4E777E611B0F6A3100EEAEFC /* FeedSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSettingsViewController.h; path = viewcontroller/FeedSettingsViewController.h; sourceTree = "<group>"; };
 		4E777E621B0F6A3100EEAEFC /* FeedSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSettingsViewController.m; path = viewcontroller/FeedSettingsViewController.m; sourceTree = "<group>"; };
 		4E777E651B0F6A6D00EEAEFC /* PostDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostDetailViewController.h; path = viewcontroller/PostDetailViewController.h; sourceTree = "<group>"; };
@@ -200,6 +205,9 @@
 				0353B49E1B0E3D3300CE3750 /* BusyView.xib */,
 				0353B4A01B0E3D5500CE3750 /* BusyView.h */,
 				0353B4A11B0E3D5500CE3750 /* BusyView.m */,
+				03FA85BF1B2A25D600F68102 /* CameraOverlayView.h */,
+				03FA85C01B2A25D600F68102 /* CameraOverlayView.m */,
+				03FA85C11B2A25D600F68102 /* CameraOverlayView.xib */,
 			);
 			name = custom_ui;
 			sourceTree = "<group>";
@@ -508,6 +516,7 @@
 				036CA1CD1AFBC88F0064AB6C /* Main.storyboard in Resources */,
 				0353B4981B0E3C1400CE3750 /* InterstateCond.ttf in Resources */,
 				0353B4921B0E3C1400CE3750 /* Interstate-LightCondensed.otf in Resources */,
+				03FA85C31B2A25D600F68102 /* CameraOverlayView.xib in Resources */,
 				0353B4891B0E3C1400CE3750 /* Interstate Bold Cond.ttf in Resources */,
 				0353B48E1B0E3C1400CE3750 /* Interstate Light Cond.ttf in Resources */,
 				03F71A7A1B20C425006F4088 /* FeedAddNewTableViewCell.xib in Resources */,
@@ -594,6 +603,7 @@
 				0353B4A21B0E3D5500CE3750 /* BusyView.m in Sources */,
 				0349E3B81B2871F30036F6D1 /* FeedSettingToggleCell.m in Sources */,
 				4E9D5AED1B15FA0200302886 /* PostModel.m in Sources */,
+				03FA85C21B2A25D600F68102 /* CameraOverlayView.m in Sources */,
 				03F71A6A1B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				032C76471B03F06D00C78CB0 /* ParseManager.m in Sources */,
 				032C764D1B03F0DE00C78CB0 /* SignUpViewController.m in Sources */,

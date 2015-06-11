@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import "LocationRangeSlider.h"
+#import "RSKImageCropViewController.h"
 
-@interface FeedSettingsViewController : UIViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate> {
+@interface FeedSettingsViewController : UIViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate> {
     NSArray *searchResultPlaces;
     GMSPlacesClient *placesClient;
     GMSVisibleRegion visibleRegion;

@@ -11,6 +11,7 @@
 #import "config.h"
 #import "GoogleMapsManager.h"
 #import "FeedSettingToggleCell.h"
+#import "CameraOverlayView.h"
 
 @interface FeedSettingsViewController ()
 
@@ -34,6 +35,10 @@
 
 
 - (void) initAutoCompleteSearch {
+    
+    //search look
+    UIFont *searchFont = [UIFont fontWithName:kMainFont size:16.0f];
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setFont:searchFont];
     
     placesClient = [[GMSPlacesClient alloc] init];
     
@@ -87,7 +92,7 @@
     if( status == kCLAuthorizationStatusAuthorizedWhenInUse ) {
         [self.locationManager startUpdatingLocation];
         
-        _mapView.myLocationEnabled = YES;
+        _mapView.myLocationEnabled = NO;
         _mapView.settings.myLocationButton = YES;
         _mapView.userInteractionEnabled = NO;
     }
@@ -145,9 +150,9 @@
     [GoogleMapsManager animateToPosition:_currentLocation onMap:_mapView];
     
     //add pin test
-    GMSMarker *marker = [GMSMarker markerWithPosition:_currentLocation];
-    marker.appearAnimation = kGMSMarkerAnimationPop;
-    marker.map = _mapView;
+    //GMSMarker *marker = [GMSMarker markerWithPosition:_currentLocation];
+    //marker.appearAnimation = kGMSMarkerAnimationPop;
+    //marker.map = _mapView;
 }
 
 #pragma mark - ScrollView Delegate Methods
@@ -238,9 +243,9 @@
                                
                                searchResultPlaces = results;
                                [self.searchDisplayController.searchResultsTableView reloadData];
-                               for (GMSAutocompletePrediction * result in results) {
-                                   NSLog(@"Result '%@' with placeID %@", result.attributedFullText.string, result.placeID);
-                               }
+                               //for (GMSAutocompletePrediction * result in results) {
+                                   //NSLog(@"Result '%@' with placeID %@", result.attributedFullText.string, result.placeID);
+                               //}
                            }];
 
 }
@@ -267,34 +272,20 @@
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
     if (shouldBeginEditing) {
         // Animate in the table view.
-        NSTimeInterval animationDuration = 0.3;
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:animationDuration];
-        self.searchDisplayController.searchResultsTableView.alpha = 1.0;
-        [UIView commitAnimations];
-        
-        [self.searchDisplayController.searchBar setShowsCancelButton:YES animated:YES];
-        
-        //testing
-        //[GoogleMapsManager placeAutoCompleteWithMap:_mapView];
+//        NSTimeInterval animationDuration = 0.3;
+//        [UIView beginAnimations:nil context:NULL];
+//        [UIView setAnimationDuration:animationDuration];
+//        self.searchDisplayController.searchResultsTableView.alpha = 1.0;
+//        [UIView commitAnimations];
+//        
+//        [self.searchDisplayController.searchBar setShowsCancelButton:YES animated:YES];
+
     }
 
     BOOL boolToReturn = shouldBeginEditing;
     shouldBeginEditing = YES;
     return boolToReturn;
 }
-
-- (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller
-{
-    // workaround for bug in ios 7 were quickly double tapping uisearchbar (e.g it         appears and get dismissed quickly)
-    // does not re add the uisearch bar to the correct view.
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        //UIView *parentView = [self.scrollView.subviews objectAtIndex:0];
-        //[parentView addSubview:self.searchDisplayController.searchBar];
-    }
-    return;
-}
-
 
 - (void)dismissSearchControllerWhileStayingActive {
     // Animate out the table view.
@@ -307,6 +298,190 @@
     [self.searchDisplayController.searchBar setShowsCancelButton:NO animated:YES];
     [self.searchDisplayController.searchBar resignFirstResponder];
 }
+
+
+
+
+#pragma mark - Camera Access Flow
+
+-(IBAction)checkCameraAccess:(id)sender {
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if(authStatus == AVAuthorizationStatusAuthorized)
+    {
+        [self showPictureOptions];
+    }
+    else if(authStatus == AVAuthorizationStatusNotDetermined)
+    {
+        NSLog(@"%@", @"Camera access not determined. Ask for permission.");
+        
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted)
+         {
+             if(granted)
+             {
+                 NSLog(@"Granted access to %@", AVMediaTypeVideo);
+                 [self showPictureOptions];
+             }
+             else
+             {
+                 NSLog(@"Not granted access to %@", AVMediaTypeVideo);
+                 [self camDenied];
+             }
+         }];
+    }
+    else if (authStatus == AVAuthorizationStatusRestricted)
+    {
+        // My own Helper class is used here to pop a dialog in one simple line.
+        [self camDenied];
+    }
+    else
+    {
+        [self camDenied];
+    }
+}
+
+- (void)camDenied
+{
+    NSLog(@"%@", @"Denied camera access");
+    
+    NSString *alertText;
+    NSString *alertButton;
+    
+    BOOL canOpenSettings = (&UIApplicationOpenSettingsURLString != NULL);
+    if (canOpenSettings)
+    {
+        alertText = NSLocalizedString(@"CameraAccessPrivacyYouPrevent", nil);
+        alertButton = @"Go";
+    }
+    else
+    {
+        alertText = NSLocalizedString(@"CameraAccessPrivacyUsPrevent", nil);
+        
+        alertButton = @"OK";
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"model.me"
+                          message:alertText
+                          delegate:self
+                          cancelButtonTitle:alertButton
+                          otherButtonTitles:nil];
+    alert.tag = 3491832;
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 3491832)
+    {
+        BOOL canOpenSettings = (&UIApplicationOpenSettingsURLString != NULL);
+        if (canOpenSettings)
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+    }
+}
+
+#pragma mark - Camera Flow Methods
+
+- (void) showPictureOptions
+{
+    NSString *actionSheetTitle = nil; //Action Sheet Title
+    NSString *destructiveTitle = nil; //Action Sheet Button Titles
+    NSString *other1 = @"Take Picture";
+    NSString *other2 = @"Browse Photo Library";
+    NSString *cancelTitle = @"Cancel";
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:actionSheetTitle
+                                  delegate:self
+                                  cancelButtonTitle:cancelTitle
+                                  destructiveButtonTitle:destructiveTitle
+                                  otherButtonTitles:other1, other2, nil];
+    
+    
+    [actionSheet showInView:self.view];
+    
+    
+    // ActionSheet styling. (ios8 has a work-around).
+    
+    SEL selector = NSSelectorFromString(@"_alertController");
+    if ([actionSheet respondsToSelector:selector])
+    {
+        UIAlertController *alertController = [actionSheet valueForKey:@"_alertController"];
+        if ([alertController isKindOfClass:[UIAlertController class]])
+        {
+            alertController.view.tintColor = [UIColor blackColor];
+            // font styling in UIAlertController is not working here
+        }
+    }
+    else
+    {
+        // use other methods for iOS 7 or older.
+        for (UIView *subview in actionSheet.subviews) {
+            if ([subview isKindOfClass:[UIButton class]]) {
+                UIButton *button = (UIButton *)subview;
+                [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                button.titleLabel.font = [UIFont fontWithName:kMainFont size:20];
+            }
+        }
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [self takePhoto];
+    } else if (buttonIndex == 1) {
+        [self selectPhoto];
+    }
+}
+
+- (void) selectPhoto
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = NO;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
+
+- (void) takePhoto
+{
+    //use CameraOverlayView
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CameraOverlayView" owner:self options:nil];
+    CameraOverlayView *cameraOverlayView = (CameraOverlayView *)[nib objectAtIndex:0];
+    
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = NO;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+    picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
+    [picker setShowsCameraControls:NO];
+    picker.cameraOverlayView = cameraOverlayView;
+    cameraOverlayView.pickerReference = picker;
+    
+    [self presentViewController:picker animated:YES completion:^{
+    }];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissViewControllerAnimated:YES completion:^{
+        
+        UIImage *image = (UIImage *)[info valueForKey:UIImagePickerControllerOriginalImage];
+        [self showImageCropper:image];
+        
+        
+    }];
+}
+
+-(void)showImageCropper:(UIImage *)image {
+    RSKImageCropViewController *imageCropVC = [[RSKImageCropViewController alloc] initWithImage:image];
+    imageCropVC.delegate = self;
+    [self.navigationController pushViewController:imageCropVC animated:YES];
+}
+
 
 /*
 #pragma mark - Navigation

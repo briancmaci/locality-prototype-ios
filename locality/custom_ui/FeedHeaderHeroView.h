@@ -11,10 +11,9 @@
 
 @protocol FeedHeaderHeroDelegate <NSObject>
 
+@optional
 -(void) toFeedMenuClicked;
 -(void) toFeedSettingsClicked:(FeedLocationModel *)feed;
-
-@optional
 -(void) openFeedClicked:(FeedLocationModel *)feed atIndex:(int)index;
 
 

@@ -22,6 +22,7 @@
             <string>InterstateLightCondensed</string>
             <string>InterstateLightCondensed</string>
             <string>InterstateLightCondensed</string>
+            <string>InterstateLightCondensed</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -846,6 +847,9 @@
                                                             <color key="titleColor" red="0.0" green="0.46666666666666667" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="checkCameraAccess:" destination="J8l-fm-Wdr" eventType="touchUpInside" id="0bS-y2-zja"/>
+                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5t-oh-p7l" userLabel="Pin">
                                                         <rect key="frame" x="18" y="65" width="284" height="1"/>
@@ -902,38 +906,29 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMS-wN-ul6">
                                                 <rect key="frame" x="0.0" y="496" width="320" height="60"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8k4-kx-DFD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="44"/>
-                                                        <color key="backgroundColor" red="0.85098039219999999" green="0.85490196080000003" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8k4-kx-DFD">
+                                                        <rect key="frame" x="20" y="0.0" width="280" height="58"/>
+                                                        <color key="backgroundColor" red="0.23921568627450981" green="0.26666666666666666" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="44" id="3Sg-Pv-tc0"/>
+                                                            <constraint firstAttribute="height" constant="58" id="Qx9-ye-oio"/>
                                                         </constraints>
-                                                        <state key="normal" title="Save Location">
+                                                        <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="16"/>
+                                                        <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="SAVE LOCATION" image="button_add_location_icon">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQE-cD-rgE">
-                                                        <rect key="frame" x="160" y="0.0" width="160" height="44"/>
-                                                        <color key="backgroundColor" red="0.89866240930726016" green="0.90179006282013008" blue="0.91117302335873995" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="44" id="Lle-hZ-3BR"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Cancel">
-                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="LQE-cD-rgE" firstAttribute="leading" secondItem="8k4-kx-DFD" secondAttribute="trailing" id="F66-hh-0ef"/>
-                                                    <constraint firstAttribute="trailing" secondItem="LQE-cD-rgE" secondAttribute="trailing" id="G8Q-Ev-0wy"/>
-                                                    <constraint firstItem="8k4-kx-DFD" firstAttribute="leading" secondItem="KMS-wN-ul6" secondAttribute="leading" id="JXt-h7-R2M"/>
-                                                    <constraint firstItem="8k4-kx-DFD" firstAttribute="top" secondItem="KMS-wN-ul6" secondAttribute="top" id="fic-o4-Yjf"/>
-                                                    <constraint firstItem="LQE-cD-rgE" firstAttribute="leading" secondItem="8k4-kx-DFD" secondAttribute="trailing" id="mMf-UC-DnP"/>
-                                                    <constraint firstItem="8k4-kx-DFD" firstAttribute="width" secondItem="LQE-cD-rgE" secondAttribute="width" id="ogV-w9-lOA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8k4-kx-DFD" secondAttribute="trailing" constant="20" id="0D6-Lf-boJ"/>
+                                                    <constraint firstItem="8k4-kx-DFD" firstAttribute="leading" secondItem="KMS-wN-ul6" secondAttribute="leading" constant="20" id="9s3-Ws-NBL"/>
                                                     <constraint firstAttribute="height" constant="60" id="rPY-0H-EuJ"/>
-                                                    <constraint firstItem="LQE-cD-rgE" firstAttribute="top" secondItem="KMS-wN-ul6" secondAttribute="top" id="xmF-vw-EgJ"/>
+                                                    <constraint firstItem="8k4-kx-DFD" firstAttribute="top" secondItem="KMS-wN-ul6" secondAttribute="top" id="tJW-vc-Xb7"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -966,8 +961,8 @@
                                     <constraint firstItem="Wh5-rR-78c" firstAttribute="top" secondItem="uMH-9v-q9C" secondAttribute="top" id="zfo-Vq-OMf"/>
                                 </constraints>
                             </scrollView>
-                            <searchBar contentMode="redraw" placeholder="Search for address or location" translatesAutoresizingMaskIntoConstraints="NO" id="xrb-11-Wjk">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="xrb-11-Wjk">
+                                <rect key="frame" x="60" y="20" width="260" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="EXI-aE-lME"/>
                                 </constraints>
@@ -981,7 +976,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="xrb-11-Wjk" secondAttribute="trailing" id="2Bi-cR-yfQ"/>
                             <constraint firstAttribute="trailing" secondItem="uMH-9v-q9C" secondAttribute="trailing" id="6DP-im-hEl"/>
-                            <constraint firstItem="xrb-11-Wjk" firstAttribute="leading" secondItem="z2J-89-zv6" secondAttribute="leading" id="GfH-5f-H4i"/>
+                            <constraint firstItem="xrb-11-Wjk" firstAttribute="leading" secondItem="z2J-89-zv6" secondAttribute="leading" constant="60" id="GfH-5f-H4i"/>
                             <constraint firstItem="uMH-9v-q9C" firstAttribute="top" secondItem="Xph-e0-f0k" secondAttribute="bottom" constant="-20" id="OUk-DP-DNt"/>
                             <constraint firstItem="uMH-9v-q9C" firstAttribute="leading" secondItem="z2J-89-zv6" secondAttribute="leading" id="ks2-Gv-f1y"/>
                             <constraint firstItem="xrb-11-Wjk" firstAttribute="top" secondItem="z2J-89-zv6" secondAttribute="top" constant="20" id="lFf-ve-Ptk"/>
@@ -1227,6 +1222,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="button_add_location_icon" width="9" height="11"/>
         <image name="button_add_photo" width="51" height="43"/>
         <image name="button_anonymous_bg" width="108" height="80"/>
         <image name="button_post" width="70" height="70"/>

@@ -11,5 +11,6 @@ pod 'FlickrKit', '~> 1.0'
 pod 'GoogleMaps'
 pod 'AFNetworking', '~> 2.5'
 pod 'SDWebImage', '~> 3.7'
+pod 'RSKImageCropper', '~> 1.1'
 end
 

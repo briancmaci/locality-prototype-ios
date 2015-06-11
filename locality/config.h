@@ -57,6 +57,6 @@
 
 /* CUSTOM UI */
 #define kSwitchSliderKnob @"ui_switch_knob"
-
+#define kMapMarkerHere @"map_marker_here"
 
 @end
