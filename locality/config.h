@@ -18,6 +18,9 @@
 
 #define GOOGLE_MAPS_API_KEY @"GoogleMapsAPIKey"
 
+#define MAP_BOX_ACCESS_TOKEN @"MapBoxAccessToken"
+#define MAP_BOX_MAP_ID @"MapBoxMapID"
+
 #define PARSE_APP_ID @"ParseApplicationID"
 #define PARSE_CLIENT_KEY @"ParseClientKey"
 
@@ -35,7 +38,7 @@
 /* CONSTANTS MOST LIKELY TO BE DB DRIVEN FOR PRODUCTION */
 #define SLIDER_STEPS_IN_FEET @[@{ @"distance":@500, @"unit_label":@"500", @"unit":@"ft"},@{ @"distance":@750, @"unit_label":@"750", @"unit":@"ft"},@{ @"distance":@1000, @"unit_label":@"1000", @"unit":@"ft"},@{ @"distance":@1320, @"unit_label":@"0.25", @"unit":@"mi"},@{ @"distance":@2640, @"unit_label":@"0.5", @"unit":@"mi"},@{ @"distance":@5280, @"unit_label":@"1", @"unit":@"mi"},@{ @"distance":@10560, @"unit_label":@"2", @"unit":@"mi"},@{ @"distance":@26400, @"unit_label":@"5", @"unit":@"mi"},@{ @"distance":@52800, @"unit_label":@"10", @"unit":@"mi"}]
 
-#define FEED_SETTINGS @[@{ @"label":@"Send me push alerts from this location", @"default":@YES, @"var":@"pushEnabled"}, @{ @"label":@"Include promotions for this location", @"default":@NO, @"var":@"promotionsEnabled"}, @{ @"label":@"Send me push alerts from this location", @"default":@YES, @"var":@"pushEnabled"}, @{ @"label":@"Include promotions for this location", @"default":@NO, @"var":@"promotionsEnabled"}, @{ @"label":@"Would you like important alerts?", @"default":@YES, @"var":@"importantEnabled"}]
+#define FEED_SETTINGS @[@{ @"label":@"Send me push alerts from this location", @"default":@YES, @"var":@"pushEnabled"}, @{ @"label":@"Include promotions for this location", @"default":@NO, @"var":@"promotionsEnabled"}]
 
 
 
@@ -47,6 +50,18 @@
 
 /* Fonts */
 #define kMainFont @"InterstateLightCondensed"
+
+/* HeaderView */
+#define kHeaderHeight 58.0f
+#define kHeaderFontSize 18.0f
+#define kHeaderButtonIndent 8
+#define kHeaderButtonSpacing 16
+
+#define kNavBarTitleUseLogo @"logo"
+
+#define kIconBack @"icon_back"
+#define kIconClose @"icon_close"
+#define kIconHamburger @"icon_hamburger"
 
 /* CURRENT FEED DEFAULTS */
 #define DEFAULT_FEED_IMAGE @"feed_default_hero"

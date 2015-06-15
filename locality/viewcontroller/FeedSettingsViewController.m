@@ -27,12 +27,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self initHeaderView];
+    
     [self initAutoCompleteSearch];
     [self initFeedOptionsTable];
     [self initCurrentLocationMap];
+    [self initMapboxMap];
     [self initRangeSlider];
 }
 
+- (void) initHeaderView {
+    [self.header initWithTitle:@"ADD NEW LOCATION"
+                leftButtonType:IconBack
+               rightButtonType:IconClose];
+    
+    [self.view addSubview:self.header];
+}
 
 - (void) initAutoCompleteSearch {
     
@@ -70,6 +80,9 @@
     _scrollView.delegate = self;
 }
 
+- (void) initMapboxMap {
+    [_mapBoxView setTileSource:[MapBoxManager sharedInstance].tileSource];
+}
 - (void) initCurrentLocationMap {
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;
@@ -93,8 +106,10 @@
         [self.locationManager startUpdatingLocation];
         
         _mapView.myLocationEnabled = NO;
-        _mapView.settings.myLocationButton = YES;
+        _mapView.settings.myLocationButton = NO;
         _mapView.userInteractionEnabled = NO;
+        
+        _mapBoxView.delegate = self;
     }
 }
 
@@ -103,11 +118,41 @@
     _currentLocation = location.coordinate;
     
     _mapView.camera = [GMSCameraPosition cameraWithTarget:_currentLocation zoom:8 bearing:0 viewingAngle:0];
+    _mapBoxView.centerCoordinate = _currentLocation;
+    _mapBoxView.zoom = 8;
+    _mapBoxView.userInteractionEnabled = NO;
     
+    
+    RMAnnotation *here = [[RMAnnotation alloc] initWithMapView:_mapBoxView coordinate:_currentLocation andTitle:@"Hayyyy"];
+    here.userInfo = @"here";
+    [_mapBoxView addAnnotation:here];
     //location only needed here to show current location. We will have location on otherwise when you update the current location feed
     [_locationManager stopUpdatingLocation];
     
     //[self reverseGeocodeCoordinate:currentLocation];
+}
+
+- (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
+{
+    if (annotation.isUserLocationAnnotation)
+        return nil;
+    
+    RMMarker *marker;
+    
+    // set 'training' marker image
+    if ([annotation.userInfo isEqualToString:@"here"])
+    {
+        marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:kMapMarkerHere]];
+    }
+    // set 'supplies' marker image
+    else if ([annotation.userInfo isEqualToString:@"supplies"])
+    {
+        marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"astronaut1.png"]];
+    }
+    
+    marker.canShowCallout = NO;
+    
+    return marker;
 }
 
 #pragma mark - LocationRangeSliderDelegate Methods
@@ -115,6 +160,8 @@
     
     _currentRange = [[rangeStep objectForKey:@"distance"] floatValue];
     [GoogleMapsManager drawRangeCircleAt:_currentLocation rangeDiameter:[AppUtilities feetToMeters:_currentRange] onMap:_mapView];
+    [MapBoxManager sharedInstance].currentRange = _currentRange;
+    [MapBoxManager drawRangeCircleAt:_currentLocation rangeDiameter:[AppUtilities feetToMeters:_currentRange] onMap:_mapBoxView];
     
     //update range label
     [_currentRangeLabel setAttributedText:[AppUtilities rangeLabel:[rangeStep objectForKey:@"unit_label"] withUnits:[[rangeStep objectForKey:@"unit"] uppercaseString]]];

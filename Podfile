@@ -12,5 +12,6 @@ pod 'GoogleMaps'
 pod 'AFNetworking', '~> 2.5'
 pod 'SDWebImage', '~> 3.7'
 pod 'RSKImageCropper', '~> 1.1'
+pod 'Mapbox-iOS-SDK', '1.6.0'
 end
 

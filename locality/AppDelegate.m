@@ -11,6 +11,7 @@
 #import "FacebookManager.h"
 #import "FlickrManager.h"
 #import "GoogleMapsManager.h"
+#import "MapBoxManager.h"
 #import "SlideNavigationController.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
@@ -34,6 +35,7 @@
     [FlickrManager initFlickr];
     [ParseManager initParse];
     [GoogleMapsManager initGoogleMaps];
+    [MapBoxManager initMapBox];
     [FacebookManager initFacebookUtils:launchOptions];
     
     [self.window makeKeyAndVisible];
@@ -53,7 +55,7 @@
 -(void) initStatusBar {
     
     //not sure where this will be. design dependent.
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 -(void) initSlideNavigation {

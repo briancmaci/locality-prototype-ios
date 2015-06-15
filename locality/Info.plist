@@ -39,6 +39,10 @@
 	<string>10fabf7c3e4ae03e</string>
 	<key>GoogleMapsAPIKey</key>
 	<string>AIzaSyDB8jIBu3FXYKljpz0n4mlEf9U5c8nEfXk</string>
+	<key>MapBoxAccessToken</key>
+	<string>pk.eyJ1IjoiYnJpYW5jbWFjaSIsImEiOiJlNGZkNGRiOTZlYzBiMTJiOGJiMzA4NzdiOGRmMWE2NSJ9.nU_n7E8n5J4uoetH-rD8MA</string>
+	<key>MapBoxMapID</key>
+	<string>briancmaci.f8755712</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>

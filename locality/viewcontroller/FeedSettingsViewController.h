@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import "MapBoxManager.h"
 #import "LocationRangeSlider.h"
 #import "RSKImageCropViewController.h"
+#import "LocalityBaseViewController.h"
 
-@interface FeedSettingsViewController : UIViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate> {
+@interface FeedSettingsViewController : LocalityBaseViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate, RMMapViewDelegate> {
     NSArray *searchResultPlaces;
     GMSPlacesClient *placesClient;
     GMSVisibleRegion visibleRegion;
@@ -25,6 +27,10 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+
+//RMMapView
+@property (weak, nonatomic) IBOutlet RMMapView *mapBoxView;
+
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) GMSGeocoder *geocoder;
 

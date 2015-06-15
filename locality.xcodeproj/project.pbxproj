@@ -64,6 +64,12 @@
 		03F71A7A1B20C425006F4088 /* FeedAddNewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F71A781B20C425006F4088 /* FeedAddNewTableViewCell.xib */; };
 		03FA85C21B2A25D600F68102 /* CameraOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FA85C01B2A25D600F68102 /* CameraOverlayView.m */; };
 		03FA85C31B2A25D600F68102 /* CameraOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03FA85C11B2A25D600F68102 /* CameraOverlayView.xib */; };
+		03FCEE871B2B0C36006D3FF3 /* LocalityBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FCEE861B2B0C36006D3FF3 /* LocalityBaseViewController.m */; };
+		03FCEE8E1B2B1093006D3FF3 /* UIColor+LocalityColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FCEE8D1B2B1093006D3FF3 /* UIColor+LocalityColor.m */; };
+		03FCEE911B2B18D2006D3FF3 /* LocalityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FCEE901B2B18D2006D3FF3 /* LocalityHeaderView.m */; };
+		03FCEE961B2B2AFB006D3FF3 /* HeaderIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FCEE951B2B2AFB006D3FF3 /* HeaderIconButton.m */; };
+		03FCEE991B2B3B03006D3FF3 /* HeaderIconModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FCEE981B2B3B03006D3FF3 /* HeaderIconModel.m */; };
+		03FCEE9D1B2B4699006D3FF3 /* MapBoxManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FCEE9C1B2B4699006D3FF3 /* MapBoxManager.m */; };
 		4823EA5EEC9A9D8CFC3335D3 /* libPods-locality.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D973429C6A2108EE94A211B /* libPods-locality.a */; };
 		4E777E631B0F6A3100EEAEFC /* FeedSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E777E621B0F6A3100EEAEFC /* FeedSettingsViewController.m */; };
 		4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E777E661B0F6A6D00EEAEFC /* PostDetailViewController.m */; };
@@ -165,6 +171,18 @@
 		03FA85BF1B2A25D600F68102 /* CameraOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraOverlayView.h; path = custom_ui/CameraOverlayView.h; sourceTree = "<group>"; };
 		03FA85C01B2A25D600F68102 /* CameraOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraOverlayView.m; path = custom_ui/CameraOverlayView.m; sourceTree = "<group>"; };
 		03FA85C11B2A25D600F68102 /* CameraOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CameraOverlayView.xib; path = custom_ui/CameraOverlayView.xib; sourceTree = "<group>"; };
+		03FCEE851B2B0C36006D3FF3 /* LocalityBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalityBaseViewController.h; path = viewcontroller/LocalityBaseViewController.h; sourceTree = "<group>"; };
+		03FCEE861B2B0C36006D3FF3 /* LocalityBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalityBaseViewController.m; path = viewcontroller/LocalityBaseViewController.m; sourceTree = "<group>"; };
+		03FCEE8C1B2B1093006D3FF3 /* UIColor+LocalityColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+LocalityColor.h"; path = "custom_ui/UIColor+LocalityColor.h"; sourceTree = "<group>"; };
+		03FCEE8D1B2B1093006D3FF3 /* UIColor+LocalityColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+LocalityColor.m"; path = "custom_ui/UIColor+LocalityColor.m"; sourceTree = "<group>"; };
+		03FCEE8F1B2B18D2006D3FF3 /* LocalityHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalityHeaderView.h; path = custom_ui/LocalityHeaderView.h; sourceTree = "<group>"; };
+		03FCEE901B2B18D2006D3FF3 /* LocalityHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalityHeaderView.m; path = custom_ui/LocalityHeaderView.m; sourceTree = "<group>"; };
+		03FCEE941B2B2AFB006D3FF3 /* HeaderIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderIconButton.h; sourceTree = "<group>"; };
+		03FCEE951B2B2AFB006D3FF3 /* HeaderIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderIconButton.m; sourceTree = "<group>"; };
+		03FCEE971B2B3B03006D3FF3 /* HeaderIconModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderIconModel.h; path = model/HeaderIconModel.h; sourceTree = "<group>"; };
+		03FCEE981B2B3B03006D3FF3 /* HeaderIconModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderIconModel.m; path = model/HeaderIconModel.m; sourceTree = "<group>"; };
+		03FCEE9B1B2B4699006D3FF3 /* MapBoxManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapBoxManager.h; path = manager/MapBoxManager.h; sourceTree = "<group>"; };
+		03FCEE9C1B2B4699006D3FF3 /* MapBoxManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapBoxManager.m; path = manager/MapBoxManager.m; sourceTree = "<group>"; };
 		4E777E611B0F6A3100EEAEFC /* FeedSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSettingsViewController.h; path = viewcontroller/FeedSettingsViewController.h; sourceTree = "<group>"; };
 		4E777E621B0F6A3100EEAEFC /* FeedSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSettingsViewController.m; path = viewcontroller/FeedSettingsViewController.m; sourceTree = "<group>"; };
 		4E777E651B0F6A6D00EEAEFC /* PostDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostDetailViewController.h; path = viewcontroller/PostDetailViewController.h; sourceTree = "<group>"; };
@@ -193,6 +211,9 @@
 		030C41331B054158004F1ECE /* custom_ui */ = {
 			isa = PBXGroup;
 			children = (
+				03FCEE931B2B2ACE006D3FF3 /* buttons */,
+				03FCEE8B1B2B0FA4006D3FF3 /* _categories */,
+				03FCEE921B2B18D7006D3FF3 /* HeaderView */,
 				03F71A571B2076A8006F4088 /* SlideNavigationController */,
 				03F71A721B20C089006F4088 /* tableviewcells */,
 				030C41371B0541A5004F1ECE /* LocationRangeSlider.h */,
@@ -221,6 +242,7 @@
 				032C76561B0407D000C78CB0 /* UserModel.m */,
 				4E9D5AEB1B15FA0200302886 /* PostModel.h */,
 				4E9D5AEC1B15FA0200302886 /* PostModel.m */,
+				03FCEE9A1B2B3B08006D3FF3 /* _utility */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -240,6 +262,8 @@
 				032C765B1B041D0800C78CB0 /* feed */,
 				4E777E641B0F6A5100EEAEFC /* post */,
 				032C76541B03FD4A00C78CB0 /* login-signup */,
+				03FCEE851B2B0C36006D3FF3 /* LocalityBaseViewController.h */,
+				03FCEE861B2B0C36006D3FF3 /* LocalityBaseViewController.m */,
 			);
 			name = viewcontroller;
 			sourceTree = "<group>";
@@ -253,6 +277,8 @@
 				030C41281B04F334004F1ECE /* FlickrManager.m */,
 				030C41301B051EC1004F1ECE /* GoogleMapsManager.h */,
 				030C41311B051EC1004F1ECE /* GoogleMapsManager.m */,
+				03FCEE9B1B2B4699006D3FF3 /* MapBoxManager.h */,
+				03FCEE9C1B2B4699006D3FF3 /* MapBoxManager.m */,
 				032C76441B03F06D00C78CB0 /* ParseManager.h */,
 				032C76451B03F06D00C78CB0 /* ParseManager.m */,
 				031BC92D1B1F87ED007DFCFB /* DataManager.h */,
@@ -424,6 +450,42 @@
 			name = tableviewcells;
 			sourceTree = "<group>";
 		};
+		03FCEE8B1B2B0FA4006D3FF3 /* _categories */ = {
+			isa = PBXGroup;
+			children = (
+				03FCEE8C1B2B1093006D3FF3 /* UIColor+LocalityColor.h */,
+				03FCEE8D1B2B1093006D3FF3 /* UIColor+LocalityColor.m */,
+			);
+			name = _categories;
+			sourceTree = "<group>";
+		};
+		03FCEE921B2B18D7006D3FF3 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				03FCEE8F1B2B18D2006D3FF3 /* LocalityHeaderView.h */,
+				03FCEE901B2B18D2006D3FF3 /* LocalityHeaderView.m */,
+			);
+			name = HeaderView;
+			sourceTree = "<group>";
+		};
+		03FCEE931B2B2ACE006D3FF3 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				03FCEE941B2B2AFB006D3FF3 /* HeaderIconButton.h */,
+				03FCEE951B2B2AFB006D3FF3 /* HeaderIconButton.m */,
+			);
+			name = buttons;
+			sourceTree = "<group>";
+		};
+		03FCEE9A1B2B3B08006D3FF3 /* _utility */ = {
+			isa = PBXGroup;
+			children = (
+				03FCEE971B2B3B03006D3FF3 /* HeaderIconModel.h */,
+				03FCEE981B2B3B03006D3FF3 /* HeaderIconModel.m */,
+			);
+			name = _utility;
+			sourceTree = "<group>";
+		};
 		2EB97B287A6B34791CB09DB4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +651,7 @@
 				033B732B1B0CB62800355581 /* FeedHeaderHeroView.m in Sources */,
 				032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */,
 				032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */,
+				03FCEE871B2B0C36006D3FF3 /* LocalityBaseViewController.m in Sources */,
 				03F71A711B20BAC4006F4088 /* FeedMenuTableViewController.m in Sources */,
 				032C76571B0407D000C78CB0 /* UserModel.m in Sources */,
 				032C76461B03F06D00C78CB0 /* FacebookManager.m in Sources */,
@@ -599,23 +662,28 @@
 				036CA1C41AFBC88F0064AB6C /* main.m in Sources */,
 				4E9D5AE11B133C5A00302886 /* PostCreateViewController.m in Sources */,
 				03F71A691B2076D3006F4088 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
+				03FCEE8E1B2B1093006D3FF3 /* UIColor+LocalityColor.m in Sources */,
 				030C41291B04F334004F1ECE /* FlickrManager.m in Sources */,
 				0353B4A21B0E3D5500CE3750 /* BusyView.m in Sources */,
 				0349E3B81B2871F30036F6D1 /* FeedSettingToggleCell.m in Sources */,
 				4E9D5AED1B15FA0200302886 /* PostModel.m in Sources */,
 				03FA85C21B2A25D600F68102 /* CameraOverlayView.m in Sources */,
 				03F71A6A1B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
+				03FCEE9D1B2B4699006D3FF3 /* MapBoxManager.m in Sources */,
 				032C76471B03F06D00C78CB0 /* ParseManager.m in Sources */,
 				032C764D1B03F0DE00C78CB0 /* SignUpViewController.m in Sources */,
 				03F71A6B1B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				03F71A791B20C425006F4088 /* FeedAddNewTableViewCell.m in Sources */,
 				4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */,
 				03F71A681B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
+				03FCEE961B2B2AFB006D3FF3 /* HeaderIconButton.m in Sources */,
+				03FCEE911B2B18D2006D3FF3 /* LocalityHeaderView.m in Sources */,
 				030C41391B0541A5004F1ECE /* LocationRangeSlider.m in Sources */,
 				031BC92F1B1F87ED007DFCFB /* DataManager.m in Sources */,
 				032C76501B03F8FC00C78CB0 /* SignUpEmailFormViewController.m in Sources */,
 				03F71A751B20C0B0006F4088 /* FeedMenuTableViewCell.m in Sources */,
 				03F71A5A1B2076B8006F4088 /* SlideNavigationController.m in Sources */,
+				03FCEE991B2B3B03006D3FF3 /* HeaderIconModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
