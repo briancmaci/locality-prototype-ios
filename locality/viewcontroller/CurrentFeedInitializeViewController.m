@@ -94,7 +94,7 @@ float currentRange;
 -(void) rangeUpdated:(NSDictionary *)rangeStep {
     
     currentRange = [[rangeStep objectForKey:@"distance"] floatValue];
-    [GoogleMapsManager drawRangeCircleAt:currentLocation rangeDiameter:[AppUtilities feetToMeters:currentRange] onMap:self.currentLocationView];
+    //[GoogleMapsManager drawRangeCircleAt:currentLocation rangeDiameter:[AppUtilities feetToMeters:currentRange] onMap:self.currentLocationView];
     
     //update range label
     [_currentRangeLabel setAttributedText:[AppUtilities rangeLabel:[rangeStep objectForKey:@"unit_label"] withUnits:[[rangeStep objectForKey:@"unit"] uppercaseString]]];

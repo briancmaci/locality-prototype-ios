@@ -15,6 +15,9 @@
 
 @implementation MapBoxManager
 
+static NSString * const circleId = @"rangeCircle";
+static NSString * const markerId = @"pinnedMarker";
+
 + (MapBoxManager *)sharedInstance
 {
     static MapBoxManager *sharedSingleton;
@@ -49,40 +52,29 @@
     
     [map removeAllAnnotations];
     
-    map.autoresizingMask = UIViewAutoresizingFlexibleHeight |
-    UIViewAutoresizingFlexibleWidth;
+    //map.autoresizingMask = UIViewAutoresizingFlexibleHeight |
+    //UIViewAutoresizingFlexibleWidth;
     
-    // add callout title
-    RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:map
-                                                          coordinate:map.centerCoordinate
-                                                            andTitle:@"Coverage Area"];
+    // add circle
+    RMAnnotation *annCircle = [[RMAnnotation alloc] initWithMapView:map
+                                                         coordinate:map.centerCoordinate
+                                                           andTitle:@""];
+    annCircle.userInfo = circleId;
     
-    [map addAnnotation:annotation];
+    RMAnnotation *annMarker = [[RMAnnotation alloc] initWithMapView:map
+                                                         coordinate:map.centerCoordinate
+                                                           andTitle:@""];
     
-    // set zoom
-    //map.zoom = 10;
+    annMarker.userInfo = markerId;
+    
+    [map addAnnotation:annCircle];
+    [map addAnnotation:annMarker];
+
     map.centerCoordinate = center;
-//    //[map clear];
-//    
-//    GMSCircle *rangeCircle = [GMSCircle circleWithPosition:center radius:[AppUtilities feetToMeters:range/2]];
-//    
-//    rangeCircle.fillColor = [UIColor colorWithRed:1 green:125.0f/255.0f blue:108.0f/255.0f alpha:0.2];
-//    //rangeCircle.strokeColor = [UIColor colorWithRed:1 green:125.0f/255.0f blue:108.0f/255.0f alpha:0.2];
-//    rangeCircle.strokeWidth = 0;
-//    rangeCircle.map = map;
-//
+
     CLLocationCoordinate2D rangePointSW = [MapBoxManager translateCoordinate:center withMetersLat:[AppUtilities feetToMeters:-range*2.2] metersLong:[AppUtilities feetToMeters:-range*2.2]];
     CLLocationCoordinate2D rangePointNE = [MapBoxManager translateCoordinate:center withMetersLat:[AppUtilities feetToMeters:range*2.2] metersLong:[AppUtilities feetToMeters:range*2.2]];
     [map zoomWithLatitudeLongitudeBoundsSouthWest:rangePointSW northEast:rangePointNE animated:YES];
-//    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithCoordinate:center coordinate:rangePoint];
-//    GMSCameraUpdate *camUpdate = [GMSCameraUpdate fitBounds:bounds];
-//    
-//    GMSMarker *marker = [GMSMarker markerWithPosition:center];
-//    marker.icon = [UIImage imageNamed:kMapMarkerHere];
-//    marker.map = map;
-//    
-//    [map animateWithCameraUpdate:camUpdate];
-//    [map animateToLocation:center];
 }
 
 +(CLLocationCoordinate2D) translateCoordinate:(CLLocationCoordinate2D)coordinate withMetersLat:(double)metersLat metersLong:(double)metersLong {
@@ -97,27 +89,38 @@
     return tempCoord;
 }
 
++(void) animateToPosition:(CLLocationCoordinate2D)center onMap:(RMMapView *)map {
+    
+    [map setCenterCoordinate:center animated:YES];
+}
+
+
 - (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
 {
-    RMMapLayer *layer = [[RMMapLayer alloc] init];
-
+    RMMapLayer *annotationLayer;
+    
     if (annotation.isUserLocationAnnotation)
         return nil;
     
-    RMCircle *circle = [[RMCircle alloc] initWithView:mapView radiusInMeters:[MapBoxManager sharedInstance].currentRange/4];
+    if( [annotation.userInfo isEqualToString:circleId] )
+    {
+        RMCircle *circle = [[RMCircle alloc] initWithView:mapView radiusInMeters:[MapBoxManager sharedInstance].currentRange/4];
+        
+        // style circle's line and fill color, and width.
+        circle.lineColor = [UIColor mapCircleColor];
+        circle.fillColor = [UIColor mapCircleColor];
+        circle.lineWidthInPixels = 0;
+        
+        annotationLayer = circle;
+    }
     
-    // style circle's line and fill color, and width.
-    circle.lineColor = [UIColor mapCircleColor];
-    circle.fillColor = [UIColor mapCircleColor];
-    circle.lineWidthInPixels = 0;
+    else if( [annotation.userInfo isEqualToString:markerId])
+    {
+        RMMarker *marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:kMapMarkerHere]];
+        annotationLayer = marker;
+    }
     
-    RMMarker *marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:kMapMarkerHere]];
-    
-    [circle addSublayer:marker];
-    //[layer addSublayer:circle];
-    //[layer addSublayer:marker];
-    
-    return circle;
+    return annotationLayer;
 }
 
 @end

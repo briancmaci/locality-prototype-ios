@@ -45,6 +45,8 @@
 	<string>briancmaci.f8755712</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>By accessing your location, locality will keep you current with what&apos;s around you.</string>
 	<key>ParseApplicationID</key>

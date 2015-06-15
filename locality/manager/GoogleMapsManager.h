@@ -15,6 +15,6 @@ typedef void(^failureBlock)(NSError *error);
 typedef void(^successBlock)(id response);
 
 +(void) initGoogleMaps;
-+(void) drawRangeCircleAt:(CLLocationCoordinate2D)center rangeDiameter:(float)range onMap:(GMSMapView*)map;
-+(void) animateToPosition:(CLLocationCoordinate2D)center onMap:(GMSMapView *)map;
+//+(void) drawRangeCircleAt:(CLLocationCoordinate2D)center rangeDiameter:(float)range onMap:(GMSMapView*)map;
+//+(void) animateToPosition:(CLLocationCoordinate2D)center onMap:(GMSMapView *)map;
 @end

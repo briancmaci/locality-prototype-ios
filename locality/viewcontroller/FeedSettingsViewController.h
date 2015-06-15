@@ -26,7 +26,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+//@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 
 //RMMapView
 @property (weak, nonatomic) IBOutlet RMMapView *mapBoxView;
@@ -34,8 +34,8 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) GMSGeocoder *geocoder;
 
-@property (weak, nonatomic) IBOutlet LocationRangeSlider *rangeSlider;
-@property (weak, nonatomic) IBOutlet UILabel *currentRangeLabel;
+@property (strong, nonatomic) LocationRangeSlider *rangeSlider;
+@property (weak, nonatomic) IBOutlet UIView *locationRangeSliderHolder;
 
 //settings options tableview
 @property (weak, nonatomic) IBOutlet UITableView *feedOptionsTable;

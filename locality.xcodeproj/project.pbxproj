@@ -46,6 +46,7 @@
 		0353B49A1B0E3C1400CE3750 /* InterstateLightCondensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0353B4881B0E3C1400CE3750 /* InterstateLightCondensed.ttf */; };
 		0353B49F1B0E3D3300CE3750 /* BusyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0353B49E1B0E3D3300CE3750 /* BusyView.xib */; };
 		0353B4A21B0E3D5500CE3750 /* BusyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0353B4A11B0E3D5500CE3750 /* BusyView.m */; };
+		0355982F1B2F198800D42A33 /* LocationRangeSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0355982E1B2F198800D42A33 /* LocationRangeSlider.xib */; };
 		036CA1C41AFBC88F0064AB6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 036CA1C31AFBC88F0064AB6C /* main.m */; };
 		036CA1C71AFBC88F0064AB6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 036CA1C61AFBC88F0064AB6C /* AppDelegate.m */; };
 		036CA1CD1AFBC88F0064AB6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1CB1AFBC88F0064AB6C /* Main.storyboard */; };
@@ -136,6 +137,7 @@
 		0353B49E1B0E3D3300CE3750 /* BusyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BusyView.xib; path = custom_ui/BusyView.xib; sourceTree = "<group>"; };
 		0353B4A01B0E3D5500CE3750 /* BusyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BusyView.h; path = custom_ui/BusyView.h; sourceTree = "<group>"; };
 		0353B4A11B0E3D5500CE3750 /* BusyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BusyView.m; path = custom_ui/BusyView.m; sourceTree = "<group>"; };
+		0355982E1B2F198800D42A33 /* LocationRangeSlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationRangeSlider.xib; path = custom_ui/LocationRangeSlider.xib; sourceTree = "<group>"; };
 		036CA1BE1AFBC88F0064AB6C /* locality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		036CA1C21AFBC88F0064AB6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		036CA1C31AFBC88F0064AB6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				03F71A721B20C089006F4088 /* tableviewcells */,
 				030C41371B0541A5004F1ECE /* LocationRangeSlider.h */,
 				030C41381B0541A5004F1ECE /* LocationRangeSlider.m */,
+				0355982E1B2F198800D42A33 /* LocationRangeSlider.xib */,
 				033B73291B0CB62800355581 /* FeedHeaderHeroView.h */,
 				033B732A1B0CB62800355581 /* FeedHeaderHeroView.m */,
 				033B732C1B0CB64000355581 /* FeedHeaderHeroView.xib */,
@@ -592,6 +595,7 @@
 				0349E3B91B2871F30036F6D1 /* FeedSettingToggleCell.xib in Resources */,
 				0353B48D1B0E3C1400CE3750 /* Interstate ExtraLight Cond.ttf in Resources */,
 				0353B4911B0E3C1400CE3750 /* Interstate-LightCond.otf in Resources */,
+				0355982F1B2F198800D42A33 /* LocationRangeSlider.xib in Resources */,
 				033B732D1B0CB64000355581 /* FeedHeaderHeroView.xib in Resources */,
 				0353B48C1B0E3C1400CE3750 /* Interstate Cond Mono.ttf in Resources */,
 				0353B49A1B0E3C1400CE3750 /* InterstateLightCondensed.ttf in Resources */,

@@ -52,8 +52,8 @@
     
     placesClient = [[GMSPlacesClient alloc] init];
     
-    visibleRegion = _mapView.projection.visibleRegion;
-    bounds = [[GMSCoordinateBounds alloc] initWithCoordinate:visibleRegion.farLeft coordinate:visibleRegion.nearRight];
+    //visibleRegion = _mapView.projection.visibleRegion;
+    //bounds = [[GMSCoordinateBounds alloc] initWithCoordinate:visibleRegion.farLeft coordinate:visibleRegion.nearRight];
     filter = [[GMSAutocompleteFilter alloc] init];
     filter.type = kGMSPlacesAutocompleteTypeFilterGeocode;
 }
@@ -82,6 +82,8 @@
 
 - (void) initMapboxMap {
     [_mapBoxView setTileSource:[MapBoxManager sharedInstance].tileSource];
+    _mapBoxView.zoom = 22;
+    
 }
 - (void) initCurrentLocationMap {
     _locationManager = [[CLLocationManager alloc] init];
@@ -90,8 +92,14 @@
 }
 
 -(void) initRangeSlider {
-    [self.rangeSlider initSliderWithRange:SLIDER_STEPS_IN_FEET];
+    _rangeSlider = [[[NSBundle mainBundle] loadNibNamed:@"LocationRangeSlider" owner:self options:nil] objectAtIndex:0];
+    [_locationRangeSliderHolder addSubview:_rangeSlider];
+    
+    [_rangeSlider initSliderWithRange:SLIDER_STEPS_IN_FEET];
     _rangeSlider.delegate = self;
+    
+    //set default current range
+    _currentRange = [_rangeSlider currentRange];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -105,9 +113,9 @@
     if( status == kCLAuthorizationStatusAuthorizedWhenInUse ) {
         [self.locationManager startUpdatingLocation];
         
-        _mapView.myLocationEnabled = NO;
-        _mapView.settings.myLocationButton = NO;
-        _mapView.userInteractionEnabled = NO;
+        //_mapView.myLocationEnabled = NO;
+        //_mapView.settings.myLocationButton = NO;
+        //_mapView.userInteractionEnabled = NO;
         
         _mapBoxView.delegate = self;
     }
@@ -117,54 +125,37 @@
     CLLocation *location = [locations objectAtIndex:0];
     _currentLocation = location.coordinate;
     
-    _mapView.camera = [GMSCameraPosition cameraWithTarget:_currentLocation zoom:8 bearing:0 viewingAngle:0];
-    _mapBoxView.centerCoordinate = _currentLocation;
-    _mapBoxView.zoom = 8;
-    _mapBoxView.userInteractionEnabled = NO;
+    //_mapView.camera = [GMSCameraPosition cameraWithTarget:_currentLocation zoom:8 bearing:0 viewingAngle:0];
+    
+    //map box set first circle
+    [MapBoxManager sharedInstance].currentRange = [_rangeSlider currentRange];
+    [MapBoxManager drawRangeCircleAt:_currentLocation rangeDiameter:[AppUtilities feetToMeters:_currentRange] onMap:_mapBoxView];
+    
+    //_mapBoxView.centerCoordinate = _currentLocation;
+    //_mapBoxView.zoom = 8;
+    //_mapBoxView.userInteractionEnabled = NO;
     
     
-    RMAnnotation *here = [[RMAnnotation alloc] initWithMapView:_mapBoxView coordinate:_currentLocation andTitle:@"Hayyyy"];
-    here.userInfo = @"here";
-    [_mapBoxView addAnnotation:here];
     //location only needed here to show current location. We will have location on otherwise when you update the current location feed
     [_locationManager stopUpdatingLocation];
     
     //[self reverseGeocodeCoordinate:currentLocation];
 }
 
-- (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
-{
-    if (annotation.isUserLocationAnnotation)
-        return nil;
-    
-    RMMarker *marker;
-    
-    // set 'training' marker image
-    if ([annotation.userInfo isEqualToString:@"here"])
-    {
-        marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:kMapMarkerHere]];
-    }
-    // set 'supplies' marker image
-    else if ([annotation.userInfo isEqualToString:@"supplies"])
-    {
-        marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"astronaut1.png"]];
-    }
-    
-    marker.canShowCallout = NO;
-    
-    return marker;
-}
-
 #pragma mark - LocationRangeSliderDelegate Methods
 -(void) rangeUpdated:(NSDictionary *)rangeStep {
     
     _currentRange = [[rangeStep objectForKey:@"distance"] floatValue];
-    [GoogleMapsManager drawRangeCircleAt:_currentLocation rangeDiameter:[AppUtilities feetToMeters:_currentRange] onMap:_mapView];
+    
+    //[GoogleMapsManager drawRangeCircleAt:_currentLocation rangeDiameter:[AppUtilities feetToMeters:_currentRange] onMap:_mapView];
+    
     [MapBoxManager sharedInstance].currentRange = _currentRange;
     [MapBoxManager drawRangeCircleAt:_currentLocation rangeDiameter:[AppUtilities feetToMeters:_currentRange] onMap:_mapBoxView];
     
     //update range label
-    [_currentRangeLabel setAttributedText:[AppUtilities rangeLabel:[rangeStep objectForKey:@"unit_label"] withUnits:[[rangeStep objectForKey:@"unit"] uppercaseString]]];
+    //[_currentRangeLabel setAttributedText:[AppUtilities rangeLabel:[rangeStep objectForKey:@"unit_label"] withUnits:[[rangeStep objectForKey:@"unit"] uppercaseString]]];
+    
+    //NSLog(@"range updated");
 }
 
 #pragma mark - GooglePlaceID Methods
@@ -178,8 +169,8 @@
         }
         
         if (place != nil) {
-            NSLog(@"Place lat %f", place.coordinate.latitude);
-            NSLog(@"Place long %f", place.coordinate.longitude);
+            //NSLog(@"Place lat %f", place.coordinate.latitude);
+            //NSLog(@"Place long %f", place.coordinate.longitude);
             //NSLog(@"Place placeID %@", place.placeID);
             //NSLog(@"Place attributions %@", place.attributions);
             [self updateMapToLocation:place.coordinate];
@@ -194,7 +185,10 @@
 -(void) updateMapToLocation:(CLLocationCoordinate2D)place {
     //_mapView.camera = [GMSCameraPosition cameraWithTarget:place zoom:14];
     _currentLocation = place;
-    [GoogleMapsManager animateToPosition:_currentLocation onMap:_mapView];
+    
+    [MapBoxManager animateToPosition:_currentLocation onMap:_mapBoxView];
+    [MapBoxManager drawRangeCircleAt:_currentLocation rangeDiameter:[AppUtilities feetToMeters:_currentRange] onMap:_mapBoxView];
+    
     
     //add pin test
     //GMSMarker *marker = [GMSMarker markerWithPosition:_currentLocation];

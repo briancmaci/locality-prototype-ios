@@ -16,8 +16,10 @@
 
 +(MapBoxManager *)sharedInstance;
 
-+(void) drawRangeCircleAt:(CLLocationCoordinate2D)center rangeDiameter:(float)range onMap:(RMMapView*)map;
-
 +(void) initMapBox;
+
++(void) drawRangeCircleAt:(CLLocationCoordinate2D)center rangeDiameter:(float)range onMap:(RMMapView*)map;
++(void) animateToPosition:(CLLocationCoordinate2D)center onMap:(RMMapView *)map;
+
 
 @end

@@ -21,12 +21,14 @@
 @property (strong, nonatomic) NSArray *sliderSteps;
 @property (nonatomic) int stepsCount;
 
-@property (strong, nonatomic) IBOutlet UISlider *slider;
-@property (strong, nonatomic) IBOutlet UILabel *minLabel;
-@property (strong, nonatomic) IBOutlet UILabel *maxLabel;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (weak, nonatomic) IBOutlet UILabel *rangeLabel;
 
-@property (nonatomic) float currentRange;
+@property (weak, nonatomic) IBOutlet UIView *tickMarkView;
+
+@property (nonatomic) int currentStep;
 
 - (void)initSliderWithRange:(NSArray *)range;
+- (float) currentRange;
 
 @end

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="InterstateLightCondensed.ttf">
+            <string>InterstateLightCondensed</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LocationRangeSlider">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_slider_bg" translatesAutoresizingMaskIntoConstraints="NO" id="GHx-8B-xvY" userLabel="bg">
+                    <rect key="frame" x="97" y="34" width="191" height="32"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="7qY-5Y-Ra0"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PrF-Os-qhg" userLabel="tickView">
+                    <rect key="frame" x="97" y="34" width="191" height="10"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="CZv-YH-S2J"/>
+                    </constraints>
+                </view>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9fp-bw-8B6">
+                    <rect key="frame" x="95" y="17" width="195" height="31"/>
+                    <color key="tintColor" red="1" green="0.49019607840000001" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="5nb-BT-7yx"/>
+                    </constraints>
+                    <connections>
+                        <action selector="rangeSliderChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="VMR-Fp-t3C"/>
+                    </connections>
+                </slider>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_location_range" translatesAutoresizingMaskIntoConstraints="NO" id="mZl-RF-JUx">
+                    <rect key="frame" x="20" y="25" width="12" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="ksd-vD-RgM"/>
+                        <constraint firstAttribute="width" constant="12" id="tuX-hz-svB"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500FT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cx-xf-Qih" userLabel="rangeLabel">
+                    <rect key="frame" x="36" y="23" width="50" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="uyW-Fk-knk"/>
+                        <constraint firstAttribute="height" constant="21" id="wZM-0r-Mqv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="19"/>
+                    <color key="textColor" red="1" green="0.49019607840000001" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9fp-bw-8B6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="97" id="2Av-pi-1Nc"/>
+                <constraint firstItem="9fp-bw-8B6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="17" id="2Wo-RW-Wrd"/>
+                <constraint firstAttribute="trailing" secondItem="9fp-bw-8B6" secondAttribute="trailing" constant="32" id="4Lc-vn-WTr"/>
+                <constraint firstItem="PrF-Os-qhg" firstAttribute="top" secondItem="9fp-bw-8B6" secondAttribute="top" constant="17" id="6hD-z1-KHF"/>
+                <constraint firstItem="3Cx-xf-Qih" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="23" id="8pn-ie-2mQ"/>
+                <constraint firstItem="PrF-Os-qhg" firstAttribute="width" secondItem="9fp-bw-8B6" secondAttribute="width" id="IS8-Bl-KIh"/>
+                <constraint firstItem="3Cx-xf-Qih" firstAttribute="leading" secondItem="mZl-RF-JUx" secondAttribute="trailing" constant="4" id="Kc5-hK-1Ei"/>
+                <constraint firstItem="mZl-RF-JUx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="LXh-Ze-LRX"/>
+                <constraint firstItem="GHx-8B-xvY" firstAttribute="centerX" secondItem="9fp-bw-8B6" secondAttribute="centerX" id="MCX-9J-cB8"/>
+                <constraint firstItem="GHx-8B-xvY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="98" id="SoZ-5D-fPC"/>
+                <constraint firstItem="PrF-Os-qhg" firstAttribute="leading" secondItem="9fp-bw-8B6" secondAttribute="leading" id="Wvc-72-ie6"/>
+                <constraint firstItem="mZl-RF-JUx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="Xmt-Sf-BrS"/>
+                <constraint firstItem="GHx-8B-xvY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="34" id="jsA-Wp-HEY"/>
+                <constraint firstItem="GHx-8B-xvY" firstAttribute="width" secondItem="9fp-bw-8B6" secondAttribute="width" id="uJx-PM-t98"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="SoZ-5D-fPC"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="rangeLabel" destination="3Cx-xf-Qih" id="Dns-Uj-6WC"/>
+                <outlet property="slider" destination="9fp-bw-8B6" id="htz-gm-aZe"/>
+                <outlet property="tickMarkView" destination="PrF-Os-qhg" id="YHX-9p-UHr"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_location_range" width="12" height="16"/>
+        <image name="location_slider_bg" width="188" height="32"/>
+    </resources>
+</document>
