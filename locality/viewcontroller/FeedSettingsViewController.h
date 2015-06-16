@@ -11,10 +11,11 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "MapBoxManager.h"
 #import "LocationRangeSlider.h"
+#import "ImageUploadView.h"
 #import "RSKImageCropViewController.h"
 #import "LocalityBaseViewController.h"
 
-@interface FeedSettingsViewController : LocalityBaseViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate, RMMapViewDelegate> {
+@interface FeedSettingsViewController : LocalityBaseViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate, RSKImageCropViewControllerDataSource, ImageUploadViewDelegate, MapBoxManagerDelegate, UITextFieldDelegate> {
     NSArray *searchResultPlaces;
     GMSPlacesClient *placesClient;
     GMSVisibleRegion visibleRegion;
@@ -35,7 +36,15 @@
 @property (strong, nonatomic) GMSGeocoder *geocoder;
 
 @property (strong, nonatomic) LocationRangeSlider *rangeSlider;
-@property (weak, nonatomic) IBOutlet UIView *locationRangeSliderHolder;
+@property (weak, nonatomic) IBOutlet UIView *rangeSliderContainer;
+
+@property (weak, nonatomic) IBOutlet UITextField *locationName;
+@property (strong, nonatomic) IBOutlet UIView *locationNameContainer;
+
+@property (strong, nonatomic) ImageUploadView *imageUploadView;
+@property (weak, nonatomic) IBOutlet UIView *imageUploadViewContainer;
+
+@property (weak, nonatomic) IBOutlet UIView *scrollButtonContainer;
 
 //settings options tableview
 @property (weak, nonatomic) IBOutlet UITableView *feedOptionsTable;

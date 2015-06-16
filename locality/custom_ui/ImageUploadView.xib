@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="InterstateLightCondensed.ttf">
+            <string>InterstateLightCondensed</string>
+            <string>InterstateLightCondensed</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ImageUploadView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqx-ft-8FH" userLabel="TakePhotoView">
+                    <rect key="frame" x="20" y="0.0" width="140" height="140"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIc-V9-h52">
+                            <rect key="frame" x="3" y="37" width="134" height="70"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button_add_photo" translatesAutoresizingMaskIntoConstraints="NO" id="r1E-We-EtX">
+                                    <rect key="frame" x="42" y="0.0" width="51" height="43"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TAKE PHOTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Eh-CC-pef">
+                                    <rect key="frame" x="0.0" y="52" width="134" height="21"/>
+                                    <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="15"/>
+                                    <color key="textColor" red="0.30196078431372547" green="0.3411764705882353" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="134" id="Wia-AD-T9Z"/>
+                                <constraint firstAttribute="height" constant="70" id="kcf-Zb-Iqd"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq3-qq-xkv" userLabel="Hit">
+                            <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="takePhotoButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="s8Z-at-KLE"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.67450980392156867" green="0.75294117647058822" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="eIc-V9-h52" secondAttribute="centerY" constant="-2" id="1le-LZ-NXG"/>
+                        <constraint firstAttribute="bottom" secondItem="Xq3-qq-xkv" secondAttribute="bottom" id="AoR-4p-xEg"/>
+                        <constraint firstAttribute="centerX" secondItem="eIc-V9-h52" secondAttribute="centerX" id="Ca0-bM-mYK"/>
+                        <constraint firstAttribute="width" secondItem="fqx-ft-8FH" secondAttribute="height" multiplier="1:1" id="a8Q-RK-WTc"/>
+                        <constraint firstAttribute="trailing" secondItem="Xq3-qq-xkv" secondAttribute="trailing" id="iFT-Jl-QIY"/>
+                        <constraint firstItem="Xq3-qq-xkv" firstAttribute="leading" secondItem="fqx-ft-8FH" secondAttribute="leading" id="lBr-pn-JS2"/>
+                        <constraint firstItem="Xq3-qq-xkv" firstAttribute="top" secondItem="fqx-ft-8FH" secondAttribute="top" id="pvF-gg-daW"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezU-SN-h2i" userLabel="UploadPhotoView">
+                    <rect key="frame" x="160" y="0.0" width="140" height="140"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkT-YS-W7N">
+                            <rect key="frame" x="3" y="37" width="134" height="70"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button_upload_photo" translatesAutoresizingMaskIntoConstraints="NO" id="CGw-c1-J38">
+                                    <rect key="frame" x="46" y="0.0" width="43" height="43"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UPLOAD PHOTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fz-Y7-g1s">
+                                    <rect key="frame" x="0.0" y="52" width="134" height="21"/>
+                                    <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="15"/>
+                                    <color key="textColor" red="0.30196078430000001" green="0.3411764706" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="Crj-7v-upD"/>
+                                <constraint firstAttribute="width" constant="134" id="ips-Y3-1H6"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgj-4u-A9I" userLabel="Hit">
+                            <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="uploadPhotoButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="USF-27-pyA"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.71372549019607845" green="0.80392156862745101" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Rgj-4u-A9I" firstAttribute="top" secondItem="ezU-SN-h2i" secondAttribute="top" id="49T-BC-HZf"/>
+                        <constraint firstAttribute="centerY" secondItem="bkT-YS-W7N" secondAttribute="centerY" constant="-2" id="Hcp-Xr-JR2"/>
+                        <constraint firstItem="Rgj-4u-A9I" firstAttribute="leading" secondItem="ezU-SN-h2i" secondAttribute="leading" id="IkE-eK-Adk"/>
+                        <constraint firstAttribute="width" secondItem="ezU-SN-h2i" secondAttribute="height" multiplier="1:1" id="LXB-HK-yV8"/>
+                        <constraint firstAttribute="trailing" secondItem="Rgj-4u-A9I" secondAttribute="trailing" id="mUC-JF-xdx"/>
+                        <constraint firstAttribute="bottom" secondItem="Rgj-4u-A9I" secondAttribute="bottom" id="qJn-Gl-lSf"/>
+                        <constraint firstAttribute="centerX" secondItem="bkT-YS-W7N" secondAttribute="centerX" id="zjb-L7-38f"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pk8-Qa-UYP">
+                    <rect key="frame" x="20" y="0.0" width="280" height="140"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Pk8-Qa-UYP" secondAttribute="height" multiplier="2:1" id="KTv-eU-JNk"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ezU-SN-h2i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1po-pb-uVb"/>
+                <constraint firstItem="Pk8-Qa-UYP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="DTw-S2-oAw"/>
+                <constraint firstAttribute="trailing" secondItem="Pk8-Qa-UYP" secondAttribute="trailing" constant="20" id="Iv3-iH-xwA"/>
+                <constraint firstItem="ezU-SN-h2i" firstAttribute="leading" secondItem="fqx-ft-8FH" secondAttribute="trailing" id="Z7j-8C-HXc"/>
+                <constraint firstItem="fqx-ft-8FH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Zu0-i8-rYm"/>
+                <constraint firstItem="fqx-ft-8FH" firstAttribute="width" secondItem="ezU-SN-h2i" secondAttribute="width" id="bEj-ic-ISl"/>
+                <constraint firstAttribute="trailing" secondItem="ezU-SN-h2i" secondAttribute="trailing" constant="20" id="gat-QW-NZB"/>
+                <constraint firstItem="fqx-ft-8FH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="rab-bz-fV4"/>
+                <constraint firstItem="Pk8-Qa-UYP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="y3y-2k-JSu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="selectedPhoto" destination="Pk8-Qa-UYP" id="NzX-kX-GjM"/>
+                <outlet property="takePhotoView" destination="fqx-ft-8FH" id="9x2-fq-ErX"/>
+                <outlet property="uploadPhotoView" destination="ezU-SN-h2i" id="4LO-n9-hdr"/>
+            </connections>
+            <point key="canvasLocation" x="584" y="528"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button_add_photo" width="51" height="43"/>
+        <image name="button_upload_photo" width="43" height="43"/>
+    </resources>
+</document>

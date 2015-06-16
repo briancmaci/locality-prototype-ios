@@ -10,7 +10,7 @@
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">22</Parameter>
   <Parameter name="minzoom">0</Parameter>
-  <Parameter name="name"><![CDATA[Mapbox Light]]></Parameter>
+  <Parameter name="name"><![CDATA[Locality Map]]></Parameter>
   <Parameter name="source"><![CDATA[mapbox:///mapbox.mapbox-terrain-v1,mapbox.mapbox-streets-v5]]></Parameter>
 </Parameters>
 
@@ -2214,25 +2214,25 @@
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <Filter>([class] = 'main')</Filter>
-    <TextSymbolizer size="13" halo-radius="1" halo-fill="#333333" fill="#ffffff" fontset-name="fontset-0" placement="line" character-spacing="1" avoid-edges="true" halo-rasterizer="fast" minimum-distance="100" minimum-padding="5" ><![CDATA[[name_en]]]></TextSymbolizer>
+    <TextSymbolizer size="13" halo-radius="0" halo-fill="#333333" fill="#333333" fontset-name="fontset-0" placement="line" character-spacing="1" avoid-edges="true" halo-rasterizer="fast" minimum-distance="100" minimum-padding="5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
     <Filter>([class] = 'main')</Filter>
-    <TextSymbolizer size="13" halo-radius="1.5" halo-fill="#333333" fill="#ffffff" fontset-name="fontset-0" placement="line" character-spacing="1" avoid-edges="true" halo-rasterizer="fast" minimum-distance="100" minimum-padding="5" ><![CDATA[[name_en]]]></TextSymbolizer>
+    <TextSymbolizer size="13" halo-radius="0" halo-fill="#333333" fill="#333333" fontset-name="fontset-0" placement="line" character-spacing="1" avoid-edges="true" halo-rasterizer="fast" minimum-distance="100" minimum-padding="5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
     <Filter>([class] = 'main')</Filter>
-    <TextSymbolizer size="12" halo-radius="1" fill="#ffffff" halo-fill="#444444" fontset-name="fontset-0" placement="line" character-spacing="1" avoid-edges="true" halo-rasterizer="fast" minimum-distance="100" minimum-padding="5" ><![CDATA[[name_en]]]></TextSymbolizer>
+    <TextSymbolizer size="12" halo-radius="0" fill="#444444" halo-fill="#444444" fontset-name="fontset-0" placement="line" character-spacing="1" avoid-edges="true" halo-rasterizer="fast" minimum-distance="100" minimum-padding="5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([class] = 'main')</Filter>
-    <TextSymbolizer size="10" halo-radius="1.5" fill="#ffffff" halo-fill="#444444" fontset-name="fontset-0" placement="line" character-spacing="1" avoid-edges="true" halo-rasterizer="fast" minimum-distance="100" minimum-padding="5" ><![CDATA[[name_en]]]></TextSymbolizer>
+    <TextSymbolizer size="10" halo-radius="0" fill="#444444" halo-fill="#444444" fontset-name="fontset-0" placement="line" character-spacing="1" avoid-edges="true" halo-rasterizer="fast" minimum-distance="100" minimum-padding="5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
 </Style>
 <Style name="road_label-shield" filter-mode="first">

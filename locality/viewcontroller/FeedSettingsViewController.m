@@ -22,6 +22,9 @@
 
 @implementation FeedSettingsViewController
 
+static NSString * const kLocationSliderNibName = @"LocationRangeSlider";
+static NSString * const kImageUploadNibName = @"ImageUploadView";
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +37,20 @@
     [self initCurrentLocationMap];
     [self initMapboxMap];
     [self initRangeSlider];
+    [self initImageUploadView];
+    [self initLocationName];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self registerForKeyboardNotifications];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self cancelKeyboardNotifications];
 }
 
 - (void) initHeaderView {
@@ -42,6 +59,10 @@
                rightButtonType:IconClose];
     
     [self.view addSubview:self.header];
+}
+
+- (void) initLocationName {
+    _locationName.delegate = self;
 }
 
 - (void) initAutoCompleteSearch {
@@ -67,22 +88,37 @@
     
     //size to fit
     _feedOptionsTableHeight.constant = FEED_SETTINGS_OPTION_HEIGHT * [_feedOptions count];
+    [_feedOptionsTable reloadData];
     
-    //size content view
-    CGRect contentRect = CGRectZero;
-    for (UIView *view in _scrollView.subviews) {
-        contentRect = CGRectUnion(contentRect, view.frame);
-    }
-    contentRect.size.height += _feedOptionsTableHeight.constant;
-    _contentViewHeight.constant = contentRect.size.height;
-    [_scrollView setContentSize:contentRect.size];
+    //size content view by adding all pieces
+    float contentHeight = 0.0f;
+    
+    contentHeight += self.searchDisplayController.searchBar.frame.size.height;
+    contentHeight += _mapBoxView.frame.size.height;
+    contentHeight += _rangeSliderContainer.frame.size.height;
+    contentHeight += _locationNameContainer.frame.size.height;
+    contentHeight += _imageUploadViewContainer.frame.size.height;
+    contentHeight += _feedOptionsTableHeight.constant;
+    contentHeight += _scrollButtonContainer.frame.size.height;
+    contentHeight += 80.0f; //bottom padding
+    
+    _contentViewHeight.constant = contentHeight;
+    [_scrollView setContentSize:CGSizeMake( DEVICE_WIDTH, contentHeight)];
     
     _scrollView.delegate = self;
 }
 
 - (void) initMapboxMap {
+    
     [_mapBoxView setTileSource:[MapBoxManager sharedInstance].tileSource];
+    [MapBoxManager setCurrentMapDelegate:_mapBoxView];
+    
+    [MapBoxManager sharedInstance].delegate = self;
+    
     _mapBoxView.zoom = 22;
+    
+    _mapBoxView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    _mapBoxView.userInteractionEnabled = YES;
     
 }
 - (void) initCurrentLocationMap {
@@ -92,14 +128,22 @@
 }
 
 -(void) initRangeSlider {
-    _rangeSlider = [[[NSBundle mainBundle] loadNibNamed:@"LocationRangeSlider" owner:self options:nil] objectAtIndex:0];
-    [_locationRangeSliderHolder addSubview:_rangeSlider];
+    _rangeSlider = [[[NSBundle mainBundle] loadNibNamed:kLocationSliderNibName owner:self options:nil] objectAtIndex:0];
+    [_rangeSliderContainer addSubview:_rangeSlider];
     
     [_rangeSlider initSliderWithRange:SLIDER_STEPS_IN_FEET];
     _rangeSlider.delegate = self;
     
     //set default current range
     _currentRange = [_rangeSlider currentRange];
+}
+
+-(void) initImageUploadView {
+    
+    _imageUploadView = [[[NSBundle mainBundle] loadNibNamed:kImageUploadNibName owner:self options:nil] objectAtIndex:0];
+    [_imageUploadViewContainer addSubview:_imageUploadView];
+    
+    _imageUploadView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,8 +161,20 @@
         //_mapView.settings.myLocationButton = NO;
         //_mapView.userInteractionEnabled = NO;
         
-        _mapBoxView.delegate = self;
+        //_mapBoxView.delegate = self;
     }
+}
+
+#pragma mark - ImageUploadViewDelegate Methods 
+
+//These both go through the action sheet flow that checks for camera access
+
+- (void) takePhotoTapped {
+    [self checkCameraAccess];
+}
+
+- (void) uploadPhotoTapped {
+    [self checkCameraAccess];
 }
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
@@ -140,6 +196,13 @@
     [_locationManager stopUpdatingLocation];
     
     //[self reverseGeocodeCoordinate:currentLocation];
+}
+
+#pragma mark - MapBoxManagerDelegate Methods 
+
+-(void) onMapTapped:(CLLocationCoordinate2D)center {
+    _currentLocation = center;
+    [MapBoxManager drawRangeCircleAt:_currentLocation rangeDiameter:[AppUtilities feetToMeters:_currentRange] onMap:_mapBoxView];
 }
 
 #pragma mark - LocationRangeSliderDelegate Methods
@@ -169,10 +232,6 @@
         }
         
         if (place != nil) {
-            //NSLog(@"Place lat %f", place.coordinate.latitude);
-            //NSLog(@"Place long %f", place.coordinate.longitude);
-            //NSLog(@"Place placeID %@", place.placeID);
-            //NSLog(@"Place attributions %@", place.attributions);
             [self updateMapToLocation:place.coordinate];
             
         } else {
@@ -185,15 +244,7 @@
 -(void) updateMapToLocation:(CLLocationCoordinate2D)place {
     //_mapView.camera = [GMSCameraPosition cameraWithTarget:place zoom:14];
     _currentLocation = place;
-    
-    [MapBoxManager animateToPosition:_currentLocation onMap:_mapBoxView];
     [MapBoxManager drawRangeCircleAt:_currentLocation rangeDiameter:[AppUtilities feetToMeters:_currentRange] onMap:_mapBoxView];
-    
-    
-    //add pin test
-    //GMSMarker *marker = [GMSMarker markerWithPosition:_currentLocation];
-    //marker.appearAnimation = kGMSMarkerAnimationPop;
-    //marker.map = _mapView;
 }
 
 #pragma mark - ScrollView Delegate Methods
@@ -205,6 +256,73 @@
     
     //remove search bar when not at top
     self.searchDisplayController.searchBar.alpha = (self.searchDisplayController.searchBar.frame.size.height - scrollView.contentOffset.y)/self.searchDisplayController.searchBar.frame.size.height;
+}
+
+#pragma mark - Keyboard Notifications
+
+- (void)registerForKeyboardNotifications {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    
+}
+
+- (void)cancelKeyboardNotifications {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardDidHideNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
+    
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    
+    NSDictionary* info = [notification userInfo];
+    
+    CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    CGPoint locOrigin = _locationName.frame.origin;
+    CGFloat locHeight = _locationName.frame.size.height;
+    
+    CGRect visibleRect = _scrollView.frame;
+    
+    visibleRect.size.height -= keyboardSize.height;
+    
+    if (!CGRectContainsPoint(visibleRect, locOrigin)){
+        CGPoint scrollPoint = CGPointMake(0.0, keyboardSize.height - locOrigin.y - locHeight );
+        
+        [_scrollView setContentOffset:scrollPoint animated:YES];
+        
+    }
+    //CGPoint scrollPoint = _scrollView.contentOffset;
+    //scrollPoint.y += keyboardSize.height;
+    
+    //[_scrollView setContentOffset:scrollPoint animated:YES];
+    
+}
+
+- (void)keyboardWillBeHidden:(NSNotification *)notification {
+    
+    [self.scrollView setContentOffset:CGPointZero animated:YES];
+    
+}
+
+#pragma mark - UITextFieldDelegate Methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 
 #pragma mark - Table view data source
@@ -341,11 +459,16 @@
 }
 
 
+#pragma mark - CTA
+
+-(IBAction)saveLocationTapped:(id)sender {
+
+}
 
 
 #pragma mark - Camera Access Flow
 
--(IBAction)checkCameraAccess:(id)sender {
+-(void)checkCameraAccess{
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if(authStatus == AVAuthorizationStatusAuthorized)
     {
@@ -497,7 +620,7 @@
     picker.delegate = self;
     picker.allowsEditing = NO;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+    picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
     picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
     [picker setShowsCameraControls:NO];
     picker.cameraOverlayView = cameraOverlayView;
@@ -518,11 +641,73 @@
 }
 
 -(void)showImageCropper:(UIImage *)image {
-    RSKImageCropViewController *imageCropVC = [[RSKImageCropViewController alloc] initWithImage:image];
+    RSKImageCropViewController *imageCropVC = [[RSKImageCropViewController alloc] initWithImage:image cropMode:RSKImageCropModeCustom];
+    //RSKImageCropViewController *imageCropVC = [[RSKImageCropViewController alloc] initWithImage:image];
+    
     imageCropVC.delegate = self;
+    imageCropVC.dataSource = self;
     [self.navigationController pushViewController:imageCropVC animated:YES];
 }
 
+#pragma mark - RSKImageCropperDelegate Methods
+
+// Crop image has been canceled.
+- (void)imageCropViewControllerDidCancelCrop:(RSKImageCropViewController *)controller
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+// The original image has been cropped.
+- (void)imageCropViewController:(RSKImageCropViewController *)controller
+                   didCropImage:(UIImage *)croppedImage
+                  usingCropRect:(CGRect)cropRect
+{
+    [_imageUploadView setLocationImage:croppedImage];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+#pragma mark - RSKImageCropperDataSource Methods
+
+-(CGRect)imageCropViewControllerCustomMaskRect:(RSKImageCropViewController *)controller {
+    
+    CGSize maskSize = CGSizeMake(DEVICE_WIDTH, DEVICE_WIDTH*IMAGE_RATIO);
+    
+    CGFloat viewWidth = CGRectGetWidth(controller.view.frame);
+    CGFloat viewHeight = CGRectGetHeight(controller.view.frame);
+    
+    CGRect maskRect = CGRectMake((viewWidth - maskSize.width) * 0.5f,
+                                 (viewHeight - maskSize.height) * 0.5f,
+                                 maskSize.width,
+                                 maskSize.height);
+    
+    return maskRect;
+}
+
+// Returns a custom path for the mask.
+- (UIBezierPath *)imageCropViewControllerCustomMaskPath:(RSKImageCropViewController *)controller
+{
+    CGRect rect = controller.maskRect;
+    CGPoint point1 = CGPointMake(CGRectGetMinX(rect), CGRectGetMaxY(rect));
+    CGPoint point2 = CGPointMake(CGRectGetMaxX(rect), CGRectGetMaxY(rect));
+    CGPoint point3 = CGPointMake(CGRectGetMaxX(rect), CGRectGetMinY(rect));
+    CGPoint point4 = CGPointMake(CGRectGetMinX(rect), CGRectGetMinY(rect));
+    
+    UIBezierPath *rectPath = [UIBezierPath bezierPath];
+    [rectPath moveToPoint:point1];
+    [rectPath addLineToPoint:point2];
+    [rectPath addLineToPoint:point3];
+    [rectPath addLineToPoint:point4];
+    [rectPath closePath];
+    
+    return rectPath;
+}
+
+
+-(CGRect)imageCropViewControllerCustomMovementRect:(RSKImageCropViewController *)controller {
+    
+    return controller.maskRect;
+}
 
 /*
 #pragma mark - Navigation

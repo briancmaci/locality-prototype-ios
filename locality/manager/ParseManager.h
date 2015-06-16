@@ -27,5 +27,5 @@ typedef void(^successBlock)(id response);
 //queries
 +(void) isValidUsername:(NSString *)username success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 +(void) updateCurrentFeed:(FeedLocationModel *)currentFeed success:(successBlock)successBlock failure:(failureBlock)failureBlock;
-
++(void) addNewPinnedLocation:(FeedLocationModel *)pinnedFeed success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 @end

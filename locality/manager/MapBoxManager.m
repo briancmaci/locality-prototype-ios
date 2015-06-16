@@ -43,17 +43,19 @@ static NSString * const markerId = @"pinnedMarker";
     
 
     [[RMConfiguration sharedInstance] setAccessToken:accessToken];
-    [MapBoxManager sharedInstance].tileSource = [[RMMapboxSource alloc  ]initWithMapID:mapID];
+    RMMapboxSource *interactiveSource = [[RMMapboxSource alloc] initWithMapID:mapID];
+    [MapBoxManager sharedInstance].tileSource = interactiveSource;
+}
+
++(void) setCurrentMapDelegate:(RMMapView *)map {
+    map.delegate = [MapBoxManager sharedInstance];
 }
 
 +(void) drawRangeCircleAt:(CLLocationCoordinate2D)center rangeDiameter:(float)range onMap:(RMMapView*)map {
     
-    map.delegate = [MapBoxManager sharedInstance];
-    
     [map removeAllAnnotations];
     
-    //map.autoresizingMask = UIViewAutoresizingFlexibleHeight |
-    //UIViewAutoresizingFlexibleWidth;
+    map.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
     // add circle
     RMAnnotation *annCircle = [[RMAnnotation alloc] initWithMapView:map
@@ -89,11 +91,16 @@ static NSString * const markerId = @"pinnedMarker";
     return tempCoord;
 }
 
+//+(void) setMarkerAtTouch:(CGPoint)touchPoint onMap:(RMMapView *)map {
+//    map setCenterProjectedPoint:<#(RMProjectedPoint)#>
+//}
+
 +(void) animateToPosition:(CLLocationCoordinate2D)center onMap:(RMMapView *)map {
-    
     [map setCenterCoordinate:center animated:YES];
+    
 }
 
+#pragma mark - RMMapView Delegate Methods
 
 - (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
 {
@@ -121,6 +128,15 @@ static NSString * const markerId = @"pinnedMarker";
     }
     
     return annotationLayer;
+}
+
+- (void) singleTapOnMap:(RMMapView *)map at:(CGPoint)point {
+    CLLocationCoordinate2D tappedLocation = CLLocationCoordinate2DMake([map pixelToCoordinate:point].latitude, [map pixelToCoordinate:point].longitude);
+    
+    if( [_delegate respondsToSelector:@selector(onMapTapped:)]) {
+        [_delegate onMapTapped:tappedLocation];
+    }
+    //[MapBoxManager animateToPosition:tappedLocation onMap:map];
 }
 
 @end

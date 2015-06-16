@@ -52,6 +52,8 @@
 		036CA1CD1AFBC88F0064AB6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1CB1AFBC88F0064AB6C /* Main.storyboard */; };
 		036CA1CF1AFBC88F0064AB6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1CE1AFBC88F0064AB6C /* Images.xcassets */; };
 		036CA1D21AFBC88F0064AB6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1D01AFBC88F0064AB6C /* LaunchScreen.xib */; };
+		03C2CF291B307BC500463BDC /* ImageUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C2CF281B307BC500463BDC /* ImageUploadView.m */; };
+		03C2CF2C1B307BFB00463BDC /* ImageUploadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C2CF2B1B307BFB00463BDC /* ImageUploadView.xib */; };
 		03D595C71B06269B00C48F25 /* AppUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D595C61B06269B00C48F25 /* AppUtilities.m */; };
 		03F71A5A1B2076B8006F4088 /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F71A591B2076B8006F4088 /* SlideNavigationController.m */; };
 		03F71A671B2076D3006F4088 /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F71A5E1B2076D3006F4088 /* SlideNavigationContorllerAnimatorFade.m */; };
@@ -148,6 +150,9 @@
 		036CA1D11AFBC88F0064AB6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		036CA1DC1AFBC88F0064AB6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		036CA1DD1AFBC88F0064AB6C /* localityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = localityTests.m; sourceTree = "<group>"; };
+		03C2CF271B307BC500463BDC /* ImageUploadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageUploadView.h; path = custom_ui/ImageUploadView.h; sourceTree = "<group>"; };
+		03C2CF281B307BC500463BDC /* ImageUploadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageUploadView.m; path = custom_ui/ImageUploadView.m; sourceTree = "<group>"; };
+		03C2CF2B1B307BFB00463BDC /* ImageUploadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageUploadView.xib; path = custom_ui/ImageUploadView.xib; sourceTree = "<group>"; };
 		03D595C51B06269B00C48F25 /* AppUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppUtilities.h; path = util/AppUtilities.h; sourceTree = "<group>"; };
 		03D595C61B06269B00C48F25 /* AppUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppUtilities.m; path = util/AppUtilities.m; sourceTree = "<group>"; };
 		03F71A581B2076B8006F4088 /* SlideNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideNavigationController.h; path = custom_ui/SlideNavigationController/SlideNavigationController.h; sourceTree = "<group>"; };
@@ -218,9 +223,8 @@
 				03FCEE921B2B18D7006D3FF3 /* HeaderView */,
 				03F71A571B2076A8006F4088 /* SlideNavigationController */,
 				03F71A721B20C089006F4088 /* tableviewcells */,
-				030C41371B0541A5004F1ECE /* LocationRangeSlider.h */,
-				030C41381B0541A5004F1ECE /* LocationRangeSlider.m */,
-				0355982E1B2F198800D42A33 /* LocationRangeSlider.xib */,
+				03C2CF2A1B307BCF00463BDC /* ImageUploadView */,
+				03C2CF2D1B308C5E00463BDC /* LocationRangeSlider */,
 				033B73291B0CB62800355581 /* FeedHeaderHeroView.h */,
 				033B732A1B0CB62800355581 /* FeedHeaderHeroView.m */,
 				033B732C1B0CB64000355581 /* FeedHeaderHeroView.xib */,
@@ -410,6 +414,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		03C2CF2A1B307BCF00463BDC /* ImageUploadView */ = {
+			isa = PBXGroup;
+			children = (
+				03C2CF271B307BC500463BDC /* ImageUploadView.h */,
+				03C2CF281B307BC500463BDC /* ImageUploadView.m */,
+				03C2CF2B1B307BFB00463BDC /* ImageUploadView.xib */,
+			);
+			name = ImageUploadView;
+			sourceTree = "<group>";
+		};
+		03C2CF2D1B308C5E00463BDC /* LocationRangeSlider */ = {
+			isa = PBXGroup;
+			children = (
+				030C41371B0541A5004F1ECE /* LocationRangeSlider.h */,
+				030C41381B0541A5004F1ECE /* LocationRangeSlider.m */,
+				0355982E1B2F198800D42A33 /* LocationRangeSlider.xib */,
+			);
+			name = LocationRangeSlider;
+			sourceTree = "<group>";
+		};
 		03F71A571B2076A8006F4088 /* SlideNavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,6 +616,7 @@
 				0353B48A1B0E3C1400CE3750 /* Interstate Cond Mono - Blk.ttf in Resources */,
 				0353B48F1B0E3C1400CE3750 /* Interstate-BlackCondensed.ttf in Resources */,
 				0353B4941B0E3C1400CE3750 /* Interstate-RegularCond.otf in Resources */,
+				03C2CF2C1B307BFB00463BDC /* ImageUploadView.xib in Resources */,
 				0349E3B91B2871F30036F6D1 /* FeedSettingToggleCell.xib in Resources */,
 				0353B48D1B0E3C1400CE3750 /* Interstate ExtraLight Cond.ttf in Resources */,
 				0353B4911B0E3C1400CE3750 /* Interstate-LightCond.otf in Resources */,
@@ -678,6 +703,7 @@
 				032C764D1B03F0DE00C78CB0 /* SignUpViewController.m in Sources */,
 				03F71A6B1B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				03F71A791B20C425006F4088 /* FeedAddNewTableViewCell.m in Sources */,
+				03C2CF291B307BC500463BDC /* ImageUploadView.m in Sources */,
 				4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */,
 				03F71A681B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				03FCEE961B2B2AFB006D3FF3 /* HeaderIconButton.m in Sources */,

@@ -41,6 +41,7 @@
 #define FEED_SETTINGS @[@{ @"label":@"Send me push alerts from this location", @"default":@YES, @"var":@"pushEnabled"}, @{ @"label":@"Include promotions for this location", @"default":@NO, @"var":@"promotionsEnabled"}]
 
 
+#define IMAGE_RATIO 0.5f
 
 /* Storyboard IDs */
 #define kLoginStoryboardId @"loginVC"

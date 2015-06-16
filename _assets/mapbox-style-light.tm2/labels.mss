@@ -365,27 +365,27 @@
     text-min-padding: 5;
     [zoom=14] { 
       text-size: 10;
-      text-halo-radius: 1.5;
-      text-fill: #fff;
+      text-halo-radius: 0;
+      text-fill: #444;
       text-halo-fill: #444;
       }
     [zoom=15] { 
       text-size: 12;
-      text-halo-radius: 1;
-      text-fill: #fff;
+      text-halo-radius: 0;
+      text-fill: #444;
       text-halo-fill: #444;
       }
     [zoom=16] { 
       text-size: 13;      
-      text-halo-radius: 1.5;
+      text-halo-radius: 0;
       text-halo-fill: #333;
-      text-fill: #fff;
+      text-fill: #333;
       }
      [zoom>=17] { 
       text-size: 13;      
-      text-halo-radius: 1;
+      text-halo-radius: 0;
       text-halo-fill: #333;
-      text-fill: #fff;
+      text-fill: #333;
       }
     }
   [class='street'][zoom>=15], [class='street_limited'][zoom>=15] {

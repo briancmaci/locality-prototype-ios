@@ -21,6 +21,11 @@
     [UserModel sharedInstance].currentLocation = [DataManager parseFeedDataIntoModel:[me objectForKey:@"currentLocation"]];
     
     //pinned locations
+    NSMutableArray *pinnedFeedArrayRaw = [me objectForKey:@"pinnedLocations"];
+    
+    for( int i = 0; i < [pinnedFeedArrayRaw count]; i++ ) {
+        [[UserModel sharedInstance].pinnedLocations addObject:[DataManager parseFeedDataIntoModel:[pinnedFeedArrayRaw objectAtIndex:i]]];
+    }
     
     //first time
     [UserModel sharedInstance].isFirstTime = [[me objectForKey:@"isFirstTime"] boolValue];
@@ -41,6 +46,19 @@
     parsedFeed.pushEnabled = [[rawFeed objectForKey:@"pushEnabled"] boolValue];
     
     return parsedFeed;
+}
+
++(NSDictionary *)parseFeedModelIntoDictionary:(FeedLocationModel *)feed {
+    
+    return @{ kName : feed.name,
+              kImgUrl : feed.imgUrl,
+              kLatitude : [[NSNumber alloc] initWithDouble:feed.latitude],
+              kLongitude : [[NSNumber alloc] initWithDouble:feed.longitude],
+              kRange : [[NSNumber alloc] initWithFloat:feed.range],
+              kPromotionsEnabled : @(feed.promotionsEnabled),
+              kPushEnabled : @(feed.pushEnabled),
+              kImportantEnabled : @(feed.importantEnabled)
+            };
 }
 
 @end

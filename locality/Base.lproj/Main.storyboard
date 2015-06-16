@@ -767,19 +767,22 @@
                                                     <constraint firstAttribute="width" secondItem="Zqi-k9-ZRE" secondAttribute="height" multiplier="1:1" id="un8-vk-jg4"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBs-37-SM7" userLabel="Range Slider Container" customClass="LocationRangeSlider">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBs-37-SM7" userLabel="Range Slider">
                                                 <rect key="frame" x="0.0" y="344" width="320" height="77"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="77" id="i0X-ey-DZO"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P13-zE-AQk" userLabel="LocationAndImageView">
-                                                <rect key="frame" x="0.0" y="421" width="320" height="86"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P13-zE-AQk" userLabel="Location Name">
+                                                <rect key="frame" x="0.0" y="421" width="320" height="54"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name your location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H9O-YQ-a6D">
-                                                        <rect key="frame" x="20" y="0.0" width="280" height="30"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name your location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H9O-YQ-a6D">
+                                                        <rect key="frame" x="20" y="0.0" width="280" height="40"/>
                                                         <color key="backgroundColor" red="0.89411764705882357" green="0.89411764705882357" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="wB2-Un-ebC"/>
+                                                        </constraints>
                                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -787,18 +790,28 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="86" id="Veg-VT-BJG"/>
+                                                    <constraint firstItem="H9O-YQ-a6D" firstAttribute="top" secondItem="P13-zE-AQk" secondAttribute="top" id="1C5-Lt-VyB"/>
+                                                    <constraint firstAttribute="height" constant="54" id="Veg-VT-BJG"/>
+                                                    <constraint firstItem="H9O-YQ-a6D" firstAttribute="leading" secondItem="P13-zE-AQk" secondAttribute="leading" constant="20" id="tLk-2J-Bf6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="H9O-YQ-a6D" secondAttribute="trailing" constant="20" id="wR4-fi-gO3"/>
                                                 </constraints>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fka-Np-QC0">
-                                                <rect key="frame" x="0.0" y="507" width="320" height="44"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2b-zz-p2k" userLabel="ImageUploadView">
+                                                <rect key="frame" x="0.0" y="475" width="320" height="140"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="R2b-zz-p2k" secondAttribute="height" multiplier="16:7" id="3Ub-qt-wGS"/>
+                                                </constraints>
+                                            </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fka-Np-QC0" userLabel="Feed Settings Table">
+                                                <rect key="frame" x="0.0" y="631" width="320" height="44"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="HZR-A5-wyg"/>
                                                 </constraints>
                                             </tableView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMS-wN-ul6">
-                                                <rect key="frame" x="0.0" y="569" width="320" height="80"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMS-wN-ul6" userLabel="Scroll Foot Button">
+                                                <rect key="frame" x="0.0" y="693" width="320" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8k4-kx-DFD">
                                                         <rect key="frame" x="20" y="0.0" width="280" height="58"/>
@@ -815,6 +828,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="saveLocationTapped:" destination="J8l-fm-Wdr" eventType="touchUpInside" id="luD-cX-mCG"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -829,19 +845,22 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="P13-zE-AQk" firstAttribute="leading" secondItem="Wh5-rR-78c" secondAttribute="leading" id="3d4-KG-hDx"/>
+                                            <constraint firstItem="R2b-zz-p2k" firstAttribute="top" secondItem="P13-zE-AQk" secondAttribute="bottom" id="6TT-W6-dhC"/>
                                             <constraint firstItem="jBs-37-SM7" firstAttribute="top" secondItem="Zqi-k9-ZRE" secondAttribute="bottom" id="Aur-le-rnh"/>
                                             <constraint firstAttribute="trailing" secondItem="Zqi-k9-ZRE" secondAttribute="trailing" id="EPg-QB-8p2"/>
+                                            <constraint firstItem="fka-Np-QC0" firstAttribute="top" secondItem="R2b-zz-p2k" secondAttribute="bottom" constant="16" id="HUB-lN-fnw"/>
+                                            <constraint firstItem="R2b-zz-p2k" firstAttribute="leading" secondItem="Wh5-rR-78c" secondAttribute="leading" id="Kqm-wH-yrF"/>
                                             <constraint firstAttribute="trailing" secondItem="jBs-37-SM7" secondAttribute="trailing" id="TiZ-Qa-9K9"/>
                                             <constraint firstItem="KMS-wN-ul6" firstAttribute="top" secondItem="fka-Np-QC0" secondAttribute="bottom" constant="18" id="UXU-l0-ezI"/>
                                             <constraint firstItem="jBs-37-SM7" firstAttribute="leading" secondItem="Wh5-rR-78c" secondAttribute="leading" id="UbR-kc-1kx"/>
                                             <constraint firstItem="KMS-wN-ul6" firstAttribute="leading" secondItem="Wh5-rR-78c" secondAttribute="leading" id="WJQ-q1-bhu"/>
                                             <constraint firstAttribute="height" constant="510" id="Wfg-mS-lPL"/>
-                                            <constraint firstItem="fka-Np-QC0" firstAttribute="top" secondItem="P13-zE-AQk" secondAttribute="bottom" id="YPZ-KS-55L"/>
                                             <constraint firstItem="fka-Np-QC0" firstAttribute="leading" secondItem="Wh5-rR-78c" secondAttribute="leading" id="dYS-6a-fXO"/>
                                             <constraint firstAttribute="trailing" secondItem="KMS-wN-ul6" secondAttribute="trailing" id="diD-Y2-aG3"/>
                                             <constraint firstAttribute="trailing" secondItem="fka-Np-QC0" secondAttribute="trailing" id="eGK-eF-s4f"/>
                                             <constraint firstItem="Zqi-k9-ZRE" firstAttribute="top" secondItem="Wh5-rR-78c" secondAttribute="top" constant="24" id="f4W-vH-F9f"/>
                                             <constraint firstAttribute="trailing" secondItem="P13-zE-AQk" secondAttribute="trailing" id="h8a-7p-E1X"/>
+                                            <constraint firstAttribute="trailing" secondItem="R2b-zz-p2k" secondAttribute="trailing" id="jCd-he-2Af"/>
                                             <constraint firstItem="P13-zE-AQk" firstAttribute="top" secondItem="jBs-37-SM7" secondAttribute="bottom" id="qDt-Py-vBX"/>
                                             <constraint firstItem="Zqi-k9-ZRE" firstAttribute="leading" secondItem="Wh5-rR-78c" secondAttribute="leading" id="zJf-U4-P5e"/>
                                         </constraints>
@@ -882,8 +901,12 @@
                         <outlet property="contentViewHeight" destination="Wfg-mS-lPL" id="5jf-yl-h2J"/>
                         <outlet property="feedOptionsTable" destination="fka-Np-QC0" id="kj8-oV-wAW"/>
                         <outlet property="feedOptionsTableHeight" destination="HZR-A5-wyg" id="Ffl-aN-Tz6"/>
-                        <outlet property="locationRangeSliderHolder" destination="jBs-37-SM7" id="RDE-Wo-38i"/>
-                        <outlet property="mapBoxView" destination="Zqi-k9-ZRE" id="9EJ-u1-iac"/>
+                        <outlet property="imageUploadViewContainer" destination="R2b-zz-p2k" id="mLc-hW-NV4"/>
+                        <outlet property="locationName" destination="H9O-YQ-a6D" id="PP9-Gt-84d"/>
+                        <outlet property="locationNameContainer" destination="P13-zE-AQk" id="GYi-M2-qxc"/>
+                        <outlet property="mapBoxView" destination="Zqi-k9-ZRE" id="svb-CR-dYg"/>
+                        <outlet property="rangeSliderContainer" destination="jBs-37-SM7" id="vld-Ge-t3n"/>
+                        <outlet property="scrollButtonContainer" destination="KMS-wN-ul6" id="Zwr-ea-mlu"/>
                         <outlet property="scrollView" destination="uMH-9v-q9C" id="gQF-gt-JeT"/>
                         <outlet property="searchDisplayController" destination="FZx-Ne-LcJ" id="GEO-c8-0Ds"/>
                     </connections>
@@ -1119,7 +1142,7 @@
         <image name="button_add_photo" width="51" height="43"/>
         <image name="button_anonymous_bg" width="108" height="80"/>
         <image name="button_post" width="70" height="70"/>
-        <image name="button_upload_photo" width="51" height="37"/>
+        <image name="button_upload_photo" width="43" height="43"/>
         <image name="feed_range_flourish" width="25" height="28"/>
         <image name="icon_back" width="16" height="16"/>
         <image name="icon_pencil" width="15" height="15"/>

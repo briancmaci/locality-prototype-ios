@@ -7,7 +7,9 @@
 //
 
 #import "ParseManager.h"
+#import "DataManager.h"
 #import "config.h"
+#import "UserModel.h"
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <Facebook-iOS-SDK/FBSDKCoreKit/FBSDKProfile.h>
 #import <Facebook-iOS-SDK/FBSDKCoreKit/FBSDKGraphRequest.h>
@@ -161,15 +163,7 @@ static NSString * kDBUser = @"_User";
 +(void) updateCurrentFeed:(FeedLocationModel *)currentFeed success:(successBlock)successBlock failure:(failureBlock)failureBlock {
     
     //create parse-safe object
-    NSDictionary *currentFeedParams = @{ kName : currentFeed.name,
-                                         
-                                         kImgUrl : currentFeed.imgUrl,
-                                         kLatitude : [[NSNumber alloc] initWithDouble:currentFeed.latitude],
-                                         kLongitude : [[NSNumber alloc] initWithDouble:currentFeed.longitude],
-                                         kRange : [[NSNumber alloc] initWithFloat:currentFeed.range],
-                                         kPromotionsEnabled : @(currentFeed.promotionsEnabled),
-                                         kPushEnabled : @(currentFeed.pushEnabled),
-                                         kImportantEnabled : @(currentFeed.importantEnabled) };
+    NSDictionary *currentFeedParams = [DataManager parseFeedModelIntoDictionary:currentFeed];
     
     [PFUser currentUser][@"currentLocation"] = currentFeedParams;
     [PFUser currentUser][@"isFirstTime"] = @NO;
@@ -183,6 +177,19 @@ static NSString * kDBUser = @"_User";
         }
     }];
 
+}
+
++(void) addNewPinnedLocation:(FeedLocationModel *)pinnedFeed success:(successBlock)successBlock failure:(failureBlock)failureBlock {
+    
+    NSMutableDictionary *newFeed = [DataManager parseFeedModelIntoDictionary:pinnedFeed];
+    NSMutableArray *rawArray = [[NSMutableArray alloc] init];
+    //write all others
+    for( int i = 0; i < [[UserModel sharedInstance].pinnedLocations count]; i++ ) {
+        NSMutableDictionary *rawFeed = [DataManager parseFeedModelIntoDictionary:[[UserModel sharedInstance].pinnedLocations objectAtIndex:i]];
+        [rawArray addObject:rawFeed];
+    }
+    
+    [rawArray addObject:newFeed];
 }
 
 @end

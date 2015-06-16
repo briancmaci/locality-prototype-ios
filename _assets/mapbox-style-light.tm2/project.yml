@@ -20,7 +20,7 @@ interactivity_layer: ''
 layers: null
 maxzoom: 22
 minzoom: 0
-name: Mapbox Light
+name: Locality Map
 source: "mapbox:///mapbox.mapbox-terrain-v1,mapbox.mapbox-streets-v5"
 styles: 
   - style.mss
