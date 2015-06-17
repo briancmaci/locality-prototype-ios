@@ -20,4 +20,5 @@
 
 -(void) setSelected:(BOOL)yes;
 -(void) setForMultiply;
+
 @end
