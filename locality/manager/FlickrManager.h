@@ -8,11 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import "CallbackManager.h"
 
-@interface FlickrManager : NSObject
-
-typedef void(^failureBlock)(NSError *error);
-typedef void(^successBlock)(id response);
+@interface FlickrManager : CallbackManager
 
 +(void) initFlickr;
 +(void) getImagesForLocation:(CLLocationCoordinate2D)center success:(successBlock)successBlock failure:(failureBlock)failureBlock;

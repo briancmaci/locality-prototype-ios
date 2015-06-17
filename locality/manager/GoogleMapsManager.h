@@ -8,11 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import "CallbackManager.h"
 
-@interface GoogleMapsManager : NSObject
-
-typedef void(^failureBlock)(NSError *error);
-typedef void(^successBlock)(id response);
+@interface GoogleMapsManager : CallbackManager
 
 +(void) initGoogleMaps;
 //+(void) drawRangeCircleAt:(CLLocationCoordinate2D)center rangeDiameter:(float)range onMap:(GMSMapView*)map;

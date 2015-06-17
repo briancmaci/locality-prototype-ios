@@ -11,5 +11,12 @@
 
 @implementation PhotoUploadManager
 
-+(void)
+static NSString * const k
+
++(void) uploadPhoto:(UIImage *)image ofType:(PhotoType)type success:(successBlock)successBlock failure:(failureBlock)failureBlock {
+    
+    
+}
+
+
 @end

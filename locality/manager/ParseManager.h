@@ -9,11 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "FeedLocationModel.h"
+#import "CallbackManager.h"
 
-@interface ParseManager : NSObject
-
-typedef void(^failureBlock)(NSError *error);
-typedef void(^successBlock)(id response);
+@interface ParseManager : CallbackManager
 
 +(void) initParse;
 

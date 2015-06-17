@@ -14,6 +14,7 @@
 -(void) onMapTapped:(CLLocationCoordinate2D)center;
 
 @end
+
 @interface MapBoxManager : NSObject <RMMapViewDelegate>
 
 @property (weak, nonatomic) id<MapBoxManagerDelegate> delegate;

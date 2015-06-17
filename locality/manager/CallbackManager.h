@@ -10,4 +10,7 @@
 
 @interface CallbackManager : NSObject
 
+typedef void(^failureBlock)(NSError *error);
+typedef void(^successBlock)(id response);
+
 @end

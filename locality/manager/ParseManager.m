@@ -181,11 +181,11 @@ static NSString * kDBUser = @"_User";
 
 +(void) addNewPinnedLocation:(FeedLocationModel *)pinnedFeed success:(successBlock)successBlock failure:(failureBlock)failureBlock {
     
-    NSMutableDictionary *newFeed = [DataManager parseFeedModelIntoDictionary:pinnedFeed];
+    NSDictionary *newFeed = [DataManager parseFeedModelIntoDictionary:pinnedFeed];
     NSMutableArray *rawArray = [[NSMutableArray alloc] init];
     //write all others
     for( int i = 0; i < [[UserModel sharedInstance].pinnedLocations count]; i++ ) {
-        NSMutableDictionary *rawFeed = [DataManager parseFeedModelIntoDictionary:[[UserModel sharedInstance].pinnedLocations objectAtIndex:i]];
+        NSDictionary *rawFeed = [DataManager parseFeedModelIntoDictionary:[[UserModel sharedInstance].pinnedLocations objectAtIndex:i]];
         [rawArray addObject:rawFeed];
     }
     

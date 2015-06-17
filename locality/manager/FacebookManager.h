@@ -7,11 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CallbackManager.h"
 
-@interface FacebookManager : NSObject
-
-typedef void(^failureBlock)(NSError *error);
-typedef void(^successBlock)(id response);
+@interface FacebookManager : CallbackManager
 
 +(void) initFacebookUtils:(NSDictionary *)launchOptions;
 

@@ -52,6 +52,8 @@
 		036CA1CD1AFBC88F0064AB6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1CB1AFBC88F0064AB6C /* Main.storyboard */; };
 		036CA1CF1AFBC88F0064AB6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1CE1AFBC88F0064AB6C /* Images.xcassets */; };
 		036CA1D21AFBC88F0064AB6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1D01AFBC88F0064AB6C /* LaunchScreen.xib */; };
+		039A79271B31AD220039651F /* CallbackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 039A79261B31AD220039651F /* CallbackManager.m */; };
+		039A792A1B31AD440039651F /* PhotoUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 039A79291B31AD440039651F /* PhotoUploadManager.m */; };
 		03C2CF291B307BC500463BDC /* ImageUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C2CF281B307BC500463BDC /* ImageUploadView.m */; };
 		03C2CF2C1B307BFB00463BDC /* ImageUploadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C2CF2B1B307BFB00463BDC /* ImageUploadView.xib */; };
 		03D595C71B06269B00C48F25 /* AppUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D595C61B06269B00C48F25 /* AppUtilities.m */; };
@@ -150,6 +152,10 @@
 		036CA1D11AFBC88F0064AB6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		036CA1DC1AFBC88F0064AB6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		036CA1DD1AFBC88F0064AB6C /* localityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = localityTests.m; sourceTree = "<group>"; };
+		039A79251B31AD220039651F /* CallbackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CallbackManager.h; path = manager/CallbackManager.h; sourceTree = "<group>"; };
+		039A79261B31AD220039651F /* CallbackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CallbackManager.m; path = manager/CallbackManager.m; sourceTree = "<group>"; };
+		039A79281B31AD440039651F /* PhotoUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoUploadManager.h; path = manager/PhotoUploadManager.h; sourceTree = "<group>"; };
+		039A79291B31AD440039651F /* PhotoUploadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoUploadManager.m; path = manager/PhotoUploadManager.m; sourceTree = "<group>"; };
 		03C2CF271B307BC500463BDC /* ImageUploadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageUploadView.h; path = custom_ui/ImageUploadView.h; sourceTree = "<group>"; };
 		03C2CF281B307BC500463BDC /* ImageUploadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageUploadView.m; path = custom_ui/ImageUploadView.m; sourceTree = "<group>"; };
 		03C2CF2B1B307BFB00463BDC /* ImageUploadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageUploadView.xib; path = custom_ui/ImageUploadView.xib; sourceTree = "<group>"; };
@@ -278,6 +284,8 @@
 		032C76381B03EFCD00C78CB0 /* manager */ = {
 			isa = PBXGroup;
 			children = (
+				039A79251B31AD220039651F /* CallbackManager.h */,
+				039A79261B31AD220039651F /* CallbackManager.m */,
 				032C76421B03F06D00C78CB0 /* FacebookManager.h */,
 				032C76431B03F06D00C78CB0 /* FacebookManager.m */,
 				030C41271B04F334004F1ECE /* FlickrManager.h */,
@@ -290,6 +298,8 @@
 				032C76451B03F06D00C78CB0 /* ParseManager.m */,
 				031BC92D1B1F87ED007DFCFB /* DataManager.h */,
 				031BC92E1B1F87ED007DFCFB /* DataManager.m */,
+				039A79281B31AD440039651F /* PhotoUploadManager.h */,
+				039A79291B31AD440039651F /* PhotoUploadManager.m */,
 			);
 			name = manager;
 			sourceTree = "<group>";
@@ -680,6 +690,7 @@
 				033B732B1B0CB62800355581 /* FeedHeaderHeroView.m in Sources */,
 				032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */,
 				032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */,
+				039A79271B31AD220039651F /* CallbackManager.m in Sources */,
 				03FCEE871B2B0C36006D3FF3 /* LocalityBaseViewController.m in Sources */,
 				03F71A711B20BAC4006F4088 /* FeedMenuTableViewController.m in Sources */,
 				032C76571B0407D000C78CB0 /* UserModel.m in Sources */,
@@ -688,6 +699,7 @@
 				030C41321B051EC1004F1ECE /* GoogleMapsManager.m in Sources */,
 				033B73321B0D039500355581 /* FeedSliderMenuView.m in Sources */,
 				032C76531B03FC1100C78CB0 /* SignUpEmailSentViewController.m in Sources */,
+				039A792A1B31AD440039651F /* PhotoUploadManager.m in Sources */,
 				036CA1C41AFBC88F0064AB6C /* main.m in Sources */,
 				4E9D5AE11B133C5A00302886 /* PostCreateViewController.m in Sources */,
 				03F71A691B2076D3006F4088 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
