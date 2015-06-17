@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface AppUtilities : NSObject
 
 +(float) feetToMeters:(float)valueInFeet;
 +(NSMutableAttributedString *) rangeLabel:(NSString *)size withUnits:(NSString *)unit;
-
++(NSString *) locationLabelFromAddress:(GMSAddress *)address;
 
 @end

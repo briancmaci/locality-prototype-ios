@@ -12,6 +12,10 @@
 #import "GoogleMapsManager.h"
 #import "FeedSettingToggleCell.h"
 #import "CameraOverlayView.h"
+#import "PhotoUploadManager.h"
+#import "AppUtilities.h"
+#import "ParseManager.h"
+#import "FeedLocationModel.h"
 
 @interface FeedSettingsViewController ()
 
@@ -24,7 +28,6 @@
 
 static NSString * const kLocationSliderNibName = @"LocationRangeSlider";
 static NSString * const kImageUploadNibName = @"ImageUploadView";
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -459,10 +462,67 @@ static NSString * const kImageUploadNibName = @"ImageUploadView";
 }
 
 
-#pragma mark - CTA
+#pragma mark - Save New Location Feed
 
 -(IBAction)saveLocationTapped:(id)sender {
+    
+    //upload photo
+    
+    if( _imageUploadView.selectedPhoto.image ) {
+        [PhotoUploadManager uploadPhoto:_imageUploadView.selectedPhoto.image ofType:LocationFeedPhoto success:^(id response) {
+            NSLog(@"URL: %@", response);
+            [self createFeedModelWithImageUrl:response];
+        
+        } failure:^(NSError *error) {
+            NSLog(@"Picture Upload failure: %@", error);
+        }];
+    }
+    
+    else {
+        //they have no image to upload... use default
+        [self createFeedModelWithImageUrl:DEFAULT_FEED_IMAGE];
+    }
+}
 
+-(void)createFeedModelWithImageUrl:(NSString *)url {
+    
+    FeedLocationModel *newFeed = [[FeedLocationModel alloc] initWithLocation:_currentLocation andName:_locationName.text];
+    
+    newFeed.imgUrl = url;
+    newFeed.range = _currentRange;
+    
+    newFeed.pushEnabled = YES;
+    newFeed.promotionsEnabled = YES;
+    newFeed.importantEnabled = YES;
+    
+    //reverse geolocate to get location
+    [GoogleMapsManager reverseGeocodeCoordinate:CLLocationCoordinate2DMake(newFeed.latitude, newFeed.longitude) success:^(id response) {
+        // we got the address
+        GMSAddress *address = (GMSAddress *)response;
+        //NSLog(@"address? %@", address);
+        
+        newFeed.location = [AppUtilities locationLabelFromAddress:address];
+        
+        [self saveFeedModel:newFeed];
+        
+    } failure:^(NSError *error) {
+        NSLog(@"error retrieving address: %@", error);
+        //do nothing
+        [self saveFeedModel:newFeed];
+    }];
+}
+
+-(void)saveFeedModel:(FeedLocationModel *)newFeed {
+    
+    [ParseManager addNewPinnedLocation:newFeed success:^(id response) {
+        NSLog(@"Pinned Location added!");
+        
+        //go back
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    } failure:^(NSError *error) {
+        NSLog(@"Pinned Location add fail: %@", error);
+    }];
 }
 
 

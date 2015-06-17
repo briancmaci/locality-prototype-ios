@@ -32,8 +32,13 @@ static NSString * kAddNewLocationSegue = @"addNewLocationSegue";
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self initMenuOptionsWithCurrentLocation:[UserModel sharedInstance].currentLocation andPinnedLocations:[UserModel sharedInstance].pinnedLocations];
+    _menuOptions = [[NSMutableArray alloc] init];
     [self initAddNewButtonCell];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [self initMenuOptionsWithCurrentLocation:[UserModel sharedInstance].currentLocation andPinnedLocations:[UserModel sharedInstance].pinnedLocations];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,12 +48,14 @@ static NSString * kAddNewLocationSegue = @"addNewLocationSegue";
 
 -(void) initMenuOptionsWithCurrentLocation:(FeedLocationModel *)currentLocation andPinnedLocations:(NSMutableArray *)pinnedLocations {
     
-    _menuOptions = [[NSMutableArray alloc] init];
+    [_menuOptions removeAllObjects];
     [_menuOptions addObject:currentLocation];
         
     for( int i = 0; i < [pinnedLocations count]; i++ ) {
         [_menuOptions addObject:[pinnedLocations objectAtIndex:i]];
     }
+    
+    [self.tableView reloadData];
 }
 
 -(void) initAddNewButtonCell {

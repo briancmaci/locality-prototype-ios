@@ -37,4 +37,9 @@ static const float metersPerFoot = 0.3048;
     return attString;
 }
 
++(NSString *)locationLabelFromAddress:(GMSAddress *)address {
+    
+    return [NSString stringWithFormat:@"— %@, %@ —", address.locality ? address.locality : address.subLocality, address.administrativeArea ? address.administrativeArea : address.country];
+}
+
 @end

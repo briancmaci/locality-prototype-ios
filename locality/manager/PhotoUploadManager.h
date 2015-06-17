@@ -24,4 +24,8 @@ typedef enum {
 
 +(void) uploadPhoto:(UIImage *)image ofType:(PhotoType)type success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 
+
+//helper methods
++(NSString *)buildPhotoURLForType:(PhotoType)type;
+
 @end

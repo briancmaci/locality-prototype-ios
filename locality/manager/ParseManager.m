@@ -183,6 +183,7 @@ static NSString * kDBUser = @"_User";
     
     NSDictionary *newFeed = [DataManager parseFeedModelIntoDictionary:pinnedFeed];
     NSMutableArray *rawArray = [[NSMutableArray alloc] init];
+    
     //write all others
     for( int i = 0; i < [[UserModel sharedInstance].pinnedLocations count]; i++ ) {
         NSDictionary *rawFeed = [DataManager parseFeedModelIntoDictionary:[[UserModel sharedInstance].pinnedLocations objectAtIndex:i]];
@@ -190,6 +191,22 @@ static NSString * kDBUser = @"_User";
     }
     
     [rawArray addObject:newFeed];
+    //NSLog(@"raw array: %@", rawArray);
+    
+    [PFUser currentUser][@"pinnedLocations"] = rawArray;
+    
+    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {   // Hooray! Let them use the app now.
+            successBlock(nil);
+            
+            //now add it to our user object
+            [[UserModel sharedInstance].pinnedLocations addObject:pinnedFeed];
+            
+        } else {   //NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
+            failureBlock(error);
+            NSLog(@"error saving pinnedLocation");
+        }
+    }];
 }
 
 @end

@@ -13,6 +13,8 @@
 @interface GoogleMapsManager : CallbackManager
 
 +(void) initGoogleMaps;
++(void) reverseGeocodeCoordinate:(CLLocationCoordinate2D)coordinate success:(successBlock)successBlock failure:(failureBlock)failureBlock;
+
 //+(void) drawRangeCircleAt:(CLLocationCoordinate2D)center rangeDiameter:(float)range onMap:(GMSMapView*)map;
 //+(void) animateToPosition:(CLLocationCoordinate2D)center onMap:(GMSMapView *)map;
 @end

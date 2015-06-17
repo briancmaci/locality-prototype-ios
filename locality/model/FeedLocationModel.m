@@ -24,6 +24,7 @@
         _longitude = center.longitude;
         
         _name = name;
+        _location = @"";
         _imgUrl = DEFAULT_FEED_IMAGE;
     }
     

@@ -9,6 +9,7 @@
 #import "FeedHeaderHeroView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "config.h"
+#import "GoogleMapsManager.h"
 
 @implementation FeedHeaderHeroView
 
@@ -25,6 +26,7 @@
     _feedIndex = index;
     
     [self initImage];
+    [self initLabels];
     [self setMenuMode:NO];
     
 }
@@ -38,6 +40,11 @@
     else {
         [_heroImage setImage:[UIImage imageNamed:DEFAULT_FEED_IMAGE]];
     }
+}
+
+-(void) initLabels {
+    _titleLabel.text = [_model.name isEqualToString:@"_current"] ? @"CURRENT LOCATION" : [_model.name uppercaseString];
+    _locationLabel.text = [_model.location uppercaseString];
 }
 
 -(void) setMenuMode:(BOOL)yes {

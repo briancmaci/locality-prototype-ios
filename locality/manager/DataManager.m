@@ -39,6 +39,7 @@
     
     //get the rest of the data
     parsedFeed.imgUrl = [rawFeed objectForKey:@"imgUrl"];
+    parsedFeed.location = [rawFeed objectForKey:@"location"];
     parsedFeed.range = [[rawFeed objectForKey:@"range"] floatValue];
     
     parsedFeed.promotionsEnabled = [[rawFeed objectForKey:@"promotionsEnabled"] boolValue];
@@ -51,6 +52,7 @@
 +(NSDictionary *)parseFeedModelIntoDictionary:(FeedLocationModel *)feed {
     
     return @{ kName : feed.name,
+              kLocationLabel : feed.location,
               kImgUrl : feed.imgUrl,
               kLatitude : [[NSNumber alloc] initWithDouble:feed.latitude],
               kLongitude : [[NSNumber alloc] initWithDouble:feed.longitude],

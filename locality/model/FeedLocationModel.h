@@ -14,6 +14,8 @@
 #define kCurrentFeedName @"_current"
 
 #define kName @"name"
+#define kLocationLabel @"location"
+
 #define kImgUrl @"imgUrl"
 
 #define kLatitude @"latitude"
@@ -25,6 +27,8 @@
 #define kImportantEnabled @"importantEnabled"
 
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *location;
+
 @property (strong, nonatomic) NSString *imgUrl;
 
 @property (nonatomic) double latitude;
@@ -36,6 +40,6 @@
 @property (nonatomic) BOOL pushEnabled;
 @property (nonatomic) BOOL importantEnabled;
 
--(id) initWithLocation:(CLLocationCoordinate2D)center andName:(NSString *)name;;
+-(id) initWithLocation:(CLLocationCoordinate2D)center andName:(NSString *)name;
 
 @end

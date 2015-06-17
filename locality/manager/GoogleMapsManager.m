@@ -64,4 +64,22 @@
     [map animateWithCameraUpdate:camUpdate];
 }
 
++(void) reverseGeocodeCoordinate:(CLLocationCoordinate2D)coordinate success:(successBlock)successBlock failure:(failureBlock)failureBlock {
+    GMSGeocoder *geocoder = [[GMSGeocoder alloc] init];
+    
+    [geocoder reverseGeocodeCoordinate:coordinate completionHandler:^(GMSReverseGeocodeResponse *response, NSError *error) {
+        GMSAddress *address = response.firstResult;
+        
+        if(!error) {
+            successBlock(address);
+        }
+        
+        else {
+            failureBlock(error);
+        }
+        
+    }];
+}
+
+
 @end

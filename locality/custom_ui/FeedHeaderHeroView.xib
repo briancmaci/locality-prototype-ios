@@ -20,6 +20,9 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ye0-Ad-rIU">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                 </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feed_location_hero_overlay" translatesAutoresizingMaskIntoConstraints="NO" id="2SI-y9-qgT">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aB-Zc-4rk">
                     <rect key="frame" x="65" y="36" width="190" height="28"/>
                     <constraints>
@@ -30,7 +33,7 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW YORK, NY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO3-kb-efM">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO3-kb-efM" userLabel="Location Label">
                     <rect key="frame" x="65" y="62" width="190" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="190" id="VCG-ok-V6h"/>
@@ -76,12 +79,15 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.19862006500000001" green="0.3620610635" blue="0.59868421049999998" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.30196078430000001" green="0.3411764706" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="2SI-y9-qgT" secondAttribute="trailing" id="2zp-37-M7k"/>
                 <constraint firstAttribute="trailing" secondItem="aPe-vI-gqo" secondAttribute="trailing" constant="10" id="5pJ-kv-WR8"/>
+                <constraint firstItem="2SI-y9-qgT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AvN-f9-FCB"/>
                 <constraint firstAttribute="trailing" secondItem="iqH-HF-y2A" secondAttribute="trailing" constant="10" id="GoB-GI-NPn"/>
                 <constraint firstItem="iqH-HF-y2A" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="HEk-Te-W1O"/>
                 <constraint firstAttribute="trailing" secondItem="Ye0-Ad-rIU" secondAttribute="trailing" id="MLK-zl-IqS"/>
+                <constraint firstItem="2SI-y9-qgT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="O4a-qS-Tof"/>
                 <constraint firstItem="Ye0-Ad-rIU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ry5-xc-Acv"/>
                 <constraint firstItem="aPe-vI-gqo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="TLd-Mz-YrW"/>
                 <constraint firstAttribute="bottom" secondItem="Ye0-Ad-rIU" secondAttribute="bottom" id="VJN-CX-lH3"/>
@@ -94,6 +100,7 @@
                 <constraint firstItem="k2J-V1-QTv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="whc-t0-jF2"/>
                 <constraint firstItem="hO3-kb-efM" firstAttribute="centerX" secondItem="Ye0-Ad-rIU" secondAttribute="centerX" id="x5h-un-TAY"/>
                 <constraint firstItem="3aB-Zc-4rk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="y0w-AF-1qC"/>
+                <constraint firstAttribute="bottom" secondItem="2SI-y9-qgT" secondAttribute="bottom" id="zvx-0Q-d3i"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -108,7 +115,8 @@
         </view>
     </objects>
     <resources>
-        <image name="icon_menu" width="18" height="12"/>
+        <image name="feed_location_hero_overlay" width="320" height="150"/>
+        <image name="icon_menu" width="16" height="15"/>
         <image name="icon_settings" width="18" height="18"/>
     </resources>
 </document>
