@@ -15,7 +15,7 @@
 #import "RSKImageCropViewController.h"
 #import "LocalityBaseViewController.h"
 
-@interface FeedSettingsViewController : LocalityBaseViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate, RSKImageCropViewControllerDataSource, ImageUploadViewDelegate, MapBoxManagerDelegate, UITextFieldDelegate> {
+@interface FeedSettingsViewController : LocalityBaseViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, ImageUploadViewDelegate, MapBoxManagerDelegate, UITextFieldDelegate> {
     NSArray *searchResultPlaces;
     GMSPlacesClient *placesClient;
     GMSVisibleRegion visibleRegion;

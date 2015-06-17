@@ -54,6 +54,10 @@
 		036CA1D21AFBC88F0064AB6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036CA1D01AFBC88F0064AB6C /* LaunchScreen.xib */; };
 		039A79271B31AD220039651F /* CallbackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 039A79261B31AD220039651F /* CallbackManager.m */; };
 		039A792A1B31AD440039651F /* PhotoUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 039A79291B31AD440039651F /* PhotoUploadManager.m */; };
+		03A87E461B32054700BE37C8 /* PostFromView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A87E451B32054700BE37C8 /* PostFromView.m */; };
+		03A87E481B32060A00BE37C8 /* PostFromView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A87E471B32060A00BE37C8 /* PostFromView.xib */; };
+		03A87E4C1B32120200BE37C8 /* PostFromViewToggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A87E4B1B32120200BE37C8 /* PostFromViewToggle.m */; };
+		03A87E551B322AE400BE37C8 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A87E541B322AE400BE37C8 /* UIImage+Tint.m */; };
 		03C2CF291B307BC500463BDC /* ImageUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C2CF281B307BC500463BDC /* ImageUploadView.m */; };
 		03C2CF2C1B307BFB00463BDC /* ImageUploadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C2CF2B1B307BFB00463BDC /* ImageUploadView.xib */; };
 		03D595C71B06269B00C48F25 /* AppUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D595C61B06269B00C48F25 /* AppUtilities.m */; };
@@ -156,6 +160,13 @@
 		039A79261B31AD220039651F /* CallbackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CallbackManager.m; path = manager/CallbackManager.m; sourceTree = "<group>"; };
 		039A79281B31AD440039651F /* PhotoUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoUploadManager.h; path = manager/PhotoUploadManager.h; sourceTree = "<group>"; };
 		039A79291B31AD440039651F /* PhotoUploadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoUploadManager.m; path = manager/PhotoUploadManager.m; sourceTree = "<group>"; };
+		03A87E441B32054700BE37C8 /* PostFromView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostFromView.h; path = custom_ui/PostFromView.h; sourceTree = "<group>"; };
+		03A87E451B32054700BE37C8 /* PostFromView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostFromView.m; path = custom_ui/PostFromView.m; sourceTree = "<group>"; };
+		03A87E471B32060A00BE37C8 /* PostFromView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostFromView.xib; path = custom_ui/PostFromView.xib; sourceTree = "<group>"; };
+		03A87E4A1B32120200BE37C8 /* PostFromViewToggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostFromViewToggle.h; path = custom_ui/PostFromViewToggle.h; sourceTree = "<group>"; };
+		03A87E4B1B32120200BE37C8 /* PostFromViewToggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostFromViewToggle.m; path = custom_ui/PostFromViewToggle.m; sourceTree = "<group>"; };
+		03A87E531B322AE400BE37C8 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Tint.h"; path = "custom_ui/UIImage+Tint.h"; sourceTree = "<group>"; };
+		03A87E541B322AE400BE37C8 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Tint.m"; path = "custom_ui/UIImage+Tint.m"; sourceTree = "<group>"; };
 		03C2CF271B307BC500463BDC /* ImageUploadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageUploadView.h; path = custom_ui/ImageUploadView.h; sourceTree = "<group>"; };
 		03C2CF281B307BC500463BDC /* ImageUploadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageUploadView.m; path = custom_ui/ImageUploadView.m; sourceTree = "<group>"; };
 		03C2CF2B1B307BFB00463BDC /* ImageUploadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageUploadView.xib; path = custom_ui/ImageUploadView.xib; sourceTree = "<group>"; };
@@ -225,11 +236,12 @@
 			isa = PBXGroup;
 			children = (
 				03FCEE931B2B2ACE006D3FF3 /* buttons */,
-				03FCEE8B1B2B0FA4006D3FF3 /* _categories */,
+				03FCEE8B1B2B0FA4006D3FF3 /* categories */,
 				03FCEE921B2B18D7006D3FF3 /* HeaderView */,
 				03F71A571B2076A8006F4088 /* SlideNavigationController */,
 				03F71A721B20C089006F4088 /* tableviewcells */,
 				03C2CF2A1B307BCF00463BDC /* ImageUploadView */,
+				03A87E491B32060E00BE37C8 /* PostFromView */,
 				03C2CF2D1B308C5E00463BDC /* LocationRangeSlider */,
 				033B73291B0CB62800355581 /* FeedHeaderHeroView.h */,
 				033B732A1B0CB62800355581 /* FeedHeaderHeroView.m */,
@@ -424,6 +436,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		03A87E491B32060E00BE37C8 /* PostFromView */ = {
+			isa = PBXGroup;
+			children = (
+				03A87E441B32054700BE37C8 /* PostFromView.h */,
+				03A87E451B32054700BE37C8 /* PostFromView.m */,
+				03A87E471B32060A00BE37C8 /* PostFromView.xib */,
+				03A87E4A1B32120200BE37C8 /* PostFromViewToggle.h */,
+				03A87E4B1B32120200BE37C8 /* PostFromViewToggle.m */,
+			);
+			name = PostFromView;
+			sourceTree = "<group>";
+		};
 		03C2CF2A1B307BCF00463BDC /* ImageUploadView */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,13 +511,15 @@
 			name = tableviewcells;
 			sourceTree = "<group>";
 		};
-		03FCEE8B1B2B0FA4006D3FF3 /* _categories */ = {
+		03FCEE8B1B2B0FA4006D3FF3 /* categories */ = {
 			isa = PBXGroup;
 			children = (
 				03FCEE8C1B2B1093006D3FF3 /* UIColor+LocalityColor.h */,
 				03FCEE8D1B2B1093006D3FF3 /* UIColor+LocalityColor.m */,
+				03A87E531B322AE400BE37C8 /* UIImage+Tint.h */,
+				03A87E541B322AE400BE37C8 /* UIImage+Tint.m */,
 			);
-			name = _categories;
+			name = categories;
 			sourceTree = "<group>";
 		};
 		03FCEE921B2B18D7006D3FF3 /* HeaderView */ = {
@@ -634,6 +660,7 @@
 				033B732D1B0CB64000355581 /* FeedHeaderHeroView.xib in Resources */,
 				0353B48C1B0E3C1400CE3750 /* Interstate Cond Mono.ttf in Resources */,
 				0353B49A1B0E3C1400CE3750 /* InterstateLightCondensed.ttf in Resources */,
+				03A87E481B32060A00BE37C8 /* PostFromView.xib in Resources */,
 				036CA1D21AFBC88F0064AB6C /* LaunchScreen.xib in Resources */,
 				0353B4971B0E3C1400CE3750 /* Interstate-ThinCondensed.ttf in Resources */,
 				036CA1CF1AFBC88F0064AB6C /* Images.xcassets in Resources */,
@@ -690,6 +717,7 @@
 				033B732B1B0CB62800355581 /* FeedHeaderHeroView.m in Sources */,
 				032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */,
 				032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */,
+				03A87E4C1B32120200BE37C8 /* PostFromViewToggle.m in Sources */,
 				039A79271B31AD220039651F /* CallbackManager.m in Sources */,
 				03FCEE871B2B0C36006D3FF3 /* LocalityBaseViewController.m in Sources */,
 				03F71A711B20BAC4006F4088 /* FeedMenuTableViewController.m in Sources */,
@@ -710,11 +738,13 @@
 				4E9D5AED1B15FA0200302886 /* PostModel.m in Sources */,
 				03FA85C21B2A25D600F68102 /* CameraOverlayView.m in Sources */,
 				03F71A6A1B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
+				03A87E461B32054700BE37C8 /* PostFromView.m in Sources */,
 				03FCEE9D1B2B4699006D3FF3 /* MapBoxManager.m in Sources */,
 				032C76471B03F06D00C78CB0 /* ParseManager.m in Sources */,
 				032C764D1B03F0DE00C78CB0 /* SignUpViewController.m in Sources */,
 				03F71A6B1B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				03F71A791B20C425006F4088 /* FeedAddNewTableViewCell.m in Sources */,
+				03A87E551B322AE400BE37C8 /* UIImage+Tint.m in Sources */,
 				03C2CF291B307BC500463BDC /* ImageUploadView.m in Sources */,
 				4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */,
 				03F71A681B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.m in Sources */,

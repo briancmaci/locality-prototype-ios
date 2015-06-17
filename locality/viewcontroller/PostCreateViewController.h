@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocalityBaseViewController.h"
+#import "ImageUploadView.h"
+#import "PostFromView.h"
 
-@interface PostCreateViewController : UIViewController
+@interface PostCreateViewController : LocalityBaseViewController <ImageUploadViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton * backButton;
-@property (weak, nonatomic) IBOutlet UIButton * publishPostButton;
+@property (weak, nonatomic) IBOutlet UITextView *commentField;
+
+@property (weak, nonatomic) IBOutlet UIView *imageUploadViewContainer;
+@property (strong, nonatomic) ImageUploadView *imageUploadView;
+
+@property (weak, nonatomic) IBOutlet UIView *postFromViewContainer;
+@property (strong, nonatomic) PostFromView *postFromView;
+
+@property (weak, nonatomic) IBOutlet UIButton *publishPostButton;
 @end

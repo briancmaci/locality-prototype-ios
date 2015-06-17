@@ -31,4 +31,18 @@
                            alpha:0.2f];
 }
 
++(UIColor *)lightGrayUIColor {
+    return [UIColor colorWithRed:205.0f/255.0f
+                           green:215.0f/255.0f
+                            blue:219.0f/255.0f
+                           alpha:1.0f];
+}
+
++(UIColor *)redUIColor {
+    return [UIColor colorWithRed:180.0f/255.0f
+                           green:0.0f/255.0f
+                            blue:38.0f/255.0f
+                           alpha:1.0f];
+}
+
 @end

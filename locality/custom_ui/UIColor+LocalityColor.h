@@ -12,6 +12,11 @@
 
 + (UIColor *)blueUIColor;
 + (UIColor *)orangeUIColor;
-+(UIColor *)mapCircleColor;
++ (UIColor *)redUIColor;
++ (UIColor *)lightGrayUIColor;
+
++ (UIColor *)mapCircleColor;
+
+
 
 @end

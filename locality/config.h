@@ -53,7 +53,7 @@
 #define kMainFont @"InterstateLightCondensed"
 
 /* HeaderView */
-#define kHeaderHeight 58.0f
+#define kHeaderHeight 59.0f
 #define kHeaderFontSize 18.0f
 #define kHeaderButtonIndent 8
 #define kHeaderButtonSpacing 16
