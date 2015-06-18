@@ -28,13 +28,13 @@
 //@property (weak, nonatomic) IBOutlet UIImageView *heroImage;
 //@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *flexHeaderHeight;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *feedNameTop;
+
 
 @property (strong, nonatomic) FeedLocationModel *model;
 @property (nonatomic) int feedIndex;
 
--(void) populateWithData:(FeedLocationModel *)model atIndex:(int)index;
--(void) setMenuMode:(BOOL)yes;
+-(void) populateWithData:(FeedLocationModel *)model atIndex:(int)index inFeedMenu:(BOOL)isInFeedMenu;
+
+-(void) updateHeaderHeight:(float)newHeaderHeight;
 
 @end

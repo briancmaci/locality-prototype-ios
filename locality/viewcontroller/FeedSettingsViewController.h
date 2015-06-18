@@ -15,7 +15,7 @@
 #import "RSKImageCropViewController.h"
 #import "LocalityPhotoBaseViewController.h"
 
-@interface FeedSettingsViewController : LocalityPhotoBaseViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, ImageUploadViewDelegate, MapBoxManagerDelegate, UITextFieldDelegate> {
+@interface FeedSettingsViewController : LocalityPhotoBaseViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, ImageUploadViewDelegate, MapBoxManagerDelegate, UITextFieldDelegate, UIScrollViewDelegate> {
     NSArray *searchResultPlaces;
     GMSPlacesClient *placesClient;
     GMSVisibleRegion visibleRegion;
@@ -53,5 +53,6 @@
 @property (strong, nonatomic) NSMutableArray *feedOptions;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeight;
+
 
 @end

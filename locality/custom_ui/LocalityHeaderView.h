@@ -27,6 +27,9 @@
 @property (strong, nonatomic) IBOutlet UIImageView *bgImage;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *flexHeaderHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *feedNameTop;
+
 @property (strong, nonatomic) HeaderIconButton *leftIconButton;
 @property (strong, nonatomic) HeaderIconButton *rightIconButton;
 

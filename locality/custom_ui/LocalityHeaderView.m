@@ -12,9 +12,6 @@
 
 @implementation LocalityHeaderView
 
-static float const kTitleHeight = 20.0f;
-static float const kStatusBarOffset = 10.0f;
-
 -(id) initWithFrame:(CGRect)frame {
     
     if( self = [super initWithFrame:frame] ) {
@@ -34,13 +31,11 @@ static float const kStatusBarOffset = 10.0f;
     [self addSubview:_bgImage];
     
     //set title
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, kHeaderHeight/2 + kStatusBarOffset - kTitleHeight/2, DEVICE_WIDTH, kTitleHeight)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, kHeaderTitleY0, DEVICE_WIDTH, kHeaderTitleHeight)];
     [_titleLabel setFont:[UIFont fontWithName:kMainFont size:kHeaderFontSize]];
     [_titleLabel setTextColor:[UIColor whiteColor]];
     [_titleLabel setTextAlignment:NSTextAlignmentCenter];
     [self addSubview:_titleLabel];
-    
-    //set back button
     
 }
 
@@ -80,9 +75,11 @@ static float const kStatusBarOffset = 10.0f;
 
 - (void) setLeftButton:(HeaderIconType)type {
     
+    if( type == IconNone ) return;
+    
     _leftIconButton = [[HeaderIconButton alloc] initWithType:type];
     _leftIconButton.frame = CGRectMake(kHeaderButtonIndent,
-                                       (kHeaderHeight - _leftIconButton.frame.size.height)/2 + kStatusBarOffset,
+                                       kHeaderTitleY0 + kHeaderTitleHeight/2 - _leftIconButton.frame.size.height/2,
                                        _leftIconButton.frame.size.width,
                                        _leftIconButton.frame.size.height);
     
@@ -92,9 +89,11 @@ static float const kStatusBarOffset = 10.0f;
 
 - (void) setRightButton:(HeaderIconType)type {
     
+    if( type == IconNone ) return;
+    
     _rightIconButton = [[HeaderIconButton alloc] initWithType:type];
     _rightIconButton.frame = CGRectMake(DEVICE_WIDTH - kHeaderButtonIndent - _rightIconButton.frame.size.width,
-                                        (kHeaderHeight - _rightIconButton.frame.size.height)/2 + kStatusBarOffset,
+                                        kHeaderTitleY0 + kHeaderTitleHeight/2 - _rightIconButton.frame.size.height/2,
                                         _rightIconButton.frame.size.width,
                                         _rightIconButton.frame.size.height);
     
@@ -114,6 +113,5 @@ static float const kStatusBarOffset = 10.0f;
         [self.delegate iconClicked:sender];
     }
 }
-
 
 @end

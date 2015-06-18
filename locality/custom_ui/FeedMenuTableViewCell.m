@@ -24,7 +24,7 @@
 }
 
 -(void) initHeaderHero {
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FeedHeaderHeroView" owner:self options:nil];
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FlexibleFeedHeaderView" owner:self options:nil];
     _heroView = [nib objectAtIndex:0];
     
     //set frame
@@ -35,7 +35,7 @@
 }
 
 -(void) populateWithData:(FeedLocationModel *)data {
-    [_heroView populateWithData:data atIndex:0];
+    [_heroView populateWithData:data atIndex:0 inFeedMenu:YES];
 }
 
 @end

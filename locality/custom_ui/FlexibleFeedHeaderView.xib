@@ -20,16 +20,16 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xX-hA-34F" userLabel="ContainerView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ye0-Ad-rIU" userLabel="bgImage">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ye0-Ad-rIU" userLabel="bgImage">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="feed_location_hero_overlay" translatesAutoresizingMaskIntoConstraints="NO" id="2SI-y9-qgT">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feed_location_hero_overlay" translatesAutoresizingMaskIntoConstraints="NO" id="2SI-y9-qgT">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="feedName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aB-Zc-4rk">
-                            <rect key="frame" x="65" y="36" width="190" height="28"/>
+                            <rect key="frame" x="65" y="62" width="190" height="20"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="28" id="kNV-T9-LJH"/>
+                                <constraint firstAttribute="height" constant="20" id="kNV-T9-LJH"/>
                                 <constraint firstAttribute="width" constant="190" id="lgn-DU-hhp"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="18"/>
@@ -37,7 +37,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="locationName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO3-kb-efM" userLabel="Location Label">
-                            <rect key="frame" x="65" y="62" width="190" height="22"/>
+                            <rect key="frame" x="65" y="82" width="190" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="190" id="VCG-ok-V6h"/>
                                 <constraint firstAttribute="height" constant="22" id="wPG-J4-CNu"/>
@@ -46,7 +46,7 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2J-V1-QTv" userLabel="openFeedButton">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2J-V1-QTv" userLabel="openFeedButton">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                             <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -58,11 +58,23 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="hO3-kb-efM" firstAttribute="top" secondItem="3aB-Zc-4rk" secondAttribute="bottom" constant="-2" id="2cw-Y2-2Cd"/>
-                        <constraint firstItem="3aB-Zc-4rk" firstAttribute="top" secondItem="7xX-hA-34F" secondAttribute="top" constant="36" id="7im-mB-OaL"/>
+                        <constraint firstItem="hO3-kb-efM" firstAttribute="top" secondItem="3aB-Zc-4rk" secondAttribute="bottom" id="2cw-Y2-2Cd"/>
+                        <constraint firstItem="k2J-V1-QTv" firstAttribute="top" secondItem="7xX-hA-34F" secondAttribute="top" id="3Ei-C3-uFa"/>
+                        <constraint firstItem="3aB-Zc-4rk" firstAttribute="top" secondItem="7xX-hA-34F" secondAttribute="top" constant="62" id="7im-mB-OaL"/>
+                        <constraint firstAttribute="trailing" secondItem="k2J-V1-QTv" secondAttribute="trailing" id="87E-MY-FOp"/>
+                        <constraint firstAttribute="trailing" secondItem="2SI-y9-qgT" secondAttribute="trailing" id="8sN-pi-mcr"/>
                         <constraint firstAttribute="centerX" secondItem="3aB-Zc-4rk" secondAttribute="centerX" id="Kee-zk-461"/>
+                        <constraint firstAttribute="bottom" secondItem="2SI-y9-qgT" secondAttribute="bottom" id="Otd-St-lDe"/>
+                        <constraint firstAttribute="bottom" secondItem="Ye0-Ad-rIU" secondAttribute="bottom" id="RWi-VL-fQs"/>
+                        <constraint firstItem="Ye0-Ad-rIU" firstAttribute="leading" secondItem="7xX-hA-34F" secondAttribute="leading" id="U88-21-MhX"/>
                         <constraint firstAttribute="height" constant="157" id="avn-Bp-SWg"/>
+                        <constraint firstAttribute="bottom" secondItem="k2J-V1-QTv" secondAttribute="bottom" id="baJ-lg-A7G"/>
+                        <constraint firstItem="2SI-y9-qgT" firstAttribute="leading" secondItem="7xX-hA-34F" secondAttribute="leading" id="cbO-0L-b8t"/>
+                        <constraint firstAttribute="trailing" secondItem="Ye0-Ad-rIU" secondAttribute="trailing" id="iUG-bi-UhV"/>
                         <constraint firstAttribute="centerX" secondItem="hO3-kb-efM" secondAttribute="centerX" id="kLm-J6-fJn"/>
+                        <constraint firstItem="2SI-y9-qgT" firstAttribute="top" secondItem="7xX-hA-34F" secondAttribute="top" id="lCq-vp-Q7I"/>
+                        <constraint firstItem="k2J-V1-QTv" firstAttribute="leading" secondItem="7xX-hA-34F" secondAttribute="leading" id="lrd-Ti-MoM"/>
+                        <constraint firstItem="Ye0-Ad-rIU" firstAttribute="top" secondItem="7xX-hA-34F" secondAttribute="top" id="tBn-cO-zYe"/>
                     </constraints>
                 </view>
             </subviews>
@@ -75,11 +87,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="bgImage" destination="Ye0-Ad-rIU" id="6VV-IC-41Q"/>
-                <outlet property="feedNameTop" destination="7im-mB-OaL" id="GC8-cN-FdS"/>
+                <outlet property="feedNameTop" destination="7im-mB-OaL" id="K84-E8-QFx"/>
                 <outlet property="flexHeaderHeight" destination="avn-Bp-SWg" id="PI3-4O-OFj"/>
                 <outlet property="locationLabel" destination="hO3-kb-efM" id="NgR-zq-YHo"/>
                 <outlet property="openFeedButton" destination="k2J-V1-QTv" id="Uyw-Bg-RTE"/>
-                <outlet property="titleLabel" destination="3aB-Zc-4rk" id="Pdd-VD-Vys"/>
+                <outlet property="titleLabel" destination="3aB-Zc-4rk" id="OXJ-nM-dH4"/>
             </connections>
             <point key="canvasLocation" x="726" y="535.5"/>
         </view>

@@ -50,11 +50,25 @@
             NSLog(@"Close Button Clicked");
             break;
             
+        case IconFeedMenu:
+            //this pops for now until we get the sliding menu feature in
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+            
         case IconHamburger:
             [[SlideNavigationController sharedInstance] openMenu:MenuLeft withCompletion:^{
                 //menu left on complete
                 NSLog(@"left menu opened");
             }];
+            break;
+        
+        case IconFeedSettings:
+            NSLog(@"feed settings");
+            break;
+        
+        case IconNone:
+        default:
+            NSLog(@"do nothing");
             break;
     }
     

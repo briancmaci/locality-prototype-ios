@@ -10,7 +10,7 @@
 #import "FlexibleFeedHeaderView.h"
 #import "FeedAddNewTableViewCell.h"
 
-@interface FeedMenuTableViewController : UITableViewController <FeedHeaderHeroDelegate, FeedAddNewDelegate>
+@interface FeedMenuTableViewController : UITableViewController <LocalityHeaderViewDelegate, FeedAddNewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *menuOptions;
 

@@ -45,7 +45,7 @@
         
         //set frame
         [op setFrame:CGRectMake(0, i * FEED_HERO_HEIGHT, DEVICE_WIDTH, FEED_HERO_HEIGHT)];
-        [op populateWithData:[_menuOptions objectAtIndex:i] atIndex:i];
+        [op populateWithData:[_menuOptions objectAtIndex:i] atIndex:i inFeedMenu:YES];
         op.delegate = self;
         
         [self addSubview:op];

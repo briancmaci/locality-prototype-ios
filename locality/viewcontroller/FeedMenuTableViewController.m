@@ -65,7 +65,32 @@ static NSString * kAddNewLocationSegue = @"addNewLocationSegue";
     _addNewCell.delegate = self;
 }
 
-#pragma mark - FeedHeaderHero Delegate Methods
+#pragma mark - LocalityHeaderViewDelegate Methods
+
+-(void) iconClicked:(HeaderIconButton *)sender {
+    
+    switch(sender.iconType) {
+            
+        case IconBack:
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+            
+        case IconClose:
+            NSLog(@"Close Button Clicked");
+            break;
+            
+        case IconFeedSettings:
+            NSLog(@"feed settings");
+            break;
+            
+        case IconNone:
+        default:
+            NSLog(@"do nothing");
+            break;
+    }
+    
+}
+
 
 -(void) openFeedClicked:(FeedLocationModel *)feed atIndex:(int)index {
     NSLog(@"Load feed #%d", index);
@@ -87,7 +112,7 @@ static NSString * kAddNewLocationSegue = @"addNewLocationSegue";
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
+
     //second section is just button to add new
     return 2;
 }

@@ -32,6 +32,10 @@
         case IconFeedMenu:
             return kIconFeedMenu;
             break;
+        
+        case IconNone:
+            return @"";
+            break;
             
         default:
             return @"";

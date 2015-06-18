@@ -21,15 +21,16 @@
 }
 */
 
--(void) populateWithData:(FeedLocationModel *)model atIndex:(int)index {
+//header height
+static float deltaHeight = FEED_HERO_HEIGHT - kHeaderHeight;
+
+-(void) populateWithData:(FeedLocationModel *)model atIndex:(int)index inFeedMenu:(BOOL)isInFeedMenu {
     _model = model;
     _feedIndex = index;
     
     [self initImage];
-    [self initIcons];
+    [self initIcons:isInFeedMenu];
     [self initLabels];
-    [self setMenuMode:NO];
-    
 }
 
 -(void) initImage {
@@ -43,8 +44,12 @@
     }
 }
 
--(void) initIcons {
-    [self initWithTitle:[_model.name isEqualToString:@"_current"] ? @"CURRENT LOCATION" : [_model.name uppercaseString] leftButtonType:IconHamburger rightButtonType:IconFeedSettings];
+-(void) initIcons:(BOOL)isInFeedMenu {
+    
+    [self initWithTitle:[_model.name isEqualToString:@"_current"] ? @"CURRENT LOCATION" : [_model.name uppercaseString] leftButtonType:(isInFeedMenu ? IconNone : IconHamburger) rightButtonType:(isInFeedMenu ? IconFeedSettings : IconFeedMenu)];
+    
+    //move buttons
+    [self updateIconsY];
 }
 
 -(void) initLabels {
@@ -52,9 +57,21 @@
     _locationLabel.text = [_model.location uppercaseString];
 }
 
--(void) setMenuMode:(BOOL)yes {
-    //[_menuButton setHidden:!yes];
-    //[_settingsButton setHidden:yes];
+-(void) onHeaderButtonClick:(UIButton *)sender {
+    if([self.delegate respondsToSelector:@selector(openFeedClicked:atIndex:)]){
+        [self.delegate openFeedClicked:_model atIndex:_feedIndex];
+    }
+}
+
+-(void) updateIconsY {
+    
+    CGRect lFrame = self.leftIconButton.frame;
+    lFrame.origin.y = self.feedNameTop.constant + self.titleLabel.frame.size.height/2 - self.leftIconButton.frame.size.height/2;
+    self.leftIconButton.frame = lFrame;
+    
+    lFrame = self.rightIconButton.frame;
+    lFrame.origin.y = self.feedNameTop.constant + self.titleLabel.frame.size.height/2 - self.rightIconButton.frame.size.height/2;
+    self.rightIconButton.frame = lFrame;
 }
 
 #pragma mark - CTAs
@@ -67,20 +84,18 @@
     }
 }
 
-//-(IBAction)settingsTapped:(id)sender {
-//
-//    //call delegate
-//    if( [self.delegate respondsToSelector:@selector(toFeedSettingsClicked:)]) {
-//        [self.delegate toFeedSettingsClicked:_model];
-//    }
-//}
-//
-//-(IBAction)feedMenuTapped:(id)sender {
-//
-//    //call delegate
-//    if( [self.delegate respondsToSelector:@selector(toFeedMenuClicked)]) {
-//        [self.delegate toFeedMenuClicked];
-//    }
-//}
+#pragma mark - Height Update on Scroll
+
+-(void) updateHeaderHeight:(float)newHeaderHeight {
+    
+    self.flexHeaderHeight.constant = newHeaderHeight;
+    [_locationLabel setAlpha:(newHeaderHeight - kHeaderHeight)/deltaHeight ];
+    //set title and buttons
+    self.feedNameTop.constant = kHeaderTitleY0 + (kHeaderTitleY1 * ((newHeaderHeight - kHeaderHeight)/FEED_HERO_HEIGHT));
+    
+    [self updateIconsY];
+    
+    [self setNeedsUpdateConstraints];
+}
 
 @end

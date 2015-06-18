@@ -18,7 +18,8 @@ typedef enum {
     IconClose,
     IconHamburger,
     IconFeedSettings,
-    IconFeedMenu
+    IconFeedMenu,
+    IconNone
     
 } HeaderIconType;
 

@@ -12,13 +12,14 @@
 #import "FlexibleFeedHeaderView.h"
 #import "LocalityBaseViewController.h"
 
-@interface FeedViewController : LocalityBaseViewController
+@interface FeedViewController : LocalityBaseViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) FlexibleFeedHeaderView *headerHero;
 @property (strong, nonatomic) IBOutlet UITableView *feedPostsTable;
 @property (strong, nonatomic) IBOutlet UIButton *addPostButton;
 @property (strong, nonatomic) IBOutlet UIView *headerHeroHolder;
 
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *flexHeaderHeight;
 //coming up
 @property (strong, nonatomic) FlexibleFeedHeaderView *flexHeaderView;
 

@@ -526,7 +526,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cot-hv-HOC" userLabel="Range Slider" customClass="LocationRangeSlider">
                                 <rect key="frame" x="0.0" y="345" width="320" height="84"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="location_slider_bg" translatesAutoresizingMaskIntoConstraints="NO" id="ybd-SH-ANv">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_slider_bg" translatesAutoresizingMaskIntoConstraints="NO" id="ybd-SH-ANv">
                                         <rect key="frame" x="66" y="2" width="188" height="32"/>
                                     </imageView>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sWJ-H1-7sA">
@@ -658,6 +658,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fql-3W-LOP">
+                                <rect key="frame" x="0.0" y="59" width="320" height="509"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFR-5K-yMe">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -665,10 +669,6 @@
                                     <constraint firstAttribute="height" constant="157" id="N6d-Gh-onl"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fql-3W-LOP">
-                                <rect key="frame" x="0.0" y="157" width="320" height="411"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pz-uC-Wwn">
                                 <rect key="frame" x="125" y="478" width="70" height="70"/>
                                 <constraints>
@@ -690,16 +690,17 @@
                             <constraint firstItem="fql-3W-LOP" firstAttribute="leading" secondItem="bFY-bu-2bj" secondAttribute="leading" id="G0w-48-1JY"/>
                             <constraint firstItem="KFR-5K-yMe" firstAttribute="leading" secondItem="bFY-bu-2bj" secondAttribute="leading" id="Nzb-FK-8iR"/>
                             <constraint firstAttribute="trailing" secondItem="fql-3W-LOP" secondAttribute="trailing" id="OFU-bM-htK"/>
-                            <constraint firstItem="fql-3W-LOP" firstAttribute="top" secondItem="KFR-5K-yMe" secondAttribute="bottom" id="XtN-kg-jAm"/>
                             <constraint firstAttribute="centerX" secondItem="7pz-uC-Wwn" secondAttribute="centerX" id="ejz-hB-8ey"/>
                             <constraint firstItem="cKO-kK-zLX" firstAttribute="top" secondItem="7pz-uC-Wwn" secondAttribute="bottom" constant="20" id="h2r-RY-Hi9"/>
                             <constraint firstAttribute="trailing" secondItem="KFR-5K-yMe" secondAttribute="trailing" id="sek-8Z-0Yy"/>
+                            <constraint firstItem="fql-3W-LOP" firstAttribute="top" secondItem="5Q7-q9-SF9" secondAttribute="bottom" constant="39" id="vrc-8o-gy2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jdh-1l-bS2"/>
                     <connections>
                         <outlet property="addPostButton" destination="7pz-uC-Wwn" id="kHj-GX-kzC"/>
                         <outlet property="feedPostsTable" destination="fql-3W-LOP" id="kR4-Oz-ysv"/>
+                        <outlet property="flexHeaderHeight" destination="N6d-Gh-onl" id="Hte-M1-ZQN"/>
                         <outlet property="headerHeroHolder" destination="KFR-5K-yMe" id="0Z7-qV-gmE"/>
                     </connections>
                 </viewController>
@@ -1009,7 +1010,7 @@
     </scenes>
     <resources>
         <image name="button_add_location_icon" width="9" height="11"/>
-        <image name="button_post" width="70" height="70"/>
+        <image name="button_post" width="69" height="69"/>
         <image name="feed_range_flourish" width="25" height="28"/>
         <image name="icon_pencil" width="10" height="10"/>
         <image name="location_slider_bg" width="188" height="32"/>
