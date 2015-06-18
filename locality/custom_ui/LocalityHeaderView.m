@@ -80,18 +80,26 @@ static float const kStatusBarOffset = 10.0f;
 
 - (void) setLeftButton:(HeaderIconType)type {
     
-    HeaderIconButton *b = [[HeaderIconButton alloc] initWithType:type];
-    b.frame = CGRectMake(kHeaderButtonIndent, (kHeaderHeight - b.frame.size.height)/2 + kStatusBarOffset, b.frame.size.width, b.frame.size.height);
-    [self bindEventFor:b];
-    [self addSubview:b];
+    _leftIconButton = [[HeaderIconButton alloc] initWithType:type];
+    _leftIconButton.frame = CGRectMake(kHeaderButtonIndent,
+                                       (kHeaderHeight - _leftIconButton.frame.size.height)/2 + kStatusBarOffset,
+                                       _leftIconButton.frame.size.width,
+                                       _leftIconButton.frame.size.height);
+    
+    [self bindEventFor:_leftIconButton];
+    [self addSubview:_leftIconButton];
 }
 
 - (void) setRightButton:(HeaderIconType)type {
     
-    HeaderIconButton *b = [[HeaderIconButton alloc] initWithType:type];
-    b.frame = CGRectMake(DEVICE_WIDTH - kHeaderButtonIndent - b.frame.size.width, (kHeaderHeight - b.frame.size.height)/2 + kStatusBarOffset, b.frame.size.width, b.frame.size.height);
-    [self bindEventFor:b];
-    [self addSubview:b];
+    _rightIconButton = [[HeaderIconButton alloc] initWithType:type];
+    _rightIconButton.frame = CGRectMake(DEVICE_WIDTH - kHeaderButtonIndent - _rightIconButton.frame.size.width,
+                                        (kHeaderHeight - _rightIconButton.frame.size.height)/2 + kStatusBarOffset,
+                                        _rightIconButton.frame.size.width,
+                                        _rightIconButton.frame.size.height);
+    
+    [self bindEventFor:_rightIconButton];
+    [self addSubview:_rightIconButton];
 }
 
 -(void) bindEventFor:(HeaderIconButton *)b {

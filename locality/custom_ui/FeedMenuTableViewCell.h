@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FeedHeaderHeroView.h"
+#import "FlexibleFeedHeaderView.h"
 
 @interface FeedMenuTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) FeedHeaderHeroView *heroView;
+@property (strong, nonatomic) FlexibleFeedHeaderView *heroView;
 
 -(void) populateWithData:(FeedLocationModel *)data;
 

@@ -41,7 +41,7 @@
     for( int i = 0; i < [_menuOptions count]; i++ ) {
         
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FeedHeaderHeroView" owner:self options:nil];
-        FeedHeaderHeroView *op = [nib objectAtIndex:0];
+        FlexibleFeedHeaderView *op = [nib objectAtIndex:0];
         
         //set frame
         [op setFrame:CGRectMake(0, i * FEED_HERO_HEIGHT, DEVICE_WIDTH, FEED_HERO_HEIGHT)];

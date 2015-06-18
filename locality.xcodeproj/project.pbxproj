@@ -21,12 +21,11 @@
 		032C76531B03FC1100C78CB0 /* SignUpEmailSentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76521B03FC1100C78CB0 /* SignUpEmailSentViewController.m */; };
 		032C76571B0407D000C78CB0 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76561B0407D000C78CB0 /* UserModel.m */; };
 		032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76591B041CFE00C78CB0 /* FeedViewController.m */; };
-		033B732B1B0CB62800355581 /* FeedHeaderHeroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B732A1B0CB62800355581 /* FeedHeaderHeroView.m */; };
-		033B732D1B0CB64000355581 /* FeedHeaderHeroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033B732C1B0CB64000355581 /* FeedHeaderHeroView.xib */; };
+		033B732B1B0CB62800355581 /* FlexibleFeedHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B732A1B0CB62800355581 /* FlexibleFeedHeaderView.m */; };
+		033B732D1B0CB64000355581 /* FlexibleFeedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033B732C1B0CB64000355581 /* FlexibleFeedHeaderView.xib */; };
 		033B73321B0D039500355581 /* FeedSliderMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B73311B0D039500355581 /* FeedSliderMenuView.m */; };
 		0349E3B81B2871F30036F6D1 /* FeedSettingToggleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E3B61B2871F30036F6D1 /* FeedSettingToggleCell.m */; };
 		0349E3B91B2871F30036F6D1 /* FeedSettingToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0349E3B71B2871F30036F6D1 /* FeedSettingToggleCell.xib */; };
-		03510AAE1B32F4EC00089659 /* FlexibleFeedHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03510AAD1B32F4EC00089659 /* FlexibleFeedHeaderView.m */; };
 		03510AB11B3300EB00089659 /* LocalityPhotoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03510AB01B3300EB00089659 /* LocalityPhotoBaseViewController.m */; };
 		0353B4891B0E3C1400CE3750 /* Interstate Bold Cond.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0353B4771B0E3C1400CE3750 /* Interstate Bold Cond.ttf */; };
 		0353B48A1B0E3C1400CE3750 /* Interstate Cond Mono - Blk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0353B4781B0E3C1400CE3750 /* Interstate Cond Mono - Blk.ttf */; };
@@ -118,16 +117,14 @@
 		032C76561B0407D000C78CB0 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserModel.m; path = model/UserModel.m; sourceTree = "<group>"; };
 		032C76581B041CFE00C78CB0 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedViewController.h; path = viewcontroller/FeedViewController.h; sourceTree = "<group>"; };
 		032C76591B041CFE00C78CB0 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedViewController.m; path = viewcontroller/FeedViewController.m; sourceTree = "<group>"; };
-		033B73291B0CB62800355581 /* FeedHeaderHeroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedHeaderHeroView.h; path = custom_ui/FeedHeaderHeroView.h; sourceTree = "<group>"; };
-		033B732A1B0CB62800355581 /* FeedHeaderHeroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedHeaderHeroView.m; path = custom_ui/FeedHeaderHeroView.m; sourceTree = "<group>"; };
-		033B732C1B0CB64000355581 /* FeedHeaderHeroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedHeaderHeroView.xib; path = custom_ui/FeedHeaderHeroView.xib; sourceTree = "<group>"; };
+		033B73291B0CB62800355581 /* FlexibleFeedHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlexibleFeedHeaderView.h; path = custom_ui/FlexibleFeedHeaderView.h; sourceTree = "<group>"; };
+		033B732A1B0CB62800355581 /* FlexibleFeedHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlexibleFeedHeaderView.m; path = custom_ui/FlexibleFeedHeaderView.m; sourceTree = "<group>"; };
+		033B732C1B0CB64000355581 /* FlexibleFeedHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FlexibleFeedHeaderView.xib; path = custom_ui/FlexibleFeedHeaderView.xib; sourceTree = "<group>"; };
 		033B73301B0D039500355581 /* FeedSliderMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSliderMenuView.h; path = custom_ui/FeedSliderMenuView.h; sourceTree = "<group>"; };
 		033B73311B0D039500355581 /* FeedSliderMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSliderMenuView.m; path = custom_ui/FeedSliderMenuView.m; sourceTree = "<group>"; };
 		0349E3B51B2871F30036F6D1 /* FeedSettingToggleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSettingToggleCell.h; path = custom_ui/FeedSettingToggleCell.h; sourceTree = "<group>"; };
 		0349E3B61B2871F30036F6D1 /* FeedSettingToggleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSettingToggleCell.m; path = custom_ui/FeedSettingToggleCell.m; sourceTree = "<group>"; };
 		0349E3B71B2871F30036F6D1 /* FeedSettingToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedSettingToggleCell.xib; path = custom_ui/FeedSettingToggleCell.xib; sourceTree = "<group>"; };
-		03510AAC1B32F4EC00089659 /* FlexibleFeedHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlexibleFeedHeaderView.h; path = custom_ui/FlexibleFeedHeaderView.h; sourceTree = "<group>"; };
-		03510AAD1B32F4EC00089659 /* FlexibleFeedHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlexibleFeedHeaderView.m; path = custom_ui/FlexibleFeedHeaderView.m; sourceTree = "<group>"; };
 		03510AAF1B3300EB00089659 /* LocalityPhotoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalityPhotoBaseViewController.h; path = viewcontroller/LocalityPhotoBaseViewController.h; sourceTree = "<group>"; };
 		03510AB01B3300EB00089659 /* LocalityPhotoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalityPhotoBaseViewController.m; path = viewcontroller/LocalityPhotoBaseViewController.m; sourceTree = "<group>"; };
 		0353B4771B0E3C1400CE3750 /* Interstate Bold Cond.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Interstate Bold Cond.ttf"; path = "fonts/Interstate Bold Cond.ttf"; sourceTree = "<group>"; };
@@ -249,9 +246,6 @@
 				03C2CF2A1B307BCF00463BDC /* ImageUploadView */,
 				03A87E491B32060E00BE37C8 /* PostFromView */,
 				03C2CF2D1B308C5E00463BDC /* LocationRangeSlider */,
-				033B73291B0CB62800355581 /* FeedHeaderHeroView.h */,
-				033B732A1B0CB62800355581 /* FeedHeaderHeroView.m */,
-				033B732C1B0CB64000355581 /* FeedHeaderHeroView.xib */,
 				033B73301B0D039500355581 /* FeedSliderMenuView.h */,
 				033B73311B0D039500355581 /* FeedSliderMenuView.m */,
 				0353B49E1B0E3D3300CE3750 /* BusyView.xib */,
@@ -543,8 +537,9 @@
 			children = (
 				03FCEE8F1B2B18D2006D3FF3 /* LocalityHeaderView.h */,
 				03FCEE901B2B18D2006D3FF3 /* LocalityHeaderView.m */,
-				03510AAC1B32F4EC00089659 /* FlexibleFeedHeaderView.h */,
-				03510AAD1B32F4EC00089659 /* FlexibleFeedHeaderView.m */,
+				033B73291B0CB62800355581 /* FlexibleFeedHeaderView.h */,
+				033B732A1B0CB62800355581 /* FlexibleFeedHeaderView.m */,
+				033B732C1B0CB64000355581 /* FlexibleFeedHeaderView.xib */,
 			);
 			name = HeaderView;
 			sourceTree = "<group>";
@@ -675,7 +670,7 @@
 				0353B48D1B0E3C1400CE3750 /* Interstate ExtraLight Cond.ttf in Resources */,
 				0353B4911B0E3C1400CE3750 /* Interstate-LightCond.otf in Resources */,
 				0355982F1B2F198800D42A33 /* LocationRangeSlider.xib in Resources */,
-				033B732D1B0CB64000355581 /* FeedHeaderHeroView.xib in Resources */,
+				033B732D1B0CB64000355581 /* FlexibleFeedHeaderView.xib in Resources */,
 				0353B48C1B0E3C1400CE3750 /* Interstate Cond Mono.ttf in Resources */,
 				0353B49A1B0E3C1400CE3750 /* InterstateLightCondensed.ttf in Resources */,
 				03A87E481B32060A00BE37C8 /* PostFromView.xib in Resources */,
@@ -733,7 +728,7 @@
 				032C764A1B03F0A400C78CB0 /* LoginViewController.m in Sources */,
 				03510AB11B3300EB00089659 /* LocalityPhotoBaseViewController.m in Sources */,
 				4E777E631B0F6A3100EEAEFC /* FeedSettingsViewController.m in Sources */,
-				033B732B1B0CB62800355581 /* FeedHeaderHeroView.m in Sources */,
+				033B732B1B0CB62800355581 /* FlexibleFeedHeaderView.m in Sources */,
 				032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */,
 				032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */,
 				03A87E4C1B32120200BE37C8 /* PostFromViewToggle.m in Sources */,
@@ -766,7 +761,6 @@
 				03A87E551B322AE400BE37C8 /* UIImage+Tint.m in Sources */,
 				03C2CF291B307BC500463BDC /* ImageUploadView.m in Sources */,
 				4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */,
-				03510AAE1B32F4EC00089659 /* FlexibleFeedHeaderView.m in Sources */,
 				03F71A681B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				03FCEE961B2B2AFB006D3FF3 /* HeaderIconButton.m in Sources */,
 				03FCEE911B2B18D2006D3FF3 /* LocalityHeaderView.m in Sources */,

@@ -63,6 +63,8 @@
 #define kIconBack @"icon_back"
 #define kIconClose @"icon_close"
 #define kIconHamburger @"icon_hamburger"
+#define kIconFeedSettings @"icon_settings"
+#define kIconFeedMenu @"icon_menu"
 
 /* CURRENT FEED DEFAULTS */
 #define DEFAULT_FEED_IMAGE @"feed_default_hero"

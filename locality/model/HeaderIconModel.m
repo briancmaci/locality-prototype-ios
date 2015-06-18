@@ -25,6 +25,14 @@
             return kIconHamburger;
             break;
             
+        case IconFeedSettings:
+            return kIconFeedSettings;
+            break;
+        
+        case IconFeedMenu:
+            return kIconFeedMenu;
+            break;
+            
         default:
             return @"";
             break;

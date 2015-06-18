@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FeedHeaderHeroView.h"
+#import "FlexibleFeedHeaderView.h"
 #import "FeedAddNewTableViewCell.h"
 
 @interface FeedMenuTableViewController : UITableViewController <FeedHeaderHeroDelegate, FeedAddNewDelegate>

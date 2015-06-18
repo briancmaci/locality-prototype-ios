@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "HeaderIconButton.h"
+#import "FeedLocationModel.h"
 
 @protocol LocalityHeaderViewDelegate <NSObject>
 
 //delegate methods
 -(void)iconClicked:(HeaderIconButton *)sender;
+
+@optional
+-(void)openFeedClicked:(FeedLocationModel *)model atIndex:(int)index;
 
 @end
 
@@ -20,8 +24,11 @@
 
 @property (weak, nonatomic) id<LocalityHeaderViewDelegate> delegate;
 
-@property (strong, nonatomic) UIImageView *bgImage;
-@property (strong, nonatomic) UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *bgImage;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (strong, nonatomic) HeaderIconButton *leftIconButton;
+@property (strong, nonatomic) HeaderIconButton *rightIconButton;
 
 -(void) updateWithBackgroundImage:(UIImage *)bg;
 -(void) initWithTitle:(NSString *)title leftButtonType:(HeaderIconType)leftType rightButtonType:(HeaderIconType)rightType;

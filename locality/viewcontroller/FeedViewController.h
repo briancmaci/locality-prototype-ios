@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FeedHeaderHeroView.h"
+#import "FlexibleFeedHeaderView.h"
 #import "FeedLocationModel.h"
 #import "FlexibleFeedHeaderView.h"
+#import "LocalityBaseViewController.h"
 
-@interface FeedViewController : UIViewController <FeedHeaderHeroDelegate>
+@interface FeedViewController : LocalityBaseViewController
 
-@property (strong, nonatomic) FeedHeaderHeroView *headerHero;
+@property (strong, nonatomic) FlexibleFeedHeaderView *headerHero;
 @property (strong, nonatomic) IBOutlet UITableView *feedPostsTable;
 @property (strong, nonatomic) IBOutlet UIButton *addPostButton;
 @property (strong, nonatomic) IBOutlet UIView *headerHeroHolder;
