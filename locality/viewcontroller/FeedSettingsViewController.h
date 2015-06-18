@@ -13,9 +13,9 @@
 #import "LocationRangeSlider.h"
 #import "ImageUploadView.h"
 #import "RSKImageCropViewController.h"
-#import "LocalityBaseViewController.h"
+#import "LocalityPhotoBaseViewController.h"
 
-@interface FeedSettingsViewController : LocalityBaseViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, ImageUploadViewDelegate, MapBoxManagerDelegate, UITextFieldDelegate> {
+@interface FeedSettingsViewController : LocalityPhotoBaseViewController <CLLocationManagerDelegate, LocationRangeSliderDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, ImageUploadViewDelegate, MapBoxManagerDelegate, UITextFieldDelegate> {
     NSArray *searchResultPlaces;
     GMSPlacesClient *placesClient;
     GMSVisibleRegion visibleRegion;

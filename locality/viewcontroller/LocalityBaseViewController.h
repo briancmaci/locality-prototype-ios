@@ -8,13 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "LocalityHeaderView.h"
-#import <AVFoundation/AVFoundation.h>
-#import "RSKImageCropViewController.h"
 #import "config.h"
 
-@interface LocalityBaseViewController : UIViewController <LocalityHeaderViewDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate, RSKImageCropViewControllerDataSource>
+@interface LocalityBaseViewController : UIViewController <LocalityHeaderViewDelegate>
 
 @property (strong, nonatomic) LocalityHeaderView *header;
 
--(void)checkCameraAccess;
 @end

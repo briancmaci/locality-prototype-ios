@@ -26,6 +26,8 @@
 		033B73321B0D039500355581 /* FeedSliderMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B73311B0D039500355581 /* FeedSliderMenuView.m */; };
 		0349E3B81B2871F30036F6D1 /* FeedSettingToggleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E3B61B2871F30036F6D1 /* FeedSettingToggleCell.m */; };
 		0349E3B91B2871F30036F6D1 /* FeedSettingToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0349E3B71B2871F30036F6D1 /* FeedSettingToggleCell.xib */; };
+		03510AAE1B32F4EC00089659 /* FlexibleFeedHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03510AAD1B32F4EC00089659 /* FlexibleFeedHeaderView.m */; };
+		03510AB11B3300EB00089659 /* LocalityPhotoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03510AB01B3300EB00089659 /* LocalityPhotoBaseViewController.m */; };
 		0353B4891B0E3C1400CE3750 /* Interstate Bold Cond.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0353B4771B0E3C1400CE3750 /* Interstate Bold Cond.ttf */; };
 		0353B48A1B0E3C1400CE3750 /* Interstate Cond Mono - Blk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0353B4781B0E3C1400CE3750 /* Interstate Cond Mono - Blk.ttf */; };
 		0353B48B1B0E3C1400CE3750 /* Interstate Cond Mono - Lgt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0353B4791B0E3C1400CE3750 /* Interstate Cond Mono - Lgt.ttf */; };
@@ -124,6 +126,10 @@
 		0349E3B51B2871F30036F6D1 /* FeedSettingToggleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSettingToggleCell.h; path = custom_ui/FeedSettingToggleCell.h; sourceTree = "<group>"; };
 		0349E3B61B2871F30036F6D1 /* FeedSettingToggleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSettingToggleCell.m; path = custom_ui/FeedSettingToggleCell.m; sourceTree = "<group>"; };
 		0349E3B71B2871F30036F6D1 /* FeedSettingToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedSettingToggleCell.xib; path = custom_ui/FeedSettingToggleCell.xib; sourceTree = "<group>"; };
+		03510AAC1B32F4EC00089659 /* FlexibleFeedHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlexibleFeedHeaderView.h; path = custom_ui/FlexibleFeedHeaderView.h; sourceTree = "<group>"; };
+		03510AAD1B32F4EC00089659 /* FlexibleFeedHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlexibleFeedHeaderView.m; path = custom_ui/FlexibleFeedHeaderView.m; sourceTree = "<group>"; };
+		03510AAF1B3300EB00089659 /* LocalityPhotoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalityPhotoBaseViewController.h; path = viewcontroller/LocalityPhotoBaseViewController.h; sourceTree = "<group>"; };
+		03510AB01B3300EB00089659 /* LocalityPhotoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalityPhotoBaseViewController.m; path = viewcontroller/LocalityPhotoBaseViewController.m; sourceTree = "<group>"; };
 		0353B4771B0E3C1400CE3750 /* Interstate Bold Cond.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Interstate Bold Cond.ttf"; path = "fonts/Interstate Bold Cond.ttf"; sourceTree = "<group>"; };
 		0353B4781B0E3C1400CE3750 /* Interstate Cond Mono - Blk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Interstate Cond Mono - Blk.ttf"; path = "fonts/Interstate Cond Mono - Blk.ttf"; sourceTree = "<group>"; };
 		0353B4791B0E3C1400CE3750 /* Interstate Cond Mono - Lgt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Interstate Cond Mono - Lgt.ttf"; path = "fonts/Interstate Cond Mono - Lgt.ttf"; sourceTree = "<group>"; };
@@ -284,11 +290,10 @@
 		032C76371B03EFB700C78CB0 /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				03510AB21B3300F200089659 /* _base */,
 				032C765B1B041D0800C78CB0 /* feed */,
 				4E777E641B0F6A5100EEAEFC /* post */,
 				032C76541B03FD4A00C78CB0 /* login-signup */,
-				03FCEE851B2B0C36006D3FF3 /* LocalityBaseViewController.h */,
-				03FCEE861B2B0C36006D3FF3 /* LocalityBaseViewController.m */,
 			);
 			name = viewcontroller;
 			sourceTree = "<group>";
@@ -369,6 +374,17 @@
 				0353B4881B0E3C1400CE3750 /* InterstateLightCondensed.ttf */,
 			);
 			name = fonts;
+			sourceTree = "<group>";
+		};
+		03510AB21B3300F200089659 /* _base */ = {
+			isa = PBXGroup;
+			children = (
+				03FCEE851B2B0C36006D3FF3 /* LocalityBaseViewController.h */,
+				03FCEE861B2B0C36006D3FF3 /* LocalityBaseViewController.m */,
+				03510AAF1B3300EB00089659 /* LocalityPhotoBaseViewController.h */,
+				03510AB01B3300EB00089659 /* LocalityPhotoBaseViewController.m */,
+			);
+			name = _base;
 			sourceTree = "<group>";
 		};
 		036CA1B51AFBC88E0064AB6C = {
@@ -527,6 +543,8 @@
 			children = (
 				03FCEE8F1B2B18D2006D3FF3 /* LocalityHeaderView.h */,
 				03FCEE901B2B18D2006D3FF3 /* LocalityHeaderView.m */,
+				03510AAC1B32F4EC00089659 /* FlexibleFeedHeaderView.h */,
+				03510AAD1B32F4EC00089659 /* FlexibleFeedHeaderView.m */,
 			);
 			name = HeaderView;
 			sourceTree = "<group>";
@@ -713,6 +731,7 @@
 				03D595C71B06269B00C48F25 /* AppUtilities.m in Sources */,
 				030C412C1B050B22004F1ECE /* CurrentFeedInitializeViewController.m in Sources */,
 				032C764A1B03F0A400C78CB0 /* LoginViewController.m in Sources */,
+				03510AB11B3300EB00089659 /* LocalityPhotoBaseViewController.m in Sources */,
 				4E777E631B0F6A3100EEAEFC /* FeedSettingsViewController.m in Sources */,
 				033B732B1B0CB62800355581 /* FeedHeaderHeroView.m in Sources */,
 				032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */,
@@ -747,6 +766,7 @@
 				03A87E551B322AE400BE37C8 /* UIImage+Tint.m in Sources */,
 				03C2CF291B307BC500463BDC /* ImageUploadView.m in Sources */,
 				4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */,
+				03510AAE1B32F4EC00089659 /* FlexibleFeedHeaderView.m in Sources */,
 				03F71A681B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				03FCEE961B2B2AFB006D3FF3 /* HeaderIconButton.m in Sources */,
 				03FCEE911B2B18D2006D3FF3 /* LocalityHeaderView.m in Sources */,

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LocalityBaseViewController.h"
+#import "LocalityPhotoBaseViewController.h"
 #import "ImageUploadView.h"
 #import "PostFromView.h"
 
-@interface PostCreateViewController : LocalityBaseViewController <ImageUploadViewDelegate>
+@interface PostCreateViewController : LocalityPhotoBaseViewController <ImageUploadViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *commentField;
 

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FeedHeaderHeroView.h"
 #import "FeedLocationModel.h"
+#import "FlexibleFeedHeaderView.h"
 
 @interface FeedViewController : UIViewController <FeedHeaderHeroDelegate>
 
@@ -16,6 +17,9 @@
 @property (strong, nonatomic) IBOutlet UITableView *feedPostsTable;
 @property (strong, nonatomic) IBOutlet UIButton *addPostButton;
 @property (strong, nonatomic) IBOutlet UIView *headerHeroHolder;
+
+//coming up
+@property (strong, nonatomic) FlexibleFeedHeaderView *flexHeaderView;
 
 @property (strong, nonatomic) FeedLocationModel *thisFeed;
 @property (nonatomic) BOOL isCurrentLocationFeed;
