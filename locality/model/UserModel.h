@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FeedLocationModel.h"
+#import "UserStatusModel.h"
 
 @interface UserModel : NSObject
 
@@ -23,6 +24,9 @@
 //feeds
 @property (strong, nonatomic) FeedLocationModel *currentLocation;
 @property (strong, nonatomic) NSMutableArray *pinnedLocations;
+
+//status
+@property (nonatomic) UserStatusType userStatus;
 
 + (UserModel *)sharedInstance;
 

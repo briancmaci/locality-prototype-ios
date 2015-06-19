@@ -55,6 +55,7 @@ static NSString * kDBUser = @"_User";
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
         if (!error) {
             // Do stuff after successful login.
+            
             successBlock(user);
         } else {
             // The login failed. Check error to see why.
@@ -205,6 +206,19 @@ static NSString * kDBUser = @"_User";
         } else {   //NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
             failureBlock(error);
             NSLog(@"error saving pinnedLocation");
+        }
+    }];
+}
+
++(void) addNewPost:(PostModel *)post success:(successBlock)successBlock failure:(failureBlock)failureBlock {
+    
+    PFObject *newPost = [DataManager parsePostModelIntoParseObject:post];
+    
+    [newPost saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            successBlock(nil);
+        } else {
+            failureBlock(error);
         }
     }];
 }

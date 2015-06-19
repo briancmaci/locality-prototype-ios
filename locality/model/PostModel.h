@@ -10,6 +10,15 @@
 
 @interface PostModel : NSObject
 
+#define kProfileName @"profileName"
+#define kProfileImgUrl @"profileImgUrl"
+#define kPostImgUrl @"postImgUrl"
+#define kCaption @"caption"
+#define kPostLocation @"postLocation"
+
+#define kLikes @"likes"
+#define kCommentsCount @"commentsCount"
+
 @property (strong, nonatomic) NSDate *createdDate;
 @property (strong, nonatomic) NSString *postId;
 
@@ -20,7 +29,9 @@
 @property (strong, nonatomic) NSString *postImgUrl;
 
 //User info
-@property (nonatomic) BOOL isAnonymous;
+//@property (nonatomic) BOOL isAnonymous;
+
+// If no username - make anonymous
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *profileImgUrl;
 

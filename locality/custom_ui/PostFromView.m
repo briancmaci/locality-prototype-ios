@@ -8,6 +8,7 @@
 
 #import "PostFromView.h"
 #import "UIImage+Tint.h"
+#import "AppUtilities.h"
 
 @implementation PostFromView
 
@@ -27,7 +28,9 @@
 
 -(void) initToggles {
     //from me
+    [AppUtilities loadProfileImage:_postFromMeToggle.img];
     _postFromMeToggle.img.layer.cornerRadius = _postFromMeToggle.img.frame.size.width/2;
+    _postFromMeToggle.img.layer.masksToBounds = YES;
     
     //incognito
     [_postIncognitoToggle setForMultiply];
@@ -39,6 +42,8 @@
     
     [self.postFromMeToggle setSelected:yes];
     [self.postIncognitoToggle setSelected:!yes];
+    
+    _isAnonymous = !yes;
 }
 
 -(IBAction)postFromMeTapped:(id)sender {

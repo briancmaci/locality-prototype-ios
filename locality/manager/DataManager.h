@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "FeedLocationModel.h"
+#import "PostModel.h"
 
 @interface DataManager : NSObject
 
 +(void) parseUserDataIntoModel:(PFUser *)me;
 
 +(NSDictionary *) parseFeedModelIntoDictionary:(FeedLocationModel *)feed;
++(PFObject *)parsePostModelIntoParseObject:(PostModel *)post;
+
 @end

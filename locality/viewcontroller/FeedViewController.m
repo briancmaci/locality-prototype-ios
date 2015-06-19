@@ -64,19 +64,9 @@ static float scrollRangeCollapsed = 0;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    //NSLog(@"scroll offset: %f, scroll inset: %f", _feedPostsTable.contentOffset.y, headerExpandedOffset);
+    _flexHeaderHeight.constant = MAX( kHeaderHeight, kHeaderHeight + (FEED_HERO_HEIGHT - kHeaderHeight) * -(_feedPostsTable.contentOffset.y)/headerExpandedOffset);
     
-    if(( _feedPostsTable.contentOffset.y < scrollRangeExpanded ) || ( _feedPostsTable.contentOffset.y > scrollRangeCollapsed )) return;
-    //update header height on scroll
-    //NSLog(@"scroll!");
-    _flexHeaderHeight.constant = kHeaderHeight + (FEED_HERO_HEIGHT - kHeaderHeight) * -(_feedPostsTable.contentOffset.y)/headerExpandedOffset;
-    //NSLog(@"Flex header height: %f", _flexHeaderHeight.constant);
     [_headerHeroHolder setNeedsUpdateConstraints];
-    
-    //_feedPostsTable.contentInset = UIEdgeInsetsMake(headerExpandedOffset - _feedPostsTable.contentOffset.y + headerCollapsedOffset, 0, 0, 0);
-    
-    
-    
     [_headerHero updateHeaderHeight:_flexHeaderHeight.constant];
     
 }

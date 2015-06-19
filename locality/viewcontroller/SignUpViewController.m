@@ -57,6 +57,15 @@ static NSString * kSignUpCompleteSegue = @"signupCompleteSegue";
             NSLog(@"Go to facebook authentication process");
             [ParseManager signupUserViaFacebookWithUsername:self.usernameField.text success:^(id response) {
                 NSLog(@"facebook signup success");
+                
+                //Not Sure If Needed
+                //populate user model
+                [UserModel sharedInstance].username = self.usernameField.text;
+                [UserModel sharedInstance].isFirstTime = YES;
+                [UserModel sharedInstance].userStatus = UserStatusNewUser;
+                [[PFUser currentUser] setObject:@([UserModel sharedInstance].isFirstTime) forKey:@"isFirstTime"];
+                [[PFUser currentUser] saveInBackground];
+                
                 //[self performSegueWithIdentifier:kSignUpCompleteSegue sender:self];
                 [[NSNotificationCenter defaultCenter] postNotificationName:kLoggedInNotify object:nil userInfo:nil];
                 

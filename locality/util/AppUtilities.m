@@ -9,6 +9,8 @@
 #import "AppUtilities.h"
 #import <CoreText/CTStringAttributes.h>
 #import <CoreText/CoreText.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "UserModel.h"
 #import "config.h"
 
 @implementation AppUtilities
@@ -40,6 +42,29 @@ static const float metersPerFoot = 0.3048;
 +(NSString *)locationLabelFromAddress:(GMSAddress *)address {
     
     return [NSString stringWithFormat:@"— %@, %@ —", address.locality ? address.locality : address.subLocality, address.administrativeArea ? address.administrativeArea : address.country];
+}
+
++(void) loadProfileImage:(UIImageView *)imgView {
+    
+    if( ![[UserModel sharedInstance].profileImgUrl isEqualToString:kDefaultAvatar] ) {
+        [imgView sd_setImageWithURL:[NSURL URLWithString:[UserModel sharedInstance].profileImgUrl] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if(cacheType == SDImageCacheTypeDisk || cacheType == SDImageCacheTypeNone) {
+                imgView.alpha = 0;
+                [UIView animateWithDuration:0.25 animations:^{
+                    [imgView setAlpha:1];
+                }];
+            }
+            
+            else {
+                [imgView setAlpha:1];
+            }
+        }];
+    }
+    
+    else {
+        [imgView setImage:[UIImage imageNamed:kDefaultAvatar]];
+    }
+    
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "UserModel.h"
+#import "config.h"
 
 @implementation UserModel
 
@@ -23,8 +24,10 @@
             sharedSingleton.email = @"";
             sharedSingleton.password = @"";
             sharedSingleton.username = @"";
+            sharedSingleton.profileImgUrl = kDefaultAvatar;
             sharedSingleton.isVerified = NO;
             sharedSingleton.isFirstTime = YES;
+            sharedSingleton.userStatus = UserStatusNewUser;
             
             sharedSingleton.pinnedLocations = [[NSMutableArray alloc] init];
         }

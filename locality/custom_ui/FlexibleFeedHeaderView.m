@@ -36,7 +36,18 @@ static float deltaHeight = FEED_HERO_HEIGHT - kHeaderHeight;
 -(void) initImage {
     
     if( ![_model.imgUrl isEqualToString:DEFAULT_FEED_IMAGE] ) {
-        [self.bgImage sd_setImageWithURL:[NSURL URLWithString:_model.imgUrl]];
+        [self.bgImage sd_setImageWithURL:[NSURL URLWithString:_model.imgUrl] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if(cacheType == SDImageCacheTypeDisk || cacheType == SDImageCacheTypeNone) {
+                self.bgImage.alpha = 0;
+                [UIView animateWithDuration:0.25 animations:^{
+                    [self.bgImage setAlpha:1];
+                }];
+            }
+            
+            else {
+                [self.bgImage setAlpha:1];
+            }
+        }];
     }
     
     else {

@@ -11,9 +11,12 @@
 #import "ImageUploadView.h"
 #import "PostFromView.h"
 
-@interface PostCreateViewController : LocalityPhotoBaseViewController <ImageUploadViewDelegate>
+@interface PostCreateViewController : LocalityPhotoBaseViewController <ImageUploadViewDelegate, CLLocationManagerDelegate, UITextViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextView *commentField;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (nonatomic) CLLocationCoordinate2D currentLocation;
+
+@property (weak, nonatomic) IBOutlet UITextView *captionField;
 
 @property (weak, nonatomic) IBOutlet UIView *imageUploadViewContainer;
 @property (strong, nonatomic) ImageUploadView *imageUploadView;

@@ -14,4 +14,6 @@
 @property (weak, nonatomic) IBOutlet PostFromViewToggle *postFromMeToggle;
 @property (weak, nonatomic) IBOutlet PostFromViewToggle *postIncognitoToggle;
 
+@property (nonatomic) BOOL isAnonymous;
+
 @end

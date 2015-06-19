@@ -9,6 +9,7 @@
 #import "DataManager.h"
 #import "UserModel.h"
 #import "FeedLocationModel.h"
+#import "config.h"
 
 @implementation DataManager
 
@@ -29,6 +30,12 @@
     
     //first time
     [UserModel sharedInstance].isFirstTime = [[me objectForKey:@"isFirstTime"] boolValue];
+    
+    //user status
+    [UserModel sharedInstance].userStatus = [[me objectForKey:@"userStatus"] intValue];
+    
+    //image
+    [UserModel sharedInstance].profileImgUrl = [me objectForKey:@"profileImageUrl"];
     
 }
 
@@ -61,6 +68,23 @@
               kPushEnabled : @(feed.pushEnabled),
               kImportantEnabled : @(feed.importantEnabled)
             };
+}
+
++(PFObject *)parsePostModelIntoParseObject:(PostModel *)post {
+    
+    //Create geopoint
+    PFGeoPoint *postCoord = [[PFGeoPoint alloc] init];
+    postCoord.latitude = post.latitude;
+    postCoord.longitude = post.longitude;
+    
+    PFObject *newPost = [[PFObject alloc] initWithClassName:kPostsTable];
+    newPost[kProfileName] = post.username;
+    newPost[kProfileImgUrl] = post.profileImgUrl;
+    newPost[kCaption] = post.postCaption;
+    newPost[kPostLocation] = postCoord;
+    newPost[kPostImgUrl] = post.postImgUrl;
+    
+    return newPost;
 }
 
 @end

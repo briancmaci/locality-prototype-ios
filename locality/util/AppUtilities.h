@@ -16,4 +16,6 @@
 +(NSMutableAttributedString *) rangeLabel:(NSString *)size withUnits:(NSString *)unit;
 +(NSString *) locationLabelFromAddress:(GMSAddress *)address;
 
++(void) loadProfileImage:(UIImageView *)imgView;
+
 @end

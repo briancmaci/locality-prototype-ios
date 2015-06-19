@@ -708,6 +708,24 @@
             </objects>
             <point key="canvasLocation" x="757" y="908"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Mlw-IF-Heh">
+            <objects>
+                <viewController id="RBa-8B-pc3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u4v-gM-2Sa"/>
+                        <viewControllerLayoutGuide type="bottom" id="f10-aG-0Nt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zBM-Vw-SR5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.14509803921568629" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Xn-Rf-fC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342" y="1579"/>
+        </scene>
         <!--Feed Menu Table View Controller-->
         <scene sceneID="ewY-fm-kcX">
             <objects>
@@ -997,7 +1015,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="z0h-DW-JZW"/>
                     <connections>
-                        <outlet property="commentField" destination="EdP-16-wGg" id="XyG-rD-Mlq"/>
+                        <outlet property="captionField" destination="EdP-16-wGg" id="1mt-2L-TUB"/>
                         <outlet property="imageUploadViewContainer" destination="jA2-P2-RCp" id="oTq-Z3-1TR"/>
                         <outlet property="postFromViewContainer" destination="vCb-Gl-eRw" id="iNR-BE-2fX"/>
                         <outlet property="publishPostButton" destination="ByS-wz-bSh" id="9Dx-Y6-l5B"/>

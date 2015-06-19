@@ -43,6 +43,9 @@
 
 #define IMAGE_RATIO 0.5f
 
+/* dB Table IDs */
+#define kPostsTable @"Post"
+
 /* Storyboard IDs */
 #define kLoginStoryboardId @"loginVC"
 #define kCurrentFeedInitStoryboardId @"currentFeedInitVC"
@@ -51,6 +54,9 @@
 
 /* Fonts */
 #define kMainFont @"InterstateLightCondensed"
+
+/* Defaults */
+#define kDefaultAvatar @"default_avatar"
 
 /* HeaderView */
 

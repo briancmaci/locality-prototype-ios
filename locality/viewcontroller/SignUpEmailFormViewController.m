@@ -71,6 +71,7 @@ static NSString * kSignUpCompleteSegue = @"signupCompleteSegue";
         [UserModel sharedInstance].email = self.emailField.text;
         [UserModel sharedInstance].password = self.passwordField.text;
         [UserModel sharedInstance].isFirstTime = YES;
+        [UserModel sharedInstance].userStatus = UserStatusNewUser;
         
         [self performSegueWithIdentifier:kSignUpCompleteSegue sender:self];
         
