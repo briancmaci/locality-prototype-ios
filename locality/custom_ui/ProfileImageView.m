@@ -13,11 +13,17 @@
 -(id) initWithCoder:(NSCoder *)aDecoder {
     
     if( (self = [super initWithCoder:aDecoder])) {
-        self.layer.cornerRadius = self.frame.size.width/2;
-        self.layer.masksToBounds = YES;
+        [self updateImageMask];
     }
     
     return self;
+}
+
+-(void) updateImageMask {
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    self.layer.cornerRadius = self.frame.size.width/2;
+    self.layer.masksToBounds = YES;
 }
 
 @end

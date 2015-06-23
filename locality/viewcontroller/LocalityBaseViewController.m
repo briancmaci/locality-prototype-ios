@@ -58,7 +58,7 @@
         case IconHamburger:
             [[SlideNavigationController sharedInstance] openMenu:MenuLeft withCompletion:^{
                 //menu left on complete
-                NSLog(@"left menu opened");
+                //NSLog(@"left menu opened");
             }];
             break;
         

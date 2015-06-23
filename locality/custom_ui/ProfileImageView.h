@@ -10,4 +10,6 @@
 
 @interface ProfileImageView : UIImageView
 
+-(void) updateImageMask;
+
 @end

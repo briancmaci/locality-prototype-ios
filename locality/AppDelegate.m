@@ -13,6 +13,7 @@
 #import "GoogleMapsManager.h"
 #import "MapBoxManager.h"
 #import "SlideNavigationController.h"
+#import "LocalityLeftMenuViewController.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -60,8 +61,10 @@
 
 -(void) initSlideNavigation {
     
-    //currently there is no need for the SlideNavigationController, nor this method.
-    //However, we foresee a future side-menu for User profile settings, etc. I built it into the structure now.
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LocalityLeftMenuViewController *leftMenu = (LocalityLeftMenuViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:kLeftMenuStoryboardId];
+    
+    [SlideNavigationController sharedInstance].leftMenu = leftMenu;
 }
 
 -(void) initStoryboardAccess {

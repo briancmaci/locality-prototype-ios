@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProfileImageView.h"
 
 @interface LocalityLeftMenuViewController : UIViewController
+
+@property(weak, nonatomic) IBOutlet ProfileImageView *profileImage;
+@property(weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property(weak, nonatomic) IBOutlet UILabel *userStatusLabel;
+
+@property(weak, nonatomic) IBOutlet UILabel *likesLabel;
+@property(weak, nonatomic) IBOutlet UILabel *postsLabel;
+@property(weak, nonatomic) IBOutlet UIImageView *postsIcon;
+
+@property(weak, nonatomic) IBOutlet NSLayoutConstraint *postsIconRightConstraint;
 
 @end

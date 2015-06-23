@@ -7,6 +7,8 @@
 //
 
 #import "LocalityLeftMenuViewController.h"
+#import "UserModel.h"
+#import "AppUtilities.h"
 
 @interface LocalityLeftMenuViewController ()
 
@@ -17,11 +19,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self initProfileImage];
+    [self initLabels];
+}
+
+- (void) viewDidLayoutSubviews {
+    [_profileImage updateImageMask];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) initProfileImage {
+    [AppUtilities loadProfileImage:_profileImage];
+}
+
+-(void) initLabels {
+    [_usernameLabel setText:[UserModel sharedInstance].username];
 }
 
 /*
