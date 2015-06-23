@@ -29,8 +29,6 @@
 -(void) initToggles {
     //from me
     [AppUtilities loadProfileImage:_postFromMeToggle.img];
-    _postFromMeToggle.img.layer.cornerRadius = _postFromMeToggle.img.frame.size.width/2;
-    _postFromMeToggle.img.layer.masksToBounds = YES;
     
     //incognito
     [_postIncognitoToggle setForMultiply];

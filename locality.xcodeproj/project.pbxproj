@@ -24,6 +24,11 @@
 		033B732B1B0CB62800355581 /* FlexibleFeedHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B732A1B0CB62800355581 /* FlexibleFeedHeaderView.m */; };
 		033B732D1B0CB64000355581 /* FlexibleFeedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033B732C1B0CB64000355581 /* FlexibleFeedHeaderView.xib */; };
 		033B73321B0D039500355581 /* FeedSliderMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B73311B0D039500355581 /* FeedSliderMenuView.m */; };
+		0347955E1B39957100557698 /* ProfileImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0347955D1B39957100557698 /* ProfileImageView.m */; };
+		034795611B39975700557698 /* LikePostButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 034795601B39975700557698 /* LikePostButton.m */; };
+		034795641B39977A00557698 /* CommentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 034795631B39977A00557698 /* CommentButton.m */; };
+		034795671B3997A100557698 /* HeaderIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 034795661B3997A100557698 /* HeaderIconButton.m */; };
+		0347956A1B39980D00557698 /* PostFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 034795691B39980D00557698 /* PostFilterView.m */; };
 		0349E3B81B2871F30036F6D1 /* FeedSettingToggleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E3B61B2871F30036F6D1 /* FeedSettingToggleCell.m */; };
 		0349E3B91B2871F30036F6D1 /* FeedSettingToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0349E3B71B2871F30036F6D1 /* FeedSettingToggleCell.xib */; };
 		03510AB11B3300EB00089659 /* LocalityPhotoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03510AB01B3300EB00089659 /* LocalityPhotoBaseViewController.m */; };
@@ -83,7 +88,6 @@
 		03FCEE871B2B0C36006D3FF3 /* LocalityBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FCEE861B2B0C36006D3FF3 /* LocalityBaseViewController.m */; };
 		03FCEE8E1B2B1093006D3FF3 /* UIColor+LocalityColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FCEE8D1B2B1093006D3FF3 /* UIColor+LocalityColor.m */; };
 		03FCEE911B2B18D2006D3FF3 /* LocalityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FCEE901B2B18D2006D3FF3 /* LocalityHeaderView.m */; };
-		03FCEE961B2B2AFB006D3FF3 /* HeaderIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FCEE951B2B2AFB006D3FF3 /* HeaderIconButton.m */; };
 		03FCEE991B2B3B03006D3FF3 /* HeaderIconModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FCEE981B2B3B03006D3FF3 /* HeaderIconModel.m */; };
 		03FCEE9D1B2B4699006D3FF3 /* MapBoxManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FCEE9C1B2B4699006D3FF3 /* MapBoxManager.m */; };
 		4823EA5EEC9A9D8CFC3335D3 /* libPods-locality.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D973429C6A2108EE94A211B /* libPods-locality.a */; };
@@ -128,6 +132,16 @@
 		033B732C1B0CB64000355581 /* FlexibleFeedHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FlexibleFeedHeaderView.xib; path = custom_ui/FlexibleFeedHeaderView.xib; sourceTree = "<group>"; };
 		033B73301B0D039500355581 /* FeedSliderMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSliderMenuView.h; path = custom_ui/FeedSliderMenuView.h; sourceTree = "<group>"; };
 		033B73311B0D039500355581 /* FeedSliderMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSliderMenuView.m; path = custom_ui/FeedSliderMenuView.m; sourceTree = "<group>"; };
+		0347955C1B39957100557698 /* ProfileImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileImageView.h; path = custom_ui/ProfileImageView.h; sourceTree = "<group>"; };
+		0347955D1B39957100557698 /* ProfileImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileImageView.m; path = custom_ui/ProfileImageView.m; sourceTree = "<group>"; };
+		0347955F1B39975700557698 /* LikePostButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LikePostButton.h; path = custom_ui/LikePostButton.h; sourceTree = "<group>"; };
+		034795601B39975700557698 /* LikePostButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LikePostButton.m; path = custom_ui/LikePostButton.m; sourceTree = "<group>"; };
+		034795621B39977A00557698 /* CommentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentButton.h; path = custom_ui/CommentButton.h; sourceTree = "<group>"; };
+		034795631B39977A00557698 /* CommentButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentButton.m; path = custom_ui/CommentButton.m; sourceTree = "<group>"; };
+		034795651B3997A100557698 /* HeaderIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderIconButton.h; path = custom_ui/HeaderIconButton.h; sourceTree = "<group>"; };
+		034795661B3997A100557698 /* HeaderIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderIconButton.m; path = custom_ui/HeaderIconButton.m; sourceTree = "<group>"; };
+		034795681B39980D00557698 /* PostFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostFilterView.h; path = custom_ui/PostFilterView.h; sourceTree = "<group>"; };
+		034795691B39980D00557698 /* PostFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostFilterView.m; path = custom_ui/PostFilterView.m; sourceTree = "<group>"; };
 		0349E3B51B2871F30036F6D1 /* FeedSettingToggleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSettingToggleCell.h; path = custom_ui/FeedSettingToggleCell.h; sourceTree = "<group>"; };
 		0349E3B61B2871F30036F6D1 /* FeedSettingToggleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSettingToggleCell.m; path = custom_ui/FeedSettingToggleCell.m; sourceTree = "<group>"; };
 		0349E3B71B2871F30036F6D1 /* FeedSettingToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedSettingToggleCell.xib; path = custom_ui/FeedSettingToggleCell.xib; sourceTree = "<group>"; };
@@ -220,8 +234,6 @@
 		03FCEE8D1B2B1093006D3FF3 /* UIColor+LocalityColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+LocalityColor.m"; path = "custom_ui/UIColor+LocalityColor.m"; sourceTree = "<group>"; };
 		03FCEE8F1B2B18D2006D3FF3 /* LocalityHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalityHeaderView.h; path = custom_ui/LocalityHeaderView.h; sourceTree = "<group>"; };
 		03FCEE901B2B18D2006D3FF3 /* LocalityHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalityHeaderView.m; path = custom_ui/LocalityHeaderView.m; sourceTree = "<group>"; };
-		03FCEE941B2B2AFB006D3FF3 /* HeaderIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderIconButton.h; sourceTree = "<group>"; };
-		03FCEE951B2B2AFB006D3FF3 /* HeaderIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderIconButton.m; sourceTree = "<group>"; };
 		03FCEE971B2B3B03006D3FF3 /* HeaderIconModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderIconModel.h; path = model/HeaderIconModel.h; sourceTree = "<group>"; };
 		03FCEE981B2B3B03006D3FF3 /* HeaderIconModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderIconModel.m; path = model/HeaderIconModel.m; sourceTree = "<group>"; };
 		03FCEE9B1B2B4699006D3FF3 /* MapBoxManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapBoxManager.h; path = manager/MapBoxManager.h; sourceTree = "<group>"; };
@@ -254,6 +266,7 @@
 		030C41331B054158004F1ECE /* custom_ui */ = {
 			isa = PBXGroup;
 			children = (
+				0347955B1B39955900557698 /* views */,
 				03FCEE931B2B2ACE006D3FF3 /* buttons */,
 				03FCEE8B1B2B0FA4006D3FF3 /* categories */,
 				03FCEE921B2B18D7006D3FF3 /* HeaderView */,
@@ -385,6 +398,17 @@
 				0353B4881B0E3C1400CE3750 /* InterstateLightCondensed.ttf */,
 			);
 			name = fonts;
+			sourceTree = "<group>";
+		};
+		0347955B1B39955900557698 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				0347955C1B39957100557698 /* ProfileImageView.h */,
+				0347955D1B39957100557698 /* ProfileImageView.m */,
+				034795681B39980D00557698 /* PostFilterView.h */,
+				034795691B39980D00557698 /* PostFilterView.m */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 		03510AB21B3300F200089659 /* _base */ = {
@@ -587,8 +611,12 @@
 		03FCEE931B2B2ACE006D3FF3 /* buttons */ = {
 			isa = PBXGroup;
 			children = (
-				03FCEE941B2B2AFB006D3FF3 /* HeaderIconButton.h */,
-				03FCEE951B2B2AFB006D3FF3 /* HeaderIconButton.m */,
+				034795651B3997A100557698 /* HeaderIconButton.h */,
+				034795661B3997A100557698 /* HeaderIconButton.m */,
+				0347955F1B39975700557698 /* LikePostButton.h */,
+				034795601B39975700557698 /* LikePostButton.m */,
+				034795621B39977A00557698 /* CommentButton.h */,
+				034795631B39977A00557698 /* CommentButton.m */,
 			);
 			name = buttons;
 			sourceTree = "<group>";
@@ -774,6 +802,8 @@
 				03510AB11B3300EB00089659 /* LocalityPhotoBaseViewController.m in Sources */,
 				4E777E631B0F6A3100EEAEFC /* FeedSettingsViewController.m in Sources */,
 				033B732B1B0CB62800355581 /* FlexibleFeedHeaderView.m in Sources */,
+				034795611B39975700557698 /* LikePostButton.m in Sources */,
+				034795671B3997A100557698 /* HeaderIconButton.m in Sources */,
 				032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */,
 				032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */,
 				03A87E4C1B32120200BE37C8 /* PostFromViewToggle.m in Sources */,
@@ -785,10 +815,12 @@
 				036CA1C71AFBC88F0064AB6C /* AppDelegate.m in Sources */,
 				030C41321B051EC1004F1ECE /* GoogleMapsManager.m in Sources */,
 				033B73321B0D039500355581 /* FeedSliderMenuView.m in Sources */,
+				0347955E1B39957100557698 /* ProfileImageView.m in Sources */,
 				032C76531B03FC1100C78CB0 /* SignUpEmailSentViewController.m in Sources */,
 				03C390BB1B3444AB00251A16 /* UserStatusModel.m in Sources */,
 				039A792A1B31AD440039651F /* PhotoUploadManager.m in Sources */,
 				036CA1C41AFBC88F0064AB6C /* main.m in Sources */,
+				0347956A1B39980D00557698 /* PostFilterView.m in Sources */,
 				4E9D5AE11B133C5A00302886 /* PostCreateViewController.m in Sources */,
 				03F71A691B2076D3006F4088 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				03FCEE8E1B2B1093006D3FF3 /* UIColor+LocalityColor.m in Sources */,
@@ -797,6 +829,7 @@
 				0349E3B81B2871F30036F6D1 /* FeedSettingToggleCell.m in Sources */,
 				4E9D5AED1B15FA0200302886 /* PostModel.m in Sources */,
 				03FA85C21B2A25D600F68102 /* CameraOverlayView.m in Sources */,
+				034795641B39977A00557698 /* CommentButton.m in Sources */,
 				03C390C71B348BEF00251A16 /* PostFeedCell.m in Sources */,
 				03F71A6A1B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				03A87E461B32054700BE37C8 /* PostFromView.m in Sources */,
@@ -809,7 +842,6 @@
 				03C2CF291B307BC500463BDC /* ImageUploadView.m in Sources */,
 				4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */,
 				03F71A681B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
-				03FCEE961B2B2AFB006D3FF3 /* HeaderIconButton.m in Sources */,
 				03C390C21B34522A00251A16 /* LocalityLeftMenuViewController.m in Sources */,
 				03FCEE911B2B18D2006D3FF3 /* LocalityHeaderView.m in Sources */,
 				030C41391B0541A5004F1ECE /* LocationRangeSlider.m in Sources */,
