@@ -84,9 +84,6 @@
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fX2-hx-x95" userLabel="PostCaption">
                     <rect key="frame" x="20" y="72" width="280" height="32"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="32" id="7WU-W1-csJ"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="13"/>
                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -114,15 +111,6 @@
                         <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="12"/>
-                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rcm-P2-V6T" userLabel="Pinline">
                     <rect key="frame" x="0.0" y="165" width="320" height="1"/>
@@ -156,7 +144,6 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="captionHeight" destination="7WU-W1-csJ" id="PRd-zn-Dhe"/>
                 <outlet property="commentButton" destination="2Cq-4i-gb8" id="Lhq-fH-VNF"/>
                 <outlet property="filterView" destination="5jl-Zs-UJm" id="HCO-Ni-aFH"/>
                 <outlet property="likeButton" destination="Nif-Hc-ECu" id="YOE-gm-lA2"/>

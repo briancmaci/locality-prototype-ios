@@ -29,6 +29,6 @@
 
 +(void) drawRangeCircleAt:(CLLocationCoordinate2D)center rangeDiameter:(float)range onMap:(RMMapView*)map;
 +(void) animateToPosition:(CLLocationCoordinate2D)center onMap:(RMMapView *)map;
-
++(CLLocationCoordinate2D) translateCoordinate:(CLLocationCoordinate2D)coordinate withMetersLat:(double)metersLat metersLong:(double)metersLong;
 
 @end

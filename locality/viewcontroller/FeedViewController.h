@@ -11,6 +11,7 @@
 #import "FeedLocationModel.h"
 #import "FlexibleFeedHeaderView.h"
 #import "LocalityBaseViewController.h"
+#import "SortByModel.h"
 
 @interface FeedViewController : LocalityBaseViewController <UITableViewDelegate, UITableViewDataSource>
 
@@ -24,6 +25,10 @@
 @property (strong, nonatomic) FlexibleFeedHeaderView *flexHeaderView;
 
 @property (strong, nonatomic) FeedLocationModel *thisFeed;
+@property (strong, nonatomic) NSMutableArray *feedPosts;
+
+@property (nonatomic) SortByType currentSortByType;
+
 @property (nonatomic) BOOL isCurrentLocationFeed;
 
 @end

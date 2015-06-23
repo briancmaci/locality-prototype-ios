@@ -156,6 +156,11 @@ static NSString * const kPostFromNibName = @"PostFromView";
         newPost.profileImgUrl = [UserModel sharedInstance].profileImgUrl;
     }
     
+    else {
+        newPost.username = @"Anonymous";
+        newPost.profileImgUrl = kDefaultAvatar;
+    }
+    
     newPost.postCaption = _captionField.text;
     
     //check if no location

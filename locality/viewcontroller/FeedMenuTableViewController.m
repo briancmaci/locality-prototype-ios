@@ -38,7 +38,7 @@ static NSString * kAddNewLocationSegue = @"addNewLocationSegue";
 
 -(void)viewWillAppear:(BOOL)animated {
     
-    [self initMenuOptionsWithCurrentLocation:[UserModel sharedInstance].currentLocation andPinnedLocations:[UserModel sharedInstance].pinnedLocations];
+    [self initMenuOptionsWithCurrentLocation:[UserModel sharedInstance].currentLocationFeed andPinnedLocations:[UserModel sharedInstance].pinnedLocations];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,7 +93,7 @@ static NSString * kAddNewLocationSegue = @"addNewLocationSegue";
 
 
 -(void) openFeedClicked:(FeedLocationModel *)feed atIndex:(int)index {
-    NSLog(@"Load feed #%d", index);
+    //NSLog(@"Load feed #%d", index);
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     FeedViewController *vc = [storyboard instantiateViewControllerWithIdentifier:kCurrentFeedStoryboardId];

@@ -29,6 +29,7 @@
 		034795641B39977A00557698 /* CommentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 034795631B39977A00557698 /* CommentButton.m */; };
 		034795671B3997A100557698 /* HeaderIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 034795661B3997A100557698 /* HeaderIconButton.m */; };
 		0347956A1B39980D00557698 /* PostFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 034795691B39980D00557698 /* PostFilterView.m */; };
+		034795701B39F19700557698 /* SortByModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0347956F1B39F19700557698 /* SortByModel.m */; };
 		0349E3B81B2871F30036F6D1 /* FeedSettingToggleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349E3B61B2871F30036F6D1 /* FeedSettingToggleCell.m */; };
 		0349E3B91B2871F30036F6D1 /* FeedSettingToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0349E3B71B2871F30036F6D1 /* FeedSettingToggleCell.xib */; };
 		03510AB11B3300EB00089659 /* LocalityPhotoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03510AB01B3300EB00089659 /* LocalityPhotoBaseViewController.m */; };
@@ -69,7 +70,6 @@
 		03C390BB1B3444AB00251A16 /* UserStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C390BA1B3444AB00251A16 /* UserStatusModel.m */; };
 		03C390C21B34522A00251A16 /* LocalityLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C390C11B34522A00251A16 /* LocalityLeftMenuViewController.m */; };
 		03C390C71B348BEF00251A16 /* PostFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C390C51B348BEF00251A16 /* PostFeedCell.m */; };
-		03C390C81B348BEF00251A16 /* PostFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C390C61B348BEF00251A16 /* PostFeedCell.xib */; };
 		03C390CC1B348D3E00251A16 /* PostFeedCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C390CB1B348D3E00251A16 /* PostFeedCellView.m */; };
 		03C390CE1B348DB700251A16 /* PostFeedCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C390CD1B348DB700251A16 /* PostFeedCellView.xib */; };
 		03D595C71B06269B00C48F25 /* AppUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D595C61B06269B00C48F25 /* AppUtilities.m */; };
@@ -142,6 +142,8 @@
 		034795661B3997A100557698 /* HeaderIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderIconButton.m; path = custom_ui/HeaderIconButton.m; sourceTree = "<group>"; };
 		034795681B39980D00557698 /* PostFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostFilterView.h; path = custom_ui/PostFilterView.h; sourceTree = "<group>"; };
 		034795691B39980D00557698 /* PostFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostFilterView.m; path = custom_ui/PostFilterView.m; sourceTree = "<group>"; };
+		0347956E1B39F19700557698 /* SortByModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SortByModel.h; path = model/SortByModel.h; sourceTree = "<group>"; };
+		0347956F1B39F19700557698 /* SortByModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SortByModel.m; path = model/SortByModel.m; sourceTree = "<group>"; };
 		0349E3B51B2871F30036F6D1 /* FeedSettingToggleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSettingToggleCell.h; path = custom_ui/FeedSettingToggleCell.h; sourceTree = "<group>"; };
 		0349E3B61B2871F30036F6D1 /* FeedSettingToggleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSettingToggleCell.m; path = custom_ui/FeedSettingToggleCell.m; sourceTree = "<group>"; };
 		0349E3B71B2871F30036F6D1 /* FeedSettingToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedSettingToggleCell.xib; path = custom_ui/FeedSettingToggleCell.xib; sourceTree = "<group>"; };
@@ -199,7 +201,6 @@
 		03C390C11B34522A00251A16 /* LocalityLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalityLeftMenuViewController.m; path = viewcontroller/LocalityLeftMenuViewController.m; sourceTree = "<group>"; };
 		03C390C41B348BEF00251A16 /* PostFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostFeedCell.h; path = custom_ui/PostFeedCell.h; sourceTree = "<group>"; };
 		03C390C51B348BEF00251A16 /* PostFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostFeedCell.m; path = custom_ui/PostFeedCell.m; sourceTree = "<group>"; };
-		03C390C61B348BEF00251A16 /* PostFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostFeedCell.xib; path = custom_ui/PostFeedCell.xib; sourceTree = "<group>"; };
 		03C390CA1B348D3E00251A16 /* PostFeedCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostFeedCellView.h; path = custom_ui/PostFeedCellView.h; sourceTree = "<group>"; };
 		03C390CB1B348D3E00251A16 /* PostFeedCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostFeedCellView.m; path = custom_ui/PostFeedCellView.m; sourceTree = "<group>"; };
 		03C390CD1B348DB700251A16 /* PostFeedCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostFeedCellView.xib; path = custom_ui/PostFeedCellView.xib; sourceTree = "<group>"; };
@@ -533,7 +534,6 @@
 			children = (
 				03C390C41B348BEF00251A16 /* PostFeedCell.h */,
 				03C390C51B348BEF00251A16 /* PostFeedCell.m */,
-				03C390C61B348BEF00251A16 /* PostFeedCell.xib */,
 				03C390CA1B348D3E00251A16 /* PostFeedCellView.h */,
 				03C390CB1B348D3E00251A16 /* PostFeedCellView.m */,
 				03C390CD1B348DB700251A16 /* PostFeedCellView.xib */,
@@ -628,6 +628,8 @@
 				03FCEE981B2B3B03006D3FF3 /* HeaderIconModel.m */,
 				03C390B91B3444AB00251A16 /* UserStatusModel.h */,
 				03C390BA1B3444AB00251A16 /* UserStatusModel.m */,
+				0347956E1B39F19700557698 /* SortByModel.h */,
+				0347956F1B39F19700557698 /* SortByModel.m */,
 			);
 			name = _utility;
 			sourceTree = "<group>";
@@ -738,7 +740,6 @@
 				0353B4941B0E3C1400CE3750 /* Interstate-RegularCond.otf in Resources */,
 				03C2CF2C1B307BFB00463BDC /* ImageUploadView.xib in Resources */,
 				0349E3B91B2871F30036F6D1 /* FeedSettingToggleCell.xib in Resources */,
-				03C390C81B348BEF00251A16 /* PostFeedCell.xib in Resources */,
 				0353B48D1B0E3C1400CE3750 /* Interstate ExtraLight Cond.ttf in Resources */,
 				0353B4911B0E3C1400CE3750 /* Interstate-LightCond.otf in Resources */,
 				0355982F1B2F198800D42A33 /* LocationRangeSlider.xib in Resources */,
@@ -805,6 +806,7 @@
 				034795611B39975700557698 /* LikePostButton.m in Sources */,
 				034795671B3997A100557698 /* HeaderIconButton.m in Sources */,
 				032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */,
+				034795701B39F19700557698 /* SortByModel.m in Sources */,
 				032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */,
 				03A87E4C1B32120200BE37C8 /* PostFromViewToggle.m in Sources */,
 				039A79271B31AD220039651F /* CallbackManager.m in Sources */,

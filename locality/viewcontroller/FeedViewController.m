@@ -10,6 +10,8 @@
 #import "UserModel.h"
 #import "config.h"
 #import "ParseManager.h"
+#import "DataManager.h"
+#import "PostFeedCell.h"
 
 @interface FeedViewController ()
 
@@ -17,25 +19,44 @@
 
 @implementation FeedViewController
 
-static float headerExpandedOffset = FEED_HERO_HEIGHT - kHeaderHeight - kStatusBarHeight;
-static float headerCollapsedOffset = 0;
-
-static float scrollRangeExpanded = -(FEED_HERO_HEIGHT - kHeaderHeight);
-static float scrollRangeCollapsed = 0;
+static float headerExpandedOffset = FEED_HERO_HEIGHT - kHeaderHeight - 0;
+static NSString * const kPostFeedCellIdentifier = @"PostFeedCellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    //NSLog(@"Add Post Button: %@", NSStringFromCGRect(_addPostButton.frame));
-    
+    [self initSortByType];
     [self initHeroHeader];
     [self initTableView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [self loadFeedPosts];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) loadFeedPosts {
+    
+    //load feed
+    [ParseManager getPostsWithinRange:_thisFeed.range atCoordinate:CLLocationCoordinate2DMake(_thisFeed.latitude, _thisFeed.longitude) sortedBy:_currentSortByType success:^(id response) {
+        //NSLog(@"Post count: %lu", (unsigned long)[response count]);
+        _feedPosts = [DataManager parsePostFeedIntoModelArray:response];
+        
+        [_feedPostsTable reloadData];
+        
+    } failure:^(NSError *error) {
+        NSLog(@"Post query error.");
+    }];
+    
+}
+
+-(void) initSortByType {
+    _currentSortByType = SortProximity;
 }
 
 -(void) initHeroHeader {
@@ -58,6 +79,7 @@ static float scrollRangeCollapsed = 0;
     
     //set initial content inset
     _feedPostsTable.contentInset = UIEdgeInsetsMake(headerExpandedOffset, 0, 0, 0);
+    [_feedPostsTable registerClass:[PostFeedCell class] forCellReuseIdentifier:kPostFeedCellIdentifier];
 }
 
 #pragma mark - ScrollView Delegate Methods
@@ -75,96 +97,66 @@ static float scrollRangeCollapsed = 0;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    //second section is just button to add new
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //#warning Incomplete method implementation.
     
-    return 10;
+    return [_feedPosts count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath  {
     
-    //testing
-    return ((arc4random() % 4) + 1) * 100;
+    return [self heightForBasicCellAtIndexPath:indexPath];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"FeedPostCell";
+- (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
+    static PostFeedCell *sizingCell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sizingCell = [[PostFeedCell alloc] initWithModelByTime:[_feedPosts objectAtIndex:0]];
+    });
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    PostModel *p = [_feedPosts objectAtIndex:indexPath.row];
+    return [sizingCell.postContent getViewHeight:p.postCaption] + ([p.postImgUrl isEqualToString:@""] ? 0 : (DEVICE_WIDTH * IMAGE_RATIO));
+}
+
+- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
+    [sizingCell setNeedsLayout];
+    [sizingCell layoutIfNeeded];
+    
+    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    
+    return size.height; // Add 1.0f for the cell separator height
+}
+
+- (PostFeedCell *)basicCellAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //init based on current sort by
+    PostFeedCell *cell;
+    
+    switch (_currentSortByType ) {
+            
+        case SortProximity:
+            cell = [[PostFeedCell alloc] initWithModelByProximity:[_feedPosts objectAtIndex:indexPath.row] from:CLLocationCoordinate2DMake(_thisFeed.latitude, _thisFeed.longitude)];
+            break;
         
-    if(cell == nil )
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.backgroundColor = (indexPath.row % 2) ? [UIColor lightGrayColor] : [UIColor greenColor];
-        cell.textLabel.text = [NSString stringWithFormat:@"POST #%ld", (long)indexPath.row];
+        case SortTime:
+            cell = [[PostFeedCell alloc] initWithModelByTime:[_feedPosts objectAtIndex:indexPath.row]];
+            break;
         
-        //cell = [[FeedMenuTableViewCell alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, FEED_HERO_HEIGHT)];
-        //cell.reuseIdentifier = CellIdentifier;
-        //cell = [[FeedMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        
+        case SortActivity:
+            //for now...
+            cell = [[PostFeedCell alloc] initWithModelByTime:[_feedPosts objectAtIndex:indexPath.row]];
+            break;
     }
     
     return cell;
 }
 
-
-/*
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
- 
- // Configure the cell...
- 
- return cell;
- }
- */
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return [self basicCellAtIndexPath:indexPath];
 }
-*/
 
 @end

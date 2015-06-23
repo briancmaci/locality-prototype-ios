@@ -10,6 +10,7 @@
 #import "ProfileImageView.h"
 #import "LikePostButton.h"
 #import "CommentButton.h"
+#import "PostModel.h"
 #import "PostFilterView.h"
 
 @interface PostFeedCellView : UIView
@@ -26,6 +27,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *pinline;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *captionHeight;
-
+-(void) populateWithData:(PostModel *)thisModel;
+-(float) getViewHeight:(NSString *)caption;
 @end

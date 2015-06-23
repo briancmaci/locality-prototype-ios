@@ -10,6 +10,8 @@
 #import "DataManager.h"
 #import "config.h"
 #import "UserModel.h"
+#import "AppUtilities.h"
+#import "MapBoxManager.h"
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <Facebook-iOS-SDK/FBSDKCoreKit/FBSDKProfile.h>
 #import <Facebook-iOS-SDK/FBSDKCoreKit/FBSDKGraphRequest.h>
@@ -159,6 +161,55 @@ static NSString * kDBUser = @"_User";
             return failureBlock(error);
         }
     }];
+}
+
++(void) getPostsWithinRange:(float)rangeInFeet atCoordinate:(CLLocationCoordinate2D)center sortedBy:(SortByType)sortByType success:(successBlock)successBlock failure:(failureBlock)failureBlock {
+    
+    //build range
+    CLLocationCoordinate2D rangePointSW = [MapBoxManager translateCoordinate:center withMetersLat:[AppUtilities feetToMeters:-rangeInFeet*2] metersLong:[AppUtilities feetToMeters:-rangeInFeet*2]];
+    CLLocationCoordinate2D rangePointNE = [MapBoxManager translateCoordinate:center withMetersLat:[AppUtilities feetToMeters:rangeInFeet*2] metersLong:[AppUtilities feetToMeters:rangeInFeet*2]];
+    
+    //convert to geopoint
+    PFGeoPoint *swPoint = [[PFGeoPoint alloc] init];
+    swPoint.latitude = rangePointSW.latitude;
+    swPoint.longitude = rangePointSW.longitude;
+    
+    PFGeoPoint *nePoint = [[PFGeoPoint alloc] init];
+    nePoint.latitude = rangePointNE.latitude;
+    nePoint.longitude = rangePointNE.longitude;
+    
+    PFQuery *geoQuery = [PFQuery queryWithClassName:kPostsTable];
+    
+    [geoQuery whereKey:@"postLocation" withinGeoBoxFromSouthwest:swPoint toNortheast:nePoint];
+    
+    //add sort by
+    switch( sortByType ) {
+        case SortTime:
+            [geoQuery orderByAscending:@"createdAt"];
+            break;
+        
+        case SortActivity:
+            //Not sure yet
+            break;
+        
+        case SortProximity:
+        default:
+            //Do nothing
+            break;
+    }
+    
+    [geoQuery findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        
+        if( !error ) {
+            return successBlock(posts);
+        }
+        
+        else {
+            NSLog(@"Geo Query Error: %@", [error userInfo]);
+            return failureBlock(error);
+        }
+    }];
+    
 }
 
 +(void) updateCurrentFeed:(FeedLocationModel *)currentFeed success:(successBlock)successBlock failure:(failureBlock)failureBlock {

@@ -22,7 +22,7 @@
 @property (nonatomic) BOOL isFirstTime;
 
 //feeds
-@property (strong, nonatomic) FeedLocationModel *currentLocation;
+@property (strong, nonatomic) FeedLocationModel *currentLocationFeed;
 @property (strong, nonatomic) NSMutableArray *pinnedLocations;
 
 //status

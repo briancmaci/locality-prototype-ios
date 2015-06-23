@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "FeedLocationModel.h"
 #import "PostModel.h"
+#import "SortByModel.h"
 #import "CallbackManager.h"
 
 @interface ParseManager : CallbackManager
@@ -25,6 +26,7 @@
 
 //queries
 +(void) isValidUsername:(NSString *)username success:(successBlock)successBlock failure:(failureBlock)failureBlock;
++(void) getPostsWithinRange:(float)rangeInFeet atCoordinate:(CLLocationCoordinate2D)center sortedBy:(SortByType)sortByType success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 
 //posts
 +(void) updateCurrentFeed:(FeedLocationModel *)currentFeed success:(successBlock)successBlock failure:(failureBlock)failureBlock;

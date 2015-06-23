@@ -103,13 +103,13 @@ float currentRange;
 #pragma mark - Create Current Feed CTA
 -(IBAction) createCurrentFeed:(id)sender {
     
-    [UserModel sharedInstance].currentLocation = [[FeedLocationModel alloc] initWithLocation:currentLocation andName:kCurrentFeedName];
-    [[UserModel sharedInstance].currentLocation setImgUrl:flickrDefaultImage ? flickrDefaultImage : DEFAULT_FEED_IMAGE];
-    [[UserModel sharedInstance].currentLocation setRange:currentRange];
+    [UserModel sharedInstance].currentLocationFeed = [[FeedLocationModel alloc] initWithLocation:currentLocation andName:kCurrentFeedName];
+    [[UserModel sharedInstance].currentLocationFeed setImgUrl:flickrDefaultImage ? flickrDefaultImage : DEFAULT_FEED_IMAGE];
+    [[UserModel sharedInstance].currentLocationFeed setRange:currentRange];
     
     [[BusyView sharedInstance] show:YES withLabel:@"INITIALIZING"];
     
-    [ParseManager updateCurrentFeed:[UserModel sharedInstance].currentLocation success:^(id response) {
+    [ParseManager updateCurrentFeed:[UserModel sharedInstance].currentLocationFeed success:^(id response) {
         [[BusyView sharedInstance] show:NO withLabel:nil];
         NSLog(@"LOCATION SAVED!");
         

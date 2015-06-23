@@ -19,7 +19,7 @@
     [UserModel sharedInstance].username = [me objectForKey:@"username"];
     
     //current location
-    [UserModel sharedInstance].currentLocation = [DataManager parseFeedDataIntoModel:[me objectForKey:@"currentLocation"]];
+    [UserModel sharedInstance].currentLocationFeed = [DataManager parseFeedDataIntoModel:[me objectForKey:@"currentLocation"]];
     
     //pinned locations
     NSMutableArray *pinnedFeedArrayRaw = [me objectForKey:@"pinnedLocations"];
@@ -54,6 +54,31 @@
     parsedFeed.pushEnabled = [[rawFeed objectForKey:@"pushEnabled"] boolValue];
     
     return parsedFeed;
+}
+
++(NSMutableArray *)parsePostFeedIntoModelArray:(NSArray *)rawPosts {
+    
+    NSMutableArray *modelsArray = [[NSMutableArray alloc] init];
+    for( int i = 0; i < [rawPosts count]; i++ ) {
+        
+        PostModel *p = [[PostModel alloc] init];
+        
+        p.createdDate = [[rawPosts objectAtIndex:i] objectForKey:@"createdAt"];
+        p.username = [[rawPosts objectAtIndex:i] objectForKey:kProfileName];
+        p.profileImgUrl = [[rawPosts objectAtIndex:i] objectForKey:kProfileImgUrl];
+        p.postImgUrl = [[rawPosts objectAtIndex:i] objectForKey:kPostImgUrl];
+        p.postId = [[rawPosts objectAtIndex:i] objectForKey:@"objectId"];
+        p.postCaption = [[rawPosts objectAtIndex:i] objectForKey:kCaption];
+        
+        //grab geopoint
+        PFGeoPoint *ctr = [[rawPosts objectAtIndex:i] objectForKey:kPostLocation];
+        p.latitude = ctr.latitude;
+        p.longitude = ctr.longitude;
+        
+        [modelsArray addObject:p];
+    }
+    
+    return modelsArray;
 }
 
 +(NSDictionary *)parseFeedModelIntoDictionary:(FeedLocationModel *)feed {

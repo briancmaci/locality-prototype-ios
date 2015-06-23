@@ -111,7 +111,7 @@
         
         FeedViewController *currentFeedVC = [_storyboard instantiateViewControllerWithIdentifier:kCurrentFeedStoryboardId];
         currentFeedVC.isCurrentLocationFeed = YES;
-        currentFeedVC.thisFeed = [UserModel sharedInstance].currentLocation;
+        currentFeedVC.thisFeed = [UserModel sharedInstance].currentLocationFeed;
         
         //for now... let's push the feedMenu THEN the currentFeed to go back. Ultimately the Feed Menu VC and the Feed VC will be one view controller, with an expand/collapse animation between the two states.
         [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:[_storyboard instantiateViewControllerWithIdentifier:kFeedMenuStoryboardId] withCompletion:nil];

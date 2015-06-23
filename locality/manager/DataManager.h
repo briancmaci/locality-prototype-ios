@@ -17,5 +17,6 @@
 
 +(NSDictionary *) parseFeedModelIntoDictionary:(FeedLocationModel *)feed;
 +(PFObject *)parsePostModelIntoParseObject:(PostModel *)post;
++(NSMutableArray *)parsePostFeedIntoModelArray:(NSArray *)rawPosts;
 
 @end

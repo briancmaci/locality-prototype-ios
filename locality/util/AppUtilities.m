@@ -21,6 +21,10 @@ static const float metersPerFoot = 0.3048;
     return metersPerFoot * valueInFeet;
 }
 
++(float) metersToFeet:(float)valueInMeters {
+    return valueInMeters * (1/metersPerFoot);
+}
+
 +(NSMutableAttributedString *) rangeLabel:(NSString *)size withUnits:(NSString *)unit {
     //NSLog(@"size %@, unit %@", size, unit);
     //NSLog (@"Font families: %@", [UIFont familyNames]);
@@ -65,6 +69,43 @@ static const float metersPerFoot = 0.3048;
         [imgView setImage:[UIImage imageNamed:kDefaultAvatar]];
     }
     
+}
+
++(void) loadFeedPostProfileImage:(UIImageView *)imgView fromURL:(NSString *)imgUrl {
+    if( ![imgUrl isEqualToString:kDefaultAvatar] ) {
+        [imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if(cacheType == SDImageCacheTypeDisk || cacheType == SDImageCacheTypeNone) {
+                imgView.alpha = 0;
+                [UIView animateWithDuration:0.25 animations:^{
+                    [imgView setAlpha:1];
+                }];
+            }
+            
+            else {
+                [imgView setAlpha:1];
+            }
+        }];
+    }
+    
+    else {
+        [imgView setImage:[UIImage imageNamed:kDefaultAvatar]];
+    }
+}
+
++(void) loadPostImage:(NSString *)imgUrl intoView:(UIImageView *)imgView {
+    
+    [imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if(cacheType == SDImageCacheTypeDisk || cacheType == SDImageCacheTypeNone) {
+            imgView.alpha = 0;
+            [UIView animateWithDuration:0.25 animations:^{
+                [imgView setAlpha:1];
+            }];
+        }
+            
+        else {
+            [imgView setAlpha:1];
+        }
+    }];
 }
 
 @end
