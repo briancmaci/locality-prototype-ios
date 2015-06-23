@@ -10,42 +10,61 @@
             <string>InterstateLightCondensed</string>
             <string>InterstateLightCondensed</string>
             <string>InterstateLightCondensed</string>
+            <string>InterstateLightCondensed</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dwx-3E-7Ds" userLabel="profileImage">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dwx-3E-7Ds" userLabel="profileImage">
                     <rect key="frame" x="20" y="25" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="1L4-Eh-HGt"/>
+                        <constraint firstAttribute="width" constant="35" id="IVv-hR-Ikr"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Anonymous" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeI-MW-9nR">
-                    <rect key="frame" x="62" y="28" width="168" height="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Anonymous" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeI-MW-9nR" userLabel="UserNameLabel">
+                    <rect key="frame" x="62" y="27" width="168" height="16"/>
                     <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="13"/>
                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contributor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWd-0b-l9s">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contributor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWd-0b-l9s" userLabel="UserStatusLabel">
                     <rect key="frame" x="62" y="41" width="168" height="16"/>
                     <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="10"/>
                     <color key="textColor" red="0.4392156862745098" green="0.49019607843137253" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fX2-hx-x95">
-                    <rect key="frame" x="20" y="68" width="280" height="41"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fX2-hx-x95" userLabel="PostContent">
+                    <rect key="frame" x="20" y="72" width="280" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="7WU-W1-csJ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="13"/>
                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_like_off" translatesAutoresizingMaskIntoConstraints="NO" id="d5B-OZ-1wQ">
-                    <rect key="frame" x="20" y="129" width="24" height="24"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Cq-4i-gb8">
-                    <rect key="frame" x="52" y="129" width="50" height="24"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nif-Hc-ECu" userLabel="LikeButton">
+                    <rect key="frame" x="14" y="112" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="YCu-jn-V7K"/>
+                        <constraint firstAttribute="width" constant="36" id="bDx-fm-TKP"/>
+                    </constraints>
+                    <state key="normal" image="icon_like_off">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Cq-4i-gb8" userLabel="CommentButton">
+                    <rect key="frame" x="52" y="118" width="50" height="24"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="WKR-e3-9z1"/>
+                        <constraint firstAttribute="width" constant="50" id="eL9-F3-Ade"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="13"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
                     <state key="normal" title="2k" image="icon_paperclip">
@@ -62,12 +81,53 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_filter_location" translatesAutoresizingMaskIntoConstraints="NO" id="WgA-xV-w4e">
-                    <rect key="frame" x="256" y="30" width="8" height="10"/>
-                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jl-Zs-UJm" userLabel="FilterView">
+                    <rect key="frame" x="252" y="35" width="44" height="16"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_filter_location" translatesAutoresizingMaskIntoConstraints="NO" id="WgA-xV-w4e">
+                            <rect key="frame" x="0.0" y="3" width="8" height="10"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23ft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tv3-Mg-5Iu">
+                            <rect key="frame" x="14" y="0.0" width="30" height="16"/>
+                            <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="13"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="3e5-WT-7YZ"/>
+                        <constraint firstAttribute="height" constant="16" id="F96-BC-cla"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rcm-P2-V6T" userLabel="Pinline">
+                    <rect key="frame" x="0.0" y="165" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="dSZ-cN-Btz"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Rcm-P2-V6T" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1Sb-P5-9e8"/>
+                <constraint firstAttribute="trailing" secondItem="5jl-Zs-UJm" secondAttribute="trailing" constant="24" id="3K7-HZ-nEY"/>
+                <constraint firstAttribute="bottom" secondItem="Nif-Hc-ECu" secondAttribute="bottom" constant="18" id="9hH-KV-5dK"/>
+                <constraint firstAttribute="bottom" secondItem="Rcm-P2-V6T" secondAttribute="bottom" id="Aup-h8-d7P"/>
+                <constraint firstAttribute="trailing" secondItem="fX2-hx-x95" secondAttribute="trailing" constant="20" id="FFa-CK-BdU"/>
+                <constraint firstItem="5jl-Zs-UJm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="FWZ-Jy-Ws3"/>
+                <constraint firstItem="fX2-hx-x95" firstAttribute="top" secondItem="dwx-3E-7Ds" secondAttribute="bottom" constant="12" id="FYx-yJ-NCY"/>
+                <constraint firstItem="dwx-3E-7Ds" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="GBn-Lh-qa6"/>
+                <constraint firstItem="2Cq-4i-gb8" firstAttribute="leading" secondItem="Nif-Hc-ECu" secondAttribute="trailing" constant="2" id="QXN-GD-5jj"/>
+                <constraint firstItem="Nif-Hc-ECu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="SNC-sZ-Qqx"/>
+                <constraint firstItem="fX2-hx-x95" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="VH5-wB-ENQ"/>
+                <constraint firstAttribute="bottom" secondItem="2Cq-4i-gb8" secondAttribute="bottom" constant="24" id="VjA-Zb-JJj"/>
+                <constraint firstItem="dwx-3E-7Ds" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="deG-Yq-gSh"/>
+                <constraint firstItem="2Cq-4i-gb8" firstAttribute="top" secondItem="fX2-hx-x95" secondAttribute="bottom" constant="14" id="ebw-Mq-XD8"/>
+                <constraint firstAttribute="trailing" secondItem="Rcm-P2-V6T" secondAttribute="trailing" id="mTK-JQ-WtE"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="726" y="343"/>
         </view>
     </objects>
     <resources>
