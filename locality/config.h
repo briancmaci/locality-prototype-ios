@@ -43,6 +43,9 @@
 
 #define IMAGE_RATIO 0.5f
 
+/* Slide Defaults */
+#define kSlideOffset 120.0f
+
 /* dB Table IDs */
 #define kPostsTable @"Post"
 
@@ -52,12 +55,21 @@
 #define kCurrentFeedInitStoryboardId @"currentFeedInitVC"
 #define kCurrentFeedStoryboardId @"mainFeedVC"
 #define kFeedMenuStoryboardId @"feedMenuVC"
+#define kSettingsStoryboardId @"settingsVC"
+#define kAboutStoryboardId @"aboutVC"
+
+/* Action IDs */
+#define kLogoutActionId @"logout"
+#define kContactUsActionId @"contactus"
+#define kDeleteAccountActionId @"deleteaccount"
 
 /* Fonts */
 #define kMainFont @"InterstateLightCondensed"
 
 /* Defaults */
 #define kDefaultAvatar @"default_avatar"
+#define kDefaultAvatarPost @"default_avatar_post"
+#define kAnonymousUsername @"Anonymous"
 
 /* HeaderView */
 

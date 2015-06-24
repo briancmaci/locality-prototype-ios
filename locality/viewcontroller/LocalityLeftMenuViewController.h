@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ProfileImageView.h"
 
-@interface LocalityLeftMenuViewController : UIViewController
+@interface LocalityLeftMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property(weak, nonatomic) IBOutlet ProfileImageView *profileImage;
 @property(weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -20,5 +20,13 @@
 @property(weak, nonatomic) IBOutlet UIImageView *postsIcon;
 
 @property(weak, nonatomic) IBOutlet NSLayoutConstraint *postsIconRightConstraint;
+@property(weak, nonatomic) IBOutlet NSLayoutConstraint *menuOptionsHeightConstraint;
+
+@property(weak, nonatomic) IBOutlet UITableView *menuOptionsTable;
+@property (weak, nonatomic) IBOutlet UIButton *termsPrivacyButton;
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
+
+//data
+@property (strong, nonatomic) NSMutableArray *menuOptions;
 
 @end

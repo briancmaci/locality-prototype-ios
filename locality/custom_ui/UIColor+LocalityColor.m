@@ -45,4 +45,25 @@
                            alpha:1.0f];
 }
 
++(UIColor *)leftNavLightColor {
+    return [UIColor colorWithRed:204.0f/255.0f
+                           green:204.0f/255.0f
+                            blue:204.0f/255.0f
+                           alpha:1.0f];
+}
+
++(UIColor *)leftNavDarkColor {
+    return [UIColor colorWithRed:75.0f/255.0f
+                           green:81.0f/255.0f
+                            blue:85.0f/255.0f
+                           alpha:1.0f];
+}
+
++(UIColor *)leftNavSelectedColor {
+    return [UIColor colorWithRed:0.0f/255.0f
+                           green:0.0f/255.0f
+                            blue:0.0f/255.0f
+                           alpha:0.5f];
+}
+
 @end

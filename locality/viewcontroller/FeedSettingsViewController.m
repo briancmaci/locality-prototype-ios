@@ -57,7 +57,7 @@ static NSString * const kImageUploadNibName = @"ImageUploadView";
 }
 
 - (void) initHeaderView {
-    [self.header initWithTitle:@"ADD NEW LOCATION"
+    [self.header initWithTitle:NSLocalizedString(@"NewFeedHeader", nil)
                 leftButtonType:IconBack
                rightButtonType:IconClose];
     

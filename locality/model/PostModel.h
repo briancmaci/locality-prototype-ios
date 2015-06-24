@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PostUser.h"
 
 @interface PostModel : NSObject
 
-#define kProfileName @"profileName"
-#define kProfileImgUrl @"profileImgUrl"
 #define kPostImgUrl @"postImgUrl"
 #define kCaption @"caption"
 #define kPostLocation @"postLocation"
+#define kPostUser @"user"
 
 #define kLikes @"likes"
 #define kCommentsCount @"commentsCount"
@@ -32,8 +32,7 @@
 //@property (nonatomic) BOOL isAnonymous;
 
 // If no username - make anonymous
-@property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSString *profileImgUrl;
+@property (strong, nonatomic) PostUser *user;
 
 //Get list of liked users, take count and bool if user has liked
 @property (nonatomic) int likesCount;

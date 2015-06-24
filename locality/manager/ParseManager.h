@@ -32,4 +32,8 @@
 +(void) updateCurrentFeed:(FeedLocationModel *)currentFeed success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 +(void) addNewPinnedLocation:(FeedLocationModel *)pinnedFeed success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 +(void) addNewPost:(PostModel *)post success:(successBlock)successBlock failure:(failureBlock)failureBlock;
+
+//likes
++(void) likePost:(NSString *)postId success:(successBlock)successBlock failure:(failureBlock)failureBlock;
++(void) unlikePost:(NSString *)postId success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 @end

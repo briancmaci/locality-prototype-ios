@@ -274,4 +274,59 @@ static NSString * kDBUser = @"_User";
     }];
 }
 
+//likes
++(void) likePost:(NSString *)postId success:(successBlock)successBlock failure:(failureBlock)failureBlock {
+    
+    //NSLog(@"postId: %@", postId);
+    PFQuery *likeQuery = [PFQuery queryWithClassName:kPostsTable];
+    [likeQuery whereKey:@"objectId" equalTo:postId];
+    [likeQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            //successBlock(nil);
+            
+            //we now have the object
+            PFObject *thisObject = [objects objectAtIndex:0];
+            [thisObject addUniqueObject:[PFUser currentUser].objectId forKey:kLikes];
+            
+            [thisObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    successBlock(nil);
+                    NSLog(@"WE HAVE LIKED!!!!");
+                } else {
+                    failureBlock(error);
+                }
+            }];
+            
+        } else {
+            failureBlock(error);
+        }
+    }];
+}
+
++(void) unlikePost:(NSString *)postId success:(successBlock)successBlock failure:(failureBlock)failureBlock {
+    PFQuery *likeQuery = [PFQuery queryWithClassName:kPostsTable];
+    [likeQuery whereKey:@"objectId" equalTo:postId];
+    [likeQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            //successBlock(nil);
+            
+            //we now have the object
+            PFObject *thisObject = [objects objectAtIndex:0];
+            [thisObject removeObjectsInArray:@[[PFUser currentUser].objectId] forKey:kLikes];
+            
+            [thisObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    successBlock(nil);
+                    NSLog(@"WE HAVE UNLIKED!!!!");
+                } else {
+                    failureBlock(error);
+                }
+            }];
+            
+        } else {
+            failureBlock(error);
+        }
+    }];
+}
+
 @end

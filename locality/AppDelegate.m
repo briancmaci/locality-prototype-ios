@@ -13,6 +13,7 @@
 #import "GoogleMapsManager.h"
 #import "MapBoxManager.h"
 #import "SlideNavigationController.h"
+#import "SlideNavigationContorllerAnimatorSlideAndFade.h"
 #import "LocalityLeftMenuViewController.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
@@ -65,6 +66,14 @@
     LocalityLeftMenuViewController *leftMenu = (LocalityLeftMenuViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:kLeftMenuStoryboardId];
     
     [SlideNavigationController sharedInstance].leftMenu = leftMenu;
+    
+    //set offset
+    [SlideNavigationController sharedInstance].portraitSlideOffset = kSlideOffset;
+    [SlideNavigationController sharedInstance].avoidSwitchingToSameClassViewController = YES;
+    
+    //set animation style
+    id <SlideNavigationContorllerAnimator> revealAnimator = [[SlideNavigationContorllerAnimatorSlideAndFade alloc] init];
+    [SlideNavigationController sharedInstance].menuRevealAnimator = revealAnimator;
 }
 
 -(void) initStoryboardAccess {

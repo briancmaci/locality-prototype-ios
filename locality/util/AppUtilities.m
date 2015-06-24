@@ -72,6 +72,7 @@ static const float metersPerFoot = 0.3048;
 }
 
 +(void) loadFeedPostProfileImage:(UIImageView *)imgView fromURL:(NSString *)imgUrl {
+    //NSLog(@"Profile Image Url? %@", imgUrl);
     if( ![imgUrl isEqualToString:kDefaultAvatar] ) {
         [imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             if(cacheType == SDImageCacheTypeDisk || cacheType == SDImageCacheTypeNone) {
@@ -88,7 +89,7 @@ static const float metersPerFoot = 0.3048;
     }
     
     else {
-        [imgView setImage:[UIImage imageNamed:kDefaultAvatar]];
+        [imgView setImage:[UIImage imageNamed:kDefaultAvatarPost]];
     }
 }
 

@@ -37,7 +37,7 @@ static NSString * const kPostFromNibName = @"PostFromView";
 }
 
 - (void) initHeaderView {
-    [self.header initWithTitle:@"POST"
+    [self.header initWithTitle:NSLocalizedString(@"CreatePostHeader", nil)
                 leftButtonType:IconBack
                rightButtonType:IconClose];
     
@@ -151,15 +151,22 @@ static NSString * const kPostFromNibName = @"PostFromView";
     //Build post model
     PostModel *newPost = [[PostModel alloc] init];
     
-    if( !_postFromView.isAnonymous ) {
-        newPost.username = [UserModel sharedInstance].username;
-        newPost.profileImgUrl = [UserModel sharedInstance].profileImgUrl;
-    }
+    //set post user
+    newPost.user = [[PostUser alloc] initWithUserId:[PFUser currentUser].objectId
+                                           username:_postFromView.isAnonymous ? @"" : [UserModel sharedInstance].username
+                                         userStatus:[UserModel sharedInstance].userStatus
+                                          andImgUrl:_postFromView.isAnonymous ? kDefaultAvatar : [UserModel sharedInstance].profileImgUrl];
     
-    else {
-        newPost.username = @"Anonymous";
-        newPost.profileImgUrl = kDefaultAvatar;
-    }
+    NSLog(@"New post user created %@", newPost.user);
+//    if( !_postFromView.isAnonymous ) {
+//        newPost.username = [UserModel sharedInstance].username;
+//        newPost.profileImgUrl = [UserModel sharedInstance].profileImgUrl;
+//    }
+//    
+//    else {
+//        newPost.username = @"Anonymous";
+//        newPost.profileImgUrl = kDefaultAvatar;
+//    }
     
     newPost.postCaption = _captionField.text;
     

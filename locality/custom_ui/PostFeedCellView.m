@@ -9,6 +9,7 @@
 #import "PostFeedCellView.h"
 #import "AppUtilities.h"
 #import "config.h"
+#import "ParseManager.h"
 
 @implementation PostFeedCellView
 
@@ -42,11 +43,41 @@ static float const kDefaultCaptionHeight = 32.0f;
 
 -(void) populateWithData:(PostModel *)thisModel {
     
-    [AppUtilities loadFeedPostProfileImage:_profileImage fromURL:thisModel.profileImgUrl];
+    _thisPost = thisModel;
+    
+    [AppUtilities loadFeedPostProfileImage:_profileImage fromURL:thisModel.user.profileImageUrl];
     _postCaption.text = thisModel.postCaption;
-    _usernameLabel.text = thisModel.username;
+    _usernameLabel.text = [thisModel.user.username isEqualToString:@""] ? kAnonymousUsername : thisModel.user.username;
+    
+    [_likeButton setSelected:_thisPost.isLikedByMe];
     
     [_postCaption sizeToFit];
+}
+
+#pragma mark - CTAs
+
+-(IBAction)onLikeTapped:(id)sender {
+    if(!_thisPost.isLikedByMe) {
+        [ParseManager likePost:_thisPost.postId success:^(id response) {
+            NSLog(@"Like it!");
+            [sender setSelected:YES];
+            _thisPost.isLikedByMe = YES;
+        } failure:^(NSError *error) {
+            NSLog(@"Like FAIL");
+        }];
+    }
+    
+    else {
+        
+        [ParseManager unlikePost:_thisPost.postId success:^(id response) {
+            NSLog(@"Unlike it!");
+            [sender setSelected:NO];
+            _thisPost.isLikedByMe = NO;
+        } failure:^(NSError *error) {
+            NSLog(@"Unlike FAIL");
+        }];
+    
+    }
 }
 
 @end

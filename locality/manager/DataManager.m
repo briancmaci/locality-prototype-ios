@@ -59,26 +59,45 @@
 +(NSMutableArray *)parsePostFeedIntoModelArray:(NSArray *)rawPosts {
     
     NSMutableArray *modelsArray = [[NSMutableArray alloc] init];
+    PFObject *post;
+    
     for( int i = 0; i < [rawPosts count]; i++ ) {
         
         PostModel *p = [[PostModel alloc] init];
+        post = (PFObject *)[rawPosts objectAtIndex:i];
+        p.createdDate = post[@"createdAt"];
+        p.user = [DataManager parseDictionaryIntoPostUser:post[kPostUser]];
         
-        p.createdDate = [[rawPosts objectAtIndex:i] objectForKey:@"createdAt"];
-        p.username = [[rawPosts objectAtIndex:i] objectForKey:kProfileName];
-        p.profileImgUrl = [[rawPosts objectAtIndex:i] objectForKey:kProfileImgUrl];
-        p.postImgUrl = [[rawPosts objectAtIndex:i] objectForKey:kPostImgUrl];
-        p.postId = [[rawPosts objectAtIndex:i] objectForKey:@"objectId"];
-        p.postCaption = [[rawPosts objectAtIndex:i] objectForKey:kCaption];
+        p.postImgUrl = post[kPostImgUrl];
+        p.postId = post.objectId;
+        p.postCaption = post[kCaption];
         
         //grab geopoint
-        PFGeoPoint *ctr = [[rawPosts objectAtIndex:i] objectForKey:kPostLocation];
+        PFGeoPoint *ctr = post[kPostLocation];
         p.latitude = ctr.latitude;
         p.longitude = ctr.longitude;
+        
+        //likes
+        p.likesCount = (int)[post[kLikes] count];
+        p.isLikedByMe = [DataManager myLikeStatusWithArray:post[kLikes]];
         
         [modelsArray addObject:p];
     }
     
     return modelsArray;
+}
+
++(BOOL)myLikeStatusWithArray:(NSArray *)likers {
+    
+    if( !likers || ![likers count] ) return NO;
+    
+    for( int i = 0; i < [likers count]; i++ ) {
+        if ( [[likers objectAtIndex:i] isEqualToString:[PFUser currentUser].objectId] ) {
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
 +(NSDictionary *)parseFeedModelIntoDictionary:(FeedLocationModel *)feed {
@@ -95,6 +114,18 @@
             };
 }
 
++(NSDictionary *) parsePostUserIntoDictionary:(PostUser *)user {
+    return @{ kPostUserId : user.userId,
+              kPostUserStatus : user.userStatus,
+              kPostProfileImgUrl : user.profileImageUrl,
+              kPostUsername : user.username
+             };
+}
+
++(PostUser *) parseDictionaryIntoPostUser:(NSDictionary *)dict {
+    return [[PostUser alloc] initWithUserId:[dict objectForKey:kPostUserId] username:[dict objectForKey:kPostUsername] userStatus:[UserStatusModel statusTypeFromString:[dict objectForKey:kPostUserStatus]] andImgUrl:[dict objectForKey:kPostProfileImgUrl]];
+}
+
 +(PFObject *)parsePostModelIntoParseObject:(PostModel *)post {
     
     //Create geopoint
@@ -103,8 +134,7 @@
     postCoord.longitude = post.longitude;
     
     PFObject *newPost = [[PFObject alloc] initWithClassName:kPostsTable];
-    newPost[kProfileName] = post.username;
-    newPost[kProfileImgUrl] = post.profileImgUrl;
+    newPost[kPostUser] = [DataManager parsePostUserIntoDictionary:post.user];
     newPost[kCaption] = post.postCaption;
     newPost[kPostLocation] = postCoord;
     newPost[kPostImgUrl] = post.postImgUrl;

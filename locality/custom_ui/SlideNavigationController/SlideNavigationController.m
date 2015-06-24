@@ -47,8 +47,8 @@ NSString * const SlideNavigationControllerDidOpen = @"SlideNavigationControllerD
 NSString * const SlideNavigationControllerDidClose = @"SlideNavigationControllerDidClose";
 NSString  *const SlideNavigationControllerDidReveal = @"SlideNavigationControllerDidReveal";
 
-#define MENU_SLIDE_ANIMATION_DURATION .2
-#define MENU_QUICK_SLIDE_ANIMATION_DURATION .18
+#define MENU_SLIDE_ANIMATION_DURATION .26
+#define MENU_QUICK_SLIDE_ANIMATION_DURATION .24
 #define MENU_IMAGE @"icon_hamburger"
 #define MENU_SHADOW_RADIUS 4
 #define MENU_SHADOW_OPACITY 1

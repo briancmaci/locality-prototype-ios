@@ -16,6 +16,7 @@
 +(void) parseUserDataIntoModel:(PFUser *)me;
 
 +(NSDictionary *) parseFeedModelIntoDictionary:(FeedLocationModel *)feed;
++(NSDictionary *) parsePostUserIntoDictionary:(PostUser *)user;
 +(PFObject *)parsePostModelIntoParseObject:(PostModel *)post;
 +(NSMutableArray *)parsePostFeedIntoModelArray:(NSArray *)rawPosts;
 

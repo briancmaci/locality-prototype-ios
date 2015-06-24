@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  locality
+
+  Created by Brian Maci on 6/24/15.
+  Copyright (c) 2015 briancmaci. All rights reserved.
+*/
+
+/* Header View Titles */
+"CreatePostHeader" = "POST";
+"AboutHeader" = "ABOUT LOCALITY";
+"SettingsHeader" = "SETTINGS";
+"NewFeedHeader" = "ADD NEW LOCATION";
+
+/* Left Navigation */
+"SettingsLabel" = "Settings";
+"LocationsLabel" = "My Locations";
+"AboutLabel" = "About";
+"LogOutLabel" = "Log Out";
+"ContactUsLabel" = "Contact Us";
+"DeleteAccountLabel" = "Delete Account";
+"TermsLabel" = "Terms and Privacy";
+"VersionLabel" = "Locality 2015 | Version %@";
+
+/* About */
+"AboutCopy" = "Locality is a news, entertainment and information\n\ngathering application based on your whereabouts.\n\nIt help you make dessicions and keeps you informed\n\nno matter where you are by adding new locations.";
+"AboutShareLabel" = "Help get the word out about Locality";

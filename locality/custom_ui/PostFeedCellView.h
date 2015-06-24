@@ -27,6 +27,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *pinline;
 
+@property (strong, nonatomic) PostModel *thisPost;
+
 -(void) populateWithData:(PostModel *)thisModel;
 -(float) getViewHeight:(NSString *)caption;
 @end

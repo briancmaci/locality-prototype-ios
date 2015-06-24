@@ -15,6 +15,11 @@
 + (UIColor *)redUIColor;
 + (UIColor *)lightGrayUIColor;
 
+//left nav
++ (UIColor *)leftNavLightColor;
++ (UIColor *)leftNavDarkColor;
++ (UIColor *)leftNavSelectedColor;
+
 + (UIColor *)mapCircleColor;
 
 

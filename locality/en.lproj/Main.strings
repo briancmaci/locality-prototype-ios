@@ -1,0 +1,111 @@
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "13X-Tz-ouo"; */
+"13X-Tz-ouo.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Login Via Facebook"; ObjectID = "1ok-za-Zpj"; */
+"1ok-za-Zpj.normalTitle" = "Login Via Facebook";
+
+/* Class = "UILabel"; text = "500FT"; ObjectID = "2M4-k4-QOf"; */
+"2M4-k4-QOf.text" = "500FT";
+
+/* Class = "UILabel"; text = "status"; ObjectID = "5Af-OP-QI8"; */
+"5Af-OP-QI8.text" = "status";
+
+/* Class = "UILabel"; text = "locality"; ObjectID = "5ET-O4-OD2"; */
+"5ET-O4-OD2.text" = "locality";
+
+/* Class = "UIButton"; normalTitle = "SAVE LOCATION"; ObjectID = "8k4-kx-DFD"; */
+"8k4-kx-DFD.normalTitle" = "SAVE LOCATION";
+
+/* Class = "UIButton"; normalTitle = "PUBLISH POST"; ObjectID = "ByS-wz-bSh"; */
+"ByS-wz-bSh.normalTitle" = "PUBLISH POST";
+
+/* Class = "UILabel"; text = "Need an account?"; ObjectID = "DA6-s6-Ym2"; */
+"DA6-s6-Ym2.text" = "Need an account?";
+
+/* Class = "UILabel"; text = "500FT"; ObjectID = "DyP-qH-lJL"; */
+"DyP-qH-lJL.text" = "500FT";
+
+/* Class = "UITextView"; text = "Write a comment"; ObjectID = "EdP-16-wGg"; */
+"EdP-16-wGg.text" = "Write a comment";
+
+/* Class = "UILabel"; text = "You are in <city, state>"; ObjectID = "Est-cA-GlT"; */
+"Est-cA-GlT.text" = "You are in <city, state>";
+
+/* Class = "UIButton"; normalTitle = "Login Via Email"; ObjectID = "FXi-ND-Qb4"; */
+"FXi-ND-Qb4.normalTitle" = "Login Via Email";
+
+/* Class = "UILabel"; text = " - OR -"; ObjectID = "GvW-aB-h3c"; */
+"GvW-aB-h3c.text" = " - OR -";
+
+/* Class = "UITextField"; placeholder = "Name your location"; ObjectID = "H9O-YQ-a6D"; */
+"H9O-YQ-a6D.placeholder" = "Name your location";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "I47-0t-XEw"; */
+"I47-0t-XEw.text" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Set Range"; ObjectID = "IFU-Iw-wfc"; */
+"IFU-Iw-wfc.normalTitle" = "Set Range";
+
+/* Class = "UITextField"; placeholder = "Email Address"; ObjectID = "IKQ-2A-B52"; */
+"IKQ-2A-B52.placeholder" = "Email Address";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "Ibk-W5-2VQ"; */
+"Ibk-W5-2VQ.placeholder" = "Confirm Password";
+
+/* Class = "UIButton"; normalTitle = "Sign Up Via Email"; ObjectID = "MWH-xX-eP4"; */
+"MWH-xX-eP4.normalTitle" = "Sign Up Via Email";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "O7O-Sn-fGm"; */
+"O7O-Sn-fGm.placeholder" = "Username";
+
+/* Class = "UILabel"; text = "username"; ObjectID = "TUL-4R-k3R"; */
+"TUL-4R-k3R.text" = "username";
+
+/* Class = "UIButton"; normalTitle = "Back To Login"; ObjectID = "UlK-u4-4Dq"; */
+"UlK-u4-4Dq.normalTitle" = "Back To Login";
+
+/* Class = "UILabel"; text = "locality"; ObjectID = "VbG-2B-c3I"; */
+"VbG-2B-c3I.text" = "locality";
+
+/* Class = "UIButton"; normalTitle = "PRIVACY"; ObjectID = "XGC-OX-Veq"; */
+"XGC-OX-Veq.normalTitle" = "PRIVACY";
+
+/* Class = "UILabel"; text = "locality"; ObjectID = "XfV-Wf-Ixr"; */
+"XfV-Wf-Ixr.text" = "locality";
+
+/* Class = "UILabel"; text = "Almost done, username!"; ObjectID = "Yx3-C9-MUm"; */
+"Yx3-C9-MUm.text" = "Almost done, username!";
+
+/* Class = "UILabel"; text = "Likes"; ObjectID = "ZMk-55-SiZ"; */
+"ZMk-55-SiZ.text" = "Likes";
+
+/* Class = "UILabel"; text = " - OR -"; ObjectID = "ZcD-Ft-tYa"; */
+"ZcD-Ft-tYa.text" = " - OR -";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "dBN-79-aYL"; */
+"dBN-79-aYL.normalTitle" = "Submit";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "eIr-Xi-9Fz"; */
+"eIr-Xi-9Fz.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Sign Up Via Facebook"; ObjectID = "fwV-gR-9NZ"; */
+"fwV-gR-9NZ.normalTitle" = "Sign Up Via Facebook";
+
+/* Class = "UILabel"; text = "Posts"; ObjectID = "k3e-jz-Sbu"; */
+"k3e-jz-Sbu.text" = "Posts";
+
+/* Class = "UILabel"; text = "Great! Now just click the link in the email you received from us to login and get started!"; ObjectID = "mcp-6c-bTR"; */
+"mcp-6c-bTR.text" = "Great! Now just click the link in the email you received from us to login and get started!";
+
+/* Class = "UILabel"; text = "Please choose a username"; ObjectID = "osM-f9-Fol"; */
+"osM-f9-Fol.text" = "Please choose a username";
+
+/* Class = "UIButton"; normalTitle = "TERMS"; ObjectID = "qnq-yW-eM4"; */
+"qnq-yW-eM4.normalTitle" = "TERMS";
+
+/* Class = "UILabel"; text = "locality"; ObjectID = "tbQ-0Z-6Hi"; */
+"tbQ-0Z-6Hi.text" = "locality";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "wGC-4j-bl0"; */
+"wGC-4j-bl0.normalTitle" = "Sign Up";

@@ -97,6 +97,11 @@
                     <state key="normal" image="icon_like_off">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="selected" image="icon_like_on"/>
+                    <state key="highlighted" image="icon_like_on"/>
+                    <connections>
+                        <action selector="onLikeTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="e9E-Rc-vQz"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Cq-4i-gb8" userLabel="CommentButton" customClass="CommentButton">
                     <rect key="frame" x="52" y="118" width="50" height="24"/>
@@ -159,6 +164,7 @@
     <resources>
         <image name="icon_filter_location" width="8" height="10"/>
         <image name="icon_like_off" width="24" height="24"/>
+        <image name="icon_like_on" width="24" height="24"/>
         <image name="icon_paperclip" width="9" height="10"/>
     </resources>
 </document>

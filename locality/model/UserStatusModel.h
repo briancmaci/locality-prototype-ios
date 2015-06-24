@@ -21,4 +21,7 @@ typedef enum {
     
 } UserStatusType;
 
++ (NSString*) stringFromUserStatusType:(UserStatusType)type;
++ (UserStatusType) statusTypeFromString:(NSString *)str;
+
 @end

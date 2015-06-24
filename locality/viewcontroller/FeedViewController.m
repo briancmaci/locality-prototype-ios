@@ -134,7 +134,6 @@ static NSString * const kPostFeedCellIdentifier = @"PostFeedCellIdentifier";
     
     //init based on current sort by
     PostFeedCell *cell;
-    
     switch (_currentSortByType ) {
             
         case SortProximity:

@@ -65,6 +65,13 @@
 		03A87E481B32060A00BE37C8 /* PostFromView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A87E471B32060A00BE37C8 /* PostFromView.xib */; };
 		03A87E4C1B32120200BE37C8 /* PostFromViewToggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A87E4B1B32120200BE37C8 /* PostFromViewToggle.m */; };
 		03A87E551B322AE400BE37C8 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A87E541B322AE400BE37C8 /* UIImage+Tint.m */; };
+		03BE44761B3ACF0C00344B73 /* leftMenuOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03BE44751B3ACF0C00344B73 /* leftMenuOptions.plist */; };
+		03BE44791B3AD58800344B73 /* LeftMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BE44781B3AD58800344B73 /* LeftMenuModel.m */; };
+		03BE44831B3AD84100344B73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03BE44851B3AD84100344B73 /* Localizable.strings */; };
+		03BE44891B3AE9B800344B73 /* LeftMenuOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BE44881B3AE9B800344B73 /* LeftMenuOptionTableViewCell.m */; };
+		03BE448D1B3B040C00344B73 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BE448C1B3B040C00344B73 /* AboutViewController.m */; };
+		03BE44911B3B04AA00344B73 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BE44901B3B04AA00344B73 /* SettingsViewController.m */; };
+		03BE44951B3B3F1700344B73 /* PostUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BE44941B3B3F1700344B73 /* PostUser.m */; };
 		03C2CF291B307BC500463BDC /* ImageUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C2CF281B307BC500463BDC /* ImageUploadView.m */; };
 		03C2CF2C1B307BFB00463BDC /* ImageUploadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C2CF2B1B307BFB00463BDC /* ImageUploadView.xib */; };
 		03C390BB1B3444AB00251A16 /* UserStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C390BA1B3444AB00251A16 /* UserStatusModel.m */; };
@@ -192,6 +199,18 @@
 		03A87E4B1B32120200BE37C8 /* PostFromViewToggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostFromViewToggle.m; path = custom_ui/PostFromViewToggle.m; sourceTree = "<group>"; };
 		03A87E531B322AE400BE37C8 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Tint.h"; path = "custom_ui/UIImage+Tint.h"; sourceTree = "<group>"; };
 		03A87E541B322AE400BE37C8 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Tint.m"; path = "custom_ui/UIImage+Tint.m"; sourceTree = "<group>"; };
+		03BE44751B3ACF0C00344B73 /* leftMenuOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = leftMenuOptions.plist; sourceTree = "<group>"; };
+		03BE44771B3AD58800344B73 /* LeftMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuModel.h; path = model/LeftMenuModel.h; sourceTree = "<group>"; };
+		03BE44781B3AD58800344B73 /* LeftMenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuModel.m; path = model/LeftMenuModel.m; sourceTree = "<group>"; };
+		03BE44871B3AE9B800344B73 /* LeftMenuOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuOptionTableViewCell.h; path = custom_ui/LeftMenuOptionTableViewCell.h; sourceTree = "<group>"; };
+		03BE44881B3AE9B800344B73 /* LeftMenuOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuOptionTableViewCell.m; path = custom_ui/LeftMenuOptionTableViewCell.m; sourceTree = "<group>"; };
+		03BE448A1B3AF52700344B73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		03BE448B1B3B040C00344B73 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = viewcontroller/AboutViewController.h; sourceTree = "<group>"; };
+		03BE448C1B3B040C00344B73 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = viewcontroller/AboutViewController.m; sourceTree = "<group>"; };
+		03BE448F1B3B04AA00344B73 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = viewcontroller/SettingsViewController.h; sourceTree = "<group>"; };
+		03BE44901B3B04AA00344B73 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = viewcontroller/SettingsViewController.m; sourceTree = "<group>"; };
+		03BE44931B3B3F1700344B73 /* PostUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostUser.h; path = model/PostUser.h; sourceTree = "<group>"; };
+		03BE44941B3B3F1700344B73 /* PostUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostUser.m; path = model/PostUser.m; sourceTree = "<group>"; };
 		03C2CF271B307BC500463BDC /* ImageUploadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageUploadView.h; path = custom_ui/ImageUploadView.h; sourceTree = "<group>"; };
 		03C2CF281B307BC500463BDC /* ImageUploadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageUploadView.m; path = custom_ui/ImageUploadView.m; sourceTree = "<group>"; };
 		03C2CF2B1B307BFB00463BDC /* ImageUploadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageUploadView.xib; path = custom_ui/ImageUploadView.xib; sourceTree = "<group>"; };
@@ -297,6 +316,8 @@
 				032C76561B0407D000C78CB0 /* UserModel.m */,
 				4E9D5AEB1B15FA0200302886 /* PostModel.h */,
 				4E9D5AEC1B15FA0200302886 /* PostModel.m */,
+				03BE44931B3B3F1700344B73 /* PostUser.h */,
+				03BE44941B3B3F1700344B73 /* PostUser.m */,
 				03FCEE9A1B2B3B08006D3FF3 /* _utility */,
 			);
 			name = model;
@@ -318,6 +339,8 @@
 				032C765B1B041D0800C78CB0 /* feed */,
 				4E777E641B0F6A5100EEAEFC /* post */,
 				032C76541B03FD4A00C78CB0 /* login-signup */,
+				03BE448E1B3B041D00344B73 /* about */,
+				03BE44921B3B04AE00344B73 /* settings */,
 				03C390BF1B3451EE00251A16 /* side menu */,
 			);
 			name = viewcontroller;
@@ -466,7 +489,9 @@
 			children = (
 				033B73331B0D218400355581 /* fonts */,
 				036CA1C21AFBC88F0064AB6C /* Info.plist */,
+				03BE44751B3ACF0C00344B73 /* leftMenuOptions.plist */,
 				036CA1C31AFBC88F0064AB6C /* main.m */,
+				03BE44851B3AD84100344B73 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -498,6 +523,24 @@
 				03A87E4B1B32120200BE37C8 /* PostFromViewToggle.m */,
 			);
 			name = PostFromView;
+			sourceTree = "<group>";
+		};
+		03BE448E1B3B041D00344B73 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				03BE448B1B3B040C00344B73 /* AboutViewController.h */,
+				03BE448C1B3B040C00344B73 /* AboutViewController.m */,
+			);
+			name = about;
+			sourceTree = "<group>";
+		};
+		03BE44921B3B04AE00344B73 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				03BE448F1B3B04AA00344B73 /* SettingsViewController.h */,
+				03BE44901B3B04AA00344B73 /* SettingsViewController.m */,
+			);
+			name = settings;
 			sourceTree = "<group>";
 		};
 		03C2CF2A1B307BCF00463BDC /* ImageUploadView */ = {
@@ -580,6 +623,8 @@
 				0349E3B51B2871F30036F6D1 /* FeedSettingToggleCell.h */,
 				0349E3B61B2871F30036F6D1 /* FeedSettingToggleCell.m */,
 				0349E3B71B2871F30036F6D1 /* FeedSettingToggleCell.xib */,
+				03BE44871B3AE9B800344B73 /* LeftMenuOptionTableViewCell.h */,
+				03BE44881B3AE9B800344B73 /* LeftMenuOptionTableViewCell.m */,
 				03C390C91B348D1D00251A16 /* PostFeedCell */,
 			);
 			name = tableviewcells;
@@ -630,6 +675,8 @@
 				03C390BA1B3444AB00251A16 /* UserStatusModel.m */,
 				0347956E1B39F19700557698 /* SortByModel.h */,
 				0347956F1B39F19700557698 /* SortByModel.m */,
+				03BE44771B3AD58800344B73 /* LeftMenuModel.h */,
+				03BE44781B3AD58800344B73 /* LeftMenuModel.m */,
 			);
 			name = _utility;
 			sourceTree = "<group>";
@@ -735,6 +782,7 @@
 				0353B49F1B0E3D3300CE3750 /* BusyView.xib in Resources */,
 				0353B4951B0E3C1400CE3750 /* Interstate-RegularCondensed.otf in Resources */,
 				0353B4961B0E3C1400CE3750 /* Interstate-RegularCondensed.ttf in Resources */,
+				03BE44831B3AD84100344B73 /* Localizable.strings in Resources */,
 				0353B48A1B0E3C1400CE3750 /* Interstate Cond Mono - Blk.ttf in Resources */,
 				0353B48F1B0E3C1400CE3750 /* Interstate-BlackCondensed.ttf in Resources */,
 				0353B4941B0E3C1400CE3750 /* Interstate-RegularCond.otf in Resources */,
@@ -743,6 +791,7 @@
 				0353B48D1B0E3C1400CE3750 /* Interstate ExtraLight Cond.ttf in Resources */,
 				0353B4911B0E3C1400CE3750 /* Interstate-LightCond.otf in Resources */,
 				0355982F1B2F198800D42A33 /* LocationRangeSlider.xib in Resources */,
+				03BE44761B3ACF0C00344B73 /* leftMenuOptions.plist in Resources */,
 				033B732D1B0CB64000355581 /* FlexibleFeedHeaderView.xib in Resources */,
 				0353B48C1B0E3C1400CE3750 /* Interstate Cond Mono.ttf in Resources */,
 				0353B49A1B0E3C1400CE3750 /* InterstateLightCondensed.ttf in Resources */,
@@ -801,6 +850,7 @@
 				030C412C1B050B22004F1ECE /* CurrentFeedInitializeViewController.m in Sources */,
 				032C764A1B03F0A400C78CB0 /* LoginViewController.m in Sources */,
 				03510AB11B3300EB00089659 /* LocalityPhotoBaseViewController.m in Sources */,
+				03BE448D1B3B040C00344B73 /* AboutViewController.m in Sources */,
 				4E777E631B0F6A3100EEAEFC /* FeedSettingsViewController.m in Sources */,
 				033B732B1B0CB62800355581 /* FlexibleFeedHeaderView.m in Sources */,
 				034795611B39975700557698 /* LikePostButton.m in Sources */,
@@ -809,6 +859,7 @@
 				034795701B39F19700557698 /* SortByModel.m in Sources */,
 				032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */,
 				03A87E4C1B32120200BE37C8 /* PostFromViewToggle.m in Sources */,
+				03BE44911B3B04AA00344B73 /* SettingsViewController.m in Sources */,
 				039A79271B31AD220039651F /* CallbackManager.m in Sources */,
 				03FCEE871B2B0C36006D3FF3 /* LocalityBaseViewController.m in Sources */,
 				03F71A711B20BAC4006F4088 /* FeedMenuTableViewController.m in Sources */,
@@ -824,6 +875,8 @@
 				036CA1C41AFBC88F0064AB6C /* main.m in Sources */,
 				0347956A1B39980D00557698 /* PostFilterView.m in Sources */,
 				4E9D5AE11B133C5A00302886 /* PostCreateViewController.m in Sources */,
+				03BE44891B3AE9B800344B73 /* LeftMenuOptionTableViewCell.m in Sources */,
+				03BE44951B3B3F1700344B73 /* PostUser.m in Sources */,
 				03F71A691B2076D3006F4088 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				03FCEE8E1B2B1093006D3FF3 /* UIColor+LocalityColor.m in Sources */,
 				030C41291B04F334004F1ECE /* FlickrManager.m in Sources */,
@@ -852,6 +905,7 @@
 				03F71A751B20C0B0006F4088 /* FeedMenuTableViewCell.m in Sources */,
 				03F71A5A1B2076B8006F4088 /* SlideNavigationController.m in Sources */,
 				03FCEE991B2B3B03006D3FF3 /* HeaderIconModel.m in Sources */,
+				03BE44791B3AD58800344B73 /* LeftMenuModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -872,6 +926,14 @@
 				036CA1D11AFBC88F0064AB6C /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		03BE44851B3AD84100344B73 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BE448A1B3AF52700344B73 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
