@@ -133,7 +133,7 @@
     postCoord.latitude = post.latitude;
     postCoord.longitude = post.longitude;
     
-    PFObject *newPost = [[PFObject alloc] initWithClassName:kPostsTable];
+    PFObject *newPost = [[PFObject alloc] initWithClassName:kDBPost];
     newPost[kPostUser] = [DataManager parsePostUserIntoDictionary:post.user];
     newPost[kCaption] = post.postCaption;
     newPost[kPostLocation] = postCoord;

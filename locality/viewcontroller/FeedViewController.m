@@ -12,6 +12,7 @@
 #import "ParseManager.h"
 #import "DataManager.h"
 #import "PostFeedCell.h"
+#import "PostDetailViewController.h"
 
 @interface FeedViewController ()
 
@@ -156,6 +157,15 @@ static NSString * const kPostFeedCellIdentifier = @"PostFeedCellIdentifier";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return [self basicCellAtIndexPath:indexPath];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    PostDetailViewController *vc = (PostDetailViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:kPostDetailStoryboardId];
+    vc.thisPost = [_feedPosts objectAtIndex:indexPath.row];
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

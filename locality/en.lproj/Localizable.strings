@@ -8,6 +8,7 @@
 
 /* Header View Titles */
 "CreatePostHeader" = "POST";
+"PostDetailHeader" = "COMMENTS";
 "AboutHeader" = "ABOUT LOCALITY";
 "SettingsHeader" = "SETTINGS";
 "NewFeedHeader" = "ADD NEW LOCATION";

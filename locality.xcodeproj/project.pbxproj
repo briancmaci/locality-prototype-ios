@@ -72,6 +72,8 @@
 		03BE448D1B3B040C00344B73 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BE448C1B3B040C00344B73 /* AboutViewController.m */; };
 		03BE44911B3B04AA00344B73 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BE44901B3B04AA00344B73 /* SettingsViewController.m */; };
 		03BE44951B3B3F1700344B73 /* PostUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BE44941B3B3F1700344B73 /* PostUser.m */; };
+		03C1BB8E1B3C761800995263 /* PostDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C1BB8D1B3C761800995263 /* PostDetailHeader.xib */; };
+		03C1BB911B3C762C00995263 /* PostDetailHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C1BB901B3C762C00995263 /* PostDetailHeader.m */; };
 		03C2CF291B307BC500463BDC /* ImageUploadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C2CF281B307BC500463BDC /* ImageUploadView.m */; };
 		03C2CF2C1B307BFB00463BDC /* ImageUploadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C2CF2B1B307BFB00463BDC /* ImageUploadView.xib */; };
 		03C390BB1B3444AB00251A16 /* UserStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C390BA1B3444AB00251A16 /* UserStatusModel.m */; };
@@ -211,6 +213,9 @@
 		03BE44901B3B04AA00344B73 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = viewcontroller/SettingsViewController.m; sourceTree = "<group>"; };
 		03BE44931B3B3F1700344B73 /* PostUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostUser.h; path = model/PostUser.h; sourceTree = "<group>"; };
 		03BE44941B3B3F1700344B73 /* PostUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostUser.m; path = model/PostUser.m; sourceTree = "<group>"; };
+		03C1BB8D1B3C761800995263 /* PostDetailHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostDetailHeader.xib; path = custom_ui/PostDetailHeader.xib; sourceTree = "<group>"; };
+		03C1BB8F1B3C762C00995263 /* PostDetailHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostDetailHeader.h; path = custom_ui/PostDetailHeader.h; sourceTree = "<group>"; };
+		03C1BB901B3C762C00995263 /* PostDetailHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostDetailHeader.m; path = custom_ui/PostDetailHeader.m; sourceTree = "<group>"; };
 		03C2CF271B307BC500463BDC /* ImageUploadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageUploadView.h; path = custom_ui/ImageUploadView.h; sourceTree = "<group>"; };
 		03C2CF281B307BC500463BDC /* ImageUploadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageUploadView.m; path = custom_ui/ImageUploadView.m; sourceTree = "<group>"; };
 		03C2CF2B1B307BFB00463BDC /* ImageUploadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageUploadView.xib; path = custom_ui/ImageUploadView.xib; sourceTree = "<group>"; };
@@ -431,6 +436,9 @@
 				0347955D1B39957100557698 /* ProfileImageView.m */,
 				034795681B39980D00557698 /* PostFilterView.h */,
 				034795691B39980D00557698 /* PostFilterView.m */,
+				03C1BB8F1B3C762C00995263 /* PostDetailHeader.h */,
+				03C1BB901B3C762C00995263 /* PostDetailHeader.m */,
+				03C1BB8D1B3C761800995263 /* PostDetailHeader.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -769,6 +777,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C1BB8E1B3C761800995263 /* PostDetailHeader.xib in Resources */,
 				0353B4991B0E3C1400CE3750 /* InterstateCondBlack.ttf in Resources */,
 				036CA1CD1AFBC88F0064AB6C /* Main.storyboard in Resources */,
 				0353B4981B0E3C1400CE3750 /* InterstateCond.ttf in Resources */,
@@ -904,6 +913,7 @@
 				032C76501B03F8FC00C78CB0 /* SignUpEmailFormViewController.m in Sources */,
 				03F71A751B20C0B0006F4088 /* FeedMenuTableViewCell.m in Sources */,
 				03F71A5A1B2076B8006F4088 /* SlideNavigationController.m in Sources */,
+				03C1BB911B3C762C00995263 /* PostDetailHeader.m in Sources */,
 				03FCEE991B2B3B03006D3FF3 /* HeaderIconModel.m in Sources */,
 				03BE44791B3AD58800344B73 /* LeftMenuModel.m in Sources */,
 			);

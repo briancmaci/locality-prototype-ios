@@ -47,7 +47,9 @@
 #define kSlideOffset 120.0f
 
 /* dB Table IDs */
-#define kPostsTable @"Post"
+#define kDBUser @"_User"
+#define kDBPost @"Post"
+#define kDBComment @"Comment"
 
 /* Storyboard IDs */
 #define kLeftMenuStoryboardId @"leftMenuVC"
@@ -57,6 +59,8 @@
 #define kFeedMenuStoryboardId @"feedMenuVC"
 #define kSettingsStoryboardId @"settingsVC"
 #define kAboutStoryboardId @"aboutVC"
+#define kPostCreateStoryboardId @"postCreateVC"
+#define kPostDetailStoryboardId @"postDetailVC"
 
 /* Action IDs */
 #define kLogoutActionId @"logout"

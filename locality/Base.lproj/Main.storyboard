@@ -24,6 +24,7 @@
             <string>InterstateLightCondensed</string>
             <string>InterstateLightCondensed</string>
             <string>InterstateLightCondensed</string>
+            <string>InterstateLightCondensed</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -667,7 +668,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fql-3W-LOP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fql-3W-LOP">
                                 <rect key="frame" x="0.0" y="59" width="320" height="509"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -957,6 +958,72 @@
             </objects>
             <point key="canvasLocation" x="757" y="1579"/>
         </scene>
+        <!--Post Detail View Controller-->
+        <scene sceneID="gNf-aE-l5x">
+            <objects>
+                <viewController storyboardIdentifier="postDetailVC" id="KIM-Hw-CQR" customClass="PostDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oJZ-20-TuR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tcw-K7-dkm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lBl-2E-olP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfL-T3-SxF">
+                                <rect key="frame" x="10" y="494" width="300" height="54"/>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.3411764706" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="y2Y-DP-wMq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="16"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="WRITE COMMENT" image="icon_paperclip_white">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6l-IE-YD3" userLabel="PostDetailHeaderContainer">
+                                <rect key="frame" x="0.0" y="59" width="320" height="136"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="sQo-hO-Era"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pzV-pV-lYL">
+                                <rect key="frame" x="0.0" y="195" width="320" height="373"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s6l-IE-YD3" firstAttribute="top" secondItem="oJZ-20-TuR" secondAttribute="bottom" constant="39" id="6wz-NY-2xt"/>
+                            <constraint firstAttribute="trailing" secondItem="cfL-T3-SxF" secondAttribute="trailing" constant="10" id="EKU-mh-KOU"/>
+                            <constraint firstItem="Tcw-K7-dkm" firstAttribute="top" secondItem="cfL-T3-SxF" secondAttribute="bottom" constant="20" id="Ree-NB-DUg"/>
+                            <constraint firstAttribute="trailing" secondItem="pzV-pV-lYL" secondAttribute="trailing" id="UKX-w2-BV9"/>
+                            <constraint firstItem="pzV-pV-lYL" firstAttribute="leading" secondItem="lBl-2E-olP" secondAttribute="leading" id="Y31-A8-bj8"/>
+                            <constraint firstItem="pzV-pV-lYL" firstAttribute="top" secondItem="s6l-IE-YD3" secondAttribute="bottom" id="Zy8-AS-f7W"/>
+                            <constraint firstItem="Tcw-K7-dkm" firstAttribute="top" secondItem="pzV-pV-lYL" secondAttribute="bottom" id="gLS-q4-c9H"/>
+                            <constraint firstItem="s6l-IE-YD3" firstAttribute="leading" secondItem="lBl-2E-olP" secondAttribute="leading" id="jPF-i3-Xa9"/>
+                            <constraint firstAttribute="trailing" secondItem="s6l-IE-YD3" secondAttribute="trailing" id="sTf-It-at6"/>
+                            <constraint firstItem="cfL-T3-SxF" firstAttribute="leading" secondItem="lBl-2E-olP" secondAttribute="leading" constant="10" id="sdE-Xp-T0R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentsTable" destination="pzV-pV-lYL" id="onX-pb-zPc"/>
+                        <outlet property="postHeaderContainer" destination="s6l-IE-YD3" id="b3F-iA-vfQ"/>
+                        <outlet property="postHeaderHeightConstraint" destination="sQo-hO-Era" id="1LM-OW-hXP"/>
+                        <outlet property="writeCommentButton" destination="cfL-T3-SxF" id="coJ-dg-GFK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CcL-eq-pKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1594" y="908"/>
+        </scene>
         <!--Feed Settings View Controller-->
         <scene sceneID="Do7-xi-vGa">
             <objects>
@@ -1225,7 +1292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ZD-jI-ngz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="1579"/>
+            <point key="canvasLocation" x="1594" y="1579"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="qRD-0E-ur0">
@@ -1243,7 +1310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GeC-AH-6QE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1958" y="1579"/>
+            <point key="canvasLocation" x="2021" y="1579"/>
         </scene>
         <!--Post Create View Controller-->
         <scene sceneID="4kg-G5-4D3">
@@ -1273,7 +1340,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Ro1-px-CP4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="16"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="PUBLISH POST" image="icon_pencil">
@@ -1342,6 +1409,7 @@
         <image name="icon_camera_sidemenu" width="12" height="10"/>
         <image name="icon_comments_sidemenu" width="24" height="24"/>
         <image name="icon_likes_sidemenu" width="24" height="24"/>
+        <image name="icon_paperclip_white" width="9" height="10"/>
         <image name="icon_pencil" width="10" height="10"/>
         <image name="location_slider_bg" width="188" height="32"/>
     </resources>

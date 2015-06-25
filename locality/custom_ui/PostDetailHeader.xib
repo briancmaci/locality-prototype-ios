@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="InterstateLightCondensed.ttf">
+            <string>InterstateLightCondensed</string>
+            <string>InterstateLightCondensed</string>
+            <string>InterstateLightCondensed</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PostDetailHeader">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us6-Aj-Etj" userLabel="DrawingView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W1U-QA-DYf" userLabel="profileImage" customClass="ProfileImageView">
+                            <rect key="frame" x="20" y="15" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="Bme-Cd-HVb"/>
+                                <constraint firstAttribute="height" constant="35" id="DXC-uw-eYg"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anonymous" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udv-0O-3sX" userLabel="UserNameLabel">
+                            <rect key="frame" x="62" y="19" width="168" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="06A-Cz-wkc"/>
+                                <constraint firstAttribute="width" constant="168" id="fwc-C7-8jc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="14"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contributor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diI-OU-Dtw" userLabel="UserStatusLabel">
+                            <rect key="frame" x="62" y="33" width="168" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="VUc-Og-QA0"/>
+                                <constraint firstAttribute="width" constant="168" id="iqW-Gd-zH2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="11"/>
+                            <color key="textColor" red="0.43921568630000002" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXU-YZ-pNP" userLabel="PostCaption">
+                            <rect key="frame" x="20" y="64" width="280" height="48"/>
+                            <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="14"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="fXU-YZ-pNP" firstAttribute="leading" secondItem="Us6-Aj-Etj" secondAttribute="leading" constant="20" id="ENl-nU-L7U"/>
+                        <constraint firstItem="diI-OU-Dtw" firstAttribute="leading" secondItem="W1U-QA-DYf" secondAttribute="trailing" constant="7" id="GsQ-hT-ay6"/>
+                        <constraint firstItem="udv-0O-3sX" firstAttribute="top" secondItem="Us6-Aj-Etj" secondAttribute="top" constant="19" id="No8-nA-le5"/>
+                        <constraint firstItem="W1U-QA-DYf" firstAttribute="leading" secondItem="Us6-Aj-Etj" secondAttribute="leading" constant="20" id="RPG-qz-L7P"/>
+                        <constraint firstItem="fXU-YZ-pNP" firstAttribute="top" secondItem="W1U-QA-DYf" secondAttribute="bottom" constant="14" id="Ulp-fi-sz6"/>
+                        <constraint firstAttribute="bottom" secondItem="fXU-YZ-pNP" secondAttribute="bottom" constant="24" id="aaJ-yL-CZD"/>
+                        <constraint firstItem="udv-0O-3sX" firstAttribute="leading" secondItem="W1U-QA-DYf" secondAttribute="trailing" constant="7" id="gGP-HW-azS"/>
+                        <constraint firstItem="W1U-QA-DYf" firstAttribute="top" secondItem="Us6-Aj-Etj" secondAttribute="top" constant="15" id="hGs-PD-grU"/>
+                        <constraint firstItem="diI-OU-Dtw" firstAttribute="top" secondItem="Us6-Aj-Etj" secondAttribute="top" constant="33" id="hi0-i8-FAR"/>
+                        <constraint firstAttribute="trailing" secondItem="fXU-YZ-pNP" secondAttribute="trailing" constant="20" id="pfe-8Z-d9h"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Us6-Aj-Etj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="329-tq-Rcm"/>
+                <constraint firstAttribute="bottom" secondItem="Us6-Aj-Etj" secondAttribute="bottom" id="79y-H4-Gg6"/>
+                <constraint firstItem="Us6-Aj-Etj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mxg-wj-dYM"/>
+                <constraint firstAttribute="trailing" secondItem="Us6-Aj-Etj" secondAttribute="trailing" id="mP4-oH-NVW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="drawingBackground" destination="Us6-Aj-Etj" id="ew7-cK-CSX"/>
+                <outlet property="postCaption" destination="fXU-YZ-pNP" id="pvT-Ca-rWq"/>
+                <outlet property="profileImage" destination="W1U-QA-DYf" id="y2b-NI-NSe"/>
+                <outlet property="userStatusLabel" destination="diI-OU-Dtw" id="YFs-XS-rK7"/>
+                <outlet property="usernameLabel" destination="udv-0O-3sX" id="aKd-3M-ila"/>
+            </connections>
+        </view>
+    </objects>
+</document>

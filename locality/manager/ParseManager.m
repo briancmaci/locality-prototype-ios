@@ -18,8 +18,6 @@
 
 @implementation ParseManager
 
-static NSString * kDBUser = @"_User";
-
 +(void) initParse {
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
@@ -178,7 +176,7 @@ static NSString * kDBUser = @"_User";
     nePoint.latitude = rangePointNE.latitude;
     nePoint.longitude = rangePointNE.longitude;
     
-    PFQuery *geoQuery = [PFQuery queryWithClassName:kPostsTable];
+    PFQuery *geoQuery = [PFQuery queryWithClassName:kDBPost];
     
     [geoQuery whereKey:@"postLocation" withinGeoBoxFromSouthwest:swPoint toNortheast:nePoint];
     
@@ -278,7 +276,7 @@ static NSString * kDBUser = @"_User";
 +(void) likePost:(NSString *)postId success:(successBlock)successBlock failure:(failureBlock)failureBlock {
     
     //NSLog(@"postId: %@", postId);
-    PFQuery *likeQuery = [PFQuery queryWithClassName:kPostsTable];
+    PFQuery *likeQuery = [PFQuery queryWithClassName:kDBPost];
     [likeQuery whereKey:@"objectId" equalTo:postId];
     [likeQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -304,7 +302,7 @@ static NSString * kDBUser = @"_User";
 }
 
 +(void) unlikePost:(NSString *)postId success:(successBlock)successBlock failure:(failureBlock)failureBlock {
-    PFQuery *likeQuery = [PFQuery queryWithClassName:kPostsTable];
+    PFQuery *likeQuery = [PFQuery queryWithClassName:kDBPost];
     [likeQuery whereKey:@"objectId" equalTo:postId];
     [likeQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {

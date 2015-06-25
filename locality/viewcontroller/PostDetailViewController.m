@@ -7,6 +7,7 @@
 //
 
 #import "PostDetailViewController.h"
+#import "config.h"
 
 @interface PostDetailViewController ()
 
@@ -14,9 +15,30 @@
 
 @implementation PostDetailViewController
 
+static NSString * const kPostHeaderNibName = @"PostDetailHeader";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self initHeaderView];
+    [self initPostDetailHeader];
+}
+
+- (void) initHeaderView {
+    [self.header initWithTitle:NSLocalizedString(@"PostDetailHeader", nil)
+                leftButtonType:IconBack
+               rightButtonType:IconClose];
+    
+    [self.view addSubview:self.header];
+}
+
+-(void) initPostDetailHeader {
+    
+    _postHeader = [[[NSBundle mainBundle] loadNibNamed:kPostHeaderNibName owner:self options:nil] objectAtIndex:0];
+    [_postHeaderContainer addSubview:_postHeader];
+    
+    [_postHeader populateWithData:_thisPost];
 }
 
 - (void)didReceiveMemoryWarning {
