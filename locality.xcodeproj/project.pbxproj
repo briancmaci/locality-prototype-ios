@@ -21,6 +21,10 @@
 		032C76531B03FC1100C78CB0 /* SignUpEmailSentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76521B03FC1100C78CB0 /* SignUpEmailSentViewController.m */; };
 		032C76571B0407D000C78CB0 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76561B0407D000C78CB0 /* UserModel.m */; };
 		032C765A1B041CFE00C78CB0 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76591B041CFE00C78CB0 /* FeedViewController.m */; };
+		033303641B3D75A7008A34DE /* PostDetailHeaderBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033303631B3D75A7008A34DE /* PostDetailHeaderBackgroundView.m */; };
+		033303691B3DB14A008A34DE /* CommentFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 033303671B3DB14A008A34DE /* CommentFeedCell.m */; };
+		0333036A1B3DB14A008A34DE /* CommentFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033303681B3DB14A008A34DE /* CommentFeedCell.xib */; };
+		0333036D1B3DB1B5008A34DE /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0333036C1B3DB1B5008A34DE /* CommentModel.m */; };
 		033B732B1B0CB62800355581 /* FlexibleFeedHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B732A1B0CB62800355581 /* FlexibleFeedHeaderView.m */; };
 		033B732D1B0CB64000355581 /* FlexibleFeedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033B732C1B0CB64000355581 /* FlexibleFeedHeaderView.xib */; };
 		033B73321B0D039500355581 /* FeedSliderMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B73311B0D039500355581 /* FeedSliderMenuView.m */; };
@@ -136,6 +140,13 @@
 		032C76561B0407D000C78CB0 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserModel.m; path = model/UserModel.m; sourceTree = "<group>"; };
 		032C76581B041CFE00C78CB0 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedViewController.h; path = viewcontroller/FeedViewController.h; sourceTree = "<group>"; };
 		032C76591B041CFE00C78CB0 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedViewController.m; path = viewcontroller/FeedViewController.m; sourceTree = "<group>"; };
+		033303621B3D75A7008A34DE /* PostDetailHeaderBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostDetailHeaderBackgroundView.h; path = custom_ui/PostDetailHeaderBackgroundView.h; sourceTree = "<group>"; };
+		033303631B3D75A7008A34DE /* PostDetailHeaderBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostDetailHeaderBackgroundView.m; path = custom_ui/PostDetailHeaderBackgroundView.m; sourceTree = "<group>"; };
+		033303661B3DB14A008A34DE /* CommentFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentFeedCell.h; path = custom_ui/CommentFeedCell.h; sourceTree = "<group>"; };
+		033303671B3DB14A008A34DE /* CommentFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentFeedCell.m; path = custom_ui/CommentFeedCell.m; sourceTree = "<group>"; };
+		033303681B3DB14A008A34DE /* CommentFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentFeedCell.xib; path = custom_ui/CommentFeedCell.xib; sourceTree = "<group>"; };
+		0333036B1B3DB1B5008A34DE /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentModel.h; path = model/CommentModel.h; sourceTree = "<group>"; };
+		0333036C1B3DB1B5008A34DE /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentModel.m; path = model/CommentModel.m; sourceTree = "<group>"; };
 		033B73291B0CB62800355581 /* FlexibleFeedHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlexibleFeedHeaderView.h; path = custom_ui/FlexibleFeedHeaderView.h; sourceTree = "<group>"; };
 		033B732A1B0CB62800355581 /* FlexibleFeedHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlexibleFeedHeaderView.m; path = custom_ui/FlexibleFeedHeaderView.m; sourceTree = "<group>"; };
 		033B732C1B0CB64000355581 /* FlexibleFeedHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FlexibleFeedHeaderView.xib; path = custom_ui/FlexibleFeedHeaderView.xib; sourceTree = "<group>"; };
@@ -317,6 +328,8 @@
 			children = (
 				032C762F1B03C9A100C78CB0 /* FeedLocationModel.h */,
 				032C76301B03C9A100C78CB0 /* FeedLocationModel.m */,
+				0333036B1B3DB1B5008A34DE /* CommentModel.h */,
+				0333036C1B3DB1B5008A34DE /* CommentModel.m */,
 				032C76551B0407D000C78CB0 /* UserModel.h */,
 				032C76561B0407D000C78CB0 /* UserModel.m */,
 				4E9D5AEB1B15FA0200302886 /* PostModel.h */,
@@ -404,6 +417,16 @@
 			name = feed;
 			sourceTree = "<group>";
 		};
+		033303651B3DB112008A34DE /* CommentFeedCell */ = {
+			isa = PBXGroup;
+			children = (
+				033303661B3DB14A008A34DE /* CommentFeedCell.h */,
+				033303671B3DB14A008A34DE /* CommentFeedCell.m */,
+				033303681B3DB14A008A34DE /* CommentFeedCell.xib */,
+			);
+			name = CommentFeedCell;
+			sourceTree = "<group>";
+		};
 		033B73331B0D218400355581 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +462,8 @@
 				03C1BB8F1B3C762C00995263 /* PostDetailHeader.h */,
 				03C1BB901B3C762C00995263 /* PostDetailHeader.m */,
 				03C1BB8D1B3C761800995263 /* PostDetailHeader.xib */,
+				033303621B3D75A7008A34DE /* PostDetailHeaderBackgroundView.h */,
+				033303631B3D75A7008A34DE /* PostDetailHeaderBackgroundView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -633,6 +658,7 @@
 				0349E3B71B2871F30036F6D1 /* FeedSettingToggleCell.xib */,
 				03BE44871B3AE9B800344B73 /* LeftMenuOptionTableViewCell.h */,
 				03BE44881B3AE9B800344B73 /* LeftMenuOptionTableViewCell.m */,
+				033303651B3DB112008A34DE /* CommentFeedCell */,
 				03C390C91B348D1D00251A16 /* PostFeedCell */,
 			);
 			name = tableviewcells;
@@ -810,6 +836,7 @@
 				036CA1CF1AFBC88F0064AB6C /* Images.xcassets in Resources */,
 				0353B4901B0E3C1400CE3750 /* Interstate-HairlineCondensed.ttf in Resources */,
 				0353B48B1B0E3C1400CE3750 /* Interstate Cond Mono - Lgt.ttf in Resources */,
+				0333036A1B3DB14A008A34DE /* CommentFeedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +907,7 @@
 				0347955E1B39957100557698 /* ProfileImageView.m in Sources */,
 				032C76531B03FC1100C78CB0 /* SignUpEmailSentViewController.m in Sources */,
 				03C390BB1B3444AB00251A16 /* UserStatusModel.m in Sources */,
+				033303691B3DB14A008A34DE /* CommentFeedCell.m in Sources */,
 				039A792A1B31AD440039651F /* PhotoUploadManager.m in Sources */,
 				036CA1C41AFBC88F0064AB6C /* main.m in Sources */,
 				0347956A1B39980D00557698 /* PostFilterView.m in Sources */,
@@ -901,6 +929,7 @@
 				032C76471B03F06D00C78CB0 /* ParseManager.m in Sources */,
 				032C764D1B03F0DE00C78CB0 /* SignUpViewController.m in Sources */,
 				03F71A6B1B2076D3006F4088 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
+				033303641B3D75A7008A34DE /* PostDetailHeaderBackgroundView.m in Sources */,
 				03F71A791B20C425006F4088 /* FeedAddNewTableViewCell.m in Sources */,
 				03A87E551B322AE400BE37C8 /* UIImage+Tint.m in Sources */,
 				03C2CF291B307BC500463BDC /* ImageUploadView.m in Sources */,
@@ -914,6 +943,7 @@
 				03F71A751B20C0B0006F4088 /* FeedMenuTableViewCell.m in Sources */,
 				03F71A5A1B2076B8006F4088 /* SlideNavigationController.m in Sources */,
 				03C1BB911B3C762C00995263 /* PostDetailHeader.m in Sources */,
+				0333036D1B3DB1B5008A34DE /* CommentModel.m in Sources */,
 				03FCEE991B2B3B03006D3FF3 /* HeaderIconModel.m in Sources */,
 				03BE44791B3AD58800344B73 /* LeftMenuModel.m in Sources */,
 			);

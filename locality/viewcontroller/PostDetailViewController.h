@@ -21,4 +21,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *writeCommentButton;
 
 @property (strong, nonatomic) PostModel *thisPost;
+@property (strong, nonatomic) NSMutableArray *postComments;
 @end

@@ -970,6 +970,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pzV-pV-lYL">
+                                <rect key="frame" x="0.0" y="184" width="320" height="384"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfL-T3-SxF">
                                 <rect key="frame" x="10" y="494" width="300" height="54"/>
                                 <color key="backgroundColor" red="0.30196078430000001" green="0.3411764706" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -989,24 +993,20 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6l-IE-YD3" userLabel="PostDetailHeaderContainer">
                                 <rect key="frame" x="0.0" y="59" width="320" height="136"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="136" id="sQo-hO-Era"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pzV-pV-lYL">
-                                <rect key="frame" x="0.0" y="195" width="320" height="373"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="s6l-IE-YD3" firstAttribute="top" secondItem="oJZ-20-TuR" secondAttribute="bottom" constant="39" id="6wz-NY-2xt"/>
                             <constraint firstAttribute="trailing" secondItem="cfL-T3-SxF" secondAttribute="trailing" constant="10" id="EKU-mh-KOU"/>
                             <constraint firstItem="Tcw-K7-dkm" firstAttribute="top" secondItem="cfL-T3-SxF" secondAttribute="bottom" constant="20" id="Ree-NB-DUg"/>
                             <constraint firstAttribute="trailing" secondItem="pzV-pV-lYL" secondAttribute="trailing" id="UKX-w2-BV9"/>
                             <constraint firstItem="pzV-pV-lYL" firstAttribute="leading" secondItem="lBl-2E-olP" secondAttribute="leading" id="Y31-A8-bj8"/>
-                            <constraint firstItem="pzV-pV-lYL" firstAttribute="top" secondItem="s6l-IE-YD3" secondAttribute="bottom" id="Zy8-AS-f7W"/>
+                            <constraint firstItem="pzV-pV-lYL" firstAttribute="top" secondItem="s6l-IE-YD3" secondAttribute="bottom" constant="-11" id="Zy8-AS-f7W"/>
                             <constraint firstItem="Tcw-K7-dkm" firstAttribute="top" secondItem="pzV-pV-lYL" secondAttribute="bottom" id="gLS-q4-c9H"/>
                             <constraint firstItem="s6l-IE-YD3" firstAttribute="leading" secondItem="lBl-2E-olP" secondAttribute="leading" id="jPF-i3-Xa9"/>
                             <constraint firstAttribute="trailing" secondItem="s6l-IE-YD3" secondAttribute="trailing" id="sTf-It-at6"/>

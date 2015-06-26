@@ -18,9 +18,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us6-Aj-Etj" userLabel="DrawingView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us6-Aj-Etj" userLabel="ContainerView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5SP-Rb-4Id" userLabel="bgContainer">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
+                            <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W1U-QA-DYf" userLabel="profileImage" customClass="ProfileImageView">
                             <rect key="frame" x="20" y="15" width="35" height="35"/>
                             <constraints>
@@ -57,6 +61,8 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="5SP-Rb-4Id" firstAttribute="top" secondItem="Us6-Aj-Etj" secondAttribute="top" id="6A6-VC-zAy"/>
+                        <constraint firstAttribute="trailing" secondItem="5SP-Rb-4Id" secondAttribute="trailing" id="6AZ-aS-8ni"/>
                         <constraint firstItem="fXU-YZ-pNP" firstAttribute="leading" secondItem="Us6-Aj-Etj" secondAttribute="leading" constant="20" id="ENl-nU-L7U"/>
                         <constraint firstItem="diI-OU-Dtw" firstAttribute="leading" secondItem="W1U-QA-DYf" secondAttribute="trailing" constant="7" id="GsQ-hT-ay6"/>
                         <constraint firstItem="udv-0O-3sX" firstAttribute="top" secondItem="Us6-Aj-Etj" secondAttribute="top" constant="19" id="No8-nA-le5"/>
@@ -66,7 +72,9 @@
                         <constraint firstItem="udv-0O-3sX" firstAttribute="leading" secondItem="W1U-QA-DYf" secondAttribute="trailing" constant="7" id="gGP-HW-azS"/>
                         <constraint firstItem="W1U-QA-DYf" firstAttribute="top" secondItem="Us6-Aj-Etj" secondAttribute="top" constant="15" id="hGs-PD-grU"/>
                         <constraint firstItem="diI-OU-Dtw" firstAttribute="top" secondItem="Us6-Aj-Etj" secondAttribute="top" constant="33" id="hi0-i8-FAR"/>
+                        <constraint firstAttribute="bottom" secondItem="5SP-Rb-4Id" secondAttribute="bottom" id="jlk-GR-rDr"/>
                         <constraint firstAttribute="trailing" secondItem="fXU-YZ-pNP" secondAttribute="trailing" constant="20" id="pfe-8Z-d9h"/>
+                        <constraint firstItem="5SP-Rb-4Id" firstAttribute="leading" secondItem="Us6-Aj-Etj" secondAttribute="leading" id="qvq-rx-vLr"/>
                     </constraints>
                 </view>
             </subviews>
@@ -79,7 +87,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="drawingBackground" destination="Us6-Aj-Etj" id="ew7-cK-CSX"/>
+                <outlet property="bgContainer" destination="5SP-Rb-4Id" id="LGj-sN-kwQ"/>
                 <outlet property="postCaption" destination="fXU-YZ-pNP" id="pvT-Ca-rWq"/>
                 <outlet property="profileImage" destination="W1U-QA-DYf" id="y2b-NI-NSe"/>
                 <outlet property="userStatusLabel" destination="diI-OU-Dtw" id="YFs-XS-rK7"/>
