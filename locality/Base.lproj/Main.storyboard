@@ -991,9 +991,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6l-IE-YD3" userLabel="PostDetailHeaderContainer">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="post_comment_header_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Z90-ZJ-guq">
+                                <rect key="frame" x="0.0" y="135" width="320" height="171"/>
+                            </imageView>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6l-IE-YD3" userLabel="PostDetailHeader" customClass="PostDetailHeader">
                                 <rect key="frame" x="0.0" y="59" width="320" height="136"/>
-                                <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="136" id="sQo-hO-Era"/>
                                 </constraints>
@@ -1015,7 +1018,7 @@
                     </view>
                     <connections>
                         <outlet property="commentsTable" destination="pzV-pV-lYL" id="onX-pb-zPc"/>
-                        <outlet property="postHeaderContainer" destination="s6l-IE-YD3" id="b3F-iA-vfQ"/>
+                        <outlet property="postHeader" destination="s6l-IE-YD3" id="cQf-2o-WjS"/>
                         <outlet property="postHeaderHeightConstraint" destination="sQo-hO-Era" id="1LM-OW-hXP"/>
                         <outlet property="writeCommentButton" destination="cfL-T3-SxF" id="coJ-dg-GFK"/>
                     </connections>
@@ -1412,6 +1415,7 @@
         <image name="icon_paperclip_white" width="9" height="10"/>
         <image name="icon_pencil" width="10" height="10"/>
         <image name="location_slider_bg" width="188" height="32"/>
+        <image name="post_comment_header_bg" width="312" height="163"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

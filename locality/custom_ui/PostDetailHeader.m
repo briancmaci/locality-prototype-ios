@@ -15,6 +15,18 @@
 static float const kDefaultHeight = 136.0f;
 static float const kDefaultCaptionHeight = 48.0f;
 
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    if ((self = [super initWithCoder:aDecoder])){
+        [self addSubview:
+         [[[NSBundle mainBundle] loadNibNamed:@"PostDetailHeader"
+                                        owner:self
+                                      options:nil] objectAtIndex:0]];
+        
+        [self setBackgroundColor:[UIColor clearColor]];
+        [self setOpaque:NO];
+    }
+    return self;
+}
 
 -(float) getViewHeight:(NSString *)caption {
     
@@ -36,19 +48,14 @@ static float const kDefaultCaptionHeight = 48.0f;
     
     _thisPost = thisModel;
     
-    [AppUtilities loadFeedPostProfileImage:_profileImage fromURL:thisModel.user.profileImageUrl];
+    //set post user info
+    [_postUserInfo initWithImage:thisModel.user.profileImageUrl
+                        username:thisModel.user.username
+                      userStatus:thisModel.user.userStatus];
+    
     _postCaption.text = thisModel.postCaption;
-    _usernameLabel.text = [thisModel.user.username isEqualToString:@""] ? kAnonymousUsername : thisModel.user.username;
     
     [_postCaption sizeToFit];
-}
-
--(void) drawBackground {
-    
-    //draw background
-    _drawingBackground = [[PostDetailHeaderBackgroundView alloc] initWithFrame:_bgContainer.frame];
-    [_bgContainer addSubview:_drawingBackground];
-    [_bgContainer setNeedsDisplay];
 }
 
 @end

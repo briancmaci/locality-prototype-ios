@@ -7,23 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ProfileImageView.h"
+#import "PostUserInfoView.h"
 #import "PostModel.h"
 #import "PostDetailHeaderBackgroundView.h"
 
 @interface PostDetailHeader : UIView
 
-@property (strong, nonatomic) PostDetailHeaderBackgroundView *drawingBackground;
-@property (weak, nonatomic) IBOutlet UIView *bgContainer;
-@property (weak, nonatomic) IBOutlet ProfileImageView *profileImage;
-@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *userStatusLabel;
+@property (weak, nonatomic) IBOutlet PostDetailHeaderBackgroundView *drawingBackground;
+@property (weak, nonatomic) IBOutlet PostUserInfoView *postUserInfo;
 
 @property (weak, nonatomic) IBOutlet UILabel *postCaption;
 
 @property (strong, nonatomic) PostModel *thisPost;
 
 -(void) populateWithData:(PostModel *)thisModel;
--(void) drawBackground;
 
 @end

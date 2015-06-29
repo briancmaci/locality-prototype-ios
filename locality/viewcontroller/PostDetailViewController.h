@@ -13,8 +13,7 @@
 
 @interface PostDetailViewController : LocalityBaseViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UIView *postHeaderContainer;
-@property (strong, nonatomic) PostDetailHeader *postHeader;
+@property (weak, nonatomic) IBOutlet PostDetailHeader *postHeader;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *postHeaderHeightConstraint;
 
 @property (weak, nonatomic) IBOutlet UITableView *commentsTable;

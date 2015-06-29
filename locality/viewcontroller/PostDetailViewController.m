@@ -31,7 +31,7 @@ static NSString * const kPostHeaderNibName = @"PostDetailHeader";
 - (void) viewDidLayoutSubviews {
     
     //set anything to be drawn post autolayout
-    [_postHeader drawBackground];
+    //[_postHeader drawBackground];
     //[_postHeaderContainer setNeedsDisplay];
 }
 
@@ -51,11 +51,9 @@ static NSString * const kPostHeaderNibName = @"PostDetailHeader";
 }
 
 -(void) initPostDetailHeader {
-    
-    _postHeader = [[[NSBundle mainBundle] loadNibNamed:kPostHeaderNibName owner:self options:nil] objectAtIndex:0];
-    [_postHeaderContainer addSubview:_postHeader];
-    
     [_postHeader populateWithData:_thisPost];
+    [_postHeader setBackgroundColor:[UIColor clearColor]];
+    [_postHeader setOpaque:NO];
 }
 
 - (void)didReceiveMemoryWarning {

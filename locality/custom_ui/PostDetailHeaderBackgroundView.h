@@ -10,5 +10,4 @@
 
 @interface PostDetailHeaderBackgroundView : UIView
 
-@property (nonatomic) CGContextRef context;
 @end

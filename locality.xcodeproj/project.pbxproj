@@ -28,6 +28,8 @@
 		033B732B1B0CB62800355581 /* FlexibleFeedHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B732A1B0CB62800355581 /* FlexibleFeedHeaderView.m */; };
 		033B732D1B0CB64000355581 /* FlexibleFeedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033B732C1B0CB64000355581 /* FlexibleFeedHeaderView.xib */; };
 		033B73321B0D039500355581 /* FeedSliderMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B73311B0D039500355581 /* FeedSliderMenuView.m */; };
+		034225871B417C0A001C757D /* PostUserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 034225861B417C0A001C757D /* PostUserInfoView.m */; };
+		034225891B417D23001C757D /* PostUserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034225881B417D23001C757D /* PostUserInfoView.xib */; };
 		0347955E1B39957100557698 /* ProfileImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0347955D1B39957100557698 /* ProfileImageView.m */; };
 		034795611B39975700557698 /* LikePostButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 034795601B39975700557698 /* LikePostButton.m */; };
 		034795641B39977A00557698 /* CommentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 034795631B39977A00557698 /* CommentButton.m */; };
@@ -152,6 +154,9 @@
 		033B732C1B0CB64000355581 /* FlexibleFeedHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FlexibleFeedHeaderView.xib; path = custom_ui/FlexibleFeedHeaderView.xib; sourceTree = "<group>"; };
 		033B73301B0D039500355581 /* FeedSliderMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedSliderMenuView.h; path = custom_ui/FeedSliderMenuView.h; sourceTree = "<group>"; };
 		033B73311B0D039500355581 /* FeedSliderMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedSliderMenuView.m; path = custom_ui/FeedSliderMenuView.m; sourceTree = "<group>"; };
+		034225851B417C0A001C757D /* PostUserInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostUserInfoView.h; path = custom_ui/PostUserInfoView.h; sourceTree = "<group>"; };
+		034225861B417C0A001C757D /* PostUserInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostUserInfoView.m; path = custom_ui/PostUserInfoView.m; sourceTree = "<group>"; };
+		034225881B417D23001C757D /* PostUserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostUserInfoView.xib; path = custom_ui/PostUserInfoView.xib; sourceTree = "<group>"; };
 		0347955C1B39957100557698 /* ProfileImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileImageView.h; path = custom_ui/ProfileImageView.h; sourceTree = "<group>"; };
 		0347955D1B39957100557698 /* ProfileImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileImageView.m; path = custom_ui/ProfileImageView.m; sourceTree = "<group>"; };
 		0347955F1B39975700557698 /* LikePostButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LikePostButton.h; path = custom_ui/LikePostButton.h; sourceTree = "<group>"; };
@@ -305,7 +310,6 @@
 				0347955B1B39955900557698 /* views */,
 				03FCEE931B2B2ACE006D3FF3 /* buttons */,
 				03FCEE8B1B2B0FA4006D3FF3 /* categories */,
-				03FCEE921B2B18D7006D3FF3 /* HeaderView */,
 				03F71A571B2076A8006F4088 /* SlideNavigationController */,
 				03F71A721B20C089006F4088 /* tableviewcells */,
 				03C2CF2A1B307BCF00463BDC /* ImageUploadView */,
@@ -313,12 +317,6 @@
 				03C2CF2D1B308C5E00463BDC /* LocationRangeSlider */,
 				033B73301B0D039500355581 /* FeedSliderMenuView.h */,
 				033B73311B0D039500355581 /* FeedSliderMenuView.m */,
-				0353B49E1B0E3D3300CE3750 /* BusyView.xib */,
-				0353B4A01B0E3D5500CE3750 /* BusyView.h */,
-				0353B4A11B0E3D5500CE3750 /* BusyView.m */,
-				03FA85BF1B2A25D600F68102 /* CameraOverlayView.h */,
-				03FA85C01B2A25D600F68102 /* CameraOverlayView.m */,
-				03FA85C11B2A25D600F68102 /* CameraOverlayView.xib */,
 			);
 			name = custom_ui;
 			sourceTree = "<group>";
@@ -452,9 +450,32 @@
 			name = fonts;
 			sourceTree = "<group>";
 		};
+		034225831B417559001C757D /* BusyView */ = {
+			isa = PBXGroup;
+			children = (
+				0353B49E1B0E3D3300CE3750 /* BusyView.xib */,
+				0353B4A01B0E3D5500CE3750 /* BusyView.h */,
+				0353B4A11B0E3D5500CE3750 /* BusyView.m */,
+			);
+			name = BusyView;
+			sourceTree = "<group>";
+		};
+		034225841B417564001C757D /* CameraOverlayView */ = {
+			isa = PBXGroup;
+			children = (
+				03FA85BF1B2A25D600F68102 /* CameraOverlayView.h */,
+				03FA85C01B2A25D600F68102 /* CameraOverlayView.m */,
+				03FA85C11B2A25D600F68102 /* CameraOverlayView.xib */,
+			);
+			name = CameraOverlayView;
+			sourceTree = "<group>";
+		};
 		0347955B1B39955900557698 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				034225831B417559001C757D /* BusyView */,
+				034225841B417564001C757D /* CameraOverlayView */,
+				03FCEE921B2B18D7006D3FF3 /* HeaderView */,
 				0347955C1B39957100557698 /* ProfileImageView.h */,
 				0347955D1B39957100557698 /* ProfileImageView.m */,
 				034795681B39980D00557698 /* PostFilterView.h */,
@@ -464,6 +485,9 @@
 				03C1BB8D1B3C761800995263 /* PostDetailHeader.xib */,
 				033303621B3D75A7008A34DE /* PostDetailHeaderBackgroundView.h */,
 				033303631B3D75A7008A34DE /* PostDetailHeaderBackgroundView.m */,
+				034225851B417C0A001C757D /* PostUserInfoView.h */,
+				034225861B417C0A001C757D /* PostUserInfoView.m */,
+				034225881B417D23001C757D /* PostUserInfoView.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -832,6 +856,7 @@
 				0353B49A1B0E3C1400CE3750 /* InterstateLightCondensed.ttf in Resources */,
 				03A87E481B32060A00BE37C8 /* PostFromView.xib in Resources */,
 				036CA1D21AFBC88F0064AB6C /* LaunchScreen.xib in Resources */,
+				034225891B417D23001C757D /* PostUserInfoView.xib in Resources */,
 				0353B4971B0E3C1400CE3750 /* Interstate-ThinCondensed.ttf in Resources */,
 				036CA1CF1AFBC88F0064AB6C /* Images.xcassets in Resources */,
 				0353B4901B0E3C1400CE3750 /* Interstate-HairlineCondensed.ttf in Resources */,
@@ -935,6 +960,7 @@
 				03C2CF291B307BC500463BDC /* ImageUploadView.m in Sources */,
 				4E777E671B0F6A6D00EEAEFC /* PostDetailViewController.m in Sources */,
 				03F71A681B2076D3006F4088 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
+				034225871B417C0A001C757D /* PostUserInfoView.m in Sources */,
 				03C390C21B34522A00251A16 /* LocalityLeftMenuViewController.m in Sources */,
 				03FCEE911B2B18D2006D3FF3 /* LocalityHeaderView.m in Sources */,
 				030C41391B0541A5004F1ECE /* LocationRangeSlider.m in Sources */,
