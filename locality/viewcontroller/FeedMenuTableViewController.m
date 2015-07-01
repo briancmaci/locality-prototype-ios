@@ -134,19 +134,21 @@ static NSString * kAddNewLocationSegue = @"addNewLocationSegue";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"FeedMenuCell";
+    //static NSString *CellIdentifier = @"FeedMenuCell";
     
     if( indexPath.section == 0 )
     {
-        FeedMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        //FeedMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
-        if(cell == nil )
-        {
-            //cell = [[FeedMenuTableViewCell alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, FEED_HERO_HEIGHT)];
+        //if(cell == nil )
+        //{
+            FeedMenuTableViewCell *cell = [[FeedMenuTableViewCell alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, FEED_HERO_HEIGHT)];
+        //NSLog(@"table frame? %@", NSStringFromCGRect(self.tableView.frame));
+        //    NSLog(@"cell frame? %@", NSStringFromCGRect(cell.frame));
             //cell.reuseIdentifier = CellIdentifier;
-            cell = [[FeedMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            //FeedMenuTableViewCell *cell = [[FeedMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             
-        }
+        //}
         
         [cell populateWithData:[_menuOptions objectAtIndex:indexPath.row]];
         cell.heroView.delegate = self;

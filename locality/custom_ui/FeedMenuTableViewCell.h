@@ -11,7 +11,7 @@
 
 @interface FeedMenuTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) FlexibleFeedHeaderView *heroView;
+@property (weak, nonatomic) IBOutlet FlexibleFeedHeaderView *heroView;
 
 -(void) populateWithData:(FeedLocationModel *)data;
 

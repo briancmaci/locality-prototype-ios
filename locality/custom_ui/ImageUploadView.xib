@@ -12,9 +12,15 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageUploadView">
+            <connections>
+                <outlet property="selectedPhoto" destination="Pk8-Qa-UYP" id="eMH-Lf-MRQ"/>
+                <outlet property="takePhotoView" destination="fqx-ft-8FH" id="kA6-mU-hyd"/>
+                <outlet property="uploadPhotoView" destination="ezU-SN-h2i" id="JRI-Y4-6g5"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ImageUploadView">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -46,7 +52,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="takePhotoButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="s8Z-at-KLE"/>
+                                <action selector="takePhotoButtonTapped:" destination="-1" eventType="touchUpInside" id="ZHT-Sx-K74"/>
                             </connections>
                         </button>
                     </subviews>
@@ -89,7 +95,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="uploadPhotoButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="USF-27-pyA"/>
+                                <action selector="uploadPhotoButtonTapped:" destination="-1" eventType="touchUpInside" id="NSS-qM-iFT"/>
                             </connections>
                         </button>
                     </subviews>
@@ -124,11 +130,6 @@
                 <constraint firstItem="Pk8-Qa-UYP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="y3y-2k-JSu"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="selectedPhoto" destination="Pk8-Qa-UYP" id="NzX-kX-GjM"/>
-                <outlet property="takePhotoView" destination="fqx-ft-8FH" id="9x2-fq-ErX"/>
-                <outlet property="uploadPhotoView" destination="ezU-SN-h2i" id="4LO-n9-hdr"/>
-            </connections>
             <point key="canvasLocation" x="584" y="528"/>
         </view>
     </objects>

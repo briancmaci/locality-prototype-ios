@@ -13,6 +13,10 @@
 -(id) initWithCoder:(NSCoder *)aDecoder {
     
     if( self = [super initWithCoder:aDecoder]) {
+        [self addSubview:
+         [[[NSBundle mainBundle] loadNibNamed:@"ImageUploadView"
+                                        owner:self
+                                      options:nil] objectAtIndex:0]];
         [self initView];
     }
     

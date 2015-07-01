@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedMenuTableViewCell">
+            <connections>
+                <outlet property="heroView" destination="sPG-JZ-D1F" id="Mbj-PD-BAd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="157" id="vyI-vt-dw6">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vyI-vt-dw6" id="RE9-gR-ftK">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPG-JZ-D1F" customClass="FlexibleFeedHeaderView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sPG-JZ-D1F" firstAttribute="top" secondItem="RE9-gR-ftK" secondAttribute="top" id="5lY-KR-ehw"/>
+                    <constraint firstItem="sPG-JZ-D1F" firstAttribute="leading" secondItem="RE9-gR-ftK" secondAttribute="leading" id="XNu-G2-LBY"/>
+                    <constraint firstAttribute="trailing" secondItem="sPG-JZ-D1F" secondAttribute="trailing" id="eS1-Cn-HZR"/>
+                    <constraint firstAttribute="bottom" secondItem="sPG-JZ-D1F" secondAttribute="bottom" id="lg9-o3-Zg5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="326" y="233.5"/>
+        </tableViewCell>
+    </objects>
+</document>

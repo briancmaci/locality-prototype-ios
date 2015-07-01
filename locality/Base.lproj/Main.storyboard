@@ -672,7 +672,7 @@
                                 <rect key="frame" x="0.0" y="59" width="320" height="509"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFR-5K-yMe">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFR-5K-yMe" customClass="FlexibleFeedHeaderView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -711,7 +711,7 @@
                         <outlet property="addPostButton" destination="7pz-uC-Wwn" id="kHj-GX-kzC"/>
                         <outlet property="feedPostsTable" destination="fql-3W-LOP" id="kR4-Oz-ysv"/>
                         <outlet property="flexHeaderHeight" destination="N6d-Gh-onl" id="Hte-M1-ZQN"/>
-                        <outlet property="headerHeroHolder" destination="KFR-5K-yMe" id="0Z7-qV-gmE"/>
+                        <outlet property="headerHero" destination="KFR-5K-yMe" id="aaA-5P-GEy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euL-UA-Uez" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -936,14 +936,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="FeedMenu" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedMenuCell" id="Xc1-s5-Gv6" customClass="FeedMenuTableViewCell">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xc1-s5-Gv6" id="Zkw-8M-bey">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="paS-xT-CFQ" id="ql9-jb-pe9"/>
                             <outlet property="delegate" destination="paS-xT-CFQ" id="OJt-1d-vsr"/>
@@ -1357,14 +1349,14 @@
                                     <action selector="publishPostButtonTapped:" destination="KKK-Bh-Iba" eventType="touchUpInside" id="m67-Nc-Oii"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jA2-P2-RCp" userLabel="ImageUploadView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jA2-P2-RCp" userLabel="ImageUploadView" customClass="ImageUploadView">
                                 <rect key="frame" x="0.0" y="170" width="320" height="140"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jA2-P2-RCp" secondAttribute="height" multiplier="16:7" id="X4R-ch-9Xp"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCb-Gl-eRw" userLabel="PostFromView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCb-Gl-eRw" userLabel="PostFromView" customClass="PostFromView">
                                 <rect key="frame" x="0.0" y="310" width="320" height="140"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1391,8 +1383,8 @@
                     <navigationItem key="navigationItem" id="z0h-DW-JZW"/>
                     <connections>
                         <outlet property="captionField" destination="EdP-16-wGg" id="1mt-2L-TUB"/>
-                        <outlet property="imageUploadViewContainer" destination="jA2-P2-RCp" id="oTq-Z3-1TR"/>
-                        <outlet property="postFromViewContainer" destination="vCb-Gl-eRw" id="iNR-BE-2fX"/>
+                        <outlet property="imageUploadView" destination="jA2-P2-RCp" id="DwC-bd-eK4"/>
+                        <outlet property="postFromView" destination="vCb-Gl-eRw" id="MPE-07-WuL"/>
                         <outlet property="publishPostButton" destination="ByS-wz-bSh" id="9Dx-Y6-l5B"/>
                     </connections>
                 </viewController>

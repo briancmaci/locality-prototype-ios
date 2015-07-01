@@ -12,8 +12,17 @@
 
 @implementation PostFromView
 
--(void) awakeFromNib {
-    [self initToggles];
+-(id) initWithCoder:(NSCoder *)aDecoder {
+    if( (self = [super initWithCoder:aDecoder])) {
+        
+        [self addSubview:
+         [[[NSBundle mainBundle] loadNibNamed:@"PostFromView"
+                                        owner:self
+                                      options:nil] objectAtIndex:0]];
+        
+    }
+    
+    return self;
 }
 
 -(id) awakeAfterUsingCoder:(NSCoder *)aDecoder {
@@ -27,6 +36,8 @@
 }
 
 -(void) initToggles {
+    
+    NSLog(@"init toggles");
     //from me
     [AppUtilities loadProfileImage:_postFromMeToggle.img];
     
@@ -51,13 +62,5 @@
 -(IBAction)postIncognitoTapped:(id)sender {
     [self toggleToMe:NO];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

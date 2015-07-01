@@ -61,14 +61,14 @@ static NSString * const kPostFeedCellIdentifier = @"PostFeedCellIdentifier";
 }
 
 -(void) initHeroHeader {
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FlexibleFeedHeaderView" owner:self options:nil];
-    _headerHero = [nib objectAtIndex:0];
+    //NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FlexibleFeedHeaderView" owner:self options:nil];
+    //_headerHero = [nib objectAtIndex:0];
     
-    [_headerHero setFrame:CGRectMake(0, 0, _headerHeroHolder.frame.size.width, _headerHeroHolder.frame.size.height)];
+    //[_headerHero setFrame:CGRectMake(0, 0, _headerHeroHolder.frame.size.width, _headerHeroHolder.frame.size.height)];
     [_headerHero populateWithData:_thisFeed atIndex:0 inFeedMenu:NO];
     _headerHero.delegate = self;
     
-    [_headerHeroHolder addSubview:_headerHero];
+    //[_headerHeroHolder addSubview:_headerHero];
     
     //[_headerHeroHolder setAlpha:0.2f];
     //NSLog(@"[FeedViewController:initHeader]");
@@ -89,7 +89,7 @@ static NSString * const kPostFeedCellIdentifier = @"PostFeedCellIdentifier";
 {
     _flexHeaderHeight.constant = MAX( kHeaderHeight, kHeaderHeight + (FEED_HERO_HEIGHT - kHeaderHeight) * -(_feedPostsTable.contentOffset.y)/headerExpandedOffset);
     
-    [_headerHeroHolder setNeedsUpdateConstraints];
+    [_headerHero setNeedsUpdateConstraints];
     [_headerHero updateHeaderHeight:_flexHeaderHeight.constant];
     
 }

@@ -18,11 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *captionField;
 
-@property (weak, nonatomic) IBOutlet UIView *imageUploadViewContainer;
-@property (strong, nonatomic) ImageUploadView *imageUploadView;
-
-@property (weak, nonatomic) IBOutlet UIView *postFromViewContainer;
-@property (strong, nonatomic) PostFromView *postFromView;
+@property (weak, nonatomic) IBOutlet ImageUploadView *imageUploadView;
+@property (strong, nonatomic) IBOutlet PostFromView *postFromView;
 
 @property (weak, nonatomic) IBOutlet UIButton *publishPostButton;
 @end

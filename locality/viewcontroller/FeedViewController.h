@@ -15,10 +15,10 @@
 
 @interface FeedViewController : LocalityBaseViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) FlexibleFeedHeaderView *headerHero;
+@property (weak, nonatomic) IBOutlet FlexibleFeedHeaderView *headerHero;
 @property (strong, nonatomic) IBOutlet UITableView *feedPostsTable;
 @property (strong, nonatomic) IBOutlet UIButton *addPostButton;
-@property (strong, nonatomic) IBOutlet UIView *headerHeroHolder;
+//@property (strong, nonatomic) IBOutlet UIView *headerHeroHolder;
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *flexHeaderHeight;
 //coming up

@@ -11,9 +11,18 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlexibleFeedHeaderView">
+            <connections>
+                <outlet property="bgImage" destination="Ye0-Ad-rIU" id="WTc-kb-DT6"/>
+                <outlet property="feedNameTop" destination="7im-mB-OaL" id="NGf-hk-btY"/>
+                <outlet property="flexHeaderHeight" destination="avn-Bp-SWg" id="wYM-75-om3"/>
+                <outlet property="locationLabel" destination="hO3-kb-efM" id="F0u-sg-bMK"/>
+                <outlet property="openFeedButton" destination="k2J-V1-QTv" id="vBl-QF-Kqt"/>
+                <outlet property="titleLabel" destination="3aB-Zc-4rk" id="aKH-sT-Nb2"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FlexibleFeedHeaderView">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -52,7 +61,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="openFeedTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="itl-Ge-5Qw"/>
+                                <action selector="openFeedTapped:" destination="-1" eventType="touchUpInside" id="pLU-fw-N95"/>
                             </connections>
                         </button>
                     </subviews>
@@ -85,14 +94,6 @@
                 <constraint firstAttribute="trailing" secondItem="7xX-hA-34F" secondAttribute="trailing" id="uYk-kg-JDz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="bgImage" destination="Ye0-Ad-rIU" id="6VV-IC-41Q"/>
-                <outlet property="feedNameTop" destination="7im-mB-OaL" id="K84-E8-QFx"/>
-                <outlet property="flexHeaderHeight" destination="avn-Bp-SWg" id="PI3-4O-OFj"/>
-                <outlet property="locationLabel" destination="hO3-kb-efM" id="NgR-zq-YHo"/>
-                <outlet property="openFeedButton" destination="k2J-V1-QTv" id="Uyw-Bg-RTE"/>
-                <outlet property="titleLabel" destination="3aB-Zc-4rk" id="OXJ-nM-dH4"/>
-            </connections>
             <point key="canvasLocation" x="726" y="535.5"/>
         </view>
     </objects>

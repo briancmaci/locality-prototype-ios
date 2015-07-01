@@ -12,6 +12,7 @@
 		030C41321B051EC1004F1ECE /* GoogleMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 030C41311B051EC1004F1ECE /* GoogleMapsManager.m */; };
 		030C41391B0541A5004F1ECE /* LocationRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 030C41381B0541A5004F1ECE /* LocationRangeSlider.m */; };
 		031BC92F1B1F87ED007DFCFB /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 031BC92E1B1F87ED007DFCFB /* DataManager.m */; };
+		0326EF0B1B42CCC5001BF97C /* FeedMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0326EF0A1B42CCC5001BF97C /* FeedMenuTableViewCell.xib */; };
 		032C76311B03C9A100C78CB0 /* FeedLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76301B03C9A100C78CB0 /* FeedLocationModel.m */; };
 		032C76461B03F06D00C78CB0 /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76431B03F06D00C78CB0 /* FacebookManager.m */; };
 		032C76471B03F06D00C78CB0 /* ParseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C76451B03F06D00C78CB0 /* ParseManager.m */; };
@@ -123,6 +124,7 @@
 		030C41381B0541A5004F1ECE /* LocationRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationRangeSlider.m; path = custom_ui/LocationRangeSlider.m; sourceTree = "<group>"; };
 		031BC92D1B1F87ED007DFCFB /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = manager/DataManager.h; sourceTree = "<group>"; };
 		031BC92E1B1F87ED007DFCFB /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = manager/DataManager.m; sourceTree = "<group>"; };
+		0326EF0A1B42CCC5001BF97C /* FeedMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedMenuTableViewCell.xib; path = custom_ui/FeedMenuTableViewCell.xib; sourceTree = "<group>"; };
 		032C762F1B03C9A100C78CB0 /* FeedLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedLocationModel.h; path = model/FeedLocationModel.h; sourceTree = "<group>"; };
 		032C76301B03C9A100C78CB0 /* FeedLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedLocationModel.m; path = model/FeedLocationModel.m; sourceTree = "<group>"; };
 		032C76331B03EFA100C78CB0 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 			children = (
 				03F71A731B20C0B0006F4088 /* FeedMenuTableViewCell.h */,
 				03F71A741B20C0B0006F4088 /* FeedMenuTableViewCell.m */,
+				0326EF0A1B42CCC5001BF97C /* FeedMenuTableViewCell.xib */,
 				03F71A761B20C425006F4088 /* FeedAddNewTableViewCell.h */,
 				03F71A771B20C425006F4088 /* FeedAddNewTableViewCell.m */,
 				03F71A781B20C425006F4088 /* FeedAddNewTableViewCell.xib */,
@@ -829,6 +832,7 @@
 			files = (
 				03C1BB8E1B3C761800995263 /* PostDetailHeader.xib in Resources */,
 				0353B4991B0E3C1400CE3750 /* InterstateCondBlack.ttf in Resources */,
+				0326EF0B1B42CCC5001BF97C /* FeedMenuTableViewCell.xib in Resources */,
 				036CA1CD1AFBC88F0064AB6C /* Main.storyboard in Resources */,
 				0353B4981B0E3C1400CE3750 /* InterstateCond.ttf in Resources */,
 				0353B4921B0E3C1400CE3750 /* Interstate-LightCondensed.otf in Resources */,

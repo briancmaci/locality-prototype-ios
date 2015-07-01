@@ -28,7 +28,6 @@ static NSString * const kPostFromNibName = @"PostFromView";
     
     [self initHeaderView];
     [self initImageUploadView];
-    [self initPostFromView];
     [self initCaption];
 }
 
@@ -46,16 +45,7 @@ static NSString * const kPostFromNibName = @"PostFromView";
 
 -(void) initImageUploadView {
     
-    _imageUploadView = [[[NSBundle mainBundle] loadNibNamed:kImageUploadNibName owner:self options:nil] objectAtIndex:0];
-    [_imageUploadViewContainer addSubview:_imageUploadView];
-    
     _imageUploadView.delegate = self;
-}
-
--(void) initPostFromView {
-    
-    _postFromView = [[[NSBundle mainBundle] loadNibNamed:kPostFromNibName owner:self options:nil] objectAtIndex:0];
-    [_postFromViewContainer addSubview:_postFromView];
 }
 
 - (void)startLocationServices {
@@ -67,7 +57,6 @@ static NSString * const kPostFromNibName = @"PostFromView";
     }
     
     _locationManager.delegate = self;
-    //[_locationManager startUpdatingLocation];
     [_locationManager requestWhenInUseAuthorization];
 }
 
@@ -77,7 +66,6 @@ static NSString * const kPostFromNibName = @"PostFromView";
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - ImageUploadViewDelegate Methods
@@ -156,17 +144,6 @@ static NSString * const kPostFromNibName = @"PostFromView";
                                            username:_postFromView.isAnonymous ? @"" : [UserModel sharedInstance].username
                                          userStatus:[UserModel sharedInstance].userStatus
                                           andImgUrl:_postFromView.isAnonymous ? kDefaultAvatar : [UserModel sharedInstance].profileImgUrl];
-    
-    NSLog(@"New post user created %@", newPost.user);
-//    if( !_postFromView.isAnonymous ) {
-//        newPost.username = [UserModel sharedInstance].username;
-//        newPost.profileImgUrl = [UserModel sharedInstance].profileImgUrl;
-//    }
-//    
-//    else {
-//        newPost.username = @"Anonymous";
-//        newPost.profileImgUrl = kDefaultAvatar;
-//    }
     
     newPost.postCaption = _captionField.text;
     

@@ -21,6 +21,21 @@
 }
 */
 
+-(id) initWithCoder:(NSCoder *)aDecoder {
+    
+    if( (self = [super initWithCoder:aDecoder])) {
+        [self addSubview:
+         [[[NSBundle mainBundle] loadNibNamed:@"FlexibleFeedHeaderView"
+                                        owner:self
+                                      options:nil] objectAtIndex:0]];
+        
+    }
+    
+    //NSLog(@"init with coder called");
+    
+    return self;
+}
+
 //header height
 static float deltaHeight = FEED_HERO_HEIGHT - kHeaderHeight;
 
