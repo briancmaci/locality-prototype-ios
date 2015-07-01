@@ -100,7 +100,7 @@ static NSString * const kImageUploadNibName = @"ImageUploadView";
     contentHeight += _mapBoxView.frame.size.height;
     contentHeight += _rangeSliderContainer.frame.size.height;
     contentHeight += _locationNameContainer.frame.size.height;
-    contentHeight += _imageUploadViewContainer.frame.size.height;
+    contentHeight += _imageUploadView.frame.size.height;
     contentHeight += _feedOptionsTableHeight.constant;
     contentHeight += _scrollButtonContainer.frame.size.height;
     contentHeight += 80.0f; //bottom padding
@@ -142,10 +142,6 @@ static NSString * const kImageUploadNibName = @"ImageUploadView";
 }
 
 -(void) initImageUploadView {
-    
-    _imageUploadView = [[[NSBundle mainBundle] loadNibNamed:kImageUploadNibName owner:self options:nil] objectAtIndex:0];
-    [_imageUploadViewContainer addSubview:_imageUploadView];
-    
     _imageUploadView.delegate = self;
 }
 

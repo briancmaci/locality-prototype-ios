@@ -10,10 +10,6 @@
 
 @implementation FeedAddNewTableViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
@@ -21,8 +17,6 @@
 }
 
 -(IBAction)addNewLocationTapped:(id)sender {
-    
-    //NSLog(@"Add New Location");
     
     if( [_delegate respondsToSelector:@selector(addNewLocationFeed)] ) {
         [_delegate addNewLocationFeed];

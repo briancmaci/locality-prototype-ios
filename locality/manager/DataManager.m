@@ -20,6 +20,7 @@
     
     //current location
     [UserModel sharedInstance].currentLocationFeed = [DataManager parseFeedDataIntoModel:[me objectForKey:@"currentLocation"]];
+    [UserModel sharedInstance].currentLocationFeed.isCurrentLocationFeed = YES;
     
     //pinned locations
     NSMutableArray *pinnedFeedArrayRaw = [me objectForKey:@"pinnedLocations"];
@@ -87,6 +88,29 @@
     return modelsArray;
 }
 
++(NSMutableArray *)parseCommentFeedIntoModelArray:(NSArray *)rawComments {
+    
+    NSMutableArray *modelsArray = [[NSMutableArray alloc] init];
+    PFObject *comment;
+    
+    for( int i = 0; i < [rawComments count]; i++ ) {
+        
+        CommentModel *c = [[CommentModel alloc] init];
+        comment = (PFObject *)[rawComments objectAtIndex:i];
+        c.createdDate = comment[@"createdAt"];
+        c.user = [DataManager parseDictionaryIntoPostUser:comment[kCommentUser]];
+        
+        c.commentId = comment.objectId;
+        c.commentText = comment[kCommentText];
+        
+        NSLog(@"Comment added: %@", c.commentText);
+        
+        [modelsArray addObject:c];
+    }
+    
+    return modelsArray;
+}
+
 +(BOOL)myLikeStatusWithArray:(NSArray *)likers {
     
     if( !likers || ![likers count] ) return NO;
@@ -115,6 +139,8 @@
 }
 
 +(NSDictionary *) parsePostUserIntoDictionary:(PostUser *)user {
+    
+    NSLog(@" User ID? %@", user.userId);
     return @{ kPostUserId : user.userId,
               kPostUserStatus : user.userStatus,
               kPostProfileImgUrl : user.profileImageUrl,
@@ -140,6 +166,16 @@
     newPost[kPostImgUrl] = post.postImgUrl;
     
     return newPost;
+}
+
++(PFObject *)parseCommentModelIntoParseObject:(CommentModel *)comment {
+    
+    PFObject *newComment = [[PFObject alloc] initWithClassName:kDBComment];
+    newComment[kCommentUser] = [DataManager parsePostUserIntoDictionary:comment.user];
+    newComment[kCommentText] = comment.commentText;
+    newComment[kCommentPostId] = comment.postId;
+    
+    return newComment;
 }
 
 @end

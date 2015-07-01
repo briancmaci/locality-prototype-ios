@@ -18,6 +18,7 @@
                 <outlet property="flexHeaderHeight" destination="avn-Bp-SWg" id="wYM-75-om3"/>
                 <outlet property="locationLabel" destination="hO3-kb-efM" id="F0u-sg-bMK"/>
                 <outlet property="openFeedButton" destination="k2J-V1-QTv" id="vBl-QF-Kqt"/>
+                <outlet property="shadowOverlay" destination="2SI-y9-qgT" id="HHp-wO-GfM"/>
                 <outlet property="titleLabel" destination="3aB-Zc-4rk" id="aKH-sT-Nb2"/>
             </connections>
         </placeholder>

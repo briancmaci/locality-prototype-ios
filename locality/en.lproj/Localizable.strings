@@ -26,3 +26,6 @@
 /* About */
 "AboutCopy" = "Locality is a news, entertainment and information\n\ngathering application based on your whereabouts.\n\nIt help you make dessicions and keeps you informed\n\nno matter where you are by adding new locations.";
 "AboutShareLabel" = "Help get the word out about Locality";
+
+/* Post Detail */
+"NoCommentsLabel" = "There are no comments for this post yet.";

@@ -26,6 +26,8 @@
         _name = name;
         _location = @"";
         _imgUrl = DEFAULT_FEED_IMAGE;
+        
+        _isCurrentLocationFeed = NO;
     }
     
     return self;

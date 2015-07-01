@@ -210,6 +210,28 @@
     
 }
 
++(void) getCommentsForPostWithId:(NSString *)postId success:(successBlock)successBlock failure:(failureBlock)failureBlock {
+    
+    PFQuery *commentsQuery = [PFQuery queryWithClassName:kDBComment];
+    
+    [commentsQuery whereKey:@"postId" equalTo:postId];
+    
+    //set limit temporarily now
+    [commentsQuery setLimit:10];
+    
+    [commentsQuery findObjectsInBackgroundWithBlock:^(NSArray *comments, NSError *error) {
+        
+        if( !error ) {
+            return successBlock(comments);
+        }
+        
+        else {
+            NSLog(@"Comments Query Error: %@", [error userInfo]);
+            return failureBlock(error);
+        }
+    }];
+}
+
 +(void) updateCurrentFeed:(FeedLocationModel *)currentFeed success:(successBlock)successBlock failure:(failureBlock)failureBlock {
     
     //create parse-safe object
@@ -266,6 +288,20 @@
     [newPost saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             successBlock(nil);
+        } else {
+            failureBlock(error);
+        }
+    }];
+}
+
++(void) addNewComment:(CommentModel *)comment success:(successBlock)successBlock failure:(failureBlock)failureBlock {
+    
+    PFObject *newComment = [DataManager parseCommentModelIntoParseObject:comment];
+    
+    [newComment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            successBlock(nil);
+            NSLog(@"Comment Posted");
         } else {
             failureBlock(error);
         }

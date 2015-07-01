@@ -41,8 +41,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *locationName;
 @property (strong, nonatomic) IBOutlet UIView *locationNameContainer;
 
-@property (strong, nonatomic) ImageUploadView *imageUploadView;
-@property (weak, nonatomic) IBOutlet UIView *imageUploadViewContainer;
+@property (weak, nonatomic) IBOutlet ImageUploadView *imageUploadView;
 
 @property (weak, nonatomic) IBOutlet UIView *scrollButtonContainer;
 

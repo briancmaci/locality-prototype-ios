@@ -31,7 +31,7 @@ static NSString * const kPostFeedCellIdentifier = @"PostFeedCellIdentifier";
     [self initTableView];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     
     [self loadFeedPosts];
 }

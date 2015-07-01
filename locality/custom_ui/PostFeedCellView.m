@@ -45,13 +45,12 @@ static float const kDefaultCaptionHeight = 32.0f;
     
     _thisPost = thisModel;
     
-    [AppUtilities loadFeedPostProfileImage:_profileImage fromURL:thisModel.user.profileImageUrl];
+    [_postUser initWithImage:_thisPost.user.profileImageUrl username:_thisPost.user.username userStatus:_thisPost.user.userStatus];
+    
     _postCaption.text = thisModel.postCaption;
-    _usernameLabel.text = [thisModel.user.username isEqualToString:@""] ? kAnonymousUsername : thisModel.user.username;
+    [_postCaption sizeToFit];
     
     [_likeButton setSelected:_thisPost.isLikedByMe];
-    
-    [_postCaption sizeToFit];
 }
 
 #pragma mark - CTAs

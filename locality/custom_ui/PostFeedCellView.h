@@ -7,18 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ProfileImageView.h"
 #import "LikePostButton.h"
 #import "CommentButton.h"
 #import "PostModel.h"
 #import "PostFilterView.h"
+#import "PostUserInfoView.h"
 
 @interface PostFeedCellView : UIView
 
-@property (weak, nonatomic) IBOutlet ProfileImageView *profileImage;
-@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *userStatusLabel;
-
+@property (weak, nonatomic) IBOutlet PostUserInfoView *postUser;
 @property (weak, nonatomic) IBOutlet UILabel *postCaption;
 
 @property (weak, nonatomic) IBOutlet LikePostButton *likeButton;

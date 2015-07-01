@@ -96,6 +96,9 @@
 #define kIconFeedSettings @"icon_settings"
 #define kIconFeedMenu @"icon_menu"
 
+/* PostDetailViewController */
+#define kPostDetailFooterHeight 84.0f
+
 /* CURRENT FEED DEFAULTS */
 #define DEFAULT_FEED_IMAGE @"feed_default_hero"
 #define FEED_HERO_HEIGHT 157.0f //adjusted 20px for the status bar

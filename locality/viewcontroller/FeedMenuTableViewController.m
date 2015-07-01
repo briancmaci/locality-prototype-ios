@@ -21,7 +21,12 @@
 
 @implementation FeedMenuTableViewController
 
-static NSString * kAddNewLocationSegue = @"addNewLocationSegue";
+static NSString * const kAddNewLocationSegue = @"addNewLocationSegue";
+
+static NSString * const kFeedMenuCellNibName = @"FeedMenuTableViewCell";
+static NSString * const kFeedCellId = @"FeedMenuCell";
+
+static NSString * const kAddNewFeedCellNibName = @"FeedAddNewTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,7 +65,7 @@ static NSString * kAddNewLocationSegue = @"addNewLocationSegue";
 
 -(void) initAddNewButtonCell {
     
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FeedAddNewTableViewCell" owner:self options:nil];
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:kAddNewFeedCellNibName owner:self options:nil];
     _addNewCell = [nib objectAtIndex:0];
     _addNewCell.delegate = self;
 }
@@ -134,21 +139,16 @@ static NSString * kAddNewLocationSegue = @"addNewLocationSegue";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //static NSString *CellIdentifier = @"FeedMenuCell";
     
     if( indexPath.section == 0 )
     {
-        //FeedMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        FeedMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kFeedCellId];
         
-        //if(cell == nil )
-        //{
-            FeedMenuTableViewCell *cell = [[FeedMenuTableViewCell alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, FEED_HERO_HEIGHT)];
-        //NSLog(@"table frame? %@", NSStringFromCGRect(self.tableView.frame));
-        //    NSLog(@"cell frame? %@", NSStringFromCGRect(cell.frame));
-            //cell.reuseIdentifier = CellIdentifier;
-            //FeedMenuTableViewCell *cell = [[FeedMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            
-        //}
+        if(cell == nil )
+        {
+            [tableView registerNib:[UINib nibWithNibName:kFeedMenuCellNibName bundle:nil] forCellReuseIdentifier:kFeedCellId];
+            cell = [tableView dequeueReusableCellWithIdentifier:kFeedCellId];
+        }
         
         [cell populateWithData:[_menuOptions objectAtIndex:indexPath.row]];
         cell.heroView.delegate = self;

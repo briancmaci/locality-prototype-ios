@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "FeedLocationModel.h"
 #import "PostModel.h"
+#import "CommentModel.h"
 
 @interface DataManager : NSObject
 
@@ -18,6 +19,8 @@
 +(NSDictionary *) parseFeedModelIntoDictionary:(FeedLocationModel *)feed;
 +(NSDictionary *) parsePostUserIntoDictionary:(PostUser *)user;
 +(PFObject *)parsePostModelIntoParseObject:(PostModel *)post;
++(PFObject *)parseCommentModelIntoParseObject:(CommentModel *)comment;
 +(NSMutableArray *)parsePostFeedIntoModelArray:(NSArray *)rawPosts;
++(NSMutableArray *)parseCommentFeedIntoModelArray:(NSArray *)rawComments;
 
 @end

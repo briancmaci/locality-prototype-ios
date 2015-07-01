@@ -30,9 +30,6 @@
                                       options:nil] objectAtIndex:0]];
         
     }
-    
-    //NSLog(@"init with coder called");
-    
     return self;
 }
 
@@ -67,6 +64,7 @@ static float deltaHeight = FEED_HERO_HEIGHT - kHeaderHeight;
     
     else {
         [self.bgImage setImage:[UIImage imageNamed:DEFAULT_FEED_IMAGE]];
+        [self.shadowOverlay setHidden:YES];
     }
 }
 

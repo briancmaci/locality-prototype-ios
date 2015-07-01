@@ -40,6 +40,9 @@
 @property (nonatomic) BOOL pushEnabled;
 @property (nonatomic) BOOL importantEnabled;
 
+//for use visually and programatically
+@property (nonatomic) BOOL isCurrentLocationFeed;
+
 -(id) initWithLocation:(CLLocationCoordinate2D)center andName:(NSString *)name;
 
 @end

@@ -9,8 +9,6 @@
             <string>InterstateLightCondensed</string>
             <string>InterstateLightCondensed</string>
             <string>InterstateLightCondensed</string>
-            <string>InterstateLightCondensed</string>
-            <string>InterstateLightCondensed</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -20,33 +18,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dwx-3E-7Ds" userLabel="profileImage" customClass="ProfileImageView">
-                    <rect key="frame" x="20" y="25" width="35" height="35"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfg-Yp-k4e" userLabel="PostUserInfoVew" customClass="PostUserInfoView">
+                    <rect key="frame" x="0.0" y="25" width="230" height="35"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="35" id="1L4-Eh-HGt"/>
-                        <constraint firstAttribute="width" constant="35" id="IVv-hR-Ikr"/>
+                        <constraint firstAttribute="height" constant="35" id="cmV-oT-TIE"/>
+                        <constraint firstAttribute="width" constant="230" id="pWe-Fm-ij1"/>
                     </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anonymous" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeI-MW-9nR" userLabel="UserNameLabel">
-                    <rect key="frame" x="62" y="27" width="168" height="16"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="16" id="Uqz-ic-fLZ"/>
-                        <constraint firstAttribute="width" constant="168" id="hnm-dy-xKQ"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="13"/>
-                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contributor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWd-0b-l9s" userLabel="UserStatusLabel">
-                    <rect key="frame" x="62" y="41" width="168" height="16"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="16" id="beN-ny-s67"/>
-                        <constraint firstAttribute="width" constant="168" id="mdB-gf-5wE"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="10"/>
-                    <color key="textColor" red="0.4392156862745098" green="0.49019607843137253" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jl-Zs-UJm" userLabel="FilterView" customClass="PostFilterView">
                     <rect key="frame" x="252" y="35" width="44" height="16"/>
                     <subviews>
@@ -129,23 +108,19 @@
             <constraints>
                 <constraint firstItem="Rcm-P2-V6T" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1Sb-P5-9e8"/>
                 <constraint firstAttribute="trailing" secondItem="5jl-Zs-UJm" secondAttribute="trailing" constant="24" id="3K7-HZ-nEY"/>
-                <constraint firstItem="UeI-MW-9nR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="27" id="71p-30-8lJ"/>
                 <constraint firstAttribute="bottom" secondItem="Nif-Hc-ECu" secondAttribute="bottom" constant="18" id="9hH-KV-5dK"/>
                 <constraint firstAttribute="bottom" secondItem="Rcm-P2-V6T" secondAttribute="bottom" id="Aup-h8-d7P"/>
                 <constraint firstAttribute="trailing" secondItem="fX2-hx-x95" secondAttribute="trailing" constant="20" id="FFa-CK-BdU"/>
                 <constraint firstItem="5jl-Zs-UJm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="FWZ-Jy-Ws3"/>
-                <constraint firstItem="fX2-hx-x95" firstAttribute="top" secondItem="dwx-3E-7Ds" secondAttribute="bottom" constant="12" id="FYx-yJ-NCY"/>
-                <constraint firstItem="dwx-3E-7Ds" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="GBn-Lh-qa6"/>
-                <constraint firstItem="UeI-MW-9nR" firstAttribute="leading" secondItem="dwx-3E-7Ds" secondAttribute="trailing" constant="7" id="Mqu-Ft-Xkf"/>
                 <constraint firstItem="2Cq-4i-gb8" firstAttribute="leading" secondItem="Nif-Hc-ECu" secondAttribute="trailing" constant="2" id="QXN-GD-5jj"/>
                 <constraint firstItem="Nif-Hc-ECu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="SNC-sZ-Qqx"/>
                 <constraint firstItem="fX2-hx-x95" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="VH5-wB-ENQ"/>
                 <constraint firstAttribute="bottom" secondItem="2Cq-4i-gb8" secondAttribute="bottom" constant="24" id="VjA-Zb-JJj"/>
-                <constraint firstItem="dwx-3E-7Ds" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="deG-Yq-gSh"/>
                 <constraint firstItem="2Cq-4i-gb8" firstAttribute="top" secondItem="fX2-hx-x95" secondAttribute="bottom" constant="14" id="ebw-Mq-XD8"/>
-                <constraint firstItem="wWd-0b-l9s" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="41" id="jKF-u0-Q7W"/>
-                <constraint firstItem="wWd-0b-l9s" firstAttribute="leading" secondItem="dwx-3E-7Ds" secondAttribute="trailing" constant="7" id="jPc-GE-doA"/>
+                <constraint firstItem="dfg-Yp-k4e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="h2v-aM-PFp"/>
+                <constraint firstItem="dfg-Yp-k4e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="hA4-4i-sa9"/>
                 <constraint firstAttribute="trailing" secondItem="Rcm-P2-V6T" secondAttribute="trailing" id="mTK-JQ-WtE"/>
+                <constraint firstItem="fX2-hx-x95" firstAttribute="top" secondItem="dfg-Yp-k4e" secondAttribute="bottom" constant="12" id="vBP-VB-waG"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -154,9 +129,7 @@
                 <outlet property="likeButton" destination="Nif-Hc-ECu" id="YOE-gm-lA2"/>
                 <outlet property="pinline" destination="Rcm-P2-V6T" id="S94-R8-890"/>
                 <outlet property="postCaption" destination="fX2-hx-x95" id="dFy-Bg-pxk"/>
-                <outlet property="profileImage" destination="dwx-3E-7Ds" id="qYE-Vc-qlV"/>
-                <outlet property="userStatusLabel" destination="wWd-0b-l9s" id="cQq-og-QQ9"/>
-                <outlet property="usernameLabel" destination="UeI-MW-9nR" id="2RF-Df-TPJ"/>
+                <outlet property="postUser" destination="dfg-Yp-k4e" id="o2p-9u-Ldh"/>
             </connections>
             <point key="canvasLocation" x="726" y="343"/>
         </view>

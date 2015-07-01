@@ -12,6 +12,7 @@
 #import "PostModel.h"
 #import "SortByModel.h"
 #import "CallbackManager.h"
+#import "CommentModel.h"
 
 @interface ParseManager : CallbackManager
 
@@ -27,11 +28,13 @@
 //queries
 +(void) isValidUsername:(NSString *)username success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 +(void) getPostsWithinRange:(float)rangeInFeet atCoordinate:(CLLocationCoordinate2D)center sortedBy:(SortByType)sortByType success:(successBlock)successBlock failure:(failureBlock)failureBlock;
++(void) getCommentsForPostWithId:(NSString *)postId success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 
 //posts
 +(void) updateCurrentFeed:(FeedLocationModel *)currentFeed success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 +(void) addNewPinnedLocation:(FeedLocationModel *)pinnedFeed success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 +(void) addNewPost:(PostModel *)post success:(successBlock)successBlock failure:(failureBlock)failureBlock;
++(void) addNewComment:(CommentModel *)comment success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 
 //likes
 +(void) likePost:(NSString *)postId success:(successBlock)successBlock failure:(failureBlock)failureBlock;

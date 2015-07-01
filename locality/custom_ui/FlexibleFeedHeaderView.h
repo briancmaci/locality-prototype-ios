@@ -20,15 +20,9 @@
 
 @interface FlexibleFeedHeaderView : LocalityHeaderView
 
-//@property (weak, nonatomic) id <FlexibleFeedHeaderDelegate> delegate;
-
-//@property (weak, nonatomic) IBOutlet UIButton *menuButton;
-//@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIButton *openFeedButton;
-//@property (weak, nonatomic) IBOutlet UIImageView *heroImage;
-//@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-
+@property (weak, nonatomic) IBOutlet UIImageView *shadowOverlay;
 
 @property (strong, nonatomic) FeedLocationModel *model;
 @property (nonatomic) int feedIndex;

@@ -11,9 +11,14 @@
 
 @interface CommentModel : NSObject
 
+#define kCommentText @"commentText"
+#define kCommentPostId @"postId"
+#define kCommentUser @"user"
+
 @property (strong, nonatomic) NSString *postId;
 @property (strong, nonatomic) NSString *commentId;
 @property (strong, nonatomic) NSString *commentText;
 @property (strong, nonatomic) PostUser *user;
+@property (strong, nonatomic) NSDate *createdDate;
 
 @end
