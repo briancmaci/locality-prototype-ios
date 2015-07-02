@@ -8,10 +8,11 @@
 
 #import "CommentFeedCell.h"
 #import "config.h"
+#import "UIColor+LocalityColor.h"
 
 @implementation CommentFeedCell
 
-static float const kDefaultHeight = 108.0f;
+static float const kDefaultHeight = 124.0f;
 static float const kDefaultCommentHeight = 44.0f;
 
 - (id)initWithModel:(CommentModel *)model{
@@ -26,7 +27,7 @@ static float const kDefaultCommentHeight = 44.0f;
         [self addSubview:content];
         //size content with caption
         [self populateWithData];
-        [self setBackgroundColor:[UIColor clearColor]];
+        [self setBackgroundColor:[UIColor commentBackgroundColor]];
     }
     
     
@@ -58,5 +59,9 @@ static float const kDefaultCommentHeight = 44.0f;
                                                 attributes:attr
                                                    context:nil];
     return kDefaultHeight - kDefaultCommentHeight + ceilf(labelBounds.size.height);
+}
+
+-(void) popBackground {
+    [self setBackgroundColor:[UIColor whiteColor]];
 }
 @end

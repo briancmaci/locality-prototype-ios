@@ -22,6 +22,8 @@
 
 + (UIColor *)mapCircleColor;
 
++ (UIColor *)commentBackgroundColor;
+
 
 
 @end

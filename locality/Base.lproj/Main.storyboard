@@ -965,7 +965,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="108" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pzV-pV-lYL">
                                 <rect key="frame" x="0.0" y="164" width="320" height="320"/>
-                                <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="11" maxX="0.0" maxY="0.0"/>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="post_comment_header_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Z90-ZJ-guq">
                                 <rect key="frame" x="0.0" y="0.0" width="312" height="163"/>
@@ -1026,7 +1027,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="s6l-IE-YD3" firstAttribute="top" secondItem="oJZ-20-TuR" secondAttribute="bottom" constant="39" id="6wz-NY-2xt"/>
                             <constraint firstItem="pzV-pV-lYL" firstAttribute="centerY" secondItem="LwZ-Om-Ndo" secondAttribute="centerY" id="Dfx-Rn-j59"/>

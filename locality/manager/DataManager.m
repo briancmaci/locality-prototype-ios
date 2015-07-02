@@ -103,8 +103,6 @@
         c.commentId = comment.objectId;
         c.commentText = comment[kCommentText];
         
-        NSLog(@"Comment added: %@", c.commentText);
-        
         [modelsArray addObject:c];
     }
     
@@ -140,7 +138,6 @@
 
 +(NSDictionary *) parsePostUserIntoDictionary:(PostUser *)user {
     
-    NSLog(@" User ID? %@", user.userId);
     return @{ kPostUserId : user.userId,
               kPostUserStatus : user.userStatus,
               kPostProfileImgUrl : user.profileImageUrl,

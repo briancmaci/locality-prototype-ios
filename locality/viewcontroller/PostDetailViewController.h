@@ -27,5 +27,6 @@
 @property (strong, nonatomic) NSMutableArray *postComments;
 
 @property (strong, nonatomic) AddCommentCell *addCommentCell;
+@property (strong, nonatomic) CommentFeedCell *sizingCell;
 @property (nonatomic) BOOL isAddingComment;
 @end

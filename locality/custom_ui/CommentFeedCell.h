@@ -21,4 +21,6 @@
 -(id)initWithModel:(CommentModel *)comment;
 -(float) getViewHeight:(NSString *)txt;
 
+-(void) popBackground;
+
 @end

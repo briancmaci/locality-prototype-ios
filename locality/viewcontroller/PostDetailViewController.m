@@ -83,11 +83,23 @@ static NSString * const kCommentCellId = @"CommentFeedCell";
         _postComments = [DataManager parseCommentFeedIntoModelArray:response];
         [_commentsTable reloadData];
         
+        //set table bottom
+        [self scrollToBottomOfTableViewWithNewComment:NO animated:NO];
+        
         //check for empty
         [_noCommentsLabel setHidden:[_postComments count]];
     } failure:^(NSError *error) {
         //NSLog(@"Comments Get Fail: %@", [error localizedDescription]);
     }];
+}
+
+#pragma mark - Custom Methods
+
+-(void)scrollToBottomOfTableViewWithNewComment:(BOOL)addNewShowing animated:(BOOL)animated {
+    [_commentsTable scrollRectToVisible:CGRectMake(0,
+                                                   [self tableHeight] + (addNewShowing ? _addCommentCell.bounds.size.height : 0 ) - _commentsTable.bounds.size.height,
+                                                   _commentsTable.bounds.size.width,
+                                                   _commentsTable.bounds.size.height) animated:animated];
 }
 
 #pragma mark - TableViewDelegate
@@ -110,14 +122,13 @@ static NSString * const kCommentCellId = @"CommentFeedCell";
 }
 
 - (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
-    static CommentFeedCell *sizingCell = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sizingCell = [[CommentFeedCell alloc] initWithModel:[_postComments objectAtIndex:0]];
+        _sizingCell = [[CommentFeedCell alloc] initWithModel:[_postComments objectAtIndex:0]];
     });
     CommentModel *c = [_postComments objectAtIndex:indexPath.row];
     
-    return [sizingCell getViewHeight:c.commentText];
+    return [_sizingCell getViewHeight:c.commentText];
 }
 
 - (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
@@ -132,6 +143,10 @@ static NSString * const kCommentCellId = @"CommentFeedCell";
 - (CommentFeedCell *)basicCellAtIndexPath:(NSIndexPath *)indexPath {
     
     CommentFeedCell *cell = [[CommentFeedCell alloc] initWithModel:[_postComments objectAtIndex:indexPath.row]];
+    if( indexPath.row == 0) {
+        [cell.pinline setHidden:YES];
+    }
+    else [cell.pinline setHidden:NO];
     return cell;
 }
 
@@ -157,20 +172,23 @@ static NSString * const kCommentCellId = @"CommentFeedCell";
 }
 
 -(void) addNewCommentCell {
-    
     [_noCommentsLabel setHidden:YES];
     
     _isAddingComment = YES;
     
+    //move table to bottom
+    //[self scrollToBottomOfTableViewWithNewComment:YES animated:YES];
+    //[_commentsTable setContentOffset:_commentsTable.contentOffset animated:NO];
+    [_commentsTable setContentOffset:CGPointMake( 0, [self tableHeight] - kStatusBarHeight )];
+    
     //activate cell
-    [_addCommentCell activate];
     [_commentsTable beginUpdates];
+    [_addCommentCell activate];
     NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:0 inSection:1];
     [_commentsTable insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationBottom];
     [_commentsTable endUpdates];
     
-    //move table to bottom
-    [_commentsTable setContentOffset:CGPointMake(0, _commentsTable.contentSize.height) animated:YES];
+    
 }
 
 #pragma mark - AddCommentDelegate
@@ -188,7 +206,7 @@ static NSString * const kCommentCellId = @"CommentFeedCell";
                                              andImgUrl:[UserModel sharedInstance].profileImgUrl];
     
     [ParseManager addNewComment:newComment success:^(id response) {
-        NSLog(@"Comment posted!");
+        //NSLog(@"Comment posted!");
         
         [self pushNewCommentToTable:newComment];
     } failure:^(NSError *error) {
@@ -199,30 +217,45 @@ static NSString * const kCommentCellId = @"CommentFeedCell";
 -(void) pushNewCommentToTable:(CommentModel *)newComment {
     _isAddingComment = NO;
     
-    [_postComments addObject:newComment];
-    //activate cell
-    [_commentsTable beginUpdates];
-    NSIndexPath *addNewIndexPath = [NSIndexPath indexPathForRow:0 inSection:1];
-    NSIndexPath *newCommentPath = [NSIndexPath indexPathForRow:[_postComments count] - 1 inSection:0];
-    [_commentsTable deleteRowsAtIndexPaths:[NSArray arrayWithObject:addNewIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-    [_commentsTable insertRowsAtIndexPaths:[NSArray arrayWithObject:newCommentPath] withRowAnimation:UITableViewRowAnimationBottom];
-    [_commentsTable endUpdates];
-    
     [_addCommentCell.commentField resignFirstResponder];
     
-    //move table to bottom
-    //[_commentsTable setContentOffset:CGPointMake(0, _commentsTable.contentSize.height) animated:YES];
+    //remove addNewComment first.
+    [CATransaction begin];
+    [_commentsTable beginUpdates];
     
+    [CATransaction setCompletionBlock:^{
+        //new comment push
+        [_postComments addObject:newComment];
+        NSIndexPath *newCommentPath = [NSIndexPath indexPathForRow:[_postComments count] - 1 inSection:0];
+        
+        [_commentsTable insertRowsAtIndexPaths:[NSArray arrayWithObject:newCommentPath] withRowAnimation:UITableViewRowAnimationLeft];
+        
+        //animate background
+        CommentFeedCell *c = (CommentFeedCell *)[_commentsTable cellForRowAtIndexPath:newCommentPath];
+        [c popBackground];
+        
+        [self scrollToBottomOfTableViewWithNewComment:NO animated:YES];
+        _commentsTable.scrollEnabled = YES;
+        
+    }];
+    
+    NSIndexPath *addNewIndexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [_commentsTable deleteRowsAtIndexPaths:[NSArray arrayWithObject:addNewIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [_commentsTable endUpdates];
+    [CATransaction commit];
 }
 
-/*
-#pragma mark - Navigation
+-(float) tableHeight {
+    float height = 0;
+    CommentModel *c;
+    
+    for( int i = 0; i < [_postComments count]; i++ ) {
+        c = [_postComments objectAtIndex:i];
+        height += [_sizingCell getViewHeight:c.commentText];
+    }
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return height;
 }
-*/
+
 
 @end
