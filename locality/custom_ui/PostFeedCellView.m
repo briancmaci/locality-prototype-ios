@@ -16,6 +16,7 @@
 
 static float const kDefaultHeight = 166.0f;
 static float const kDefaultCaptionHeight = 32.0f;
+static float const kCaptionLineSpacing = 3.0f;
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -27,16 +28,17 @@ static float const kDefaultCaptionHeight = 32.0f;
 
 -(float) getViewHeight:(NSString *)caption {
     
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:caption];
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    [style setLineSpacing:kCaptionLineSpacing];
+    [attributedString addAttribute:NSParagraphStyleAttributeName
+                             value:style
+                             range:NSMakeRange(0, [caption length])];
+    
     CGSize maximumLabelSize = CGSizeMake(_postCaption.frame.size.width, MAXFLOAT);
     
-    NSStringDrawingOptions options = NSStringDrawingTruncatesLastVisibleLine |
-    NSStringDrawingUsesLineFragmentOrigin;
+    CGRect labelBounds = [attributedString boundingRectWithSize:maximumLabelSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
     
-    NSDictionary *attr = @{NSFontAttributeName: _postCaption.font };
-    CGRect labelBounds = [caption boundingRectWithSize:maximumLabelSize
-                                                             options:options
-                                                          attributes:attr
-                                                             context:nil];
     
     return kDefaultHeight - kDefaultCaptionHeight + ceilf(labelBounds.size.height);
 }
@@ -47,10 +49,25 @@ static float const kDefaultCaptionHeight = 32.0f;
     
     [_postUser initWithImage:_thisPost.user.profileImageUrl username:_thisPost.user.username userStatus:_thisPost.user.userStatus];
     
-    _postCaption.text = thisModel.postCaption;
+    [self setAttributedCaptionText];
+    
     [_postCaption sizeToFit];
     
     [_likeButton setSelected:_thisPost.isLikedByMe];
+}
+
+-(void) setAttributedCaptionText {
+    
+    _postCaption.lineBreakMode = NSLineBreakByWordWrapping;
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:_thisPost.postCaption];
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    [style setLineSpacing:kCaptionLineSpacing];
+    [attributedString addAttribute:NSParagraphStyleAttributeName
+                             value:style
+                             range:NSMakeRange(0, [_thisPost.postCaption length])];
+    
+    _postCaption.attributedText = attributedString;
 }
 
 #pragma mark - CTAs
