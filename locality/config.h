@@ -54,6 +54,7 @@
 /* Storyboard IDs */
 #define kLeftMenuStoryboardId @"leftMenuVC"
 #define kLoginStoryboardId @"loginVC"
+#define kLoginLandingStoryboardId @"loginLandingVC"
 #define kCurrentFeedInitStoryboardId @"currentFeedInitVC"
 #define kCurrentFeedStoryboardId @"mainFeedVC"
 #define kFeedMenuStoryboardId @"feedMenuVC"

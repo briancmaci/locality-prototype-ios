@@ -11,7 +11,10 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_landing" translatesAutoresizingMaskIntoConstraints="NO" id="0r5-Yu-c8r">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_bg_color" translatesAutoresizingMaskIntoConstraints="NO" id="0r5-Yu-c8r">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_bg_contour_lines" translatesAutoresizingMaskIntoConstraints="NO" id="rLG-YY-UdW">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Locality. All rights reserved." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
@@ -21,7 +24,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landing_locality" translatesAutoresizingMaskIntoConstraints="NO" id="hXc-En-hd7">
-                    <rect key="frame" x="157" y="202" width="167" height="76"/>
+                    <rect key="frame" x="157" y="190" width="167" height="76"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="167" id="Fuy-dy-KhT"/>
                         <constraint firstAttribute="height" constant="76" id="yf5-DE-Ju0"/>
@@ -31,22 +34,33 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="0r5-Yu-c8r" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BIm-ur-U3g"/>
+                <constraint firstItem="hXc-En-hd7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="190" id="Bns-s5-exB"/>
                 <constraint firstAttribute="centerY" secondItem="hXc-En-hd7" secondAttribute="centerY" id="IZd-HI-fY1"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="8" id="Kzo-t9-V3l"/>
                 <constraint firstAttribute="centerX" secondItem="hXc-En-hd7" secondAttribute="centerX" constant="-0.5" id="LkU-hI-RZq"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
+                <constraint firstItem="rLG-YY-UdW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="XPU-F7-S3B"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstItem="rLG-YY-UdW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cdA-Yj-fHo"/>
                 <constraint firstAttribute="trailing" secondItem="0r5-Yu-c8r" secondAttribute="trailing" id="izL-m0-0Wf"/>
                 <constraint firstAttribute="bottom" secondItem="0r5-Yu-c8r" secondAttribute="bottom" id="rn4-fr-TZe"/>
+                <constraint firstAttribute="trailing" secondItem="rLG-YY-UdW" secondAttribute="trailing" id="t8V-x9-Ipc"/>
+                <constraint firstAttribute="bottom" secondItem="rLG-YY-UdW" secondAttribute="bottom" id="u5U-ND-zL4"/>
                 <constraint firstItem="0r5-Yu-c8r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uOv-FT-TrH"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="IZd-HI-fY1"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
     <resources>
-        <image name="bg_landing" width="375" height="667"/>
         <image name="landing_locality" width="167" height="76"/>
+        <image name="launch_bg_color" width="320" height="568"/>
+        <image name="launch_bg_contour_lines" width="320" height="568"/>
     </resources>
 </document>

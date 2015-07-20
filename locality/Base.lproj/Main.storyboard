@@ -26,9 +26,75 @@
             <string>InterstateLightCondensed</string>
             <string>InterstateLightCondensed</string>
             <string>InterstateLightCondensed</string>
+            <string>InterstateLightCondensed</string>
         </mutableArray>
     </customFonts>
     <scenes>
+        <!--Locality Landing View Controller-->
+        <scene sceneID="wdG-zj-BVP">
+            <objects>
+                <viewController storyboardIdentifier="loginLandingVC" id="I4y-26-Pdw" customClass="LocalityLandingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bhs-Et-0u5"/>
+                        <viewControllerLayoutGuide type="bottom" id="rGs-io-neL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eCW-f2-WmL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_bg_color" translatesAutoresizingMaskIntoConstraints="NO" id="kiZ-CN-KHL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_bg_contour_lines" translatesAutoresizingMaskIntoConstraints="NO" id="geV-qL-7P0">
+                                <rect key="frame" x="-20" y="-20" width="360" height="608"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKb-Xm-k3J" userLabel="LogoView">
+                                <rect key="frame" x="97" y="190" width="127" height="74"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Locality" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x87-Of-mkF">
+                                        <rect key="frame" x="35" y="12" width="92" height="62"/>
+                                        <fontDescription key="fontDescription" name="InterstateLightCondensed" family="InterstateLightCondensed" pointSize="31"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_locality_landing" translatesAutoresizingMaskIntoConstraints="NO" id="gft-vu-a1W">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="65"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="b5O-i4-Lco"/>
+                                    <constraint firstAttribute="height" constant="74" id="qIM-S7-Fkm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="geV-qL-7P0" secondAttribute="bottom" constant="-20" id="0XH-FD-JiF"/>
+                            <constraint firstItem="geV-qL-7P0" firstAttribute="leading" secondItem="eCW-f2-WmL" secondAttribute="leading" constant="-20" id="8TU-vw-hvi"/>
+                            <constraint firstItem="rGs-io-neL" firstAttribute="top" secondItem="kiZ-CN-KHL" secondAttribute="bottom" id="FEk-bm-IG2"/>
+                            <constraint firstItem="geV-qL-7P0" firstAttribute="top" secondItem="eCW-f2-WmL" secondAttribute="top" constant="-20" id="Ivf-GI-Gzj"/>
+                            <constraint firstAttribute="trailing" secondItem="kiZ-CN-KHL" secondAttribute="trailing" id="Oir-fj-3C7"/>
+                            <constraint firstItem="GKb-Xm-k3J" firstAttribute="top" secondItem="Bhs-Et-0u5" secondAttribute="bottom" constant="170" id="RZ7-4y-J7n"/>
+                            <constraint firstItem="kiZ-CN-KHL" firstAttribute="leading" secondItem="eCW-f2-WmL" secondAttribute="leading" id="S7b-Zn-BOg"/>
+                            <constraint firstAttribute="trailing" secondItem="geV-qL-7P0" secondAttribute="trailing" constant="-20" id="ffB-dn-AQQ"/>
+                            <constraint firstAttribute="centerX" secondItem="GKb-Xm-k3J" secondAttribute="centerX" id="hRt-fc-dZY"/>
+                            <constraint firstItem="kiZ-CN-KHL" firstAttribute="top" secondItem="eCW-f2-WmL" secondAttribute="top" id="zTX-Ln-wel"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0f8-4P-zI1"/>
+                    <connections>
+                        <outlet property="bottomParallaxStretch" destination="0XH-FD-JiF" id="wQh-5T-AQY"/>
+                        <outlet property="contourLines" destination="geV-qL-7P0" id="LcC-tM-TXf"/>
+                        <outlet property="leftParallaxStretch" destination="8TU-vw-hvi" id="ibh-cC-Wtv"/>
+                        <outlet property="rightParallaxStretch" destination="ffB-dn-AQQ" id="0WI-tW-6oI"/>
+                        <outlet property="topParallaxStretch" destination="Ivf-GI-Gzj" id="6Jc-72-cBQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GfU-6d-Qb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757" y="256"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="xme-ZL-dvp">
             <objects>
@@ -137,9 +203,6 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="F5q-3t-4fL" kind="push" id="CMB-Jy-Mel"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA6-s6-Ym2">
                                 <rect key="frame" x="98" y="439" width="124" height="21"/>
@@ -200,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mee-9f-SdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="757" y="256"/>
+            <point key="canvasLocation" x="1170" y="-424"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="8gA-Fe-VDV">
@@ -499,7 +562,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="FsX-Wk-tin" kind="relationship" relationship="rootViewController" id="bmP-wU-abe"/>
+                        <segue destination="I4y-26-Pdw" kind="relationship" relationship="rootViewController" id="FF6-T0-UOn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dBP-zP-k9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1445,8 +1508,11 @@
         <image name="icon_camera_sidemenu" width="12" height="10"/>
         <image name="icon_comments_sidemenu" width="24" height="24"/>
         <image name="icon_likes_sidemenu" width="24" height="24"/>
+        <image name="icon_locality_landing" width="31" height="65"/>
         <image name="icon_paperclip_white" width="9" height="10"/>
         <image name="icon_pencil" width="10" height="10"/>
+        <image name="launch_bg_color" width="320" height="568"/>
+        <image name="launch_bg_contour_lines" width="320" height="568"/>
         <image name="location_slider_bg" width="188" height="32"/>
         <image name="post_comment_header_bg" width="312" height="163"/>
     </resources>
@@ -1456,6 +1522,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jiQ-Bu-aQ2"/>
+        <segue reference="FsM-C4-bcf"/>
     </inferredMetricsTieBreakers>
 </document>

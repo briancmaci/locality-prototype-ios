@@ -85,8 +85,9 @@
 -(void) initBusyView {
     
     //overlay to indicate the app is thinking. Design dependent. (May be just a status bar rather than full-screen).
+    [[BusyView sharedInstance] setHidden:YES];
     [self.window addSubview:[BusyView sharedInstance]];
-    [[BusyView sharedInstance] show:NO withLabel:nil];
+    
 }
 
 - (void)loadInitialView {
@@ -97,13 +98,13 @@
         
         else{
             //no valid current Parse user
-            [self showLoginView];
+            [self showLoginLandingView];
         }
     }
     
     else{
         //no user at all
-        [self showLoginView];
+        [self showLoginLandingView];
     }
 }
 
@@ -131,12 +132,12 @@
     }
 }
 
--(void) showLoginView
+-(void) showLoginLandingView
 {
     //add login notification listener for auth success
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRootView:) name:kLoggedInNotify object:nil];
     
-    [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:[_storyboard instantiateViewControllerWithIdentifier:kLoginStoryboardId] withCompletion:nil];
+    [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:[_storyboard instantiateViewControllerWithIdentifier:kLoginLandingStoryboardId] withCompletion:nil];
 }
 
 -(void)updateRootView:(NSNotification *)notification {
