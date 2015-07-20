@@ -72,6 +72,7 @@
 		03A87E481B32060A00BE37C8 /* PostFromView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A87E471B32060A00BE37C8 /* PostFromView.xib */; };
 		03A87E4C1B32120200BE37C8 /* PostFromViewToggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A87E4B1B32120200BE37C8 /* PostFromViewToggle.m */; };
 		03A87E551B322AE400BE37C8 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A87E541B322AE400BE37C8 /* UIImage+Tint.m */; };
+		03BA49361B57EED300BC6F7D /* LocalityLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BA49351B57EED300BC6F7D /* LocalityLandingViewController.m */; };
 		03BE44761B3ACF0C00344B73 /* leftMenuOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03BE44751B3ACF0C00344B73 /* leftMenuOptions.plist */; };
 		03BE44791B3AD58800344B73 /* LeftMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BE44781B3AD58800344B73 /* LeftMenuModel.m */; };
 		03BE44831B3AD84100344B73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03BE44851B3AD84100344B73 /* Localizable.strings */; };
@@ -221,6 +222,8 @@
 		03A87E4B1B32120200BE37C8 /* PostFromViewToggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostFromViewToggle.m; path = custom_ui/PostFromViewToggle.m; sourceTree = "<group>"; };
 		03A87E531B322AE400BE37C8 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Tint.h"; path = "custom_ui/UIImage+Tint.h"; sourceTree = "<group>"; };
 		03A87E541B322AE400BE37C8 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Tint.m"; path = "custom_ui/UIImage+Tint.m"; sourceTree = "<group>"; };
+		03BA49341B57EED300BC6F7D /* LocalityLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalityLandingViewController.h; path = viewcontroller/LocalityLandingViewController.h; sourceTree = "<group>"; };
+		03BA49351B57EED300BC6F7D /* LocalityLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalityLandingViewController.m; path = viewcontroller/LocalityLandingViewController.m; sourceTree = "<group>"; };
 		03BE44751B3ACF0C00344B73 /* leftMenuOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = leftMenuOptions.plist; sourceTree = "<group>"; };
 		03BE44771B3AD58800344B73 /* LeftMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuModel.h; path = model/LeftMenuModel.h; sourceTree = "<group>"; };
 		03BE44781B3AD58800344B73 /* LeftMenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuModel.m; path = model/LeftMenuModel.m; sourceTree = "<group>"; };
@@ -403,6 +406,8 @@
 				032C764F1B03F8FC00C78CB0 /* SignUpEmailFormViewController.m */,
 				032C76511B03FC1100C78CB0 /* SignUpEmailSentViewController.h */,
 				032C76521B03FC1100C78CB0 /* SignUpEmailSentViewController.m */,
+				03BA49341B57EED300BC6F7D /* LocalityLandingViewController.h */,
+				03BA49351B57EED300BC6F7D /* LocalityLandingViewController.m */,
 			);
 			name = "login-signup";
 			sourceTree = "<group>";
@@ -939,6 +944,7 @@
 				03F71A711B20BAC4006F4088 /* FeedMenuTableViewController.m in Sources */,
 				032C76571B0407D000C78CB0 /* UserModel.m in Sources */,
 				032C76461B03F06D00C78CB0 /* FacebookManager.m in Sources */,
+				03BA49361B57EED300BC6F7D /* LocalityLandingViewController.m in Sources */,
 				036CA1C71AFBC88F0064AB6C /* AppDelegate.m in Sources */,
 				030C41321B051EC1004F1ECE /* GoogleMapsManager.m in Sources */,
 				033B73321B0D039500355581 /* FeedSliderMenuView.m in Sources */,
